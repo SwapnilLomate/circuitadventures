@@ -1,0 +1,65 @@
+@page "/onboarding"
+@inject UserService UserService
+@inject NavigationManager Navigation
+
+<div class="onboarding-page">
+    @if (currentStep == OnboardingStep.Welcome)
+    {
+        <WelcomeScreen OnGetStarted="HandleWelcomeComplete" />
+    }
+    else if (currentStep == OnboardingStep.NameEntry)
+    {
+        <NameEntry OnBack="HandleBack"
+                   OnNext="HandleNameEntry" />
+    }
+    else if (currentStep == OnboardingStep.LevelSelection)
+    {
+        <LevelSelector OnBack="HandleBack"
+                       OnStart="HandleLevelSelection" />
+    }
+</div>
+
+@code {
+    private enum OnboardingStep
+    {
+        Welcome,
+        NameEntry,
+        LevelSelection
+    }
+
+    private OnboardingStep currentStep = OnboardingStep.Welcome;
+
+    private void HandleWelcomeComplete()
+    {
+        currentStep = OnboardingStep.NameEntry;
+    }
+
+    private void HandleBack()
+    {
+        currentStep = currentStep switch
+        {
+            OnboardingStep.NameEntry => OnboardingStep.Welcome,
+            OnboardingStep.LevelSelection => OnboardingStep.NameEntry,
+            _ => OnboardingStep.Welcome
+        };
+    }
+
+    private string userName = string.Empty;
+    private string? userAvatar;
+
+    private void HandleNameEntry((string name, string? avatar) data)
+    {
+        userName = data.name;
+        userAvatar = data.avatar;
+        currentStep = OnboardingStep.LevelSelection;
+    }
+
+    private async Task HandleLevelSelection(int startingLevel)
+    {
+        // Create new user
+        await UserService.CreateUserAsync(userName, userAvatar, startingLevel);
+
+        // Navigate to home page
+        Navigation.NavigateTo("/");
+    }
+}

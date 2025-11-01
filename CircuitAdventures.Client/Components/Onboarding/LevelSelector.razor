@@ -1,0 +1,90 @@
+@* Component for selecting starting level (for returning users) *@
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-8">
+    <MudPaper Elevation="3" Class="pa-8">
+        <MudText Typo="Typo.h4" Align="Align.Center" Color="Color.Primary" Class="mb-6">
+            Is this your first time?
+        </MudText>
+
+        <MudGrid Spacing="3" Class="mb-6">
+            <MudItem xs="6">
+                <MudPaper Elevation="@(isFirstTime ? 4 : 1)"
+                          Class="pa-4"
+                          Style="cursor: pointer; text-align: center;"
+                          @onclick="() => { isFirstTime = true; selectedLevel = 1; }">
+                    <div style="font-size: 48px; margin-bottom: 10px;">✨</div>
+                    <MudText Typo="Typo.h6" Color="@(isFirstTime ? Color.Primary : Color.Default)">
+                        Yes, I'm new!
+                    </MudText>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6">
+                <MudPaper Elevation="@(!isFirstTime ? 4 : 1)"
+                          Class="pa-4"
+                          Style="cursor: pointer; text-align: center;"
+                          @onclick="() => { isFirstTime = false; }">
+                    <div style="font-size: 48px; margin-bottom: 10px;">🔄</div>
+                    <MudText Typo="Typo.h6" Color="@(!isFirstTime ? Color.Primary : Color.Default)">
+                        No, I'm returning
+                    </MudText>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+
+        @if (!isFirstTime)
+        {
+            <div class="mb-4">
+                <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-3">
+                    Which level would you like to start from?
+                </MudText>
+
+                <MudSlider @bind-Value="selectedLevel"
+                           Min="1"
+                           Max="100"
+                           Step="1"
+                           Color="Color.Primary"
+                           Variant="Variant.Filled">
+                    Level @selectedLevel
+                </MudSlider>
+
+                <MudAlert Severity="Severity.Info" Class="mt-4">
+                    <MudText Typo="Typo.body2">
+                        <strong>Note:</strong> You can access this level and all previous levels.
+                        This helps you recover progress if your data was cleared.
+                    </MudText>
+                </MudAlert>
+            </div>
+        }
+
+        <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+            <MudButton Variant="Variant.Outlined"
+                       Color="Color.Default"
+                       OnClick="OnBack"
+                       StartIcon="@Icons.Material.Filled.ArrowBack">
+                Back
+            </MudButton>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Success"
+                       OnClick="HandleStart"
+                       EndIcon="@Icons.Material.Filled.Rocket">
+                Start Learning!
+            </MudButton>
+        </div>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private bool isFirstTime = true;
+    private int selectedLevel = 1;
+
+    [Parameter]
+    public EventCallback OnBack { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnStart { get; set; }
+
+    private async Task HandleStart()
+    {
+        await OnStart.InvokeAsync(selectedLevel);
+    }
+}

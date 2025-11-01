@@ -1,0 +1,42 @@
+@* Welcome screen shown on first visit *@
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-8">
+    <MudPaper Elevation="3" Class="pa-8">
+        <div style="text-align: center;">
+            <div style="font-size: 80px; margin-bottom: 20px;">🤖</div>
+
+            <MudText Typo="Typo.h3" Color="Color.Primary" Align="Align.Center" Class="mb-4">
+                Welcome to Circuit Adventures!
+            </MudText>
+
+            <MudText Typo="Typo.h6" Align="Align.Center" Class="mb-3">
+                Get ready to explore the amazing world of electronics!
+            </MudText>
+
+            <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-2">
+                You'll learn to build 100 exciting projects with:
+            </MudText>
+
+            <div style="margin: 20px 0; text-align: left;">
+                <MudText Typo="Typo.body1" Class="mb-1">⚡ LEDs and lights</MudText>
+                <MudText Typo="Typo.body1" Class="mb-1">🔋 Batteries and solar power</MudText>
+                <MudText Typo="Typo.body1" Class="mb-1">⚙️ Motors and movement</MudText>
+                <MudText Typo="Typo.body1" Class="mb-1">🔧 Switches and circuits</MudText>
+            </div>
+
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Size="Size.Large"
+                       FullWidth="true"
+                       OnClick="OnGetStarted"
+                       StartIcon="@Icons.Material.Filled.Rocket">
+                Let's Get Started!
+            </MudButton>
+        </div>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    [Parameter]
+    public EventCallback OnGetStarted { get; set; }
+}

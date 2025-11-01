@@ -1,0 +1,433 @@
+@page "/level/{LevelId:int}"
+@inject LevelService LevelService
+@inject UserService UserService
+@inject ProgressService ProgressService
+@inject CertificateService CertificateService
+@inject NavigationManager Navigation
+@inject IDialogService DialogService
+
+@if (level == null)
+{
+    <MudContainer MaxWidth="MaxWidth.Large" Class="mt-8">
+        <MudAlert Severity="Severity.Warning">
+            Level not found or you don't have access to this level yet.
+            <MudButton Color="Color.Primary" Variant="Variant.Text" Href="/levels">Go to Level Map</MudButton>
+        </MudAlert>
+    </MudContainer>
+}
+else
+{
+    <MudContainer MaxWidth="MaxWidth.Large">
+        @* Header Section *@
+        <MudPaper Elevation="3" Class="pa-4 mb-4">
+            <MudGrid>
+                <MudItem xs="12" md="8">
+                    <MudText Typo="Typo.h3" Color="Color.Primary">
+                        Level @level.Id: @level.Title
+                    </MudText>
+                    <MudChip T="string" Color="@GetCategoryColor()" Size="Size.Medium" Class="mt-2">
+                        @level.Category
+                    </MudChip>
+                </MudItem>
+                <MudItem xs="12" md="4" Style="text-align: right;">
+                    <MudText Typo="Typo.body1">
+                        <MudIcon Icon="@Icons.Material.Filled.Timer" /> @level.EstimatedTime min
+                    </MudText>
+                    <MudRating ReadOnly="true" SelectedValue="level.Difficulty" MaxValue="5" />
+                    @if (starsEarned > 0)
+                    {
+                        <div class="mt-2">
+                            @for (int i = 0; i < 3; i++)
+                            {
+                                <MudIcon Icon="@(i < starsEarned ? Icons.Material.Filled.Star : Icons.Material.Outlined.StarBorder)"
+                                         Color="@(i < starsEarned ? Color.Warning : Color.Default)" />
+                            }
+                        </div>
+                    }
+                </MudItem>
+            </MudGrid>
+        </MudPaper>
+
+        @* Tab Navigation *@
+        <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+            @* Instructions Tab *@
+            <MudTabPanel Text="Instructions" Icon="@Icons.Material.Filled.ListAlt">
+                @* Components Needed *@
+                <MudPaper Elevation="1" Class="pa-4 mb-4">
+                    <MudText Typo="Typo.h6" Class="mb-3">🔧 Components Needed</MudText>
+                    @if (level.Components.Any())
+                    {
+                        <MudGrid>
+                            @foreach (var component in level.Components)
+                            {
+                                <MudItem xs="6" sm="4" md="3">
+                                    <MudCard Elevation="0">
+                                        <MudCardContent Class="pa-2" Style="text-align: center;">
+                                            <div style="font-size: 32px; margin-bottom: 8px;">
+                                                @GetComponentEmoji(component.Name)
+                                            </div>
+                                            <MudText Typo="Typo.body2"><strong>@component.Name</strong></MudText>
+                                            <MudText Typo="Typo.caption">Qty: @component.Quantity</MudText>
+                                        </MudCardContent>
+                                    </MudCard>
+                                </MudItem>
+                            }
+                        </MudGrid>
+                    }
+                    else
+                    {
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">Components list coming soon...</MudText>
+                    }
+                </MudPaper>
+
+                @* Safety Notes *@
+                @if (level.SafetyNotes.Any())
+                {
+                    <MudAlert Severity="Severity.Warning" Icon="@Icons.Material.Filled.Warning" Class="mb-4">
+                        <MudText Typo="Typo.h6" Class="mb-2">⚠️ Safety First!</MudText>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            @foreach (var note in level.SafetyNotes)
+                            {
+                                <li>@note</li>
+                            }
+                        </ul>
+                    </MudAlert>
+                }
+
+                @* Step-by-Step Instructions *@
+                <MudPaper Elevation="1" Class="pa-4 mb-4">
+                    <MudText Typo="Typo.h6" Class="mb-4">📝 Step-by-Step Instructions</MudText>
+                    @if (level.Instructions.Any())
+                    {
+                        @foreach (var step in level.Instructions.OrderBy(s => s.StepNumber))
+                        {
+                            <MudCard Elevation="2" Class="mb-3">
+                                <MudCardHeader>
+                                    <CardHeaderContent>
+                                        <MudText Typo="Typo.h6">
+                                            <MudChip T="string" Color="Color.Primary" Size="Size.Small">Step @step.StepNumber</MudChip>
+                                            @step.Title
+                                        </MudText>
+                                    </CardHeaderContent>
+                                </MudCardHeader>
+                                <MudCardContent>
+                                    <MudText Typo="Typo.body1" Class="mb-2">@step.Description</MudText>
+
+                                    @if (!string.IsNullOrEmpty(step.Tip))
+                                    {
+                                        <MudAlert Severity="Severity.Info" Dense="true" Class="mt-2">
+                                            <strong>💡 Tip:</strong> @step.Tip
+                                        </MudAlert>
+                                    }
+
+                                    @if (!string.IsNullOrEmpty(step.Warning))
+                                    {
+                                        <MudAlert Severity="Severity.Warning" Dense="true" Class="mt-2">
+                                            <strong>⚠️ Warning:</strong> @step.Warning
+                                        </MudAlert>
+                                    }
+                                </MudCardContent>
+                            </MudCard>
+                        }
+                    }
+                    else
+                    {
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">Detailed instructions coming soon...</MudText>
+                    }
+                </MudPaper>
+
+                @* Fun Fact *@
+                @if (!string.IsNullOrEmpty(level.FunFact))
+                {
+                    <MudAlert Severity="Severity.Success" Icon="@Icons.Material.Filled.Lightbulb" Class="mb-4">
+                        <MudText Typo="Typo.body1"><strong>🎉 Fun Fact:</strong> @level.FunFact</MudText>
+                    </MudAlert>
+                }
+
+                @* Completion Button *@
+                <MudPaper Elevation="3" Class="pa-4" Style="text-align: center;">
+                    @if (isCompleted)
+                    {
+                        <MudText Typo="Typo.h6" Color="Color.Success" Class="mb-3">
+                            ✅ You've completed this level!
+                        </MudText>
+                        <MudButton Variant="Variant.Outlined"
+                                   Color="Color.Primary"
+                                   Size="Size.Large"
+                                   StartIcon="@Icons.Material.Filled.Refresh">
+                            Rebuild to Improve Stars
+                        </MudButton>
+                    }
+                    else
+                    {
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Success"
+                                   Size="Size.Large"
+                                   FullWidth="true"
+                                   StartIcon="@Icons.Material.Filled.CheckCircle"
+                                   OnClick="HandleCompletion">
+                            I've Built This! 🎉
+                        </MudButton>
+                    }
+                </MudPaper>
+            </MudTabPanel>
+
+            @* Learning Objectives Tab *@
+            <MudTabPanel Text="Learn More" Icon="@Icons.Material.Filled.School">
+                <MudPaper Elevation="1" Class="pa-4">
+                    <MudText Typo="Typo.h6" Class="mb-3">🎯 What You'll Learn</MudText>
+                    @if (level.LearningObjectives.Any())
+                    {
+                        <ul style="padding-left: 20px;">
+                            @foreach (var objective in level.LearningObjectives)
+                            {
+                                <li><MudText Typo="Typo.body1">@objective</MudText></li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">Learning objectives coming soon...</MudText>
+                    }
+                </MudPaper>
+            </MudTabPanel>
+
+            @* Diagrams Tab *@
+            <MudTabPanel Text="Diagrams" Icon="@Icons.Material.Filled.Image">
+                <MudPaper Elevation="1" Class="pa-4" Style="text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <div>
+                        <MudIcon Icon="@Icons.Material.Filled.Image" Size="Size.Large" Color="Color.Secondary" />
+                        <MudText Typo="Typo.h6" Color="Color.Secondary" Class="mt-2">
+                            Circuit diagrams will be displayed here
+                        </MudText>
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">
+                            SVG diagrams coming soon!
+                        </MudText>
+                    </div>
+                </MudPaper>
+            </MudTabPanel>
+        </MudTabs>
+
+        @* Navigation Buttons *@
+        <MudPaper Elevation="2" Class="pa-4 mt-4">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <MudButton Variant="Variant.Outlined"
+                           Color="Color.Default"
+                           StartIcon="@Icons.Material.Filled.ArrowBack"
+                           Disabled="@(level.Id <= 1)"
+                           Href="@($"/level/{level.Id - 1}")">
+                    Previous Level
+                </MudButton>
+
+                <MudButton Variant="Variant.Text"
+                           Color="Color.Primary"
+                           StartIcon="@Icons.Material.Filled.Map"
+                           Href="/levels">
+                    Level Map
+                </MudButton>
+
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           EndIcon="@Icons.Material.Filled.ArrowForward"
+                           Disabled="@(!ProgressService.IsLevelUnlocked(level.Id + 1))"
+                           Href="@($"/level/{level.Id + 1}")">
+                    Next Level
+                </MudButton>
+            </div>
+        </MudPaper>
+    </MudContainer>
+}
+
+@code {
+    [Parameter]
+    public int LevelId { get; set; }
+
+    private Models.Level? level;
+    private bool isCompleted = false;
+    private int starsEarned = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Check if user is onboarded
+        var isOnboarded = await UserService.IsUserOnboardedAsync();
+        if (!isOnboarded)
+        {
+            Navigation.NavigateTo("/onboarding");
+            return;
+        }
+
+        LoadLevel();
+    }
+
+    protected override void OnParametersSet()
+    {
+        LoadLevel();
+    }
+
+    private void LoadLevel()
+    {
+        level = LevelService.GetLevelById(LevelId);
+
+        if (level != null)
+        {
+            // Check if user has access to this level
+            if (!ProgressService.IsLevelUnlocked(LevelId))
+            {
+                level = null;
+                return;
+            }
+
+            isCompleted = ProgressService.IsLevelCompleted(LevelId);
+            starsEarned = ProgressService.GetStarsForLevel(LevelId);
+        }
+    }
+
+    private async Task HandleCompletion()
+    {
+        if (level == null || level.Quiz == null)
+        {
+            // No quiz available, just award 1 star
+            await ProgressService.CompleteLevelAsync(LevelId, 1);
+            isCompleted = true;
+            starsEarned = 1;
+            return;
+        }
+
+        // Step 1: Show Quiz Modal
+        var quizParameters = new DialogParameters<QuizModal>
+        {
+            { x => x.Quiz, level.Quiz }
+        };
+
+        var quizOptions = new DialogOptions
+        {
+            CloseOnEscapeKey = false,
+            BackdropClick = false,
+            MaxWidth = MaxWidth.Small,
+            FullWidth = true
+        };
+
+        var quizDialog = await DialogService.ShowAsync<QuizModal>("Quiz Time!", quizParameters, quizOptions);
+        var quizResult = await quizDialog.Result;
+
+        if (quizResult.Canceled)
+            return;
+
+        bool quizPassed = (bool)(quizResult.Data ?? false);
+        int stars = quizPassed ? 2 : 1; // 1 star for completion, 2 if quiz passed
+
+        // Save progress
+        await ProgressService.CompleteLevelAsync(LevelId, stars);
+        isCompleted = true;
+        starsEarned = stars;
+
+        // Check if milestone reached
+        bool isMilestone = (LevelId % 10 == 0);
+
+        // Step 2: Show Completion Modal
+        var completionParameters = new DialogParameters<CompletionModal>
+        {
+            { x => x.LevelId, LevelId },
+            { x => x.StarsEarned, stars },
+            { x => x.QuizPassed, quizPassed },
+            { x => x.IsMilestone, isMilestone },
+            { x => x.HasNextLevel, LevelId < 100 }
+        };
+
+        var completionOptions = new DialogOptions
+        {
+            CloseOnEscapeKey = false,
+            BackdropClick = false,
+            MaxWidth = MaxWidth.Small,
+            FullWidth = true
+        };
+
+        var completionDialog = await DialogService.ShowAsync<CompletionModal>("", completionParameters, completionOptions);
+        var completionResult = await completionDialog.Result;
+
+        if (completionResult.Canceled)
+            return;
+
+        var action = completionResult.Data?.ToString() ?? "close";
+
+        // Step 3: Show Certificate Modal if milestone
+        if (isMilestone || action == "certificate")
+        {
+            var user = UserService.CurrentUser;
+            if (user != null)
+            {
+                var certificate = user.Certificates.FirstOrDefault(c => c.Level == LevelId);
+                if (certificate != null)
+                {
+                    var certParameters = new DialogParameters<CertificateModal>
+                    {
+                        { x => x.Certificate, certificate },
+                        { x => x.UserName, user.Name },
+                        { x => x.MilestoneLevel, LevelId }
+                    };
+
+                    var certOptions = new DialogOptions
+                    {
+                        CloseOnEscapeKey = true,
+                        MaxWidth = MaxWidth.Medium,
+                        FullWidth = true
+                    };
+
+                    var certDialog = await DialogService.ShowAsync<CertificateModal>("", certParameters, certOptions);
+                    var certResult = await certDialog.Result;
+
+                    if (!certResult.Canceled)
+                    {
+                        var certAction = certResult.Data?.ToString() ?? "continue";
+                        if (certAction == "continue" && LevelId < 100)
+                        {
+                            Navigation.NavigateTo($"/level/{LevelId + 1}");
+                        }
+                    }
+                    return;
+                }
+            }
+        }
+
+        // Handle action from completion modal
+        if (action == "next" && LevelId < 100)
+        {
+            Navigation.NavigateTo($"/level/{LevelId + 1}");
+        }
+        else if (action == "close")
+        {
+            Navigation.NavigateTo("/levels");
+        }
+    }
+
+    private Color GetCategoryColor()
+    {
+        return level?.Category switch
+        {
+            "Beginner Zone" => Color.Primary,
+            "Energy Explorer" => Color.Warning,
+            "Motion Maker" => Color.Success,
+            "Light Master" => Color.Info,
+            "Circuit Wizard" => Color.Secondary,
+            "Innovation Lab" => Color.Error,
+            _ => Color.Default
+        };
+    }
+
+    private string GetComponentEmoji(string componentName)
+    {
+        return componentName.ToLower() switch
+        {
+            var n when n.Contains("led") => "💡",
+            var n when n.Contains("battery") => "🔋",
+            var n when n.Contains("motor") => "⚙️",
+            var n when n.Contains("solar") => "☀️",
+            var n when n.Contains("wire") => "〰️",
+            var n when n.Contains("switch") => "🔘",
+            var n when n.Contains("resistor") => "📏",
+            var n when n.Contains("capacitor") => "🔌",
+            var n when n.Contains("breadboard") => "📋",
+            _ => "🔧"
+        };
+    }
+}

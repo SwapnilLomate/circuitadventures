@@ -1,0 +1,128 @@
+@inject NavigationManager Navigation
+@inject ProgressService ProgressService
+
+<MudCard Elevation="@(IsCurrentLevel ? 6 : 2)"
+         Class="@GetCardClass()"
+         Style="@GetCardStyle()">
+    <MudCardContent>
+        @if (IsLocked)
+        {
+            <div style="text-align: center; opacity: 0.5;">
+                <MudIcon Icon="@Icons.Material.Filled.Lock" Size="Size.Large" />
+            </div>
+        }
+        else if (IsCompleted)
+        {
+            <div style="text-align: center; color: #10B981;">
+                <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Large" />
+            </div>
+        }
+        else if (IsCurrentLevel)
+        {
+            <div style="text-align: center; color: #3B82F6;">
+                <MudIcon Icon="@Icons.Material.Filled.PlayArrow" Size="Size.Large" />
+            </div>
+        }
+
+        <MudText Typo="Typo.h6" Align="Align.Center" Class="mb-2">
+            Level @Level.Id
+        </MudText>
+
+        <MudText Typo="Typo.body2" Align="Align.Center" Class="mb-2" Style="height: 40px; overflow: hidden;">
+            @Level.Title
+        </MudText>
+
+        <MudChip T="string" Size="Size.Small" Color="@GetCategoryColor()" Class="mb-2" Style="width: 100%;">
+            @Level.Category
+        </MudChip>
+
+        @if (StarsEarned > 0)
+        {
+            <div style="text-align: center;">
+                @for (int i = 0; i < 3; i++)
+                {
+                    <MudIcon Icon="@(i < StarsEarned ? Icons.Material.Filled.Star : Icons.Material.Outlined.StarBorder)"
+                             Color="@(i < StarsEarned ? Color.Warning : Color.Default)"
+                             Size="Size.Small" />
+                }
+            </div>
+        }
+
+        @if (IsCurrentLevel)
+        {
+            <MudChip T="string" Color="Color.Success" Size="Size.Small" Style="width: 100%; margin-top: 8px;">
+                Current Level
+            </MudChip>
+        }
+    </MudCardContent>
+
+    <MudCardActions>
+        @if (IsLocked)
+        {
+            <MudButton Disabled="true" FullWidth="true" Variant="Variant.Text">
+                Locked
+            </MudButton>
+        }
+        else
+        {
+            <MudButton Color="Color.Primary"
+                       FullWidth="true"
+                       Variant="Variant.Text"
+                       OnClick="NavigateToLevel">
+                @(IsCompleted ? "Review" : "Start")
+            </MudButton>
+        }
+    </MudCardActions>
+</MudCard>
+
+@code {
+    [Parameter, EditorRequired]
+    public Models.Level Level { get; set; } = null!;
+
+    [Parameter]
+    public int CurrentLevel { get; set; }
+
+    private bool IsLocked => Level.Id > CurrentLevel;
+    private bool IsCurrentLevel => Level.Id == CurrentLevel;
+    private bool IsCompleted => ProgressService.IsLevelCompleted(Level.Id);
+    private int StarsEarned => ProgressService.GetStarsForLevel(Level.Id);
+
+    private string GetCardClass()
+    {
+        var classes = new List<string> { "level-card" };
+        if (IsLocked) classes.Add("locked");
+        if (IsCurrentLevel) classes.Add("current-level");
+        return string.Join(" ", classes);
+    }
+
+    private string GetCardStyle()
+    {
+        if (IsCurrentLevel)
+            return "border: 3px solid #3B82F6; cursor: pointer;";
+        if (IsLocked)
+            return "cursor: not-allowed; opacity: 0.6;";
+        return "cursor: pointer;";
+    }
+
+    private Color GetCategoryColor()
+    {
+        return Level.Category switch
+        {
+            "Beginner Zone" => Color.Primary,
+            "Energy Explorer" => Color.Warning,
+            "Motion Maker" => Color.Success,
+            "Light Master" => Color.Info,
+            "Circuit Wizard" => Color.Secondary,
+            "Innovation Lab" => Color.Error,
+            _ => Color.Default
+        };
+    }
+
+    private void NavigateToLevel()
+    {
+        if (!IsLocked)
+        {
+            Navigation.NavigateTo($"/level/{Level.Id}");
+        }
+    }
+}

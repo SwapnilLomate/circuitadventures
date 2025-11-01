@@ -1,0 +1,292 @@
+@page "/progress"
+@inject UserService UserService
+@inject ProgressService ProgressService
+@inject CertificateService CertificateService
+@inject NavigationManager Navigation
+@inject IDialogService DialogService
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-4">
+        📊 Your Progress
+    </MudText>
+
+    @if (user != null)
+    {
+        @* Overall Stats Section *@
+        <MudGrid Class="mb-4">
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="3" Class="pa-4" Style="text-align: center;">
+                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Size="Size.Large" />
+                    <MudText Typo="Typo.h4" Color="Color.Success">@completedCount</MudText>
+                    <MudText Typo="Typo.body2">Levels Completed</MudText>
+                </MudPaper>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="3" Class="pa-4" Style="text-align: center;">
+                    <MudIcon Icon="@Icons.Material.Filled.Star" Color="Color.Warning" Size="Size.Large" />
+                    <MudText Typo="Typo.h4" Color="Color.Warning">@totalStars</MudText>
+                    <MudText Typo="Typo.body2">Total Stars</MudText>
+                </MudPaper>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="3" Class="pa-4" Style="text-align: center;">
+                    <MudIcon Icon="@Icons.Material.Filled.EmojiEvents" Color="Color.Secondary" Size="Size.Large" />
+                    <MudText Typo="Typo.h4" Color="Color.Secondary">@user.Certificates.Count</MudText>
+                    <MudText Typo="Typo.body2">Certificates</MudText>
+                </MudPaper>
+            </MudItem>
+
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="3" Class="pa-4" Style="text-align: center;">
+                    <MudIcon Icon="@Icons.Material.Filled.LocalFireDepartment" Color="Color.Error" Size="Size.Large" />
+                    <MudText Typo="Typo.h4" Color="Color.Error">@user.Streak.Current</MudText>
+                    <MudText Typo="Typo.body2">Day Streak</MudText>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+
+        @* Overall Progress Bar *@
+        <MudPaper Elevation="3" Class="pa-4 mb-4">
+            <MudText Typo="Typo.h6" Class="mb-3">Overall Progress</MudText>
+            <MudProgressLinear Color="Color.Success" Value="@progressPercentage" Size="Size.Large" Class="mb-2">
+                <MudText Typo="Typo.body2">@completedCount / 100 Levels</MudText>
+            </MudProgressLinear>
+            <MudText Typo="Typo.body2" Color="Color.Secondary">
+                @((int)progressPercentage)% Complete
+            </MudText>
+        </MudPaper>
+
+        @* Category Breakdown *@
+        <MudPaper Elevation="3" Class="pa-4 mb-4">
+            <MudText Typo="Typo.h6" Class="mb-3">Progress by Category</MudText>
+            <MudGrid>
+                @foreach (var category in categoryProgress)
+                {
+                    <MudItem xs="12" md="6">
+                        <MudText Typo="Typo.body1" Class="mb-1">
+                            <strong>@category.Key</strong>
+                        </MudText>
+                        <MudProgressLinear Color="@GetCategoryColor(category.Key)"
+                                          Value="@category.Value"
+                                          Class="mb-2">
+                            <MudText Typo="Typo.caption">@((int)category.Value)%</MudText>
+                        </MudProgressLinear>
+                    </MudItem>
+                }
+            </MudGrid>
+        </MudPaper>
+
+        @* Certificates Gallery *@
+        <MudPaper Elevation="3" Class="pa-4 mb-4">
+            <MudText Typo="Typo.h6" Class="mb-3">🏆 Certificates Earned</MudText>
+
+            @if (user.Certificates.Any())
+            {
+                <MudGrid>
+                    @foreach (var cert in user.Certificates.OrderBy(c => c.Level))
+                    {
+                        var design = CertificateService.GetCertificateDesign(cert.Level);
+                        <MudItem xs="12" sm="6" md="4">
+                            <MudCard Elevation="2" Style="@GetCertificateCardStyle(design)">
+                                <MudCardContent Style="text-align: center;">
+                                    <div style="font-size: 48px; margin-bottom: 10px;">@design.IconSymbol</div>
+                                    <MudText Typo="Typo.h6">@design.Name</MudText>
+                                    <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                        Level @cert.Level Milestone
+                                    </MudText>
+                                    <MudText Typo="Typo.body2" Class="mt-2">
+                                        Earned: @cert.EarnedDate.ToString("MMM dd, yyyy")
+                                    </MudText>
+                                </MudCardContent>
+                                <MudCardActions>
+                                    <MudButton Variant="Variant.Text"
+                                             Color="Color.Primary"
+                                             FullWidth="true"
+                                             OnClick="@(() => ViewCertificate(cert))">
+                                        View Certificate
+                                    </MudButton>
+                                </MudCardActions>
+                            </MudCard>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info">
+                    Complete levels 10, 20, 30... to earn certificates! Keep learning!
+                </MudAlert>
+            }
+        </MudPaper>
+
+        @* Badges Section *@
+        <MudPaper Elevation="3" Class="pa-4 mb-4">
+            <MudText Typo="Typo.h6" Class="mb-3">🎖️ Badges Earned</MudText>
+
+            @if (user.Badges.Any())
+            {
+                <MudGrid>
+                    @foreach (var badgeName in user.Badges)
+                    {
+                        <MudItem xs="6" sm="4" md="3">
+                            <MudPaper Elevation="1" Class="pa-3" Style="text-align: center;">
+                                <div style="font-size: 40px; margin-bottom: 8px;">🏅</div>
+                                <MudText Typo="Typo.body2"><strong>@badgeName</strong></MudText>
+                            </MudPaper>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info">
+                    Keep completing levels to earn badges!
+                </MudAlert>
+            }
+        </MudPaper>
+
+        @* Recent Activity *@
+        <MudPaper Elevation="3" Class="pa-4 mb-4">
+            <MudText Typo="Typo.h6" Class="mb-3">📅 Recent Activity</MudText>
+            @if (user.CompletedLevels.Any())
+            {
+                <MudTimeline>
+                    @foreach (var levelId in user.CompletedLevels.OrderByDescending(l => l).Take(5))
+                    {
+                        var stars = user.StarsEarned.ContainsKey(levelId) ? user.StarsEarned[levelId] : 0;
+                        <MudTimelineItem Color="Color.Success" Size="Size.Small">
+                            <MudText Typo="Typo.body1">
+                                Completed Level @levelId
+                            </MudText>
+                            <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                @GetStarDisplay(stars) earned
+                            </MudText>
+                        </MudTimelineItem>
+                    }
+                </MudTimeline>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info">
+                    No levels completed yet. Start your adventure!
+                </MudAlert>
+            }
+        </MudPaper>
+    }
+</MudContainer>
+
+@code {
+    private Models.UserData? user;
+    private int completedCount = 0;
+    private int totalStars = 0;
+    private double progressPercentage = 0;
+    private Dictionary<string, double> categoryProgress = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Check if user is onboarded
+        var isOnboarded = await UserService.IsUserOnboardedAsync();
+        if (!isOnboarded)
+        {
+            Navigation.NavigateTo("/onboarding");
+            return;
+        }
+
+        user = UserService.CurrentUser;
+        if (user != null)
+        {
+            completedCount = user.CompletedLevels.Count;
+            totalStars = user.StarsEarned.Values.Sum();
+            progressPercentage = (completedCount / 100.0) * 100;
+
+            CalculateCategoryProgress();
+        }
+    }
+
+    private void CalculateCategoryProgress()
+    {
+        if (user == null) return;
+
+        var categories = new Dictionary<string, (int completed, int total)>
+        {
+            ["Beginner Zone"] = (0, 20),
+            ["Energy Explorer"] = (0, 15),
+            ["Motion Maker"] = (0, 15),
+            ["Light Master"] = (0, 15),
+            ["Circuit Wizard"] = (0, 15),
+            ["Innovation Lab"] = (0, 20)
+        };
+
+        foreach (var levelId in user.CompletedLevels)
+        {
+            var category = levelId switch
+            {
+                <= 20 => "Beginner Zone",
+                <= 35 => "Energy Explorer",
+                <= 50 => "Motion Maker",
+                <= 65 => "Light Master",
+                <= 80 => "Circuit Wizard",
+                _ => "Innovation Lab"
+            };
+
+            if (categories.ContainsKey(category))
+            {
+                var current = categories[category];
+                categories[category] = (current.completed + 1, current.total);
+            }
+        }
+
+        categoryProgress = categories.ToDictionary(
+            kvp => kvp.Key,
+            kvp => (kvp.Value.completed / (double)kvp.Value.total) * 100
+        );
+    }
+
+    private Color GetCategoryColor(string category)
+    {
+        return category switch
+        {
+            "Beginner Zone" => Color.Primary,
+            "Energy Explorer" => Color.Warning,
+            "Motion Maker" => Color.Success,
+            "Light Master" => Color.Info,
+            "Circuit Wizard" => Color.Secondary,
+            "Innovation Lab" => Color.Error,
+            _ => Color.Default
+        };
+    }
+
+    private string GetCertificateCardStyle(Models.CertificateDesign? design)
+    {
+        if (design == null) return "";
+        return $"background: linear-gradient(135deg, {design.BackgroundColor} 0%, white 100%); border-left: 4px solid {design.BorderColor};";
+    }
+
+    private string GetStarDisplay(int stars)
+    {
+        return string.Join("", Enumerable.Repeat("⭐", stars));
+    }
+
+    private async Task ViewCertificate(Models.Certificate cert)
+    {
+        if (user == null) return;
+
+        var parameters = new DialogParameters<Components.CertificateModal>
+        {
+            { x => x.Certificate, cert },
+            { x => x.UserName, user.Name },
+            { x => x.MilestoneLevel, cert.Level }
+        };
+
+        var options = new DialogOptions
+        {
+            CloseOnEscapeKey = true,
+            MaxWidth = MaxWidth.Medium,
+            FullWidth = true
+        };
+
+        await DialogService.ShowAsync<Components.CertificateModal>("", parameters, options);
+    }
+}

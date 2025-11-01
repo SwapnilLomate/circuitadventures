@@ -1,0 +1,88 @@
+@* Component for entering user's name *@
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-8">
+    <MudPaper Elevation="3" Class="pa-8">
+        <MudText Typo="Typo.h4" Align="Align.Center" Color="Color.Primary" Class="mb-6">
+            What's your name, young inventor?
+        </MudText>
+
+        <div class="mb-6">
+            <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-3">
+                Choose an avatar (optional):
+            </MudText>
+            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                @foreach (var avatar in _avatars)
+                {
+                    <MudButton Variant="@(selectedAvatar == avatar ? Variant.Filled : Variant.Outlined)"
+                               Color="@(selectedAvatar == avatar ? Color.Primary : Color.Default)"
+                               Size="Size.Large"
+                               OnClick="() => selectedAvatar = avatar"
+                               Style="font-size: 32px; min-width: 60px; height: 60px;">
+                        @avatar
+                    </MudButton>
+                }
+            </div>
+        </div>
+
+        <MudTextField @bind-Value="userName"
+                      Label="Enter your name"
+                      Variant="Variant.Outlined"
+                      Margin="Margin.Dense"
+                      MaxLength="20"
+                      Immediate="true"
+                      FullWidth="true"
+                      Class="mb-2" />
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <MudAlert Severity="Severity.Warning" Class="mb-4">@errorMessage</MudAlert>
+        }
+
+        <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+            <MudButton Variant="Variant.Outlined"
+                       Color="Color.Default"
+                       OnClick="OnBack"
+                       StartIcon="@Icons.Material.Filled.ArrowBack">
+                Back
+            </MudButton>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Disabled="@(!IsValidName())"
+                       OnClick="HandleNext"
+                       EndIcon="@Icons.Material.Filled.ArrowForward">
+                Next
+            </MudButton>
+        </div>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private string userName = string.Empty;
+    private string? selectedAvatar;
+    private string errorMessage = string.Empty;
+
+    private readonly List<string> _avatars = new() { "🧑‍🔬", "👨‍🔬", "👩‍🔬", "🤖", "🚀", "⚡", "🔬", "🔧" };
+
+    [Parameter]
+    public EventCallback OnBack { get; set; }
+
+    [Parameter]
+    public EventCallback<(string name, string? avatar)> OnNext { get; set; }
+
+    private bool IsValidName()
+    {
+        return !string.IsNullOrWhiteSpace(userName) && userName.Length >= 2 && userName.Length <= 20;
+    }
+
+    private async Task HandleNext()
+    {
+        if (!IsValidName())
+        {
+            errorMessage = "Please enter a name between 2 and 20 characters.";
+            return;
+        }
+
+        errorMessage = string.Empty;
+        await OnNext.InvokeAsync((userName.Trim(), selectedAvatar));
+    }
+}

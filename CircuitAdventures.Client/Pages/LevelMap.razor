@@ -1,0 +1,183 @@
+@page "/levels"
+@inject LevelService LevelService
+@inject UserService UserService
+@inject NavigationManager Navigation
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-4">
+        🗺️ Level Map
+    </MudText>
+
+    <MudPaper Elevation="2" Class="pa-4 mb-4">
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudText Typo="Typo.body1">
+                    <strong>Your Progress:</strong> Level @currentLevel / 100
+                </MudText>
+                <MudProgressLinear Color="Color.Success" Value="@progressPercentage" Class="mt-2" />
+            </MudItem>
+            <MudItem xs="12" md="6">
+                <MudTextField @bind-Value="searchText"
+                              Label="Search levels"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Search"
+                              Immediate="true" />
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+
+    <MudPaper Elevation="2" Class="pa-4 mb-4">
+        <MudText Typo="Typo.h6" Class="mb-3">Filter by Category</MudText>
+        <MudChipSet T="string" @bind-SelectedValue="selectedCategory">
+            <MudChip T="string" Text="All" Value="@("All")" Default="true" Color="Color.Default">All (100)</MudChip>
+            @foreach (var category in categories)
+            {
+                var count = allLevels.Count(l => l.Category == category);
+                <MudChip T="string" Text="@category" Value="@category" Color="@GetCategoryColor(category)">
+                    @category (@count)
+                </MudChip>
+            }
+        </MudChipSet>
+    </MudPaper>
+
+    @if (filteredLevels.Any())
+    {
+        <MudGrid Spacing="3">
+            @foreach (var level in filteredLevels)
+            {
+                <MudItem xs="12" sm="6" md="4" lg="3" xl="2">
+                    <LevelCard Level="level" CurrentLevel="currentLevel" />
+                </MudItem>
+            }
+        </MudGrid>
+    }
+    else
+    {
+        <MudAlert Severity="Severity.Info">
+            No levels found matching your search.
+        </MudAlert>
+    }
+</MudContainer>
+
+@code {
+    private List<Models.Level> allLevels = new();
+    private List<Models.Level> filteredLevels = new();
+    private List<string> categories = new();
+    private int currentLevel = 1;
+    private double progressPercentage = 0;
+    private string searchText = string.Empty;
+    private string? selectedCategory = "All";
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Check if user is onboarded
+        var isOnboarded = await UserService.IsUserOnboardedAsync();
+        if (!isOnboarded)
+        {
+            Navigation.NavigateTo("/onboarding");
+            return;
+        }
+
+        // Load levels and user data
+        allLevels = LevelService.GetAllLevels();
+        categories = LevelService.GetAllCategories();
+
+        var user = UserService.CurrentUser;
+        if (user != null)
+        {
+            currentLevel = user.CurrentLevel;
+            progressPercentage = (user.CompletedLevels.Count / 100.0) * 100;
+        }
+
+        // Generate placeholder levels if we don't have 100 yet
+        if (allLevels.Count < 100)
+        {
+            allLevels = GeneratePlaceholderLevels();
+        }
+
+        ApplyFilters();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            StateHasChanged();
+        }
+    }
+
+    private void ApplyFilters()
+    {
+        filteredLevels = allLevels;
+
+        // Apply category filter
+        if (!string.IsNullOrEmpty(selectedCategory) && selectedCategory != "All")
+        {
+            filteredLevels = filteredLevels.Where(l => l.Category == selectedCategory).ToList();
+        }
+
+        // Apply search filter
+        if (!string.IsNullOrWhiteSpace(searchText))
+        {
+            filteredLevels = filteredLevels.Where(l =>
+                l.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                l.Id.ToString().Contains(searchText)
+            ).ToList();
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        ApplyFilters();
+    }
+
+    private Color GetCategoryColor(string category)
+    {
+        return category switch
+        {
+            "Beginner Zone" => Color.Primary,
+            "Energy Explorer" => Color.Warning,
+            "Motion Maker" => Color.Success,
+            "Light Master" => Color.Info,
+            "Circuit Wizard" => Color.Secondary,
+            "Innovation Lab" => Color.Error,
+            _ => Color.Default
+        };
+    }
+
+    // Generate placeholder levels for testing (until we have all 100)
+    private List<Models.Level> GeneratePlaceholderLevels()
+    {
+        var levels = LevelService.GetAllLevels().ToList();
+        var existingCount = levels.Count;
+
+        for (int i = existingCount + 1; i <= 100; i++)
+        {
+            var category = i switch
+            {
+                <= 20 => "Beginner Zone",
+                <= 35 => "Energy Explorer",
+                <= 50 => "Motion Maker",
+                <= 65 => "Light Master",
+                <= 80 => "Circuit Wizard",
+                _ => "Innovation Lab"
+            };
+
+            levels.Add(new Models.Level
+            {
+                Id = i,
+                Title = $"Level {i} Project",
+                Category = category,
+                Difficulty = (i / 20) + 1,
+                EstimatedTime = 10 + (i / 10) * 5,
+                Components = new(),
+                Instructions = new(),
+                LearningObjectives = new List<string> { "Coming soon..." },
+                SafetyNotes = new List<string> { "Ask an adult for help" }
+            });
+        }
+
+        return levels;
+    }
+}

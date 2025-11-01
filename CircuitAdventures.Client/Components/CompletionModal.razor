@@ -1,0 +1,138 @@
+@inject NavigationManager Navigation
+@using MudBlazor
+
+<MudDialog>
+    <DialogContent>
+        <div style="text-align: center; padding: 20px;">
+            <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
+
+            <MudText Typo="Typo.h4" Color="Color.Success" Class="mb-3">
+                Level Complete!
+            </MudText>
+
+            <MudText Typo="Typo.h6" Class="mb-4">
+                You earned @StarsEarned star@(StarsEarned > 1 ? "s" : "")!
+            </MudText>
+
+            <div style="margin: 30px 0;">
+                @for (int i = 0; i < 3; i++)
+                {
+                    var index = i;
+                    <MudIcon Icon="@(index < StarsEarned ? Icons.Material.Filled.Star : Icons.Material.Outlined.StarBorder)"
+                             Color="@(index < StarsEarned ? Color.Warning : Color.Default)"
+                             Size="Size.Large"
+                             Style="@GetStarStyle(index)" />
+                }
+            </div>
+
+            <MudPaper Elevation="2" Class="pa-3 mb-4">
+                <MudText Typo="Typo.body1">
+                    <strong>Stars Breakdown:</strong>
+                </MudText>
+                <MudText Typo="Typo.body2" Class="mt-2">
+                    ⭐ Completed the project
+                </MudText>
+                @if (QuizPassed)
+                {
+                    <MudText Typo="Typo.body2" Color="Color.Success">
+                        ⭐ Answered quiz correctly
+                    </MudText>
+                }
+                else
+                {
+                    <MudText Typo="Typo.body2" Color="Color.Default">
+                        ☆ Quiz answer (try again for more stars)
+                    </MudText>
+                }
+                <MudText Typo="Typo.body2" Color="Color.Default">
+                    ☆ Challenge mode (coming soon)
+                </MudText>
+            </MudPaper>
+
+            @if (IsMilestone)
+            {
+                <MudAlert Severity="Severity.Success" Icon="@Icons.Material.Filled.EmojiEvents" Class="mb-4">
+                    <MudText Typo="Typo.h6">🏆 Certificate Earned!</MudText>
+                    <MudText Typo="Typo.body2">You've reached a milestone!</MudText>
+                </MudAlert>
+            }
+
+            <MudStack Spacing="2">
+                @if (HasNextLevel)
+                {
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Size="Size.Large"
+                               FullWidth="true"
+                               EndIcon="@Icons.Material.Filled.ArrowForward"
+                               OnClick="GoToNextLevel">
+                        Go to Next Level
+                    </MudButton>
+                }
+
+                @if (IsMilestone)
+                {
+                    <MudButton Variant="Variant.Outlined"
+                               Color="Color.Secondary"
+                               Size="Size.Large"
+                               FullWidth="true"
+                               StartIcon="@Icons.Material.Filled.EmojiEvents"
+                               OnClick="ViewCertificate">
+                        View Certificate
+                    </MudButton>
+                }
+
+                <MudButton Variant="Variant.Text"
+                           Color="Color.Default"
+                           FullWidth="true"
+                           OnClick="Close">
+                    Return to Level Map
+                </MudButton>
+            </MudStack>
+        </div>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter]
+    private IMudDialogInstance? MudDialog { get; set; }
+
+    [Parameter]
+    public int LevelId { get; set; }
+
+    [Parameter]
+    public int StarsEarned { get; set; }
+
+    [Parameter]
+    public bool QuizPassed { get; set; }
+
+    [Parameter]
+    public bool IsMilestone { get; set; }
+
+    [Parameter]
+    public bool HasNextLevel { get; set; } = true;
+
+    private string GetStarStyle(int index)
+    {
+        if (index < StarsEarned)
+        {
+            return "font-size: 60px; animation: star-bounce 0.5s ease-in-out; animation-delay: " + (index * 0.2) + "s;";
+        }
+        return "font-size: 60px; opacity: 0.3;";
+    }
+
+    private void GoToNextLevel()
+    {
+        MudDialog?.Close(DialogResult.Ok("next"));
+    }
+
+    private void ViewCertificate()
+    {
+        MudDialog?.Close(DialogResult.Ok("certificate"));
+    }
+
+    private void Close()
+    {
+        MudDialog?.Close(DialogResult.Ok("close"));
+    }
+}

@@ -1,0 +1,87 @@
+@using MudBlazor
+@inject IDialogService DialogService
+
+<MudDialog>
+    <DialogContent>
+        <div style="text-align: center; padding: 20px;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🤔</div>
+
+            <MudText Typo="Typo.h5" Class="mb-4">Quick Quiz!</MudText>
+            <MudText Typo="Typo.body1" Class="mb-4">@Quiz.Question</MudText>
+
+            @if (!answered)
+            {
+                <MudRadioGroup T="int?" @bind-Value="selectedAnswer">
+                    @for (int i = 0; i < Quiz.Options.Count; i++)
+                    {
+                        var index = i;
+                        <MudRadio T="int?" Value="@index" Color="Color.Primary" Size="Size.Large">
+                            <MudText Typo="Typo.body1">@Quiz.Options[index]</MudText>
+                        </MudRadio>
+                    }
+                </MudRadioGroup>
+
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           Size="Size.Large"
+                           FullWidth="true"
+                           Disabled="@(selectedAnswer == null)"
+                           OnClick="SubmitAnswer"
+                           Class="mt-4">
+                    Submit Answer
+                </MudButton>
+            }
+            else
+            {
+                @if (isCorrect)
+                {
+                    <MudAlert Severity="Severity.Success" Icon="@Icons.Material.Filled.CheckCircle" Class="mb-3">
+                        <MudText Typo="Typo.h6">🎉 Correct!</MudText>
+                    </MudAlert>
+                }
+                else
+                {
+                    <MudAlert Severity="Severity.Info" Icon="@Icons.Material.Filled.Info" Class="mb-3">
+                        <MudText Typo="Typo.h6">Not quite, but that's okay!</MudText>
+                    </MudAlert>
+                }
+
+                <MudPaper Elevation="2" Class="pa-3 mb-4">
+                    <MudText Typo="Typo.body1"><strong>Explanation:</strong></MudText>
+                    <MudText Typo="Typo.body2" Class="mt-2">@Quiz.Explanation</MudText>
+                </MudPaper>
+
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Success"
+                           Size="Size.Large"
+                           FullWidth="true"
+                           OnClick="Submit">
+                    Continue
+                </MudButton>
+            }
+        </div>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter]
+    private IMudDialogInstance? MudDialog { get; set; }
+
+    [Parameter, EditorRequired]
+    public Models.QuizQuestion Quiz { get; set; } = null!;
+
+    private int? selectedAnswer = null;
+    private bool answered = false;
+    private bool isCorrect = false;
+
+    private void SubmitAnswer()
+    {
+        answered = true;
+        isCorrect = selectedAnswer == Quiz.CorrectAnswerIndex;
+    }
+
+    private void Submit()
+    {
+        MudDialog?.Close(DialogResult.Ok(isCorrect));
+    }
+}

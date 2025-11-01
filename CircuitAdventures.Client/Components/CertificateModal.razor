@@ -1,0 +1,141 @@
+@inject CertificateService CertificateService
+@using MudBlazor
+
+<MudDialog MaxWidth="MaxWidth.Medium" FullWidth="true">
+    <DialogContent>
+        <div style="text-align: center; padding: 20px;">
+            <div style="font-size: 80px; margin-bottom: 20px;">🎓</div>
+
+            <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-2">
+                Congratulations!
+            </MudText>
+
+            <MudText Typo="Typo.h6" Class="mb-4">
+                You've earned a certificate!
+            </MudText>
+
+            @* Certificate Display *@
+            <MudPaper Elevation="6"
+                      Class="pa-6 mb-4"
+                      Style="@GetCertificateStyle()">
+                <div style="border: 4px double #FFD700; padding: 30px; border-radius: 8px;">
+                    <div style="font-size: 48px; margin-bottom: 10px;">@certificateDesign.IconSymbol</div>
+
+                    <MudText Typo="Typo.h4" Style="font-family: 'Georgia', serif; color: #1976D2; margin-bottom: 20px;">
+                        Circuit Adventures
+                    </MudText>
+
+                    <MudDivider Class="mb-3" />
+
+                    <MudText Typo="Typo.h5" Style="font-family: 'Georgia', serif; margin-bottom: 20px;">
+                        @certificateDesign.Name
+                    </MudText>
+
+                    <MudText Typo="Typo.body1" Class="mb-2">
+                        This certifies that
+                    </MudText>
+
+                    <MudText Typo="Typo.h4" Color="Color.Primary" Class="mb-3" Style="font-family: 'Brush Script MT', cursive;">
+                        @UserName
+                    </MudText>
+
+                    <MudText Typo="Typo.body1" Class="mb-2">
+                        Has successfully completed <strong>@MilestoneLevel levels</strong>
+                    </MudText>
+
+                    <MudText Typo="Typo.body2" Class="mb-3">
+                        In Circuit Adventures Electronics Learning Program
+                    </MudText>
+
+                    <MudText Typo="Typo.caption" Color="Color.Secondary" Class="mb-4">
+                        @certificateDesign.Description
+                    </MudText>
+
+                    <MudDivider Class="mb-3" />
+
+                    <MudText Typo="Typo.body2">
+                        Date: @Certificate.EarnedDate.ToString("MMMM dd, yyyy")
+                    </MudText>
+
+                    <MudText Typo="Typo.caption" Class="mt-2" Style="font-style: italic;">
+                        The Circuit Adventures Team
+                    </MudText>
+                </div>
+            </MudPaper>
+
+            <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
+                Certificate ID: @Certificate.Id.Substring(0, 8).ToUpper()
+            </MudText>
+
+            <MudStack Spacing="2">
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           Size="Size.Large"
+                           FullWidth="true"
+                           StartIcon="@Icons.Material.Filled.Download"
+                           OnClick="DownloadCertificate">
+                    Download Certificate
+                </MudButton>
+
+                <MudButton Variant="Variant.Outlined"
+                           Color="Color.Secondary"
+                           FullWidth="true"
+                           Href="/certificates">
+                    View All Certificates
+                </MudButton>
+
+                <MudButton Variant="Variant.Text"
+                           Color="Color.Default"
+                           FullWidth="true"
+                           OnClick="Continue">
+                    Continue Learning
+                </MudButton>
+            </MudStack>
+        </div>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter]
+    private IMudDialogInstance? MudDialog { get; set; }
+
+    [Parameter, EditorRequired]
+    public Models.Certificate Certificate { get; set; } = null!;
+
+    [Parameter, EditorRequired]
+    public string UserName { get; set; } = string.Empty;
+
+    [Parameter]
+    public int MilestoneLevel { get; set; }
+
+    private Models.CertificateDesign certificateDesign = null!;
+
+    protected override void OnInitialized()
+    {
+        certificateDesign = CertificateService.GetCertificateDesign(Certificate.Level) ?? new Models.CertificateDesign
+        {
+            Name = "Certificate",
+            IconSymbol = "🏆",
+            Description = "For completing CircuitAdventures",
+            BorderColor = "#3B82F6",
+            BackgroundColor = "#EFF6FF"
+        };
+    }
+
+    private string GetCertificateStyle()
+    {
+        return $"background: linear-gradient(135deg, {certificateDesign.BackgroundColor} 0%, white 100%); border: 2px solid {certificateDesign.BorderColor};";
+    }
+
+    private void DownloadCertificate()
+    {
+        // TODO: Implement certificate download using JSInterop and html2canvas
+        // For now, just show a message
+        MudDialog?.Close(DialogResult.Ok("download"));
+    }
+
+    private void Continue()
+    {
+        MudDialog?.Close(DialogResult.Ok("continue"));
+    }
+}
