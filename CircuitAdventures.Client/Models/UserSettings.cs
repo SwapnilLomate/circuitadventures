@@ -7,5 +7,4 @@ public class UserSettings
 {
     public bool SoundEnabled { get; set; } = true;
     public string TextSize { get; set; } = "medium"; // small, medium, large
-    public bool DarkMode { get; set; } = false;
 }

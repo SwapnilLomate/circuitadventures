@@ -1,38 +1,31 @@
 ﻿@inherits LayoutComponentBase
 @inject UserService UserService
-@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 
-<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" Theme="@_theme" />
+<MudThemeProvider />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1" Color="Color.Primary">
+    <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
-        <MudText Typo="Typo.h5" Class="ml-3" Style="color: white; font-weight: 700;">Circuit Adventures</MudText>
+        <MudText Typo="Typo.h5" Class="ml-3">Circuit Adventures</MudText>
         <MudSpacer />
 
         @if (UserService.CurrentUser != null)
         {
-            <MudText Typo="Typo.body1" Class="mr-4" Style="color: white;">
-                @(UserService.CurrentUser.Avatar ?? "👋") Welcome, @UserService.CurrentUser.Name!
+            <MudText Typo="Typo.body1" Class="mr-4">
+                Welcome, @UserService.CurrentUser.Name!
             </MudText>
-            <MudText Typo="Typo.body2" Class="mr-3" Style="color: white;">
+            <MudText Typo="Typo.body2" Class="mr-3">
                 Level @UserService.CurrentUser.CurrentLevel / 100
             </MudText>
         }
-
-        <MudTooltip Text="@(_isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode")">
-            <MudIconButton Icon="@(_isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)"
-                          Color="Color.Inherit"
-                          OnClick="@ToggleDarkMode" />
-        </MudTooltip>
     </MudAppBar>
 
     <MudDrawer @bind-Open="@_drawerOpen" Elevation="2">
         <MudDrawerHeader>
-            <MudText Typo="Typo.h6">🚀 Menu</MudText>
+            <MudText Typo="Typo.h6">Menu</MudText>
         </MudDrawerHeader>
         <NavMenu />
     </MudDrawer>
@@ -46,72 +39,14 @@
 
 @code {
     private bool _drawerOpen = true;
-    private bool _isDarkMode = false;
-    private MudThemeProvider? _mudThemeProvider;
-
-    // Custom kid-friendly theme
-    private MudTheme _theme = new()
-    {
-        PaletteLight = new PaletteLight()
-        {
-            Primary = "#FF6B6B",
-            Secondary = "#4ECDC4",
-            Success = "#95E1D3",
-            Warning = "#FFE66D",
-            Info = "#A8DADC",
-            Error = "#FF6B6B",
-            AppbarBackground = "#FF6B6B",
-            Background = "#FFF8F0",
-            DrawerBackground = "#FFFFFF",
-            Surface = "#FFFFFF"
-        },
-        PaletteDark = new PaletteDark()
-        {
-            Primary = "#FF8787",
-            Secondary = "#6EDDD5",
-            Success = "#A8E6D8",
-            Warning = "#FFE98F",
-            Info = "#BBE3E5",
-            Error = "#FF8787",
-            AppbarBackground = "#1E1E2E",
-            Background = "#13131A",
-            DrawerBackground = "#1E1E2E",
-            Surface = "#252535",
-            TextPrimary = "#E0E0E0",
-            TextSecondary = "#B0B0B0"
-        },
-        LayoutProperties = new LayoutProperties()
-        {
-            DrawerWidthLeft = "260px",
-            AppbarHeight = "64px"
-        }
-    };
 
     private void ToggleDrawer()
     {
         _drawerOpen = !_drawerOpen;
     }
 
-    private async Task ToggleDarkMode()
-    {
-        _isDarkMode = !_isDarkMode;
-        await LocalStorage.SetItemAsync("darkMode", _isDarkMode);
-    }
-
     protected override async Task OnInitializedAsync()
     {
         await UserService.InitializeAsync();
-
-        // Load dark mode preference
-        _isDarkMode = await LocalStorage.GetItemAsync<bool>("darkMode");
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender && _mudThemeProvider != null)
-        {
-            _isDarkMode = await LocalStorage.GetItemAsync<bool>("darkMode");
-            StateHasChanged();
-        }
     }
 }

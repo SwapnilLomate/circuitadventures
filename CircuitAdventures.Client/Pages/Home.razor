@@ -14,52 +14,50 @@ else if (!isOnboarded)
 }
 else
 {
-    <div class="home-page">
+    <div class="dashboard-page">
         <MudGrid>
             <MudItem xs="12">
                 <MudPaper Elevation="2" Class="pa-4">
-                    <div class="welcome-header">
-                        <MudText Typo="Typo.h3" Color="Color.Primary">
-                            @(UserService.CurrentUser?.Avatar ?? "👋") Welcome back, @UserService.CurrentUser?.Name!
-                        </MudText>
-                        <MudText Typo="Typo.body1" Class="mt-2">
-                            Ready to continue your electronics journey?
-                        </MudText>
-                    </div>
+                    <MudText Typo="Typo.h4" Color="Color.Primary">
+                        Welcome back, @UserService.CurrentUser?.Name
+                    </MudText>
+                    <MudText Typo="Typo.body1" Class="mt-2">
+                        Continue your progress through the curriculum
+                    </MudText>
                 </MudPaper>
             </MudItem>
 
             @* Continue Learning Button *@
             <MudItem xs="12" md="6">
-                <MudPaper Elevation="3" Class="pa-4 continue-learning-card">
-                    <MudText Typo="Typo.h5" Class="mb-2">🚀 Continue Learning</MudText>
+                <MudPaper Elevation="3" Class="pa-4">
+                    <MudText Typo="Typo.h5" Class="mb-2">Current Progress</MudText>
                     <MudText Typo="Typo.body1" Class="mb-3">
-                        You're on Level @currentLevel
+                        Level @currentLevel
                     </MudText>
                     <MudButton Variant="Variant.Filled"
                                Color="Color.Primary"
                                Size="Size.Large"
                                FullWidth="true"
                                OnClick="ContinueLearning">
-                        Go to Level @currentLevel →
+                        Continue to Level @currentLevel
                     </MudButton>
                 </MudPaper>
             </MudItem>
 
-            @* Quick Stats *@
+            @* Statistics *@
             <MudItem xs="12" md="6">
                 <MudPaper Elevation="2" Class="pa-4">
-                    <MudText Typo="Typo.h6" Class="mb-3">📊 Your Progress</MudText>
+                    <MudText Typo="Typo.h6" Class="mb-3">Statistics</MudText>
                     <MudStack Spacing="2">
-                        <div class="stat-item">
+                        <div>
                             <MudText Typo="Typo.body1">Levels Completed: <strong>@completedLevels / 100</strong></MudText>
                             <MudProgressLinear Color="Color.Success" Value="@completionPercentage" Class="my-2" />
                         </div>
                         <MudText Typo="Typo.body1">
-                            ⭐ Total Stars: <strong>@totalStars</strong>
+                            Total Stars: <strong>@totalStars</strong>
                         </MudText>
                         <MudText Typo="Typo.body1">
-                            🔥 Current Streak: <strong>@currentStreak days</strong>
+                            Current Streak: <strong>@currentStreak days</strong>
                         </MudText>
                     </MudStack>
                 </MudPaper>
@@ -68,7 +66,7 @@ else
             @* Next Certificate Milestone *@
             <MudItem xs="12" md="6">
                 <MudPaper Elevation="2" Class="pa-4">
-                    <MudText Typo="Typo.h6" Class="mb-3">🏆 Next Certificate</MudText>
+                    <MudText Typo="Typo.h6" Class="mb-3">Next Milestone</MudText>
                     <MudText Typo="Typo.body1" Class="mb-2">
                         Complete @nextCertificateLevels more levels to earn:
                     </MudText>
@@ -77,14 +75,6 @@ else
                     </MudText>
                     <MudProgressLinear Color="Color.Warning" Value="@certificateProgress" Class="my-2" />
                 </MudPaper>
-            </MudItem>
-
-            @* Safety Reminder *@
-            <MudItem xs="12" md="6">
-                <MudAlert Severity="Severity.Info" Icon="@Icons.Material.Filled.Warning">
-                    <MudText Typo="Typo.body1"><strong>Safety First!</strong></MudText>
-                    <MudText Typo="Typo.body2">Always ask an adult for help when working with electronics.</MudText>
-                </MudAlert>
             </MudItem>
         </MudGrid>
     </div>
