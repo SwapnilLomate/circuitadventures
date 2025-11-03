@@ -35,7 +35,8 @@
       "Bash(powershell -ExecutionPolicy Bypass -File create-badge-images.ps1)",
       "Bash(del create-level-images.ps1)",
       "Bash(del create-component-images.ps1)",
-      "Bash(del create-badge-images.ps1)"
+      "Bash(del create-badge-images.ps1)",
+      "Bash(dotnet run:*)"
     ],
     "deny": [],
     "ask": []

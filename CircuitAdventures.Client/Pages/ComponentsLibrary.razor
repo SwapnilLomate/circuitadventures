@@ -1,0 +1,189 @@
+@page "/components-library"
+@inject NavigationManager Navigation
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudText Typo="Typo.h3" Color="Color.Primary" Class="mb-2">
+        📦 Components Library
+    </MudText>
+    <MudText Typo="Typo.body1" Color="Color.Secondary" Class="mb-4">
+        Learn about all the electronic components you'll use in your circuit adventures!
+    </MudText>
+
+    @* Search Bar *@
+    <MudPaper Elevation="2" Class="pa-3 mb-4">
+        <MudTextField @bind-Value="searchQuery"
+                     Label="Search components"
+                     Variant="Variant.Outlined"
+                     Adornment="Adornment.Start"
+                     AdornmentIcon="@Icons.Material.Filled.Search"
+                     Immediate="true" />
+    </MudPaper>
+
+    @* Category Tabs *@
+    <MudPaper Elevation="1" Class="mb-4">
+        <MudTabs Elevation="0" Rounded="true" Color="Color.Primary" @bind-ActivePanelIndex="activeTab">
+            <MudTabPanel Text="All" Icon="@Icons.Material.Filled.Widgets" />
+            <MudTabPanel Text="Basics" Icon="@Icons.Material.Filled.Lightbulb" />
+            <MudTabPanel Text="Power" Icon="@Icons.Material.Filled.BatteryChargingFull" />
+            <MudTabPanel Text="Control" Icon="@Icons.Material.Filled.ToggleOn" />
+            <MudTabPanel Text="Sensors" Icon="@Icons.Material.Filled.Sensors" />
+            <MudTabPanel Text="Advanced" Icon="@Icons.Material.Filled.Memory" />
+        </MudTabs>
+    </MudPaper>
+
+    @* Components Grid *@
+    <MudGrid>
+        @foreach (var component in GetFilteredComponents())
+        {
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Elevation="3" Class="component-card">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 40px;">@component.Icon</div>
+                                <MudText Typo="Typo.h6">@component.Name</MudText>
+                            </div>
+                        </CardHeaderContent>
+                        <CardHeaderActions>
+                            <MudChip T="string" Size="Size.Small" Color="@GetCategoryColor(component.Category)">
+                                @component.Category
+                            </MudChip>
+                        </CardHeaderActions>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Typo="Typo.body2" Class="mb-3">
+                            @component.Description
+                        </MudText>
+
+                        @if (component.UsedIn.Any())
+                        {
+                            <MudDivider Class="my-2" />
+                            <MudText Typo="Typo.caption" Color="Color.Secondary">
+                                <strong>Used in:</strong> @string.Join(", ", component.UsedIn.Take(3))@(component.UsedIn.Count > 3 ? "..." : "")
+                            </MudText>
+                        }
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text"
+                                  Color="Color.Primary"
+                                  Size="Size.Small"
+                                  OnClick="@(() => ShowComponentDetails(component))">
+                            Learn More
+                        </MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+
+    @if (!GetFilteredComponents().Any())
+    {
+        <MudPaper Elevation="2" Class="pa-6" Style="text-align: center;">
+            <div style="font-size: 60px; margin-bottom: 16px;">🔍</div>
+            <MudText Typo="Typo.h6">No components found</MudText>
+            <MudText Typo="Typo.body2" Color="Color.Secondary">
+                Try adjusting your search or filter
+            </MudText>
+        </MudPaper>
+    }
+</MudContainer>
+
+<style>
+    .component-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        height: 100%;
+    }
+    .component-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+</style>
+
+@code {
+    private string searchQuery = "";
+    private int activeTab = 0;
+
+    private class Component
+    {
+        public string Name { get; set; } = "";
+        public string Icon { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string Category { get; set; } = "";
+        public string Details { get; set; } = "";
+        public List<string> UsedIn { get; set; } = new();
+    }
+
+    private List<Component> allComponents = new()
+    {
+        new Component { Name = "LED", Icon = "💡", Category = "Basics", Description = "Light Emitting Diode - converts electrical energy to light. Has polarity (long leg = positive).", Details = "LEDs are semiconductor devices that emit light when current flows through them. They're energy-efficient and long-lasting.", UsedIn = new() { "Level 1", "Level 2", "Level 5" } },
+        new Component { Name = "Resistor", Icon = "🎨", Category = "Basics", Description = "Limits current flow in a circuit. Measured in Ohms (Ω). Uses color bands to indicate resistance value.", Details = "Resistors are passive components that oppose current flow. They're essential for protecting LEDs and controlling current in circuits.", UsedIn = new() { "Level 3", "Level 4", "Level 6" } },
+        new Component { Name = "Battery", Icon = "🔋", Category = "Power", Description = "Provides electrical power (voltage) to your circuit. Common types: AA (1.5V), 9V.", Details = "Batteries convert chemical energy to electrical energy. Always check polarity before connecting!", UsedIn = new() { "Level 1", "Level 2", "Level 3" } },
+        new Component { Name = "Switch", Icon = "🔘", Category = "Control", Description = "Opens or closes a circuit path, controlling current flow. Types: toggle, push-button, slide.", Details = "Switches are mechanical devices that control whether electricity flows or stops in a circuit.", UsedIn = new() { "Level 2", "Level 7", "Level 8" } },
+        new Component { Name = "Capacitor", Icon = "⚡", Category = "Basics", Description = "Stores electrical charge temporarily. Measured in Farads (F). Used for filtering and timing.", Details = "Capacitors store energy in an electric field. They can smooth power supply voltage and filter noise.", UsedIn = new() { "Level 15", "Level 18", "Level 22" } },
+        new Component { Name = "Transistor", Icon = "🔷", Category = "Advanced", Description = "Acts as an electronic switch or amplifier. Can control large currents with small signals.", Details = "Transistors are semiconductor devices with three terminals: base, collector, and emitter. They're the building blocks of modern electronics.", UsedIn = new() { "Level 25", "Level 30", "Level 35" } },
+        new Component { Name = "Diode", Icon = "➡️", Category = "Basics", Description = "Allows current to flow in only one direction. Protects circuits from reverse polarity.", Details = "Diodes are one-way valves for electricity. The stripe indicates the cathode (negative) end.", UsedIn = new() { "Level 12", "Level 16", "Level 20" } },
+        new Component { Name = "DC Motor", Icon = "⚙️", Category = "Advanced", Description = "Converts electrical energy to mechanical motion. Speed controlled by voltage.", Details = "DC motors contain coils and magnets that create rotational motion when powered. They're used in countless applications from toys to robots.", UsedIn = new() { "Level 40", "Level 42", "Level 45" } },
+        new Component { Name = "Servo Motor", Icon = "🔄", Category = "Advanced", Description = "Precise position-controlled motor. Can rotate to specific angles (0-180°).", Details = "Servo motors contain position feedback circuitry for accurate angle control. They're perfect for robotic arms and steering mechanisms.", UsedIn = new() { "Level 55", "Level 60", "Level 65" } },
+        new Component { Name = "Buzzer", Icon = "🔊", Category = "Control", Description = "Creates sound or beeping when powered. Types: active (self-oscillating) and passive.", Details = "Buzzers convert electrical signals into audible sound. Active buzzers just need DC power, while passive buzzers need an AC signal.", UsedIn = new() { "Level 10", "Level 14", "Level 18" } },
+        new Component { Name = "Potentiometer", Icon = "🎛️", Category = "Control", Description = "Variable resistor - adjust resistance by turning a knob. Used for dimming, volume, etc.", Details = "Potentiometers have three terminals and provide adjustable resistance. They're commonly used as user input controls.", UsedIn = new() { "Level 20", "Level 25", "Level 28" } },
+        new Component { Name = "Photoresistor (LDR)", Icon = "☀️", Category = "Sensors", Description = "Light-dependent resistor. Resistance decreases with more light exposure.", Details = "LDRs are made from photosensitive semiconductor material. They're used in automatic lighting and light-following robots.", UsedIn = new() { "Level 32", "Level 35", "Level 38" } },
+        new Component { Name = "IR Sensor", Icon = "📡", Category = "Sensors", Description = "Detects infrared light. Used for line following, obstacle detection, and remote controls.", Details = "IR sensors emit and detect infrared light. They can measure distance or detect presence of objects.", UsedIn = new() { "Level 50", "Level 55", "Level 91" } },
+        new Component { Name = "Ultrasonic Sensor", Icon = "📊", Category = "Sensors", Description = "Measures distance using sound waves. Similar to how bats navigate.", Details = "Ultrasonic sensors send out high-frequency sound pulses and measure the echo time to calculate distance.", UsedIn = new() { "Level 60", "Level 65", "Level 70" } },
+        new Component { Name = "Arduino", Icon = "🤖", Category = "Advanced", Description = "Programmable microcontroller board. The brain of your circuit that can make decisions.", Details = "Arduino is an open-source electronics platform with easy-to-use hardware and software. It can read inputs and control outputs through code.", UsedIn = new() { "Level 70", "Level 80", "Level 90" } },
+        new Component { Name = "Breadboard", Icon = "📋", Category = "Basics", Description = "Prototyping board for connecting components without soldering. Reusable and beginner-friendly.", Details = "Breadboards have internal metal strips that connect component leads. Perfect for temporary circuits and learning.", UsedIn = new() { "Level 5", "Level 10", "Level 15" } },
+        new Component { Name = "Jumper Wires", Icon = "🔗", Category = "Basics", Description = "Wires for connecting components. Come in male-male, male-female, and female-female.", Details = "Jumper wires make breadboard connections easy. Color coding helps track positive (red), negative (black), and signal wires.", UsedIn = new() { "All Levels" } },
+        new Component { Name = "Relay", Icon = "🔀", Category = "Control", Description = "Electrically controlled switch. Allows low-voltage circuits to control high-voltage devices.", Details = "Relays use an electromagnet to mechanically switch higher power circuits. Essential for home automation and safety.", UsedIn = new() { "Level 75", "Level 80", "Level 92" } },
+        new Component { Name = "7-Segment Display", Icon = "8️⃣", Category = "Advanced", Description = "Display device showing digits 0-9 using seven LED segments.", Details = "7-segment displays are commonly used in digital clocks, calculators, and counters. They can be common-cathode or common-anode.", UsedIn = new() { "Level 45", "Level 50", "Level 55" } },
+        new Component { Name = "RGB LED", Icon = "🌈", Category = "Basics", Description = "LED that can produce any color by mixing Red, Green, and Blue light.", Details = "RGB LEDs contain three LEDs in one package. By varying the brightness of each color, millions of colors can be created.", UsedIn = new() { "Level 30", "Level 35", "Level 40" } }
+    };
+
+    private void FilterComponents()
+    {
+        StateHasChanged();
+    }
+
+    private List<Component> GetFilteredComponents()
+    {
+        var filtered = allComponents.AsEnumerable();
+
+        // Filter by search query
+        if (!string.IsNullOrWhiteSpace(searchQuery))
+        {
+            filtered = filtered.Where(c =>
+                c.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                c.Description.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Filter by category tab
+        filtered = activeTab switch
+        {
+            1 => filtered.Where(c => c.Category == "Basics"),
+            2 => filtered.Where(c => c.Category == "Power"),
+            3 => filtered.Where(c => c.Category == "Control"),
+            4 => filtered.Where(c => c.Category == "Sensors"),
+            5 => filtered.Where(c => c.Category == "Advanced"),
+            _ => filtered // All
+        };
+
+        return filtered.ToList();
+    }
+
+    private Color GetCategoryColor(string category)
+    {
+        return category switch
+        {
+            "Basics" => Color.Primary,
+            "Power" => Color.Warning,
+            "Control" => Color.Info,
+            "Sensors" => Color.Success,
+            "Advanced" => Color.Secondary,
+            _ => Color.Default
+        };
+    }
+
+    private void ShowComponentDetails(Component component)
+    {
+        // Could open a dialog with more detailed information
+        // For now, this is a placeholder
+    }
+}

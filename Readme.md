@@ -1025,6 +1025,40 @@ Each component should have a standard illustration showing:
 - Zoom hotspots for detailed areas
 - Animation of electricity flow (optional)
 
+## Deployment
+
+### GitHub Pages Deployment
+
+This project includes automated GitHub Pages deployment via GitHub Actions.
+
+**Quick Setup:**
+1. Push your code to GitHub
+2. Go to **Settings** → **Pages**
+3. Set source to **GitHub Actions**
+4. Go to **Settings** → **Actions** → **General**
+5. Enable **Read and write permissions**
+6. Push to `main` branch - deployment happens automatically!
+
+Your site will be live at: `https://<username>.github.io/<repository-name>/`
+
+**For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)**
+
+### Local Development
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd circuitadventures
+
+# Restore dependencies
+dotnet restore
+
+# Run the application
+dotnet run --project CircuitAdventures.Client
+
+# Open http://localhost:5190 in your browser
+```
+
 ## Notes for Claude Code
 - Start with a clean Blazor WebAssembly project template
 - Use .NET 8 or latest LTS version
