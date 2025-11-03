@@ -1,0 +1,1495 @@
+﻿[
+    {
+        "Quiz":  {
+                     "Explanation":  "An H-bridge allows current to flow in both directions through a motor, enabling forward and reverse motion!",
+                     "Options":  [
+                                     "Spin faster",
+                                     "Spin in both directions",
+                                     "Use less power",
+                                     "Make less noise"
+                                 ],
+                     "Question":  "What does an H-bridge allow a motor to do?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Connect power supply last",
+                            "Verify IC orientation before powering",
+                            "Do not exceed voltage ratings",
+                            "Motor may get warm during operation"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Place the L293D IC on breadboard, noting the notch orientation.",
+                                 "Title":  "Insert H-Bridge IC",
+                                 "DiagramUrl":  "/images/levels/level-041/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect VCC (pin 16) to 9V and GND (pins 4,5,12,13) to ground.",
+                                 "Title":  "Wire Power Connections",
+                                 "DiagramUrl":  "/images/levels/level-041/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect motor terminals to output pins 3 and 6 of the IC.",
+                                 "Title":  "Connect Motor",
+                                 "DiagramUrl":  "/images/levels/level-041/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect pins 2 and 7 to control switches for direction control.",
+                                 "Title":  "Wire Control Inputs",
+                                 "DiagramUrl":  "/images/levels/level-041/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect pin 1 (enable) to positive to activate motor driver.",
+                                 "Title":  "Enable Motor",
+                                 "DiagramUrl":  "/images/levels/level-041/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Use switches to make motor spin forward and reverse.",
+                                 "Title":  "Test Directions",
+                                 "Tip":  "Switch combinations control direction!",
+                                 "DiagramUrl":  "/images/levels/level-041/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-041/main-diagram.svg",
+                         "/images/levels/level-041/final-view.svg"
+                     ],
+        "Title":  "H-Bridge Motor Control",
+        "LearningObjectives":  [
+                                   "Understand H-bridge circuit topology",
+                                   "Learn bidirectional motor control",
+                                   "Master IC-based motor drivers",
+                                   "Understand current flow in motor circuits"
+                               ],
+        "Difficulty":  5,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor",
+                               "Description":  "6V DC motor",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "L293D H-Bridge IC",
+                               "Description":  "Motor driver chip",
+                               "ImageUrl":  "/images/components/ic.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Power supply",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "DPDT Switch",
+                               "Description":  "Control switches",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "For connections",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  15,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  35,
+        "Id":  41,
+        "FunFact":  "H-bridges are used in everything from toy cars to electric vehicles and industrial robots!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The L293D has two H-bridges, allowing it to control two DC motors independently!",
+                     "Options":  [
+                                     "1 motor",
+                                     "2 motors",
+                                     "4 motors",
+                                     "8 motors"
+                                 ],
+                     "Question":  "How many motors can a single L293D IC control?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Ensure adequate power supply capacity",
+                            "Check all connections before powering",
+                            "Monitor IC temperature during use",
+                            "Both motors share same power supply"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Place L293D on breadboard with proper orientation.",
+                                 "Title":  "Setup IC",
+                                 "DiagramUrl":  "/images/levels/level-042/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect VCC and all GND pins as in previous level.",
+                                 "Title":  "Power the IC",
+                                 "DiagramUrl":  "/images/levels/level-042/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Wire first motor to output pins 3 and 6 (channel 1).",
+                                 "Title":  "Connect Motor A",
+                                 "DiagramUrl":  "/images/levels/level-042/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Wire second motor to output pins 11 and 14 (channel 2).",
+                                 "Title":  "Connect Motor B",
+                                 "DiagramUrl":  "/images/levels/level-042/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect switches to pins 2 and 7 for first motor direction.",
+                                 "Title":  "Wire Controls for Motor A",
+                                 "DiagramUrl":  "/images/levels/level-042/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Connect switches to pins 10 and 15 for second motor direction.",
+                                 "Title":  "Wire Controls for Motor B",
+                                 "DiagramUrl":  "/images/levels/level-042/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Connect pins 1 and 9 (enable pins) to positive.",
+                                 "Title":  "Enable Both Motors",
+                                 "DiagramUrl":  "/images/levels/level-042/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Control each motor separately to verify independent operation.",
+                                 "Title":  "Test Independence",
+                                 "Tip":  "Try making them spin in opposite directions!",
+                                 "DiagramUrl":  "/images/levels/level-042/step-8.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-042/main-diagram.svg",
+                         "/images/levels/level-042/final-view.svg"
+                     ],
+        "Title":  "Dual Motor Coordination",
+        "LearningObjectives":  [
+                                   "Control two motors independently",
+                                   "Understand dual H-bridge operation",
+                                   "Learn coordinated motor movements",
+                                   "Master multi-motor circuits"
+                               ],
+        "Difficulty":  5,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "DC Motor",
+                               "Description":  "6V DC motors",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "L293D H-Bridge IC",
+                               "Description":  "Dual motor driver",
+                               "ImageUrl":  "/images/components/ic.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Power supply",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "SPDT Switch",
+                               "Description":  "Motor control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "For connections",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  20,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  40,
+        "Id":  42,
+        "FunFact":  "Robot vehicles use dual motor control to steer by varying the speed and direction of left and right motors!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The ratio is 30:10 or 3:1, meaning the output gear turns 3 times slower but with 3 times more torque!",
+                     "Options":  [
+                                     "1:3 (speed reduction)",
+                                     "3:1 (speed increase)",
+                                     "1:1 (same speed)",
+                                     "10:1 (speed reduction)"
+                                 ],
+                     "Question":  "If a 10-tooth gear drives a 30-tooth gear, what is the gear ratio?",
+                     "CorrectAnswerIndex":  0
+                 },
+        "SafetyNotes":  [
+                            "Keep fingers away from rotating gears",
+                            "Ensure gears are securely mounted",
+                            "Don\u0027t force gears together"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Secure motor to mounting board with shaft accessible.",
+                                 "Title":  "Mount Motor",
+                                 "DiagramUrl":  "/images/levels/level-043/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Fix the small gear (driver) onto the motor shaft.",
+                                 "Title":  "Attach Small Gear",
+                                 "DiagramUrl":  "/images/levels/level-043/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Mount large gear on axle so teeth mesh with small gear.",
+                                 "Title":  "Position Large Gear",
+                                 "Tip":  "Gears should touch lightly but not bind!",
+                                 "DiagramUrl":  "/images/levels/level-043/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Attach pointer flags to both gears to visualize rotation.",
+                                 "Title":  "Add Pointer",
+                                 "DiagramUrl":  "/images/levels/level-043/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect motor to battery through switch.",
+                                 "Title":  "Wire Motor Circuit",
+                                 "DiagramUrl":  "/images/levels/level-043/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Turn on motor and count rotations. Small gear spins faster!",
+                                 "Title":  "Test Gear Ratio",
+                                 "DiagramUrl":  "/images/levels/level-043/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Count teeth on each gear and divide large by small.",
+                                 "Title":  "Calculate Ratio",
+                                 "Tip":  "A 2:1 ratio means driver turns twice per output turn!",
+                                 "DiagramUrl":  "/images/levels/level-043/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Mounting board or cardboard",
+                                    "Axles or pencils for gears",
+                                    "Tape or glue",
+                                    "Pointer flag for visualization"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-043/main-diagram.svg",
+                         "/images/levels/level-043/final-view.svg"
+                     ],
+        "Title":  "Gear Systems",
+        "LearningObjectives":  [
+                                   "Understand gear ratios and mechanical advantage",
+                                   "Learn speed vs torque trade-offs",
+                                   "Observe gear teeth meshing",
+                                   "Calculate gear ratios"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor",
+                               "Description":  "6V motor with shaft",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Power supply",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "On/Off control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Small Gear",
+                               "Description":  "Driver gear",
+                               "ImageUrl":  "/images/components/gear.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Large Gear",
+                               "Description":  "Driven gear",
+                               "ImageUrl":  "/images/components/gear.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  43,
+        "FunFact":  "Bicycle gears work the same way - lower gears provide more torque for climbing hills, while higher gears give more speed!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Encoders track motor rotation by counting pulses, which tells us both the position and speed of the motor!",
+                     "Options":  [
+                                     "Motor temperature",
+                                     "Motor position and speed",
+                                     "Motor voltage",
+                                     "Motor color"
+                                 ],
+                     "Question":  "What does a motor encoder measure?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Handle IR LED carefully",
+                            "Align encoder disk precisely",
+                            "Avoid touching rotating parts",
+                            "Check voltage before connecting"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Mount slotted disk securely to motor shaft.",
+                                 "Title":  "Attach Encoder Disk",
+                                 "DiagramUrl":  "/images/levels/level-044/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Place IR LED on one side of disk with proper current-limiting resistor.",
+                                 "Title":  "Position IR LED",
+                                 "DiagramUrl":  "/images/levels/level-044/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Mount phototransistor opposite the IR LED to detect light.",
+                                 "Title":  "Position Phototransistor",
+                                 "Tip":  "Align sensor pair with disk slots!",
+                                 "DiagramUrl":  "/images/levels/level-044/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect phototransistor with pull-up resistor to detect pulses.",
+                                 "Title":  "Wire Sensor Circuit",
+                                 "DiagramUrl":  "/images/levels/level-044/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Wire indicator LED to phototransistor output to visualize pulses.",
+                                 "Title":  "Connect Indicator LED",
+                                 "DiagramUrl":  "/images/levels/level-044/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Connect motor to power supply through switch.",
+                                 "Title":  "Wire Motor",
+                                 "DiagramUrl":  "/images/levels/level-044/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Run motor and watch indicator LED blink as disk rotates.",
+                                 "Title":  "Test Encoder",
+                                 "Tip":  "Faster motor = faster blinking!",
+                                 "DiagramUrl":  "/images/levels/level-044/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Count LED blinks in 10 seconds to measure motor speed.",
+                                 "Title":  "Count Pulses",
+                                 "DiagramUrl":  "/images/levels/level-044/step-8.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Motor mounting bracket",
+                                    "Encoder disk mount",
+                                    "IR sensor holder"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-044/main-diagram.svg",
+                         "/images/levels/level-044/final-view.svg"
+                     ],
+        "Title":  "Motor Encoder Feedback",
+        "LearningObjectives":  [
+                                   "Understand rotary encoders",
+                                   "Learn position and speed sensing",
+                                   "Master optical sensing techniques",
+                                   "Implement feedback systems"
+                               ],
+        "Difficulty":  6,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor",
+                               "Description":  "Motor with encoder",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Optical Encoder Disk",
+                               "Description":  "Slotted disk",
+                               "ImageUrl":  "/images/components/encoder.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "IR LED",
+                               "Description":  "Infrared emitter",
+                               "ImageUrl":  "/images/components/ir-led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Phototransistor",
+                               "Description":  "IR detector",
+                               "ImageUrl":  "/images/components/phototransistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor 220Ω",
+                               "Description":  "LED current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor 10kΩ",
+                               "Description":  "Pull-up resistor",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Speed indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Power supply",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "For connections",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  12,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  45,
+        "Id":  44,
+        "FunFact":  "Computer mice use optical encoders to track movement. Modern optical mice sense thousands of position changes per second!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Unlike standard servos limited to 180° rotation, continuous rotation servos can spin freely in either direction at variable speeds!",
+                     "Options":  [
+                                     "It uses more power",
+                                     "It can rotate 360° continuously",
+                                     "It\u0027s larger",
+                                     "It\u0027s waterproof"
+                                 ],
+                     "Question":  "What makes a continuous rotation servo different from a standard servo?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Use correct servo voltage (typically 4.8-6V)",
+                            "Connect servo ground properly",
+                            "Don\u0027t stall servo under load"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Wire 555 IC in astable mode on breadboard.",
+                                 "Title":  "Setup 555 Timer",
+                                 "DiagramUrl":  "/images/levels/level-045/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect potentiometer to adjust 555 duty cycle.",
+                                 "Title":  "Add Potentiometer",
+                                 "DiagramUrl":  "/images/levels/level-045/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect resistors and capacitor for ~50Hz PWM output.",
+                                 "Title":  "Wire Timing Components",
+                                 "Tip":  "Servos typically use 50Hz PWM signal!",
+                                 "DiagramUrl":  "/images/levels/level-045/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Wire servo red wire to +6V and brown/black to ground.",
+                                 "Title":  "Connect Servo Power",
+                                 "DiagramUrl":  "/images/levels/level-045/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect 555 output (pin 3) to servo signal wire (orange/yellow).",
+                                 "Title":  "Connect Control Signal",
+                                 "DiagramUrl":  "/images/levels/level-045/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Adjust potentiometer to change servo speed and direction.",
+                                 "Title":  "Test Speed Control",
+                                 "Tip":  "Center position stops the servo!",
+                                 "DiagramUrl":  "/images/levels/level-045/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-045/main-diagram.svg",
+                         "/images/levels/level-045/final-view.svg"
+                     ],
+        "Title":  "Continuous Rotation Servo",
+        "LearningObjectives":  [
+                                   "Understand continuous rotation servos",
+                                   "Learn PWM speed control",
+                                   "Master 555 timer PWM generation",
+                                   "Control servo speed and direction"
+                               ],
+        "Difficulty":  5,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Continuous Rotation Servo",
+                               "Description":  "360° servo motor",
+                               "ImageUrl":  "/images/components/servo.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer 10kΩ",
+                               "Description":  "Speed control",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "555 Timer IC",
+                               "Description":  "PWM generator",
+                               "ImageUrl":  "/images/components/555-timer.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor 10kΩ",
+                               "Description":  "Timing resistors",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor 100nF",
+                               "Description":  "Timing capacitor",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "6V Battery Pack",
+                               "Description":  "Servo power",
+                               "ImageUrl":  "/images/components/battery-pack.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "For connections",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  10,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  45,
+        "FunFact":  "Continuous rotation servos are popular in small robots because they provide precise speed control without needing separate motor drivers!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Hall effect sensors detect magnetic fields, making them perfect for sensing the position and speed of rotating magnets!",
+                     "Options":  [
+                                     "Light levels",
+                                     "Magnetic fields",
+                                     "Temperature",
+                                     "Sound waves"
+                                 ],
+                     "Question":  "What does a Hall effect sensor detect?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Mount magnet securely to avoid flying off",
+                            "Keep magnet away from electronics until mounted",
+                            "Don\u0027t exceed sensor voltage ratings"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Secure cardboard disk to motor shaft.",
+                                 "Title":  "Attach Disk to Motor",
+                                 "DiagramUrl":  "/images/levels/level-046/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Tape small magnet to edge of rotating disk.",
+                                 "Title":  "Mount Magnet",
+                                 "DiagramUrl":  "/images/levels/level-046/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Mount Hall effect sensor close to disk edge path.",
+                                 "Title":  "Position Hall Sensor",
+                                 "Tip":  "Sensor should be 1-3mm from magnet path!",
+                                 "DiagramUrl":  "/images/levels/level-046/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect sensor VCC, GND, and output with pull-up resistor.",
+                                 "Title":  "Wire Hall Sensor",
+                                 "DiagramUrl":  "/images/levels/level-046/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Wire three LEDs in series as speed visualization.",
+                                 "Title":  "Create LED Indicator",
+                                 "DiagramUrl":  "/images/levels/level-046/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Wire motor with potentiometer for variable speed control.",
+                                 "Title":  "Connect Motor Circuit",
+                                 "DiagramUrl":  "/images/levels/level-046/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Start motor and verify Hall sensor detects magnet each revolution.",
+                                 "Title":  "Test Sensor",
+                                 "DiagramUrl":  "/images/levels/level-046/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Count pulses per minute to calculate RPM.",
+                                 "Title":  "Measure Speed",
+                                 "Tip":  "1 pulse = 1 revolution!",
+                                 "DiagramUrl":  "/images/levels/level-046/step-8.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard disk",
+                                    "Tape for magnet mounting"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-046/main-diagram.svg",
+                         "/images/levels/level-046/final-view.svg"
+                     ],
+        "Title":  "Motor Speed Sensors",
+        "LearningObjectives":  [
+                                   "Understand Hall effect sensors",
+                                   "Learn magnetic field detection",
+                                   "Measure motor RPM",
+                                   "Build visual speed indicators"
+                               ],
+        "Difficulty":  5,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor",
+                               "Description":  "Test motor",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Hall Effect Sensor",
+                               "Description":  "Magnetic sensor",
+                               "ImageUrl":  "/images/components/hall-sensor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Small Magnet",
+                               "Description":  "For detection",
+                               "ImageUrl":  "/images/components/magnet.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "LED",
+                               "Description":  "Speed indicators",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Resistor 220Ω",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor 10kΩ",
+                               "Description":  "Pull-up resistor",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer 10kΩ",
+                               "Description":  "Speed control",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Power supply",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "For connections",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  15,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  35,
+        "Id":  46,
+        "FunFact":  "Your car\u0027s speedometer uses a Hall effect sensor to measure wheel rotation and calculate your speed!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Differential steering works by running motors at different speeds or directions - faster right motor makes the car turn left!",
+                     "Options":  [
+                                     "Front wheels steer",
+                                     "Motors spin at different speeds",
+                                     "Car tilts sideways",
+                                     "Only one motor works"
+                                 ],
+                     "Question":  "How does a two-motor car turn?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Secure battery to prevent movement",
+                            "Test circuits before installing in chassis",
+                            "Ensure wheels can spin freely",
+                            "Keep wires away from moving parts"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Cut and assemble car body from cardboard or kit parts.",
+                                 "Title":  "Build Chassis",
+                                 "DiagramUrl":  "/images/levels/level-047/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Attach both motors to rear of chassis with proper alignment.",
+                                 "Title":  "Mount Motors",
+                                 "DiagramUrl":  "/images/levels/level-047/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Attach wheels to motor shafts, ensuring good grip.",
+                                 "Title":  "Install Drive Wheels",
+                                 "Tip":  "Add rubber bands to wheels for better traction!",
+                                 "DiagramUrl":  "/images/levels/level-047/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Install front wheels on axles that spin freely.",
+                                 "Title":  "Add Free Wheels",
+                                 "DiagramUrl":  "/images/levels/level-047/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect L293D IC circuit on breadboard.",
+                                 "Title":  "Wire Motor Driver",
+                                 "DiagramUrl":  "/images/levels/level-047/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Wire both motors to IC outputs for independent control.",
+                                 "Title":  "Connect Motors",
+                                 "DiagramUrl":  "/images/levels/level-047/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Mount switches for controlling direction of each motor.",
+                                 "Title":  "Add Control Switches",
+                                 "DiagramUrl":  "/images/levels/level-047/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Mount battery securely in center of chassis for balance.",
+                                 "Title":  "Install Battery",
+                                 "DiagramUrl":  "/images/levels/level-047/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "Test forward, reverse, left turn, and right turn movements.",
+                                 "Title":  "Test Drive",
+                                 "DiagramUrl":  "/images/levels/level-047/step-9.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Adjust wheel alignment and motor speeds for straight driving.",
+                                 "Title":  "Fine-tune",
+                                 "Tip":  "If car pulls to one side, check motor speeds!",
+                                 "DiagramUrl":  "/images/levels/level-047/step-10.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Car chassis (cardboard or plastic)",
+                                    "Motor mounts",
+                                    "Axles for wheels",
+                                    "Battery holder",
+                                    "Tape and glue",
+                                    "Wire ties for cable management"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-047/main-diagram.svg",
+                         "/images/levels/level-047/final-view.svg"
+                     ],
+        "Title":  "Build a Moving Car",
+        "LearningObjectives":  [
+                                   "Integrate motors into mechanical system",
+                                   "Design differential steering",
+                                   "Balance weight distribution",
+                                   "Troubleshoot mechanical-electrical issues",
+                                   "Practice project assembly"
+                               ],
+        "Difficulty":  6,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "DC Motor",
+                               "Description":  "Drive motors",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "L293D H-Bridge IC",
+                               "Description":  "Motor driver",
+                               "ImageUrl":  "/images/components/ic.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Main power",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "DPDT Switch",
+                               "Description":  "Direction control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Wheels",
+                               "Description":  "2 driven, 2 free",
+                               "ImageUrl":  "/images/components/wheel.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "Control circuit",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  20,
+                               "Name":  "Jumper Wires",
+                               "Description":  "All connections",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  60,
+        "Id":  47,
+        "FunFact":  "The first radio-controlled car was built in 1966. Today\u0027s RC cars can reach speeds over 200 mph!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Gears provide mechanical advantage, trading speed for torque. This allows a small motor to lift much heavier loads!",
+                     "Options":  [
+                                     "To lift faster",
+                                     "To increase torque for heavier loads",
+                                     "To save power",
+                                     "To make it quieter"
+                                 ],
+                     "Question":  "Why might you add gears to a crane\u0027s lifting motor?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Build stable base to prevent tipping",
+                            "Test with light loads first",
+                            "Keep hands away from moving parts",
+                            "Secure all structural connections",
+                            "Don\u0027t exceed motor capacity"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Construct stable platform for crane base with rotation mechanism.",
+                                 "Title":  "Build Base",
+                                 "DiagramUrl":  "/images/levels/level-048/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Build crane arm from dowels, ensuring strength for load.",
+                                 "Title":  "Construct Boom",
+                                 "DiagramUrl":  "/images/levels/level-048/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Mount first motor at base for 360° crane rotation.",
+                                 "Title":  "Install Rotation Motor",
+                                 "DiagramUrl":  "/images/levels/level-048/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Mount second motor with spool for winding lifting cable.",
+                                 "Title":  "Install Lift Motor",
+                                 "Tip":  "Add gearing for more lifting power!",
+                                 "DiagramUrl":  "/images/levels/level-048/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Mount servo at boom end to control hook opening/closing.",
+                                 "Title":  "Add Servo Hook",
+                                 "DiagramUrl":  "/images/levels/level-048/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Thread cable through boom and attach to hook mechanism.",
+                                 "Title":  "String Lifting System",
+                                 "DiagramUrl":  "/images/levels/level-048/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Build dual motor control circuit on breadboard.",
+                                 "Title":  "Wire Motor Driver",
+                                 "DiagramUrl":  "/images/levels/level-048/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Build 555 timer circuit for servo position control.",
+                                 "Title":  "Wire Servo Control",
+                                 "DiagramUrl":  "/images/levels/level-048/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "Wire rotation motor, lift motor, and servo to controllers.",
+                                 "Title":  "Connect All Motors",
+                                 "DiagramUrl":  "/images/levels/level-048/step-9.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Mount switches and potentiometers for operator control.",
+                                 "Title":  "Add Control Interface",
+                                 "DiagramUrl":  "/images/levels/level-048/step-10.svg"
+                             },
+                             {
+                                 "StepNumber":  11,
+                                 "Description":  "Practice rotating, lifting, and hook operations separately.",
+                                 "Title":  "Test Operations",
+                                 "Tip":  "Master each function before combining them!",
+                                 "DiagramUrl":  "/images/levels/level-048/step-11.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Wooden dowels or straws for boom",
+                                    "Base platform (wood or sturdy cardboard)",
+                                    "Spool for winding string",
+                                    "Hook or small container for load",
+                                    "Glue and tape",
+                                    "Bearing or lazy susan for rotation"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-048/main-diagram.svg",
+                         "/images/levels/level-048/final-view.svg"
+                     ],
+        "Title":  "Build a Crane",
+        "LearningObjectives":  [
+                                   "Coordinate multiple motors for complex motion",
+                                   "Understand mechanical advantage in lifting",
+                                   "Design stable mechanical structures",
+                                   "Implement load management",
+                                   "Integrate electrical and mechanical systems"
+                               ],
+        "Difficulty":  6,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "DC Motor",
+                               "Description":  "Lift and rotate",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Servo Motor",
+                               "Description":  "Hook control",
+                               "ImageUrl":  "/images/components/servo.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "L293D H-Bridge IC",
+                               "Description":  "Motor driver",
+                               "ImageUrl":  "/images/components/ic.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "555 Timer IC",
+                               "Description":  "Servo control",
+                               "ImageUrl":  "/images/components/555-timer.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Potentiometer 10kΩ",
+                               "Description":  "Speed controls",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "DPDT Switch",
+                               "Description":  "Direction control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "9V Battery",
+                               "Description":  "Main power",
+                               "ImageUrl":  "/images/components/battery-9v.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "Control circuit",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "String/Fishing Line",
+                               "Description":  "Lifting cable",
+                               "ImageUrl":  "/images/components/string.svg"
+                           },
+                           {
+                               "Quantity":  25,
+                               "Name":  "Jumper Wires",
+                               "Description":  "All connections",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  75,
+        "Id":  48,
+        "FunFact":  "The world\u0027s largest crane can lift 20,000 tons - equivalent to about 3,000 elephants!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "You need at least 3 servos: one for X-axis, one for Y-axis positioning, and one to lift the pen up and down for drawing control!",
+                     "Options":  [
+                                     "1 servo",
+                                     "2 servos (X and Y)",
+                                     "3 servos (X, Y, and pen lift)",
+                                     "4 servos"
+                                 ],
+                     "Question":  "How many servos minimum are needed for a 2D drawing machine?",
+                     "CorrectAnswerIndex":  2
+                 },
+        "SafetyNotes":  [
+                            "Secure all mechanical linkages",
+                            "Test servo ranges before drawing",
+                            "Use washable markers for testing",
+                            "Keep work area clean"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Create stable base with area for paper (20cm x 20cm recommended).",
+                                 "Title":  "Build Base Frame",
+                                 "DiagramUrl":  "/images/levels/level-049/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Install first servo for horizontal (X) movement control.",
+                                 "Title":  "Mount X-Axis Servo",
+                                 "DiagramUrl":  "/images/levels/level-049/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Attach arm to X servo that extends across paper width.",
+                                 "Title":  "Build X-Axis Arm",
+                                 "DiagramUrl":  "/images/levels/level-049/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Install second servo on X arm for vertical (Y) movement.",
+                                 "Title":  "Mount Y-Axis Servo",
+                                 "Tip":  "Mount Y servo on sliding carriage!",
+                                 "DiagramUrl":  "/images/levels/level-049/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Create holder that positions pen tip just above paper.",
+                                 "Title":  "Build Pen Holder",
+                                 "DiagramUrl":  "/images/levels/level-049/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Mount mini servo to raise and lower pen for drawing control.",
+                                 "Title":  "Add Pen Lift Servo",
+                                 "DiagramUrl":  "/images/levels/level-049/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Build 555 timer circuit with pot for X-axis servo control.",
+                                 "Title":  "Wire X-Axis Control",
+                                 "DiagramUrl":  "/images/levels/level-049/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Build second 555 circuit with pot for Y-axis servo control.",
+                                 "Title":  "Wire Y-Axis Control",
+                                 "DiagramUrl":  "/images/levels/level-049/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "Connect button to control pen lift servo position.",
+                                 "Title":  "Wire Pen Lift",
+                                 "DiagramUrl":  "/images/levels/level-049/step-9.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Adjust servo ranges to cover full paper area without collisions.",
+                                 "Title":  "Calibrate Movement",
+                                 "DiagramUrl":  "/images/levels/level-049/step-10.svg"
+                             },
+                             {
+                                 "StepNumber":  11,
+                                 "Description":  "Practice drawing lines, shapes, and patterns!",
+                                 "Title":  "Test Drawing",
+                                 "Tip":  "Start with simple shapes before complex drawings!",
+                                 "DiagramUrl":  "/images/levels/level-049/step-11.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard or wood base",
+                                    "Wooden sticks or straws for arms",
+                                    "Pen or marker",
+                                    "Paper",
+                                    "Tape and glue",
+                                    "Small spring for pen return",
+                                    "Mounting hardware"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-049/main-diagram.svg",
+                         "/images/levels/level-049/final-view.svg"
+                     ],
+        "Title":  "Build a Drawing Machine",
+        "LearningObjectives":  [
+                                   "Build 2D positioning system",
+                                   "Understand X-Y coordinate control",
+                                   "Master servo linkage design",
+                                   "Implement pen plotting mechanism",
+                                   "Create artistic automation"
+                               ],
+        "Difficulty":  7,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "Servo Motor",
+                               "Description":  "X-Y positioning",
+                               "ImageUrl":  "/images/components/servo.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Mini Servo",
+                               "Description":  "Pen lift",
+                               "ImageUrl":  "/images/components/servo-mini.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "555 Timer IC",
+                               "Description":  "Servo control",
+                               "ImageUrl":  "/images/components/555-timer.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Potentiometer 10kΩ",
+                               "Description":  "Position control",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Push Button",
+                               "Description":  "Pen up/down",
+                               "ImageUrl":  "/images/components/button.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "6V Battery Pack",
+                               "Description":  "Servo power",
+                               "ImageUrl":  "/images/components/battery-pack.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "Control circuits",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  20,
+                               "Name":  "Jumper Wires",
+                               "Description":  "All connections",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  80,
+        "Id":  49,
+        "FunFact":  "Modern pen plotters like this were used in the 1980s for computer graphics. Today, similar X-Y systems control 3D printers and laser cutters!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Limit switches detect when the curtain reaches fully open or closed positions and stop the motor, preventing damage from over-extension!",
+                     "Options":  [
+                                     "They make it faster",
+                                     "They prevent motor damage by stopping at end positions",
+                                     "They save power",
+                                     "They make it quieter"
+                                 ],
+                     "Question":  "Why are limit switches important in an automated curtain system?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Secure all mounting hardware properly",
+                            "Test system with light loads first",
+                            "Ensure limit switches stop motor reliably",
+                            "Keep cords away from motor mechanism",
+                            "Adult supervision required for installation",
+                            "Use appropriate power supply voltage"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Measure curtain width and determine mounting locations.",
+                                 "Title":  "Plan Installation",
+                                 "DiagramUrl":  "/images/levels/level-050/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Mount curtain rod with pulleys at both ends.",
+                                 "Title":  "Install Rod System",
+                                 "DiagramUrl":  "/images/levels/level-050/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Secure geared motor with cord spool at one end of rod.",
+                                 "Title":  "Mount Motor Unit",
+                                 "Tip":  "Use a gearbox for more pulling power!",
+                                 "DiagramUrl":  "/images/levels/level-050/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Thread cord through pulleys, attaching to curtain and motor spool.",
+                                 "Title":  "String Pulling Cord",
+                                 "DiagramUrl":  "/images/levels/level-050/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Mount switches at fully-open and fully-closed positions.",
+                                 "Title":  "Install Limit Switches",
+                                 "DiagramUrl":  "/images/levels/level-050/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Wire H-bridge circuit for bidirectional motor control.",
+                                 "Title":  "Build Motor Driver",
+                                 "DiagramUrl":  "/images/levels/level-050/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Connect limit switches to stop motor at end positions.",
+                                 "Title":  "Wire Limit Switch Logic",
+                                 "DiagramUrl":  "/images/levels/level-050/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Wire LDR sensor circuit to detect daylight for automation.",
+                                 "Title":  "Add Light Sensor",
+                                 "DiagramUrl":  "/images/levels/level-050/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "Add manual open and close buttons for override control.",
+                                 "Title":  "Install Control Buttons",
+                                 "DiagramUrl":  "/images/levels/level-050/step-9.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Wire indicator LEDs for open/closed status display.",
+                                 "Title":  "Add Status LEDs",
+                                 "DiagramUrl":  "/images/levels/level-050/step-10.svg"
+                             },
+                             {
+                                 "StepNumber":  11,
+                                 "Description":  "Verify curtain opens and closes smoothly with buttons.",
+                                 "Title":  "Test Manual Control",
+                                 "DiagramUrl":  "/images/levels/level-050/step-11.svg"
+                             },
+                             {
+                                 "StepNumber":  12,
+                                 "Description":  "Cover/uncover light sensor to test automatic operation.",
+                                 "Title":  "Test Auto Mode",
+                                 "Tip":  "Adjust LDR threshold for your lighting conditions!",
+                                 "DiagramUrl":  "/images/levels/level-050/step-12.svg"
+                             },
+                             {
+                                 "StepNumber":  13,
+                                 "Description":  "Fine-tune limit switch positions and motor speed.",
+                                 "Title":  "Final Adjustments",
+                                 "DiagramUrl":  "/images/levels/level-050/step-13.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Curtain rod or wire (1-2 meters)",
+                                    "String or cord for pulling",
+                                    "Pulleys (2-3 pieces)",
+                                    "Mounting brackets",
+                                    "Spool for winding cord",
+                                    "Light fabric for test curtain",
+                                    "Screws and anchors",
+                                    "Wire management clips"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-050/main-diagram.svg",
+                         "/images/levels/level-050/final-view.svg",
+                         "/images/levels/level-050/wiring-detail.svg"
+                     ],
+        "Title":  "Build an Automated Curtain Opener",
+        "LearningObjectives":  [
+                                   "Implement automated control systems",
+                                   "Use limit switches for position sensing",
+                                   "Integrate light sensing for automation",
+                                   "Design mechanical pulling systems",
+                                   "Build practical home automation project",
+                                   "Master complete system integration"
+                               ],
+        "Difficulty":  7,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor with Gearbox",
+                               "Description":  "High torque motor",
+                               "ImageUrl":  "/images/components/motor-geared.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "L293D H-Bridge IC",
+                               "Description":  "Motor driver",
+                               "ImageUrl":  "/images/components/ic.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Limit Switch",
+                               "Description":  "End position detection",
+                               "ImageUrl":  "/images/components/limit-switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LDR Sensor",
+                               "Description":  "Light detection",
+                               "ImageUrl":  "/images/components/ldr.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor 10kΩ",
+                               "Description":  "Divider and pull-up",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Push Button",
+                               "Description":  "Manual open/close",
+                               "ImageUrl":  "/images/components/button.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "LED",
+                               "Description":  "Status indicators",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor 220Ω",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "12V Power Supply",
+                               "Description":  "Motor power",
+                               "ImageUrl":  "/images/components/power-supply.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Breadboard",
+                               "Description":  "Control circuit",
+                               "ImageUrl":  "/images/components/breadboard.svg"
+                           },
+                           {
+                               "Quantity":  30,
+                               "Name":  "Jumper Wires",
+                               "Description":  "All connections",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  90,
+        "Id":  50,
+        "FunFact":  "Smart curtains are part of the growing home automation market, which is expected to reach $150 billion by 2025!"
+    }
+]

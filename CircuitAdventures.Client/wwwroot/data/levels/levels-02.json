@@ -1,0 +1,1135 @@
+﻿[
+    {
+        "Quiz":  {
+                     "Explanation":  "A potentiometer provides adjustable resistance. By turning the knob, you change how much resistance is in the circuit, which controls the current flow!",
+                     "Options":  [
+                                     "Stores electricity",
+                                     "Provides adjustable resistance",
+                                     "Generates voltage",
+                                     "Switches circuits on/off"
+                                 ],
+                     "Question":  "What does a potentiometer do?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Potentiometers have three pins - use the middle and one outer pin",
+                            "Don\u0027t force the knob beyond its rotation limits"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your potentiometer. It has three pins and a rotating knob.",
+                                 "Title":  "Examine Potentiometer",
+                                 "Tip":  "It\u0027s like an adjustable resistor!",
+                                 "DiagramUrl":  "/images/levels/level-011/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from battery positive (+) to one outer pin of the potentiometer.",
+                                 "Title":  "Connect Battery to Potentiometer",
+                                 "DiagramUrl":  "/images/levels/level-011/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect the middle pin of the potentiometer to the 330 Ohm resistor.",
+                                 "Title":  "Connect Middle Pin to Resistor",
+                                 "Tip":  "The middle pin is the variable output!",
+                                 "DiagramUrl":  "/images/levels/level-011/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect the resistor to the LED long leg (positive).",
+                                 "Title":  "Connect to LED",
+                                 "DiagramUrl":  "/images/levels/level-011/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect the LED short leg to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-011/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Rotate the potentiometer knob and watch the LED brightness change!",
+                                 "Title":  "Turn the Knob",
+                                 "Tip":  "You\u0027ve built a dimmer switch!",
+                                 "DiagramUrl":  "/images/levels/level-011/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-011/main-diagram.svg",
+                         "/images/levels/level-011/final-view.svg"
+                     ],
+        "Title":  "Variable Resistance",
+        "LearningObjectives":  [
+                                   "Learn what a potentiometer is",
+                                   "Understand variable resistance",
+                                   "Control LED brightness with a knob"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer (10K)",
+                               "Description":  "Variable resistor",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Base current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  11,
+        "FunFact":  "The volume knob on old radios and speakers is actually a potentiometer controlling electrical resistance!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Both LEDs dim together because they\u0027re connected to the same potentiometer output. The potentiometer controls the voltage available to both LEDs equally!",
+                     "Options":  [
+                                     "They\u0027re connected in series",
+                                     "They share the same variable voltage from the potentiometer",
+                                     "They use less power",
+                                     "The battery is weak"
+                                 ],
+                     "Question":  "Why do both LEDs dim together in this circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Make sure all connections are secure",
+                            "LEDs should be connected in parallel for equal brightness"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect battery positive (+) to one outer pin of the potentiometer.",
+                                 "Title":  "Connect Potentiometer",
+                                 "DiagramUrl":  "/images/levels/level-012/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "From the potentiometer middle pin, create two wire connections.",
+                                 "Title":  "Split Output",
+                                 "Tip":  "Both LEDs will share this variable power!",
+                                 "DiagramUrl":  "/images/levels/level-012/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect each wire to a 330 Ohm resistor.",
+                                 "Title":  "Add Resistors",
+                                 "DiagramUrl":  "/images/levels/level-012/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect each resistor to an LED long leg (positive).",
+                                 "Title":  "Connect LEDs",
+                                 "DiagramUrl":  "/images/levels/level-012/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect both LED short legs to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-012/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Turn the knob to dim both LEDs together!",
+                                 "Title":  "Test Dimmer",
+                                 "DiagramUrl":  "/images/levels/level-012/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-012/main-diagram.svg",
+                         "/images/levels/level-012/final-view.svg"
+                     ],
+        "Title":  "Smooth Dimming",
+        "LearningObjectives":  [
+                                   "Control multiple LEDs with one potentiometer",
+                                   "Understand current distribution in parallel circuits",
+                                   "Build a practical dimmer circuit"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diodes",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer (10K)",
+                               "Description":  "Variable resistor",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiters",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  12,
+        "Id":  12,
+        "FunFact":  "Stage lighting systems use dimmers to control hundreds of lights at once, creating different moods for performances!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "When light shines on an LDR, its resistance decreases, allowing more current to flow. In darkness, its resistance increases, limiting current flow!",
+                     "Options":  [
+                                     "Resistance increases",
+                                     "Resistance decreases",
+                                     "Resistance stays the same",
+                                     "It stops working"
+                                 ],
+                     "Question":  "What happens to an LDR\u0027s resistance when light shines on it?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "LDRs don\u0027t have polarity - they work in any direction",
+                            "Don\u0027t expose LDR to very bright light for long periods"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your LDR. It has a squiggly line pattern on top that detects light.",
+                                 "Title":  "Examine LDR",
+                                 "Tip":  "More light = less resistance!",
+                                 "DiagramUrl":  "/images/levels/level-013/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from battery positive (+) to one leg of the LDR.",
+                                 "Title":  "Connect Battery to LDR",
+                                 "DiagramUrl":  "/images/levels/level-013/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect the other LDR leg to the 330 Ohm resistor.",
+                                 "Title":  "Connect LDR to Resistor",
+                                 "DiagramUrl":  "/images/levels/level-013/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect the resistor to the LED long leg (positive).",
+                                 "Title":  "Connect to LED",
+                                 "DiagramUrl":  "/images/levels/level-013/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect the LED short leg to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-013/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Shine a flashlight on the LDR - the LED should get brighter! Cover the LDR - the LED should dim!",
+                                 "Title":  "Test with Light",
+                                 "Tip":  "The LDR is acting like an automatic potentiometer!",
+                                 "DiagramUrl":  "/images/levels/level-013/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Flashlight or lamp",
+                                    "Dark cloth or paper"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-013/main-diagram.svg",
+                         "/images/levels/level-013/final-view.svg"
+                     ],
+        "Title":  "Light Sensor",
+        "LearningObjectives":  [
+                                   "Learn about light-dependent resistors (LDRs)",
+                                   "Understand how sensors work",
+                                   "Build a light-responsive circuit"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LDR (Light Dependent Resistor)",
+                               "Description":  "Photo resistor",
+                               "ImageUrl":  "/images/components/ldr.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  13,
+        "FunFact":  "Automatic streetlights use LDRs to turn on when it gets dark and turn off when it\u0027s bright!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "In darkness, the LDR\u0027s resistance increases. In the voltage divider circuit, this creates a higher voltage at the junction point, providing more power to the LED!",
+                     "Options":  [
+                                     "The battery gets stronger",
+                                     "The LDR\u0027s high resistance creates higher voltage at the LED",
+                                     "The LED needs less power",
+                                     "Magic"
+                                 ],
+                     "Question":  "Why does the LED turn on when it\u0027s dark?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Keep the LDR exposed to detect room light",
+                            "Make sure all connections are insulated"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect two AA batteries in series for 3V total power.",
+                                 "Title":  "Wire Batteries",
+                                 "DiagramUrl":  "/images/levels/level-014/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect the LDR and 10K resistor in series from battery positive to negative.",
+                                 "Title":  "Create Voltage Divider",
+                                 "Tip":  "This creates a variable voltage point!",
+                                 "DiagramUrl":  "/images/levels/level-014/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "From the junction between LDR and 10K resistor, run a wire to the 1K resistor.",
+                                 "Title":  "Tap Voltage Point",
+                                 "DiagramUrl":  "/images/levels/level-014/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect the 1K resistor to the LED long leg, and LED short leg to battery negative.",
+                                 "Title":  "Connect LED",
+                                 "DiagramUrl":  "/images/levels/level-014/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "In bright light, the LED should be off or very dim.",
+                                 "Title":  "Test in Light",
+                                 "DiagramUrl":  "/images/levels/level-014/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Cover the LDR or turn off room lights - the LED should brighten!",
+                                 "Title":  "Test in Dark",
+                                 "DiagramUrl":  "/images/levels/level-014/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Mount your circuit in a small box with the LED pointing out and LDR exposed on top.",
+                                 "Title":  "Build Housing",
+                                 "Tip":  "Now you have an automatic night light!",
+                                 "DiagramUrl":  "/images/levels/level-014/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Small cardboard box",
+                                    "Tape"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-014/main-diagram.svg",
+                         "/images/levels/level-014/final-view.svg"
+                     ],
+        "Title":  "Night Light",
+        "LearningObjectives":  [
+                                   "Build a practical automatic light",
+                                   "Understand voltage dividers",
+                                   "Create a useful household device"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (White)",
+                               "Description":  "Bright white LED",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LDR (Light Dependent Resistor)",
+                               "Description":  "Photo resistor",
+                               "ImageUrl":  "/images/components/ldr.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (10K Ohm)",
+                               "Description":  "Voltage divider",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  5,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  20,
+        "Id":  14,
+        "FunFact":  "The first automatic night lights were invented in the 1960s and became popular for children\u0027s bedrooms!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "NTC stands for Negative Temperature Coefficient, which means the resistance decreases (becomes more negative) as temperature increases!",
+                     "Options":  [
+                                     "Never Too Cold",
+                                     "Negative Temperature Coefficient",
+                                     "New Technology Component",
+                                     "Normal Temperature Control"
+                                 ],
+                     "Question":  "What does NTC stand for in NTC thermistor?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t use boiling water - warm tap water is enough",
+                            "Dry the thermistor before reconnecting to circuit"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your thermistor. It looks like a resistor but senses temperature.",
+                                 "Title":  "Examine Thermistor",
+                                 "Tip":  "NTC means resistance decreases as temperature increases!",
+                                 "DiagramUrl":  "/images/levels/level-015/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect: Battery (+) â†’ Thermistor â†’ 330 Ohm resistor â†’ LED â†’ Battery (-).",
+                                 "Title":  "Build Basic Circuit",
+                                 "DiagramUrl":  "/images/levels/level-015/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Note the LED brightness at room temperature.",
+                                 "Title":  "Test at Room Temperature",
+                                 "DiagramUrl":  "/images/levels/level-015/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Quickly reconnect the circuit. The LED should be brighter!",
+                                 "Title":  "Reconnect and Observe",
+                                 "Tip":  "The thermistor\u0027s resistance decreased with heat!",
+                                 "DiagramUrl":  "/images/levels/level-015/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Let the thermistor cool down - the LED will dim again.",
+                                 "Title":  "Cool Down Test",
+                                 "DiagramUrl":  "/images/levels/level-015/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cup of warm water",
+                                    "Ice cube (optional)"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-015/main-diagram.svg",
+                         "/images/levels/level-015/final-view.svg"
+                     ],
+        "Title":  "Temperature Sensing",
+        "LearningObjectives":  [
+                                   "Learn about thermistors (temperature sensors)",
+                                   "Understand NTC (Negative Temperature Coefficient)",
+                                   "Build a temperature-responsive circuit"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red)",
+                               "Description":  "Temperature indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Thermistor (10K NTC)",
+                               "Description":  "Temperature sensor",
+                               "ImageUrl":  "/images/components/thermistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  15,
+        "FunFact":  "Thermistors are used in thermometers, thermostats, and even 3D printers to monitor and control temperature!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Red and green light mix to create yellow! This is different from paint mixing. Light mixing is called additive color mixing.",
+                     "Options":  [
+                                     "Brown",
+                                     "Yellow",
+                                     "Orange",
+                                     "Purple"
+                                 ],
+                     "Question":  "What color do you get when you mix red and green light?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "RGB LEDs have 4 pins - identify the longest pin (common cathode)",
+                            "Each resistor protects one color channel"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Find the 4 pins on your RGB LED. The longest pin is the common negative (cathode).",
+                                 "Title":  "Identify RGB Pins",
+                                 "Tip":  "The three other pins are Red, Green, and Blue!",
+                                 "DiagramUrl":  "/images/levels/level-016/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect the longest pin (common cathode) to battery negative (-).",
+                                 "Title":  "Connect Common Ground",
+                                 "DiagramUrl":  "/images/levels/level-016/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Battery (+) â†’ Switch 1 â†’ 330Î© resistor â†’ Red pin of RGB LED.",
+                                 "Title":  "Wire Red Channel",
+                                 "DiagramUrl":  "/images/levels/level-016/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect: Battery (+) â†’ Switch 2 â†’ 330Î© resistor â†’ Green pin of RGB LED.",
+                                 "Title":  "Wire Green Channel",
+                                 "DiagramUrl":  "/images/levels/level-016/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect: Battery (+) â†’ Switch 3 â†’ 330Î© resistor â†’ Blue pin of RGB LED.",
+                                 "Title":  "Wire Blue Channel",
+                                 "DiagramUrl":  "/images/levels/level-016/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Turn on one switch at a time to see pure red, green, and blue.",
+                                 "Title":  "Test Individual Colors",
+                                 "DiagramUrl":  "/images/levels/level-016/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Turn on multiple switches together: Red+Green=Yellow, Red+Blue=Magenta, Green+Blue=Cyan, All three=White!",
+                                 "Title":  "Mix Colors",
+                                 "Tip":  "You can make 7 different colors!",
+                                 "DiagramUrl":  "/images/levels/level-016/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-016/main-diagram.svg",
+                         "/images/levels/level-016/final-view.svg"
+                     ],
+        "Title":  "Color Magic",
+        "LearningObjectives":  [
+                                   "Learn about RGB (Red-Green-Blue) LEDs",
+                                   "Understand color mixing with light",
+                                   "Control multiple LED elements independently"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "RGB LED (Common Cathode)",
+                               "Description":  "Three-color LED",
+                               "ImageUrl":  "/images/components/rgb-led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Switch",
+                               "Description":  "Color controls",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiters",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  8,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  18,
+        "Id":  16,
+        "FunFact":  "Every pixel on your computer screen uses three tiny lights (red, green, blue) to create millions of colors!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "A capacitor stores electrical energy and can release it later. It\u0027s like a tiny rechargeable battery that charges and discharges very quickly!",
+                     "Options":  [
+                                     "Generates electricity",
+                                     "Stores electrical energy temporarily",
+                                     "Increases voltage",
+                                     "Makes components work faster"
+                                 ],
+                     "Question":  "What does a capacitor do in a circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Capacitors have polarity - match + and - correctly",
+                            "The longer lead is positive (+), shorter is negative (-)",
+                            "Never exceed the capacitor\u0027s voltage rating"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your capacitor. It has a + marking and a stripe indicating the negative side.",
+                                 "Title":  "Examine Capacitor",
+                                 "Tip":  "The longer lead is positive!",
+                                 "DiagramUrl":  "/images/levels/level-017/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect: Battery (+) â†’ Switch â†’ Capacitor (+). Connect Capacitor (-) to Battery (-).",
+                                 "Title":  "Build Charging Circuit",
+                                 "DiagramUrl":  "/images/levels/level-017/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Turn the switch ON for 10 seconds to charge the capacitor.",
+                                 "Title":  "Charge Capacitor",
+                                 "Tip":  "The capacitor is storing energy!",
+                                 "DiagramUrl":  "/images/levels/level-017/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect: Capacitor (+) â†’ 330Î© resistor â†’ LED (+). Connect LED (-) to Capacitor (-).",
+                                 "Title":  "Connect LED Circuit",
+                                 "DiagramUrl":  "/images/levels/level-017/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "The LED should light up and slowly fade as the capacitor discharges!",
+                                 "Title":  "Watch LED Glow",
+                                 "Tip":  "The capacitor is releasing its stored energy!",
+                                 "DiagramUrl":  "/images/levels/level-017/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-017/main-diagram.svg",
+                         "/images/levels/level-017/final-view.svg"
+                     ],
+        "Title":  "Energy Storage",
+        "LearningObjectives":  [
+                                   "Learn what capacitors do",
+                                   "Understand energy storage in circuits",
+                                   "Observe charging and discharging",
+                                   "Identify capacitor polarity"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (100ÂµF Electrolytic)",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "Charge control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  5,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  20,
+        "Id":  17,
+        "FunFact":  "Camera flashes use large capacitors that charge up and then release their energy all at once to create a bright flash of light!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The timing is determined by the capacitor size and resistor values. Larger capacitors or larger resistors make the LED stay on longer. This is called the RC time constant!",
+                     "Options":  [
+                                     "The battery voltage",
+                                     "The LED color",
+                                     "The capacitor size and resistor value",
+                                     "How hard you press the button"
+                                 ],
+                     "Question":  "What determines how long the LED stays lit in this circuit?",
+                     "CorrectAnswerIndex":  2
+                 },
+        "SafetyNotes":  [
+                            "Watch capacitor polarity",
+                            "The LED will stay on for several seconds - this is normal"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect two AA batteries in series for 3V total.",
+                                 "Title":  "Wire Battery Pack",
+                                 "DiagramUrl":  "/images/levels/level-018/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect: Battery (+) â†’ Button â†’ 1K resistor â†’ Capacitor (+). Connect Capacitor (-) to Battery (-).",
+                                 "Title":  "Connect Button to Capacitor",
+                                 "Tip":  "This charges the capacitor when button is pressed!",
+                                 "DiagramUrl":  "/images/levels/level-018/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a 1K resistor across the capacitor (+ to -).",
+                                 "Title":  "Add Discharge Path",
+                                 "DiagramUrl":  "/images/levels/level-018/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect: Capacitor (+) â†’ 470Î© resistor â†’ LED (+). Connect LED (-) to Capacitor (-).",
+                                 "Title":  "Wire LED Circuit",
+                                 "DiagramUrl":  "/images/levels/level-018/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Press and release the button. The LED should turn on and slowly fade out over several seconds!",
+                                 "Title":  "Test the Circuit",
+                                 "DiagramUrl":  "/images/levels/level-018/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Try pressing the button multiple times quickly - the LED stays brighter longer!",
+                                 "Title":  "Experiment",
+                                 "Tip":  "You\u0027ve built a timer circuit!",
+                                 "DiagramUrl":  "/images/levels/level-018/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-018/main-diagram.svg",
+                         "/images/levels/level-018/final-view.svg"
+                     ],
+        "Title":  "Blink Circuit",
+        "LearningObjectives":  [
+                                   "Build a timing circuit",
+                                   "Understand RC (Resistor-Capacitor) circuits",
+                                   "Create a delayed LED effect"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (220ÂµF)",
+                               "Description":  "Timing element",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Timing resistors",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (470 Ohm)",
+                               "Description":  "LED current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Push Button",
+                               "Description":  "Trigger",
+                               "ImageUrl":  "/images/components/button.svg"
+                           },
+                           {
+                               "Quantity":  8,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  18,
+        "FunFact":  "RC timing circuits are used in turn signal lights in cars, countdown timers, and even musical keyboards!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "You reverse a DC motor\u0027s direction by swapping its wire connections, which reverses the direction of current flow through the motor!",
+                     "Options":  [
+                                     "Use a different battery",
+                                     "Swap the motor\u0027s wire connections",
+                                     "Turn it upside down",
+                                     "Use more voltage"
+                                 ],
+                     "Question":  "How can you reverse the direction of a DC motor?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Keep fingers away from spinning motor shaft",
+                            "Don\u0027t run motor without load for too long - it can get hot",
+                            "If motor gets hot, turn it off immediately"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your DC motor. It has two wires - red (usually positive) and black (usually negative).",
+                                 "Title":  "Examine Motor",
+                                 "Tip":  "The shaft spins when power is applied!",
+                                 "DiagramUrl":  "/images/levels/level-019/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect two AA batteries in series for 3V total power.",
+                                 "Title":  "Wire Batteries",
+                                 "DiagramUrl":  "/images/levels/level-019/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Battery (+) â†’ Switch â†’ Motor red wire. Connect Motor black wire to Battery (-).",
+                                 "Title":  "Add Switch",
+                                 "DiagramUrl":  "/images/levels/level-019/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Turn the switch ON. The motor should spin!",
+                                 "Title":  "Test Motor",
+                                 "Tip":  "Feel the vibration of the spinning motor!",
+                                 "DiagramUrl":  "/images/levels/level-019/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Turn switch OFF. Swap the motor wires. Turn ON again - it spins the opposite direction!",
+                                 "Title":  "Reverse Direction",
+                                 "Tip":  "Motor direction depends on current direction!",
+                                 "DiagramUrl":  "/images/levels/level-019/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Cut a small paper fan blade and tape it to the motor shaft to see the spinning better!",
+                                 "Title":  "Optional: Add Fan",
+                                 "DiagramUrl":  "/images/levels/level-019/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Paper fan blade (optional)",
+                                    "Tape"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-019/main-diagram.svg",
+                         "/images/levels/level-019/final-view.svg"
+                     ],
+        "Title":  "Spinning Start",
+        "LearningObjectives":  [
+                                   "Learn how DC motors work",
+                                   "Understand mechanical-electrical conversion",
+                                   "Control motor speed with voltage",
+                                   "Observe motor direction"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (3V)",
+                               "Description":  "Small electric motor",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "Motor control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  19,
+        "FunFact":  "Electric motors were invented in the 1820s and are now used in everything from toy cars to electric vehicles!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The potentiometer acts as a variable resistor that controls how much current flows to the motor. Less current = slower speed, more current = faster speed!",
+                     "Options":  [
+                                     "It changes the battery voltage",
+                                     "It varies the resistance, controlling current to the motor",
+                                     "It switches the motor on and off rapidly",
+                                     "It changes the motor\u0027s direction"
+                                 ],
+                     "Question":  "How does the potentiometer control the fan speed in this project?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Ask adult for help with hot glue and scissors",
+                            "Keep fingers away from spinning fan blades",
+                            "Make sure fan blades are securely attached",
+                            "Test motor before attaching fan blades"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Cut 4 rectangular blades (2cm x 5cm each) from cardboard. Cut a small X in the center of the bottle cap.",
+                                 "Title":  "Build Fan Blades",
+                                 "Tip":  "Make blades slightly angled for better air flow!",
+                                 "DiagramUrl":  "/images/levels/level-020/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Glue the motor to a cardboard base. Use popsicle sticks to create a stable stand.",
+                                 "Title":  "Mount Motor",
+                                 "DiagramUrl":  "/images/levels/level-020/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect two AA batteries in series. Mount them on the base.",
+                                 "Title":  "Wire Battery Pack",
+                                 "DiagramUrl":  "/images/levels/level-020/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Wire: Battery (+) â†’ Switch â†’ Motor red wire. Connect Motor black wire to Battery (-).",
+                                 "Title":  "Add Main Switch",
+                                 "DiagramUrl":  "/images/levels/level-020/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Insert the potentiometer in series between the switch and motor for variable speed control.",
+                                 "Title":  "Add Speed Control",
+                                 "Tip":  "Potentiometer middle pin to motor, outer pin to switch!",
+                                 "DiagramUrl":  "/images/levels/level-020/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Wire the LED with resistor in parallel to the motor to show when power is on.",
+                                 "Title":  "Add Power LED",
+                                 "DiagramUrl":  "/images/levels/level-020/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Turn on switch and test motor speed control. Adjust potentiometer knob.",
+                                 "Title":  "Test Circuit",
+                                 "DiagramUrl":  "/images/levels/level-020/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Turn on your fan! Adjust speed with the potentiometer. Feel the breeze!",
+                                 "Title":  "Final Test",
+                                 "Tip":  "Congratulations! You\u0027ve completed the Beginner Zone!",
+                                 "DiagramUrl":  "/images/levels/level-020/step-10.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard (for fan blades and base)",
+                                    "Plastic bottle cap",
+                                    "Popsicle sticks (2-3)",
+                                    "Hot glue or strong tape",
+                                    "Scissors",
+                                    "Ruler",
+                                    "Marker"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-020/main-diagram.svg",
+                         "/images/levels/level-020/final-view.svg"
+                     ],
+        "Title":  "Build a Fan",
+        "LearningObjectives":  [
+                                   "Complete a complex multi-component project",
+                                   "Integrate mechanical and electrical design",
+                                   "Add speed control to a motor",
+                                   "Build a useful household device",
+                                   "Practice problem-solving and craftsmanship"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (3V)",
+                               "Description":  "Small electric motor",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "On/Off control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer (10K)",
+                               "Description":  "Speed control",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Blue)",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  10,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  40,
+        "Id":  20,
+        "FunFact":  "The first electric fan was invented in 1882, and by 1900, electric fans were becoming common in homes and offices!"
+    }
+]

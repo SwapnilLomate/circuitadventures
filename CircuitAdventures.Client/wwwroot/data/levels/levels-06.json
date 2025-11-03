@@ -1,0 +1,1368 @@
+[
+  {
+    "Id": 51,
+    "Title": "RGB LED Control",
+    "Category": "Light Master",
+    "Difficulty": 5,
+    "EstimatedTime": 30,
+    "Components": [
+      {
+        "Name": "RGB LED (Common Cathode)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/rgb-led.svg",
+        "Description": "Multi-color LED"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Current limiters"
+      },
+      {
+        "Name": "Potentiometer 10kΩ",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Color control"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 12,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [],
+    "LearningObjectives": [
+      "Understand RGB color mixing",
+      "Learn common cathode vs common anode",
+      "Control individual color channels",
+      "Create custom colors by mixing"
+    ],
+    "SafetyNotes": [
+      "Use correct resistor values for each channel",
+      "Don't exceed LED current ratings",
+      "Check RGB LED pinout carefully"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Identify RGB LED Pins",
+        "Description": "Identify the four pins: Red, Common (longest), Green, and Blue.",
+        "DiagramUrl": "/images/levels/level-051/step-1.svg",
+        "Tip": "Common cathode means the longest pin goes to ground!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Connect Common Cathode",
+        "Description": "Connect the common cathode (longest pin) to ground.",
+        "DiagramUrl": "/images/levels/level-051/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Wire Red Channel",
+        "Description": "Connect Red pin through 220Ω resistor to first potentiometer.",
+        "DiagramUrl": "/images/levels/level-051/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Green Channel",
+        "Description": "Connect Green pin through 220Ω resistor to second potentiometer.",
+        "DiagramUrl": "/images/levels/level-051/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Blue Channel",
+        "Description": "Connect Blue pin through 220Ω resistor to third potentiometer.",
+        "DiagramUrl": "/images/levels/level-051/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect Power",
+        "Description": "Wire all potentiometers to positive power supply.",
+        "DiagramUrl": "/images/levels/level-051/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Mix Colors",
+        "Description": "Adjust each potentiometer to create different colors!",
+        "DiagramUrl": "/images/levels/level-051/step-7.svg",
+        "Tip": "Red + Green = Yellow, Red + Blue = Magenta, Green + Blue = Cyan!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-051/main-diagram.svg",
+      "/images/levels/level-051/final-view.svg"
+    ],
+    "FunFact": "TV and computer screens use millions of tiny RGB LEDs or pixels to create every color you see!",
+    "Quiz": {
+      "Question": "What color do you get by mixing red and green light?",
+      "Options": ["Yellow", "Orange", "Brown", "Purple"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Red and green light combine to make yellow! This is additive color mixing, different from paint mixing."
+    }
+  },
+  {
+    "Id": 52,
+    "Title": "LED Matrix Basics",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 45,
+    "Components": [
+      {
+        "Name": "LED",
+        "Quantity": 16,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "For 4x4 matrix"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Row current limiters"
+      },
+      {
+        "Name": "SPST Switch",
+        "Quantity": 8,
+        "ImageUrl": "/images/components/switch.svg",
+        "Description": "Manual control"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 30,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Cardboard for mounting",
+      "Grid paper for layout"
+    ],
+    "LearningObjectives": [
+      "Understand LED matrix architecture",
+      "Learn row-column addressing",
+      "Master multiplexing concepts",
+      "Build 2D LED displays"
+    ],
+    "SafetyNotes": [
+      "Use resistors on rows or columns",
+      "Don't short circuit rows and columns",
+      "Check LED polarity carefully"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Plan Matrix Layout",
+        "Description": "Draw a 4x4 grid and plan LED positions on breadboard.",
+        "DiagramUrl": "/images/levels/level-052/step-1.svg"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Place LEDs",
+        "Description": "Insert 16 LEDs in 4 rows and 4 columns formation.",
+        "DiagramUrl": "/images/levels/level-052/step-2.svg",
+        "Tip": "Keep all anodes pointing same direction!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Rows (Anodes)",
+        "Description": "Connect all anodes in each row together (4 row lines).",
+        "DiagramUrl": "/images/levels/level-052/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect Columns (Cathodes)",
+        "Description": "Connect all cathodes in each column together (4 column lines).",
+        "DiagramUrl": "/images/levels/level-052/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Add Row Resistors",
+        "Description": "Place 220Ω resistor on each of the 4 row lines.",
+        "DiagramUrl": "/images/levels/level-052/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Wire Row Switches",
+        "Description": "Connect 4 switches to control which row is powered.",
+        "DiagramUrl": "/images/levels/level-052/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Wire Column Switches",
+        "Description": "Connect 4 switches to control which columns go to ground.",
+        "DiagramUrl": "/images/levels/level-052/step-7.svg"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test Matrix",
+        "Description": "Turn on one row and one column switch to light one LED!",
+        "DiagramUrl": "/images/levels/level-052/step-8.svg",
+        "Tip": "Each LED is addressed by its row and column!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-052/main-diagram.svg",
+      "/images/levels/level-052/final-view.svg"
+    ],
+    "FunFact": "LED scoreboards and electronic billboards use matrix displays with thousands of LEDs controlled by multiplexing!",
+    "Quiz": {
+      "Question": "In a 4x4 LED matrix, how many LEDs can you control with 8 wires (4 rows + 4 columns)?",
+      "Options": ["8 LEDs", "12 LEDs", "16 LEDs", "32 LEDs"],
+      "CorrectAnswerIndex": 2,
+      "Explanation": "A 4x4 matrix gives you 16 LEDs (4×4=16) controllable with just 8 wires! This is the power of matrix addressing."
+    }
+  },
+  {
+    "Id": 53,
+    "Title": "7-Segment Display",
+    "Category": "Light Master",
+    "Difficulty": 5,
+    "EstimatedTime": 35,
+    "Components": [
+      {
+        "Name": "7-Segment Display (Common Cathode)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/7segment.svg",
+        "Description": "Numeric display"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 7,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Segment protection"
+      },
+      {
+        "Name": "DIP Switch 8-position",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/dip-switch.svg",
+        "Description": "Segment control"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 15,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Paper and pencil for segment mapping"
+    ],
+    "LearningObjectives": [
+      "Understand 7-segment display structure",
+      "Learn segment naming (a-g)",
+      "Create numbers 0-9",
+      "Master common cathode displays"
+    ],
+    "SafetyNotes": [
+      "Use resistor for each segment",
+      "Check common pin connection",
+      "Verify display type (common cathode/anode)"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Identify Segments",
+        "Description": "Learn the 7 segments labeled a, b, c, d, e, f, g plus decimal point.",
+        "DiagramUrl": "/images/levels/level-053/step-1.svg",
+        "Tip": "Top segment is 'a', going clockwise then middle is 'g'!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Insert Display",
+        "Description": "Place 7-segment display on breadboard, straddling center gap.",
+        "DiagramUrl": "/images/levels/level-053/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Common Cathode",
+        "Description": "Identify and connect common cathode pins to ground.",
+        "DiagramUrl": "/images/levels/level-053/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Segment A",
+        "Description": "Connect segment 'a' pin through resistor to DIP switch position 1.",
+        "DiagramUrl": "/images/levels/level-053/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Remaining Segments",
+        "Description": "Connect segments b-g through resistors to DIP switches 2-7.",
+        "DiagramUrl": "/images/levels/level-053/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect Power",
+        "Description": "Wire all DIP switches to positive power rail.",
+        "DiagramUrl": "/images/levels/level-053/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Display Numbers",
+        "Description": "Flip switches to create numbers 0-9!",
+        "DiagramUrl": "/images/levels/level-053/step-7.svg",
+        "Tip": "For '0': turn on a,b,c,d,e,f. For '1': b,c only!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-053/main-diagram.svg",
+      "/images/levels/level-053/final-view.svg"
+    ],
+    "FunFact": "7-segment displays were invented in 1908 and are still used in digital clocks, meters, and calculators!",
+    "Quiz": {
+      "Question": "How many segments need to be lit to display the number '8'?",
+      "Options": ["5 segments", "6 segments", "7 segments", "8 segments"],
+      "CorrectAnswerIndex": 2,
+      "Explanation": "The number '8' requires all 7 segments to be lit! It uses the most segments of any digit."
+    }
+  },
+  {
+    "Id": 54,
+    "Title": "Multiplexing LEDs",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 40,
+    "Components": [
+      {
+        "Name": "LED",
+        "Quantity": 8,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Test LEDs"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Clock generators"
+      },
+      {
+        "Name": "4017 Decade Counter",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/4017-ic.svg",
+        "Description": "Sequential output"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 8,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Resistor 10kΩ",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Timing resistors"
+      },
+      {
+        "Name": "Capacitor 10µF",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/capacitor.svg",
+        "Description": "Timing capacitors"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 25,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [],
+    "LearningObjectives": [
+      "Understand time-division multiplexing",
+      "Learn persistence of vision",
+      "Use decade counter ICs",
+      "Control multiple LEDs efficiently"
+    ],
+    "SafetyNotes": [
+      "Check IC orientations",
+      "Verify voltage levels",
+      "Use bypass capacitors for ICs"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build Clock Circuit",
+        "Description": "Wire 555 timer in astable mode for ~100Hz clock signal.",
+        "DiagramUrl": "/images/levels/level-054/step-1.svg",
+        "Tip": "This creates the timing for multiplexing!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Setup 4017 Counter",
+        "Description": "Place 4017 decade counter IC on breadboard.",
+        "DiagramUrl": "/images/levels/level-054/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Clock Input",
+        "Description": "Wire 555 output to 4017 clock input (pin 14).",
+        "DiagramUrl": "/images/levels/level-054/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Output 0-3",
+        "Description": "Connect 4017 outputs 0-3 to first 4 LEDs through resistors.",
+        "DiagramUrl": "/images/levels/level-054/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Output 4-7",
+        "Description": "Connect 4017 outputs 4-7 to remaining 4 LEDs through resistors.",
+        "DiagramUrl": "/images/levels/level-054/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect Reset",
+        "Description": "Wire 4017 output 8 back to reset pin to create 8-step sequence.",
+        "DiagramUrl": "/images/levels/level-054/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Sequence",
+        "Description": "Power on and watch LEDs light in sequence!",
+        "DiagramUrl": "/images/levels/level-054/step-7.svg",
+        "Tip": "LEDs light one at a time, sharing the counter IC!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-054/main-diagram.svg",
+      "/images/levels/level-054/final-view.svg"
+    ],
+    "FunFact": "Multiplexing lets us control hundreds of LEDs with just a few wires - this is how LED matrices in signs and displays work!",
+    "Quiz": {
+      "Question": "What makes multiplexing work for human eyes?",
+      "Options": ["LEDs are brighter", "Persistence of vision", "Special LED types", "More power"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "Persistence of vision makes our eyes see rapidly flashing LEDs as continuously lit! This happens above ~50Hz."
+    }
+  },
+  {
+    "Id": 55,
+    "Title": "PWM Dimming",
+    "Category": "Light Master",
+    "Difficulty": 5,
+    "EstimatedTime": 30,
+    "Components": [
+      {
+        "Name": "High-Brightness LED",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Demonstration LEDs"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "PWM generator"
+      },
+      {
+        "Name": "Potentiometer 10kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Duty cycle control"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Resistor 1kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Timing resistor"
+      },
+      {
+        "Name": "Capacitor 100nF",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor.svg",
+        "Description": "Timing capacitor"
+      },
+      {
+        "Name": "Diode 1N4148",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/diode.svg",
+        "Description": "PWM asymmetry"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 15,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [],
+    "LearningObjectives": [
+      "Understand PWM (Pulse Width Modulation)",
+      "Learn duty cycle concepts",
+      "Control LED brightness without resistors",
+      "Build variable duty cycle circuits"
+    ],
+    "SafetyNotes": [
+      "Use appropriate frequency (>100Hz)",
+      "Don't exceed LED current ratings",
+      "Check diode orientation"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Setup 555 Timer",
+        "Description": "Wire 555 IC in astable mode on breadboard.",
+        "DiagramUrl": "/images/levels/level-055/step-1.svg"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Add Diode Trick",
+        "Description": "Install diode across timing resistor for independent charge/discharge.",
+        "DiagramUrl": "/images/levels/level-055/step-2.svg",
+        "Tip": "This allows duty cycle from 0-100%!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Wire Potentiometer",
+        "Description": "Connect potentiometer to control timing and duty cycle.",
+        "DiagramUrl": "/images/levels/level-055/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Add Timing Components",
+        "Description": "Connect capacitor and resistors for ~1kHz PWM frequency.",
+        "DiagramUrl": "/images/levels/level-055/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect LEDs",
+        "Description": "Wire 3 LEDs in parallel from 555 output through resistors.",
+        "DiagramUrl": "/images/levels/level-055/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Test Dimming",
+        "Description": "Adjust potentiometer to dim LEDs from off to full brightness!",
+        "DiagramUrl": "/images/levels/level-055/step-6.svg",
+        "Tip": "LEDs change brightness smoothly without changing voltage!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-055/main-diagram.svg",
+      "/images/levels/level-055/final-view.svg"
+    ],
+    "FunFact": "PWM dimming is more efficient than resistive dimming and is used in everything from phone screens to LED bulbs!",
+    "Quiz": {
+      "Question": "What is a 50% duty cycle?",
+      "Options": ["Always on", "On half the time, off half the time", "Always off", "Flashing randomly"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "A 50% duty cycle means the signal is on for half the time and off for half the time in each cycle!"
+    }
+  },
+  {
+    "Id": 56,
+    "Title": "Color Mixing",
+    "Category": "Light Master",
+    "Difficulty": 5,
+    "EstimatedTime": 35,
+    "Components": [
+      {
+        "Name": "RGB LED (Common Cathode)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/rgb-led.svg",
+        "Description": "Color mixing"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "PWM for each color"
+      },
+      {
+        "Name": "Potentiometer 10kΩ",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Color intensity"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 9,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Resistor 10kΩ",
+        "Quantity": 6,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Timing resistors"
+      },
+      {
+        "Name": "Capacitor 100nF",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/capacitor.svg",
+        "Description": "Timing capacitors"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 35,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [
+      "White diffuser material",
+      "Small box for mixing chamber"
+    ],
+    "LearningObjectives": [
+      "Master RGB color theory",
+      "Control three PWM channels",
+      "Create smooth color transitions",
+      "Build color mixing systems"
+    ],
+    "SafetyNotes": [
+      "Balance current across RGB channels",
+      "Use proper PWM frequency",
+      "Avoid overdriving any color"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build Red PWM",
+        "Description": "Create 555 PWM circuit with potentiometer for red channel.",
+        "DiagramUrl": "/images/levels/level-056/step-1.svg"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Green PWM",
+        "Description": "Create second 555 PWM circuit for green channel.",
+        "DiagramUrl": "/images/levels/level-056/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Build Blue PWM",
+        "Description": "Create third 555 PWM circuit for blue channel.",
+        "DiagramUrl": "/images/levels/level-056/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire RGB LEDs",
+        "Description": "Connect 3 RGB LEDs with common cathodes to ground.",
+        "DiagramUrl": "/images/levels/level-056/step-4.svg",
+        "Tip": "Place LEDs close together for better color mixing!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Red Outputs",
+        "Description": "Wire red PWM output to all red channels through resistors.",
+        "DiagramUrl": "/images/levels/level-056/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect Green & Blue",
+        "Description": "Wire green and blue PWM outputs to respective channels.",
+        "DiagramUrl": "/images/levels/level-056/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Add Diffuser",
+        "Description": "Place white diffuser over LEDs to blend colors smoothly.",
+        "DiagramUrl": "/images/levels/level-056/step-7.svg"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Mix Colors",
+        "Description": "Adjust three pots to create any color of the rainbow!",
+        "DiagramUrl": "/images/levels/level-056/step-8.svg",
+        "Tip": "Try creating orange, pink, purple, and white!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-056/main-diagram.svg",
+      "/images/levels/level-056/final-view.svg"
+    ],
+    "FunFact": "The human eye has three types of color receptors (red, green, blue), which is why RGB mixing can create all visible colors!",
+    "Quiz": {
+      "Question": "What color do you get with all three RGB channels at full brightness?",
+      "Options": ["Black", "White", "Gray", "Brown"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "Red + Green + Blue at full brightness creates white light! This is how white LEDs in screens are made."
+    }
+  },
+  {
+    "Id": 57,
+    "Title": "LED Chaser Circuit",
+    "Category": "Light Master",
+    "Difficulty": 5,
+    "EstimatedTime": 40,
+    "Components": [
+      {
+        "Name": "LED",
+        "Quantity": 10,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Chase sequence"
+      },
+      {
+        "Name": "4017 Decade Counter",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/4017-ic.svg",
+        "Description": "Sequential control"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Clock source"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 10,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Potentiometer 100kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Speed control"
+      },
+      {
+        "Name": "Resistor 10kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Timing resistor"
+      },
+      {
+        "Name": "Capacitor 10µF",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor.svg",
+        "Description": "Timing capacitor"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 25,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Strip of cardboard for LED mounting"
+    ],
+    "LearningObjectives": [
+      "Build sequential LED circuits",
+      "Use decade counters effectively",
+      "Create variable speed patterns",
+      "Design chase effects"
+    ],
+    "SafetyNotes": [
+      "Check IC power pins",
+      "Verify LED polarity",
+      "Use appropriate timing components"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build 555 Oscillator",
+        "Description": "Create variable frequency oscillator with potentiometer control.",
+        "DiagramUrl": "/images/levels/level-057/step-1.svg"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Setup 4017 Counter",
+        "Description": "Place 4017 decade counter IC on breadboard.",
+        "DiagramUrl": "/images/levels/level-057/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Clock",
+        "Description": "Wire 555 output to 4017 clock input (pin 14).",
+        "DiagramUrl": "/images/levels/level-057/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Mount LEDs in Line",
+        "Description": "Place 10 LEDs in a straight line on breadboard.",
+        "DiagramUrl": "/images/levels/level-057/step-4.svg",
+        "Tip": "Space them evenly for best visual effect!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Output 0-4",
+        "Description": "Connect 4017 outputs 0-4 to first 5 LEDs through resistors.",
+        "DiagramUrl": "/images/levels/level-057/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Wire Output 5-9",
+        "Description": "Connect 4017 outputs 5-9 to remaining LEDs through resistors.",
+        "DiagramUrl": "/images/levels/level-057/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Connect LED Cathodes",
+        "Description": "Wire all LED cathodes to common ground.",
+        "DiagramUrl": "/images/levels/level-057/step-7.svg"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test Chase Pattern",
+        "Description": "Power on and adjust speed pot to control chase rate!",
+        "DiagramUrl": "/images/levels/level-057/step-8.svg",
+        "Tip": "Try fast and slow speeds for different effects!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-057/main-diagram.svg",
+      "/images/levels/level-057/final-view.svg"
+    ],
+    "FunFact": "Knight Rider's KITT car used a similar LED chaser effect that became iconic in the 1980s!",
+    "Quiz": {
+      "Question": "What does a decade counter do?",
+      "Options": ["Counts to 9 then resets", "Counts to 10 then resets", "Divides by 10", "Multiplies by 10"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "A decade counter counts from 0 to 9 (10 states total), then resets back to 0!"
+    }
+  },
+  {
+    "Id": 58,
+    "Title": "Ambient Light Sensor",
+    "Category": "Light Master",
+    "Difficulty": 5,
+    "EstimatedTime": 30,
+    "Components": [
+      {
+        "Name": "LDR (Light Dependent Resistor)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ldr.svg",
+        "Description": "Light sensor"
+      },
+      {
+        "Name": "LED",
+        "Quantity": 5,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Light level display"
+      },
+      {
+        "Name": "LM3914 LED Driver",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/lm3914.svg",
+        "Description": "Bar graph driver"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 5,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Resistor 10kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Voltage divider"
+      },
+      {
+        "Name": "Potentiometer 10kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Sensitivity adjust"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 20,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [],
+    "LearningObjectives": [
+      "Understand photoresistors",
+      "Build light-sensing circuits",
+      "Use LED driver ICs",
+      "Create bar graph displays"
+    ],
+    "SafetyNotes": [
+      "Protect LDR from overheating",
+      "Check LM3914 pinout",
+      "Use appropriate reference voltage"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build Sensor Circuit",
+        "Description": "Create voltage divider with LDR and 10kΩ resistor.",
+        "DiagramUrl": "/images/levels/level-058/step-1.svg",
+        "Tip": "LDR resistance changes with light level!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Add Sensitivity Control",
+        "Description": "Wire potentiometer to adjust sensitivity range.",
+        "DiagramUrl": "/images/levels/level-058/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Setup LM3914",
+        "Description": "Place LM3914 LED bar graph driver on breadboard.",
+        "DiagramUrl": "/images/levels/level-058/step-3.svg"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect Signal Input",
+        "Description": "Wire LDR voltage divider output to LM3914 signal input (pin 5).",
+        "DiagramUrl": "/images/levels/level-058/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire LEDs",
+        "Description": "Connect 5 LEDs to LM3914 outputs 1-5 through resistors.",
+        "DiagramUrl": "/images/levels/level-058/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Set Bar Mode",
+        "Description": "Configure LM3914 for bar graph mode (pin 9 to positive).",
+        "DiagramUrl": "/images/levels/level-058/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Light Levels",
+        "Description": "Cover and uncover LDR to see LED bar graph respond!",
+        "DiagramUrl": "/images/levels/level-058/step-7.svg",
+        "Tip": "More light = more LEDs lit!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-058/main-diagram.svg",
+      "/images/levels/level-058/final-view.svg"
+    ],
+    "FunFact": "Your smartphone automatically adjusts screen brightness using a similar ambient light sensor!",
+    "Quiz": {
+      "Question": "What happens to an LDR's resistance in bright light?",
+      "Options": ["Increases a lot", "Decreases a lot", "Stays the same", "Becomes infinite"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "LDR resistance decreases dramatically in bright light, allowing more current to flow!"
+    }
+  },
+  {
+    "Id": 59,
+    "Title": "Light-Activated Switch",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 35,
+    "Components": [
+      {
+        "Name": "LDR",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ldr.svg",
+        "Description": "Light sensor"
+      },
+      {
+        "Name": "LM358 Op-Amp",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/lm358.svg",
+        "Description": "Comparator"
+      },
+      {
+        "Name": "2N2222 Transistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/transistor.svg",
+        "Description": "Switch"
+      },
+      {
+        "Name": "Relay 5V",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/relay.svg",
+        "Description": "High power switch"
+      },
+      {
+        "Name": "Diode 1N4007",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/diode.svg",
+        "Description": "Relay protection"
+      },
+      {
+        "Name": "LED",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Status indicators"
+      },
+      {
+        "Name": "Resistor 10kΩ",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Voltage dividers"
+      },
+      {
+        "Name": "Potentiometer 10kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Threshold adjust"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Resistor 1kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Base resistor"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-9v.svg",
+        "Description": "Power supply"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For connections"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 20,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "Connecting wires"
+      }
+    ],
+    "AdditionalMaterials": [],
+    "LearningObjectives": [
+      "Build comparator circuits",
+      "Use op-amps for switching",
+      "Control relays with transistors",
+      "Create automatic light switches"
+    ],
+    "SafetyNotes": [
+      "Add flyback diode across relay",
+      "Don't exceed relay voltage rating",
+      "Check op-amp power supply",
+      "Test with low voltage loads first"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build Sensor Divider",
+        "Description": "Create voltage divider with LDR and 10kΩ resistor.",
+        "DiagramUrl": "/images/levels/level-059/step-1.svg"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Reference",
+        "Description": "Create adjustable reference voltage with potentiometer.",
+        "DiagramUrl": "/images/levels/level-059/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Wire Op-Amp Comparator",
+        "Description": "Connect LM358 as comparator with LDR on + input, reference on - input.",
+        "DiagramUrl": "/images/levels/level-059/step-3.svg",
+        "Tip": "Output goes high when light level exceeds threshold!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Add Transistor Switch",
+        "Description": "Wire 2N2222 transistor with base from op-amp output.",
+        "DiagramUrl": "/images/levels/level-059/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Relay",
+        "Description": "Wire relay coil to transistor collector.",
+        "DiagramUrl": "/images/levels/level-059/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Protection Diode",
+        "Description": "Install diode across relay coil (cathode to positive).",
+        "DiagramUrl": "/images/levels/level-059/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Wire Indicator LEDs",
+        "Description": "Connect LEDs to show sensor state and relay state.",
+        "DiagramUrl": "/images/levels/level-059/step-7.svg"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Calibrate Threshold",
+        "Description": "Adjust potentiometer to set light level trigger point!",
+        "DiagramUrl": "/images/levels/level-059/step-8.svg",
+        "Tip": "Relay clicks when light crosses threshold!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-059/main-diagram.svg",
+      "/images/levels/level-059/final-view.svg"
+    ],
+    "FunFact": "Automatic street lights use this exact principle to turn on at dusk and off at dawn!",
+    "Quiz": {
+      "Question": "What does a comparator do?",
+      "Options": ["Adds voltages", "Compares two voltages", "Multiplies signals", "Filters noise"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "A comparator compares two input voltages and outputs high or low based on which is larger!"
+    }
+  },
+  {
+    "Id": 60,
+    "Title": "Build a Mood Lamp",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 75,
+    "Components": [
+      {
+        "Name": "RGB LED",
+        "Quantity": 6,
+        "ImageUrl": "/images/components/rgb-led.svg",
+        "Description": "Color changing"
+      },
+      {
+        "Name": "4017 Decade Counter",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/4017-ic.svg",
+        "Description": "Color sequencing"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Slow clock"
+      },
+      {
+        "Name": "Resistor 220Ω",
+        "Quantity": 18,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED protection"
+      },
+      {
+        "Name": "Potentiometer 100kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Speed control"
+      },
+      {
+        "Name": "Resistor 10kΩ",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Timing"
+      },
+      {
+        "Name": "Capacitor 47µF",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor.svg",
+        "Description": "Slow timing"
+      },
+      {
+        "Name": "12V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply.svg",
+        "Description": "Main power"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "Circuit base"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 40,
+        "ImageUrl": "/images/components/wire.svg",
+        "Description": "All connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Glass jar or plastic container",
+      "Frosted translucent material",
+      "Hot glue gun",
+      "Decorative base",
+      "Diffuser paper or fabric"
+    ],
+    "LearningObjectives": [
+      "Create slow color-changing patterns",
+      "Design artistic lighting",
+      "Build complete mood lighting system",
+      "Integrate electronics into decorative housing",
+      "Master multi-RGB LED coordination"
+    ],
+    "SafetyNotes": [
+      "Ensure proper ventilation in enclosure",
+      "Keep electronics away from water",
+      "Use appropriate power supply voltage",
+      "Secure all connections before enclosing",
+      "Test thoroughly before final assembly"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build Slow Oscillator",
+        "Description": "Create 555 timer circuit with ~10 second period using large capacitor.",
+        "DiagramUrl": "/images/levels/level-060/step-1.svg"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Setup Color Sequencer",
+        "Description": "Wire 4017 counter to create 10-step color sequence.",
+        "DiagramUrl": "/images/levels/level-060/step-2.svg"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Program Color Steps",
+        "Description": "Wire outputs to RGB channels to create color sequence: Red→Orange→Yellow→Green→Cyan→Blue→Purple→Pink→White→Off.",
+        "DiagramUrl": "/images/levels/level-060/step-3.svg",
+        "Tip": "Use combinations of R/G/B to create each color!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect RGB LEDs",
+        "Description": "Wire 6 RGB LEDs in parallel with common cathodes to ground.",
+        "DiagramUrl": "/images/levels/level-060/step-4.svg"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Color Channels",
+        "Description": "Connect all red, green, and blue channels to sequencer outputs.",
+        "DiagramUrl": "/images/levels/level-060/step-5.svg"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Test Color Sequence",
+        "Description": "Power on and verify smooth color transitions.",
+        "DiagramUrl": "/images/levels/level-060/step-6.svg"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Prepare Housing",
+        "Description": "Prepare jar or container with diffuser material inside.",
+        "DiagramUrl": "/images/levels/level-060/step-7.svg"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Mount LEDs",
+        "Description": "Secure LEDs inside housing pointing toward diffuser.",
+        "DiagramUrl": "/images/levels/level-060/step-8.svg",
+        "Tip": "Space LEDs evenly for uniform illumination!"
+      },
+      {
+        "StepNumber": 9,
+        "Title": "Install Circuit",
+        "Description": "Mount breadboard in base with access to speed control pot.",
+        "DiagramUrl": "/images/levels/level-060/step-9.svg"
+      },
+      {
+        "StepNumber": 10,
+        "Title": "Final Assembly",
+        "Description": "Assemble housing, secure all parts, and test final lamp!",
+        "DiagramUrl": "/images/levels/level-060/step-10.svg",
+        "Tip": "Make sure pot is accessible for speed adjustment!"
+      }
+    ],
+    "Diagrams": [
+      "/images/levels/level-060/main-diagram.svg",
+      "/images/levels/level-060/final-view.svg",
+      "/images/levels/level-060/assembly.svg"
+    ],
+    "FunFact": "Philips Hue smart bulbs use similar RGB LED technology with millions of color combinations!",
+    "Quiz": {
+      "Question": "Why use a diffuser in a mood lamp?",
+      "Options": ["Makes it brighter", "Blends colors smoothly", "Saves power", "Protects LEDs"],
+      "CorrectAnswerIndex": 1,
+      "Explanation": "A diffuser scatters and blends the light from individual LEDs, creating smooth uniform colors without visible spots!"
+    }
+  }
+]

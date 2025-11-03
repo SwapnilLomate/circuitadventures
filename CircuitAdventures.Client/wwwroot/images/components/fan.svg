@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="50" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2"/>
+  <circle cx="100" cy="100" r="10" fill="#2c3e50"/>
+  <path d="M 100,100 L 100,60 L 85,75 Z" fill="#3498db" opacity="0.7"/>
+  <path d="M 100,100 L 140,100 L 125,85 Z" fill="#3498db" opacity="0.7"/>
+  <path d="M 100,100 L 100,140 L 115,125 Z" fill="#3498db" opacity="0.7"/>
+  <path d="M 100,100 L 60,100 L 75,115 Z" fill="#3498db" opacity="0.7"/>
+  <line x1="85" y1="160" x2="85" y2="170" stroke="#e74c3c" stroke-width="4"/>
+  <line x1="115" y1="160" x2="115" y2="170" stroke="#2c3e50" stroke-width="4"/>
+  <text x="100" y="190" font-family="Arial" font-size="14" fill="#2c3e50" text-anchor="middle">Fan</text>
+</svg>

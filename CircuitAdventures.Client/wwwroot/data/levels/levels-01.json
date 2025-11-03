@@ -1,0 +1,976 @@
+﻿[
+    {
+        "Quiz":  {
+                     "Explanation":  "The longer leg of an LED is always the positive terminal. This is how we know which way to connect it in a circuit!",
+                     "Options":  [
+                                     "The shorter leg",
+                                     "The longer leg",
+                                     "Both legs are the same",
+                                     "It doesn\u0027t matter"
+                                 ],
+                     "Question":  "Which leg of an LED is positive?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Never connect battery terminals directly without a component",
+                            "Batteries can get hot if short-circuited",
+                            "Always ask an adult for help if unsure"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your LED. The longer leg is positive (+), and the shorter leg is negative (-).",
+                                 "Title":  "Identify LED Legs",
+                                 "Tip":  "Hold the LED up to the light to see the legs clearly!",
+                                 "DiagramUrl":  "/images/levels/level-001/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect one wire from the battery positive (+) terminal to the LED long leg.",
+                                 "Title":  "Connect Positive",
+                                 "DiagramUrl":  "/images/levels/level-001/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect another wire from the LED short leg to the battery negative (-) terminal.",
+                                 "Title":  "Connect Negative",
+                                 "DiagramUrl":  "/images/levels/level-001/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Your LED should light up! If it doesn\u0027t, check your connections.",
+                                 "Title":  "See the Light!",
+                                 "Tip":  "If the LED doesn\u0027t light up, try reversing the connections!",
+                                 "DiagramUrl":  "/images/levels/level-001/step-4.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-001/main-diagram.svg",
+                         "/images/levels/level-001/final-view.svg"
+                     ],
+        "Title":  "First Light",
+        "LearningObjectives":  [
+                                   "Understand what a circuit is",
+                                   "Learn about positive and negative terminals",
+                                   "Identify LED polarity (long leg = positive, short leg = negative)"
+                               ],
+        "Difficulty":  1,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "A light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  5,
+        "Id":  1,
+        "FunFact":  "LEDs use 75% less energy than regular light bulbs and can last for 25 years!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "A switch opens and closes the circuit. When it\u0027s closed (on), electricity can flow. When it\u0027s open (off), the flow stops!",
+                     "Options":  [
+                                     "Makes lights brighter",
+                                     "Opens and closes the circuit",
+                                     "Changes battery power",
+                                     "Makes wires longer"
+                                 ],
+                     "Question":  "What does a switch do in a circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Make sure switch is off when connecting wires",
+                            "Check all connections before turning switch on"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect a wire from the battery positive (+) to one terminal of the switch.",
+                                 "Title":  "Connect Battery to Switch",
+                                 "DiagramUrl":  "/images/levels/level-002/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from the other switch terminal to the LED long leg (positive).",
+                                 "Title":  "Connect Switch to LED",
+                                 "DiagramUrl":  "/images/levels/level-002/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a wire from the LED short leg (negative) to the battery negative (-).",
+                                 "Title":  "Complete the Circuit",
+                                 "DiagramUrl":  "/images/levels/level-002/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Flip the switch on and off to control the LED!",
+                                 "Title":  "Test Your Switch",
+                                 "Tip":  "Notice how the LED only lights up when the switch is on!",
+                                 "DiagramUrl":  "/images/levels/level-002/step-4.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-002/main-diagram.svg",
+                         "/images/levels/level-002/final-view.svg"
+                     ],
+        "Title":  "Switch It Up",
+        "LearningObjectives":  [
+                                   "Understand how switches control circuits",
+                                   "Learn about open and closed circuits",
+                                   "Practice building a complete circuit with control"
+                               ],
+        "Difficulty":  1,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "A light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "On/Off control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  8,
+        "Id":  2,
+        "FunFact":  "Light switches in your home work the same way - they open and close electrical circuits!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "In a series circuit, the voltage is divided among all components. That\u0027s why the LEDs might appear dimmer when connected in series!",
+                     "Options":  [
+                                     "Voltage stays the same",
+                                     "Voltage is shared between components",
+                                     "Voltage doubles",
+                                     "Voltage disappears"
+                                 ],
+                     "Question":  "In a series circuit, what happens to the voltage?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Connect batteries correctly - positive to positive, negative to negative",
+                            "Make sure all connections are secure before testing"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect two batteries in series by connecting the positive (+) of one battery to the negative (-) of the other.",
+                                 "Title":  "Connect Batteries",
+                                 "Tip":  "This gives you 3V total power!",
+                                 "DiagramUrl":  "/images/levels/level-003/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from the free positive battery terminal to the first LED long leg.",
+                                 "Title":  "Connect First LED",
+                                 "DiagramUrl":  "/images/levels/level-003/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a wire from the first LED short leg to the second LED long leg.",
+                                 "Title":  "Connect LEDs Together",
+                                 "DiagramUrl":  "/images/levels/level-003/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect a wire from the second LED short leg to the free negative battery terminal.",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-003/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Both LEDs should light up! Notice they might be dimmer than a single LED.",
+                                 "Title":  "Observe",
+                                 "Tip":  "The LEDs share the voltage in a series circuit!",
+                                 "DiagramUrl":  "/images/levels/level-003/step-5.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-003/main-diagram.svg",
+                         "/images/levels/level-003/final-view.svg"
+                     ],
+        "Title":  "Two Lights",
+        "LearningObjectives":  [
+                                   "Learn about series circuits",
+                                   "Understand how components share voltage",
+                                   "Practice connecting multiple components"
+                               ],
+        "Difficulty":  1,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diodes",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  10,
+        "Id":  3,
+        "FunFact":  "Old Christmas lights were wired in series - if one bulb burned out, the whole string stopped working!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "In a parallel circuit, each component receives the full voltage from the power source, so they work at full brightness or power!",
+                     "Options":  [
+                                     "Uses less wire",
+                                     "Each component gets full voltage",
+                                     "Works with fewer batteries",
+                                     "Components last longer"
+                                 ],
+                     "Question":  "What is the main advantage of a parallel circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Make sure positive and negative don\u0027t touch directly",
+                            "Build carefully to avoid short circuits"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect a wire from battery positive (+) to the first LED long leg.",
+                                 "Title":  "Connect First LED",
+                                 "DiagramUrl":  "/images/levels/level-004/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect another wire from the same battery positive (+) to the second LED long leg.",
+                                 "Title":  "Connect Second LED Positive",
+                                 "Tip":  "Both LEDs connect to the same positive terminal!",
+                                 "DiagramUrl":  "/images/levels/level-004/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a wire from the first LED short leg to battery negative (-).",
+                                 "Title":  "Connect First LED Negative",
+                                 "DiagramUrl":  "/images/levels/level-004/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect a wire from the second LED short leg to battery negative (-).",
+                                 "Title":  "Connect Second LED Negative",
+                                 "DiagramUrl":  "/images/levels/level-004/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Notice both LEDs are brighter than in the series circuit!",
+                                 "Title":  "Compare Brightness",
+                                 "Tip":  "Each LED gets the full battery voltage!",
+                                 "DiagramUrl":  "/images/levels/level-004/step-5.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-004/main-diagram.svg",
+                         "/images/levels/level-004/final-view.svg"
+                     ],
+        "Title":  "Parallel Power",
+        "LearningObjectives":  [
+                                   "Learn about parallel circuits",
+                                   "Understand that each component gets full voltage",
+                                   "Compare series vs parallel circuits"
+                               ],
+        "Difficulty":  1,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diodes",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  12,
+        "Id":  4,
+        "FunFact":  "Your home\u0027s electrical outlets are wired in parallel so each device gets full voltage!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "A resistor limits (or resists) the flow of electric current. This protects components like LEDs from getting too much current and burning out!",
+                     "Options":  [
+                                     "Stores electricity",
+                                     "Limits current flow",
+                                     "Makes lights brighter",
+                                     "Generates power"
+                                 ],
+                     "Question":  "What does a resistor do in a circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Resistors can get warm - this is normal",
+                            "Always use appropriate resistor values for your LED"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at the colored bands on your resistor. These tell us its resistance value.",
+                                 "Title":  "Examine Resistor",
+                                 "Tip":  "Orange-Orange-Brown = 330 Ohms!",
+                                 "DiagramUrl":  "/images/levels/level-005/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from battery positive (+) to one end of the resistor.",
+                                 "Title":  "Connect Battery to Resistor",
+                                 "DiagramUrl":  "/images/levels/level-005/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect the other end of the resistor to the LED long leg (positive).",
+                                 "Title":  "Connect Resistor to LED",
+                                 "Tip":  "Resistors don\u0027t have polarity - either direction works!",
+                                 "DiagramUrl":  "/images/levels/level-005/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect a wire from the LED short leg to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-005/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "The LED lights up and is protected from too much current!",
+                                 "Title":  "Observe",
+                                 "DiagramUrl":  "/images/levels/level-005/step-5.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-005/main-diagram.svg",
+                         "/images/levels/level-005/final-view.svg"
+                     ],
+        "Title":  "Meet the Resistor",
+        "LearningObjectives":  [
+                                   "Understand what resistors do",
+                                   "Learn how resistors protect LEDs",
+                                   "Identify resistor color bands"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Limits current flow",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  10,
+        "Id":  5,
+        "FunFact":  "Resistors are used in almost every electronic device to control the flow of electricity!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "When resistance increases, current decreases. This is why the LED gets dimmer with a higher resistance resistor!",
+                     "Options":  [
+                                     "Current increases",
+                                     "Current decreases",
+                                     "Voltage increases",
+                                     "Nothing changes"
+                                 ],
+                     "Question":  "What happens when you increase resistance in a circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t use resistors smaller than 330 Ohms with standard LEDs",
+                            "Higher resistance = dimmer LED"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Build a circuit: Battery (+) â†’ 330 Ohm resistor â†’ LED â†’ Battery (-).",
+                                 "Title":  "Build Circuit with 330 Ohm",
+                                 "DiagramUrl":  "/images/levels/level-006/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Note how bright the LED is with the 330 Ohm resistor.",
+                                 "Title":  "Observe Brightness",
+                                 "Tip":  "Take a mental note of the brightness!",
+                                 "DiagramUrl":  "/images/levels/level-006/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Disconnect the battery to safely change the resistor.",
+                                 "Title":  "Disconnect Circuit",
+                                 "DiagramUrl":  "/images/levels/level-006/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Replace the 330 Ohm resistor with the 1K Ohm resistor.",
+                                 "Title":  "Replace Resistor",
+                                 "DiagramUrl":  "/images/levels/level-006/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Reconnect the battery. The LED should be noticeably dimmer!",
+                                 "Title":  "Reconnect and Compare",
+                                 "Tip":  "More resistance = less current = dimmer LED!",
+                                 "DiagramUrl":  "/images/levels/level-006/step-5.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-006/main-diagram.svg",
+                         "/images/levels/level-006/final-view.svg"
+                     ],
+        "Title":  "Brightness Control",
+        "LearningObjectives":  [
+                                   "Learn how resistance affects brightness",
+                                   "Understand Ohm\u0027s Law basics",
+                                   "Experiment with different resistor values"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Low resistance",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Higher resistance",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  6,
+        "FunFact":  "Dimmer switches in your home work by changing the resistance to control light brightness!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "A push button (momentary switch) only makes a connection while being pressed. A toggle switch stays on or off until you change it!",
+                     "Options":  [
+                                     "Buttons are larger",
+                                     "Buttons only work while pressed",
+                                     "Switches need batteries",
+                                     "There is no difference"
+                                 ],
+                     "Question":  "What is the difference between a push button and a toggle switch?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Push buttons have four pins but only two are used",
+                            "Test button with multimeter if unsure which pins connect"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your push button. It has four pins but only stays connected while pressed.",
+                                 "Title":  "Examine Button",
+                                 "Tip":  "This is called a momentary switch!",
+                                 "DiagramUrl":  "/images/levels/level-007/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from battery positive (+) to one pin of the button.",
+                                 "Title":  "Connect Battery to Button",
+                                 "DiagramUrl":  "/images/levels/level-007/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a wire from another button pin to the resistor.",
+                                 "Title":  "Connect Button to Resistor",
+                                 "DiagramUrl":  "/images/levels/level-007/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect the resistor to the LED long leg (positive).",
+                                 "Title":  "Connect Resistor to LED",
+                                 "DiagramUrl":  "/images/levels/level-007/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect a wire from LED short leg to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-007/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Press and hold the button - the LED lights up! Release it - LED goes off!",
+                                 "Title":  "Test It!",
+                                 "Tip":  "This is how doorbells and game controllers work!",
+                                 "DiagramUrl":  "/images/levels/level-007/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-007/main-diagram.svg",
+                         "/images/levels/level-007/final-view.svg"
+                     ],
+        "Title":  "Push to Light",
+        "LearningObjectives":  [
+                                   "Learn the difference between switches and buttons",
+                                   "Understand momentary vs toggle switches",
+                                   "Build a button-controlled circuit"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Push Button",
+                               "Description":  "Momentary switch",
+                               "ImageUrl":  "/images/components/button.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  10,
+        "Id":  7,
+        "FunFact":  "The first push button was invented in 1880 and was used for doorbells!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The LED only lights when both switches are on because they\u0027re connected in series. This is called AND logic - both conditions must be true!",
+                     "Options":  [
+                                     "When either switch is on",
+                                     "Only when both switches are on",
+                                     "When both switches are off",
+                                     "Randomly"
+                                 ],
+                     "Question":  "In this double switch circuit, when does the LED light up?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Make sure both switches are off when building",
+                            "Check all connections before testing"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect a wire from battery positive (+) to the first switch.",
+                                 "Title":  "Connect Battery to First Switch",
+                                 "DiagramUrl":  "/images/levels/level-008/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from the first switch to the second switch.",
+                                 "Title":  "Connect Switches in Series",
+                                 "Tip":  "Both switches need to be on for power to flow!",
+                                 "DiagramUrl":  "/images/levels/level-008/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a wire from the second switch to the resistor.",
+                                 "Title":  "Connect to Resistor",
+                                 "DiagramUrl":  "/images/levels/level-008/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect the resistor to the LED long leg.",
+                                 "Title":  "Connect to LED",
+                                 "DiagramUrl":  "/images/levels/level-008/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect a wire from LED short leg to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-008/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Try different switch combinations. The LED only lights when BOTH switches are on!",
+                                 "Title":  "Test Logic",
+                                 "Tip":  "This is called AND logic!",
+                                 "DiagramUrl":  "/images/levels/level-008/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-008/main-diagram.svg",
+                         "/images/levels/level-008/final-view.svg"
+                     ],
+        "Title":  "Double Switch",
+        "LearningObjectives":  [
+                                   "Learn about AND logic in circuits",
+                                   "Understand series switches",
+                                   "Introduction to logic gates concept"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Switch",
+                               "Description":  "On/Off controls",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  5,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  8,
+        "FunFact":  "Computer processors use millions of tiny AND logic gates to perform calculations!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "A piezo buzzer makes sound by vibrating a piece of ceramic material. When electricity flows through it, the ceramic vibrates and creates sound waves!",
+                     "Options":  [
+                                     "By heating up air",
+                                     "By spinning a fan",
+                                     "By vibrating ceramic material",
+                                     "By moving a magnet"
+                                 ],
+                     "Question":  "How does a piezo buzzer make sound?",
+                     "CorrectAnswerIndex":  2
+                 },
+        "SafetyNotes":  [
+                            "Buzzers can be loud - don\u0027t put near your ear",
+                            "Red wire on buzzer is positive, black is negative"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Find the red (+) and black (-) wires on your buzzer.",
+                                 "Title":  "Identify Buzzer Polarity",
+                                 "Tip":  "Some buzzers have + and - markings on the case",
+                                 "DiagramUrl":  "/images/levels/level-009/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect a wire from battery positive (+) to one pin of the button.",
+                                 "Title":  "Connect Battery to Button",
+                                 "DiagramUrl":  "/images/levels/level-009/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect a wire from the button to the buzzer\u0027s red (+) wire.",
+                                 "Title":  "Connect Button to Buzzer",
+                                 "DiagramUrl":  "/images/levels/level-009/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect the buzzer\u0027s black (-) wire to battery negative (-).",
+                                 "Title":  "Complete Circuit",
+                                 "DiagramUrl":  "/images/levels/level-009/step-4.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-009/main-diagram.svg",
+                         "/images/levels/level-009/final-view.svg"
+                     ],
+        "Title":  "Sound Alarm",
+        "LearningObjectives":  [
+                                   "Learn about piezo buzzers",
+                                   "Understand buzzer polarity",
+                                   "Build a simple alarm circuit"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Buzzer",
+                               "Description":  "Sound maker",
+                               "ImageUrl":  "/images/components/buzzer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Push Button",
+                               "Description":  "Momentary switch",
+                               "ImageUrl":  "/images/components/button.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  12,
+        "Id":  9,
+        "FunFact":  "Piezo buzzers work by vibrating a small piece of ceramic material to create sound waves!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "We use parallel connection so each LED receives the full battery voltage, making them all shine brightly. In series, they would share the voltage and be much dimmer!",
+                     "Options":  [
+                                     "It uses less battery",
+                                     "Each LED gets full voltage and brightness",
+                                     "It\u0027s easier to build",
+                                     "It looks better"
+                                 ],
+                     "Question":  "Why do we connect the three LEDs in parallel instead of series for the flashlight?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Ask adult for help with scissors",
+                            "Make sure all connections are secure",
+                            "Don\u0027t short circuit the batteries"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Cut a cardboard tube to about 6 inches long. This will be your flashlight body.",
+                                 "Title":  "Prepare the Tube",
+                                 "Tip":  "A paper towel roll works perfectly!",
+                                 "DiagramUrl":  "/images/levels/level-010/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Line the inside of the tube with aluminum foil to reflect light forward.",
+                                 "Title":  "Make Reflector",
+                                 "DiagramUrl":  "/images/levels/level-010/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect three LEDs in parallel, each with its own 330 Ohm resistor.",
+                                 "Title":  "Build LED Array",
+                                 "Tip":  "All positive legs together, all negative legs together!",
+                                 "DiagramUrl":  "/images/levels/level-010/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect two AA batteries in series for 3V total power.",
+                                 "Title":  "Wire the Batteries",
+                                 "DiagramUrl":  "/images/levels/level-010/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Wire the switch between the battery pack and LED array.",
+                                 "Title":  "Add Switch",
+                                 "DiagramUrl":  "/images/levels/level-010/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Arrange the three LEDs at one end of the tube, pointing forward.",
+                                 "Title":  "Mount LEDs",
+                                 "DiagramUrl":  "/images/levels/level-010/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Tape a clear bottle cap over the LED end as a lens.",
+                                 "Title":  "Install Lens",
+                                 "DiagramUrl":  "/images/levels/level-010/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Mount the switch on the side and secure batteries inside. Test your flashlight!",
+                                 "Title":  "Final Assembly",
+                                 "Tip":  "Congratulations! You\u0027ve built your first electronic device!",
+                                 "DiagramUrl":  "/images/levels/level-010/step-8.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard tube (paper towel roll)",
+                                    "Aluminum foil",
+                                    "Clear plastic bottle cap",
+                                    "Tape",
+                                    "Scissors"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-010/main-diagram.svg",
+                         "/images/levels/level-010/final-view.svg"
+                     ],
+        "Title":  "Build a Flashlight",
+        "LearningObjectives":  [
+                                   "Apply all learned concepts in a real project",
+                                   "Design a functional device",
+                                   "Understand parallel LED circuits for brightness",
+                                   "Practice craftsmanship and circuit building"
+                               ],
+        "Difficulty":  2,
+        "Category":  "Beginner Zone",
+        "Components":  [
+                           {
+                               "Quantity":  3,
+                               "Name":  "LED (White)",
+                               "Description":  "Bright white LEDs",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "1.5V power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "On/Off control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiters",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  8,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  10,
+        "FunFact":  "The first flashlight was invented in 1899 and was called a \u0027flashlight\u0027 because early batteries couldn\u0027t power it continuously - it could only \u0027flash\u0027 light!"
+    }
+]

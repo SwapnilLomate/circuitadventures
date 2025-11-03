@@ -1,0 +1,1670 @@
+[
+  {
+    "Id": 61,
+    "Title": "Fiber Optic Light Guide",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 40,
+    "Components": [
+      {
+        "Name": "High-brightness LED (White)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led-white.svg",
+        "Description": "Ultra-bright LED for fiber optics"
+      },
+      {
+        "Name": "Fiber Optic Cable (1m)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/fiber-optic.svg",
+        "Description": "Plastic fiber optic strand"
+      },
+      {
+        "Name": "LED Lens/Coupler",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led-lens.svg",
+        "Description": "Focuses LED light into fiber"
+      },
+      {
+        "Name": "330Ω Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Current-limiting resistor"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap connector"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Small cardboard tube",
+      "Black electrical tape",
+      "Scissors"
+    ],
+    "LearningObjectives": [
+      "Understand total internal reflection",
+      "Learn about fiber optic technology",
+      "Explore light transmission efficiency",
+      "Discover real-world fiber optic applications"
+    ],
+    "SafetyNotes": [
+      "Don't look directly into the LED or fiber end",
+      "Use adult supervision when cutting fiber optic cable",
+      "Handle fiber ends carefully - they can be sharp"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Fiber Optics",
+        "Description": "Learn how light travels through a fiber optic cable by total internal reflection. The light bounces inside the cable even when it bends!",
+        "DiagramUrl": "/images/levels/level-061/step-1.svg",
+        "Tip": "Fiber optics work like a light pipe - light goes in one end and comes out the other!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build LED Circuit",
+        "Description": "Connect the high-brightness LED with a 330Ω resistor to the 9V battery. Ensure correct polarity (long leg = positive).",
+        "DiagramUrl": "/images/levels/level-061/step-2.svg",
+        "Tip": "High-brightness LEDs are much brighter than regular LEDs - perfect for fiber optics!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Attach LED Lens",
+        "Description": "Place the LED lens/coupler over the LED. This will focus the light into a tight beam for the fiber optic cable.",
+        "DiagramUrl": "/images/levels/level-061/step-3.svg",
+        "Tip": "The lens helps capture more light and direct it into the fiber core."
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Prepare Fiber Cable",
+        "Description": "Cut the fiber optic cable to desired length (if needed). Clean the ends by cutting straight across with scissors.",
+        "DiagramUrl": "/images/levels/level-061/step-4.svg",
+        "Warning": "Get adult help when cutting! Make clean, straight cuts for best light transmission."
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Insert Fiber",
+        "Description": "Carefully insert one end of the fiber optic cable into the LED lens/coupler. Push it as close to the LED as possible.",
+        "DiagramUrl": "/images/levels/level-061/step-5.svg",
+        "Tip": "The closer the fiber is to the LED, the more light it will capture!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Test Light Transmission",
+        "Description": "Turn on your circuit and observe the light coming out the other end of the fiber. Bend the fiber to see light still transmits!",
+        "DiagramUrl": "/images/levels/level-061/step-6.svg",
+        "Tip": "Try bending the fiber in loops - the light still comes through!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Create Light Guide Housing",
+        "Description": "Use the cardboard tube and black tape to create a light-tight housing for your LED and fiber connection.",
+        "DiagramUrl": "/images/levels/level-061/step-7.svg",
+        "Tip": "Blocking external light makes the fiber optic effect more dramatic!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Experiment",
+        "Description": "Try different fiber lengths, observe light loss over distance, and experiment with multiple fibers from one LED!",
+        "DiagramUrl": "/images/levels/level-061/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Total Internal Reflection",
+        "Url": "/images/levels/level-061/diagram-reflection.svg",
+        "Description": "How light bounces inside the fiber"
+      },
+      {
+        "Title": "Complete Fiber Optic Circuit",
+        "Url": "/images/levels/level-061/diagram-complete.svg",
+        "Description": "Full circuit diagram with fiber coupling"
+      }
+    ],
+    "FunFact": "The internet uses fiber optic cables to transmit data at the speed of light! A single fiber can carry data for over 100 kilometers without needing a booster. Undersea fiber optic cables connect entire continents!",
+    "Quiz": {
+      "Question": "What principle allows light to travel through a bent fiber optic cable?",
+      "Options": [
+        "Total internal reflection",
+        "Light absorption",
+        "Light diffusion",
+        "Light refraction only"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Total internal reflection keeps light bouncing inside the fiber, even when it bends! The light hits the fiber walls at such an angle that it reflects back instead of escaping."
+    }
+  },
+  {
+    "Id": 62,
+    "Title": "Light Painting Circuit",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 35,
+    "Components": [
+      {
+        "Name": "RGB LED",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/rgb-led.svg",
+        "Description": "Multi-color LEDs"
+      },
+      {
+        "Name": "Slide Switch (SPDT)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/switch-slide.svg",
+        "Description": "For color selection"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 9,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Current limiting for each LED color"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Portable power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Camera or smartphone with long exposure mode",
+      "Darkened room",
+      "Tripod (optional but helpful)"
+    ],
+    "LearningObjectives": [
+      "Understand long exposure photography",
+      "Learn about persistence of vision",
+      "Explore LED circuit design for portability",
+      "Discover creative applications of electronics"
+    ],
+    "SafetyNotes": [
+      "Work in a safe, clear space when doing light painting",
+      "Don't trip over wires in the dark!",
+      "Ask an adult to help with the camera settings"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Build RGB LED Array",
+        "Description": "Connect three RGB LEDs in parallel on your breadboard. Each LED should have 220Ω resistors on each color channel (R, G, B).",
+        "DiagramUrl": "/images/levels/level-062/step-1.svg",
+        "Tip": "Using three LEDs makes your light painting stick brighter and more visible!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Wire Color Switches",
+        "Description": "Connect a slide switch to control each color channel (red, green, blue). This lets you turn individual colors on/off.",
+        "DiagramUrl": "/images/levels/level-062/step-2.svg",
+        "Tip": "Label your switches R, G, and B so you know which is which in the dark!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Add Battery Power",
+        "Description": "Connect the 9V battery to power your circuit. Test all color combinations by flipping different switch combinations.",
+        "DiagramUrl": "/images/levels/level-062/step-3.svg",
+        "Tip": "You can create 7 different colors plus off - that's 8 combinations total!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Create a Handle",
+        "Description": "Mount your breadboard on a piece of cardboard or wood to create a comfortable handle for light painting.",
+        "DiagramUrl": "/images/levels/level-062/step-4.svg",
+        "Tip": "Make sure all wires are secure so they don't disconnect when you move!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Set Up Camera",
+        "Description": "Set your camera to manual mode with a 10-30 second exposure. Place it on a tripod or stable surface. Set ISO low (100-400).",
+        "DiagramUrl": "/images/levels/level-062/step-5.svg",
+        "Tip": "The longer the exposure, the more time you have to paint with light!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Test in the Dark",
+        "Description": "Turn off the lights and test your circuit. Make sure all LEDs are bright and switches work properly.",
+        "DiagramUrl": "/images/levels/level-062/step-6.svg",
+        "Warning": "Be careful moving around in the dark - clear any obstacles first!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Create Light Paintings",
+        "Description": "Start the camera exposure, then move your LED stick through the air to create patterns, words, or drawings!",
+        "DiagramUrl": "/images/levels/level-062/step-7.svg",
+        "Tip": "Write words backwards so they appear correctly in the photo!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Experiment",
+        "Description": "Try different colors, speeds, and patterns. Change colors mid-exposure for multicolor effects!",
+        "DiagramUrl": "/images/levels/level-062/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Complete Light Painting Circuit",
+        "Url": "/images/levels/level-062/diagram-circuit.svg",
+        "Description": "Full schematic with switches and RGB LEDs"
+      },
+      {
+        "Title": "Camera Settings Guide",
+        "Url": "/images/levels/level-062/diagram-camera.svg",
+        "Description": "Recommended camera settings for light painting"
+      }
+    ],
+    "FunFact": "Light painting has been used as an art form since the 1930s! Famous photographer Man Ray and Pablo Picasso created 'light drawings' captured on film. Today, light painting is popular for creating amazing photos and even stop-motion animations!",
+    "Quiz": {
+      "Question": "Why do we need a long camera exposure for light painting?",
+      "Options": [
+        "To capture the trail of light as the LED moves",
+        "To make the LED brighter",
+        "To save battery power",
+        "To change the LED color"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "A long exposure keeps the camera sensor collecting light for many seconds. As you move the LED, it captures the entire path of light, creating a visible trail in the final photo!"
+    }
+  },
+  {
+    "Id": 63,
+    "Title": "Stroboscope",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 40,
+    "Components": [
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Timing control chip"
+      },
+      {
+        "Name": "High-brightness White LED",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led-white.svg",
+        "Description": "Strobe light source"
+      },
+      {
+        "Name": "2N2222 Transistor (NPN)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/transistor-npn.svg",
+        "Description": "LED driver"
+      },
+      {
+        "Name": "100kΩ Potentiometer",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Frequency control"
+      },
+      {
+        "Name": "10kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "For 555 timer"
+      },
+      {
+        "Name": "1kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Base resistor for transistor"
+      },
+      {
+        "Name": "220Ω Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiter"
+      },
+      {
+        "Name": "0.01µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Timing capacitor"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Electric fan or rotating object to test",
+      "Darkened room for best effect"
+    ],
+    "LearningObjectives": [
+      "Understand 555 timer astable mode",
+      "Learn about frequency and flashing rates",
+      "Explore the stroboscopic effect",
+      "Discover how to 'freeze' motion with light"
+    ],
+    "SafetyNotes": [
+      "IMPORTANT: Flashing lights can trigger seizures in some people!",
+      "Do not use this around anyone with photosensitive epilepsy",
+      "Avoid staring directly at the flashing LED",
+      "Adult supervision required"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Place 555 Timer",
+        "Description": "Insert the 555 timer IC into the breadboard. Make sure the notch or dot on the chip faces to the left for proper orientation.",
+        "DiagramUrl": "/images/levels/level-063/step-1.svg",
+        "Tip": "The 555 timer is the heart of this circuit - it creates the flashing timing!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Wire 555 Power",
+        "Description": "Connect pin 8 (+V) of the 555 to positive rail, and pin 1 (GND) to negative rail. Also connect pins 2 and 6 together.",
+        "DiagramUrl": "/images/levels/level-063/step-2.svg",
+        "Tip": "Connecting pins 2 and 6 configures the 555 in astable mode for continuous flashing!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Add Timing Components",
+        "Description": "Connect the 100kΩ pot between +V and pin 7. Connect the 10kΩ resistor from pin 7 to pin 6/2. Add the 0.01µF cap from pin 6/2 to ground.",
+        "DiagramUrl": "/images/levels/level-063/step-3.svg",
+        "Tip": "These components determine the flash rate - adjust the pot to change speed!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect Control Pin",
+        "Description": "Connect a 0.01µF capacitor from pin 5 (control) to ground. This stabilizes the timer's operation.",
+        "DiagramUrl": "/images/levels/level-063/step-4.svg",
+        "Tip": "This capacitor prevents unwanted noise from affecting your timing!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Add Transistor Driver",
+        "Description": "Connect pin 3 (output) to the base of the 2N2222 transistor through a 1kΩ resistor. Connect transistor emitter to ground.",
+        "DiagramUrl": "/images/levels/level-063/step-5.svg",
+        "Tip": "The transistor amplifies the 555 output to drive the high-brightness LED!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect LED",
+        "Description": "Connect the high-brightness LED from +V through a 220Ω resistor to the transistor collector. LED cathode goes to collector.",
+        "DiagramUrl": "/images/levels/level-063/step-6.svg",
+        "Warning": "Make sure LED polarity is correct - cathode (short leg) to transistor collector!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Strobe",
+        "Description": "Connect the 9V battery and observe the LED flashing. Turn the potentiometer to adjust the flash rate from slow to fast!",
+        "DiagramUrl": "/images/levels/level-063/step-7.svg",
+        "Tip": "In a dark room, you can adjust the speed to match spinning fan blades and make them appear frozen!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Experiment with Motion",
+        "Description": "In a darkened room, aim your strobe at a rotating fan. Adjust the flash rate until the fan blades appear to slow down or freeze!",
+        "DiagramUrl": "/images/levels/level-063/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "555 Timer Astable Configuration",
+        "Url": "/images/levels/level-063/diagram-555.svg",
+        "Description": "How the 555 creates continuous flashing"
+      },
+      {
+        "Title": "Complete Stroboscope Circuit",
+        "Url": "/images/levels/level-063/diagram-complete.svg",
+        "Description": "Full schematic with all components"
+      }
+    ],
+    "FunFact": "Stroboscopes are used in mechanical engineering to analyze rotating machinery and detect vibrations. They're also used in music performances and dance clubs. The 'wagon wheel effect' you see in movies - where wheels appear to spin backwards - is caused by the same principle as a stroboscope!",
+    "Quiz": {
+      "Question": "What causes the 'frozen motion' effect when you shine a strobe light on a spinning fan?",
+      "Options": [
+        "The light pulses match the rotation speed, capturing the blades in the same position",
+        "The light is too bright and blinds you",
+        "The fan actually slows down",
+        "The battery is running low"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "When the flash rate matches (or is a multiple of) the rotation speed, the light catches the blades in nearly the same position each time. Your eyes see this as frozen or slow motion! This is called the stroboscopic effect."
+    }
+  },
+  {
+    "Id": 64,
+    "Title": "UV LED Circuit",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 30,
+    "Components": [
+      {
+        "Name": "UV LED (395-400nm)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/uv-led.svg",
+        "Description": "Ultraviolet light-emitting diodes"
+      },
+      {
+        "Name": "150Ω Resistors",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Current limiting resistors"
+      },
+      {
+        "Name": "Push Button",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Momentary on switch"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Fluorescent materials to test (highlighters, tonic water, white paper, teeth!)",
+      "UV-reactive paint or markers (optional)",
+      "Dark room for best effects"
+    ],
+    "LearningObjectives": [
+      "Understand ultraviolet light and the electromagnetic spectrum",
+      "Learn about fluorescence and phosphorescence",
+      "Explore UV LED forward voltage differences",
+      "Discover practical applications of UV light"
+    ],
+    "SafetyNotes": [
+      "DO NOT stare directly at UV LEDs - can damage eyes!",
+      "UV light at 395-400nm is relatively safe but still use caution",
+      "Only use momentary switch - don't leave UV on continuously",
+      "Adult supervision required"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand UV Light",
+        "Description": "Learn that UV light has a shorter wavelength than visible light. UV LEDs (395-400nm) produce near-UV light that makes fluorescent materials glow!",
+        "DiagramUrl": "/images/levels/level-064/step-1.svg",
+        "Tip": "The 'nm' stands for nanometers - that's one billionth of a meter!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Connect First UV LED",
+        "Description": "Connect a UV LED in series with a 150Ω resistor. Note: UV LEDs have a higher forward voltage (~3.2V) than regular LEDs.",
+        "DiagramUrl": "/images/levels/level-064/step-2.svg",
+        "Tip": "UV LEDs may appear dim to your eyes, but they're actually putting out strong UV light!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Add More LEDs",
+        "Description": "Connect two more UV LEDs in parallel (each with its own 150Ω resistor) to make your UV flashlight brighter.",
+        "DiagramUrl": "/images/levels/level-064/step-3.svg",
+        "Tip": "More LEDs = more UV light = brighter fluorescence!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Add Push Button",
+        "Description": "Wire a push button in series with your LED array. This creates a safe momentary-on UV flashlight.",
+        "DiagramUrl": "/images/levels/level-064/step-4.svg",
+        "Warning": "Using a momentary button prevents accidentally leaving the UV light on!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Battery",
+        "Description": "Connect the 9V battery to complete your circuit. Test the button - the LEDs should appear dim purple to your eyes.",
+        "DiagramUrl": "/images/levels/level-064/step-5.svg",
+        "Tip": "If you can see bright purple, that's working! Most of the light is UV (invisible)."
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Test on Highlighters",
+        "Description": "In a dark room, shine your UV light on yellow or pink highlighters. Watch them glow brilliantly!",
+        "DiagramUrl": "/images/levels/level-064/step-6.svg",
+        "Tip": "Highlighters contain fluorescent dyes that absorb UV and emit visible light!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Find Hidden Messages",
+        "Description": "Many white papers contain fluorescent brighteners. Use your UV light to check currency, IDs, or documents for security features!",
+        "DiagramUrl": "/images/levels/level-064/step-7.svg",
+        "Tip": "Tonic water glows bright blue under UV because of the quinine it contains!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Create UV Art",
+        "Description": "Use fluorescent markers or paints to create hidden messages or art that only appears under your UV light!",
+        "DiagramUrl": "/images/levels/level-064/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Electromagnetic Spectrum",
+        "Url": "/images/levels/level-064/diagram-spectrum.svg",
+        "Description": "Where UV light fits in the spectrum"
+      },
+      {
+        "Title": "Complete UV Flashlight Circuit",
+        "Url": "/images/levels/level-064/diagram-circuit.svg",
+        "Description": "Full schematic with parallel UV LEDs"
+      },
+      {
+        "Title": "Fluorescence Explanation",
+        "Url": "/images/levels/level-064/diagram-fluorescence.svg",
+        "Description": "How UV light causes materials to glow"
+      }
+    ],
+    "FunFact": "Scorpions glow bright green under UV light! Scientists aren't entirely sure why, but it might help them detect UV light levels. Many minerals also fluoresce under UV - rock collectors use UV lights to find special glowing minerals. Banknotes use UV-reactive security features to prevent counterfeiting!",
+    "Quiz": {
+      "Question": "What is fluorescence?",
+      "Options": [
+        "When a material absorbs UV light and emits visible light",
+        "When an LED gets brighter over time",
+        "When electricity flows through a material",
+        "When light reflects off a mirror"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Fluorescence happens when special molecules absorb high-energy UV light and then emit lower-energy visible light! That's why highlighters and tonic water glow under UV - they're converting invisible UV into visible colors you can see."
+    }
+  },
+  {
+    "Id": 65,
+    "Title": "Smart LED Strip Controller",
+    "Category": "Light Master",
+    "Difficulty": 6,
+    "EstimatedTime": 90,
+    "Components": [
+      {
+        "Name": "Arduino Nano (or compatible)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/arduino-nano.svg",
+        "Description": "Microcontroller brain"
+      },
+      {
+        "Name": "WS2812B LED Strip (30 LEDs)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led-strip-ws2812b.svg",
+        "Description": "Addressable RGB LED strip"
+      },
+      {
+        "Name": "MOSFET (IRLZ44N or similar)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/mosfet-n.svg",
+        "Description": "For high-current LED control"
+      },
+      {
+        "Name": "1000µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Power smoothing for LED strip"
+      },
+      {
+        "Name": "470Ω Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Data line protection"
+      },
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Pull-down resistors for buttons"
+      },
+      {
+        "Name": "Push Buttons",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Mode selection buttons"
+      },
+      {
+        "Name": "5V Power Supply (2A minimum)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power for LED strip"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "USB cable for programming Arduino",
+      "Computer with Arduino IDE installed",
+      "Small project enclosure (optional)"
+    ],
+    "LearningObjectives": [
+      "Understand addressable LED technology",
+      "Learn microcontroller programming basics",
+      "Explore PWM and LED control",
+      "Discover data protocols (WS2812B timing)",
+      "Create interactive light effects"
+    ],
+    "SafetyNotes": [
+      "LED strips can draw significant current - use appropriate power supply!",
+      "Don't connect LED strip power directly to Arduino - use external supply",
+      "Check polarity on the LED strip before connecting",
+      "Adult supervision required for power supply connections"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand WS2812B LEDs",
+        "Description": "Learn that WS2812B LEDs are individually addressable - each LED has a tiny chip inside that receives color data! You can control each LED's color independently.",
+        "DiagramUrl": "/images/levels/level-065/step-1.svg",
+        "Tip": "These are also called 'NeoPixels' - they're like tiny smart light bulbs!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Install Arduino Libraries",
+        "Description": "On your computer, open Arduino IDE and install the 'FastLED' or 'Adafruit NeoPixel' library through the Library Manager.",
+        "DiagramUrl": "/images/levels/level-065/step-2.svg",
+        "Tip": "Libraries are pre-written code that make controlling LED strips easy!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Arduino",
+        "Description": "Place the Arduino Nano on your breadboard. Connect its 5V and GND pins to the power rails.",
+        "DiagramUrl": "/images/levels/level-065/step-3.svg",
+        "Tip": "Make sure the Arduino is placed across the center gap of the breadboard!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire LED Strip Power",
+        "Description": "Connect the 1000µF capacitor across the 5V power supply output (positive to +, negative to -). This smooths power for the LEDs.",
+        "DiagramUrl": "/images/levels/level-065/step-4.svg",
+        "Warning": "Capacitor polarity matters! Wrong polarity can cause it to explode!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Data Line",
+        "Description": "Connect Arduino pin D6 through a 470Ω resistor to the LED strip's DIN (data input) pin. This protects the data line.",
+        "DiagramUrl": "/images/levels/level-065/step-5.svg",
+        "Tip": "The resistor prevents voltage spikes that could damage the first LED!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Control Buttons",
+        "Description": "Wire three push buttons to Arduino pins D2, D3, and D4 with 10kΩ pull-down resistors. These will select different light patterns!",
+        "DiagramUrl": "/images/levels/level-065/step-6.svg",
+        "Tip": "Label your buttons: Mode, Color, and Speed!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Connect All Grounds",
+        "Description": "IMPORTANT: Connect all grounds together - Arduino GND, LED strip GND, and power supply GND must be connected!",
+        "DiagramUrl": "/images/levels/level-065/step-7.svg",
+        "Warning": "Common ground is essential! Without it, the data signal won't work properly."
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Upload Test Code",
+        "Description": "Connect Arduino to your computer and upload a basic rainbow pattern code. Test that all LEDs light up properly!",
+        "DiagramUrl": "/images/levels/level-065/step-8.svg",
+        "Tip": "Start with example code from the FastLED library to test your connections!"
+      },
+      {
+        "StepNumber": 9,
+        "Title": "Program Multiple Patterns",
+        "Description": "Write code that changes patterns when you press the buttons. Try: rainbow, color wipe, theater chase, sparkle, and color fade effects!",
+        "DiagramUrl": "/images/levels/level-065/step-9.svg",
+        "Tip": "Use a variable to track which mode is active, and switch patterns with if statements!"
+      },
+      {
+        "StepNumber": 10,
+        "Title": "Test and Customize",
+        "Description": "Test all your patterns and button controls. Adjust speeds, colors, and effects to create your own unique light show!",
+        "DiagramUrl": "/images/levels/level-065/step-10.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "WS2812B LED Internal Structure",
+        "Url": "/images/levels/level-065/diagram-ws2812b.svg",
+        "Description": "How each LED contains a control chip"
+      },
+      {
+        "Title": "Complete LED Strip Controller Circuit",
+        "Url": "/images/levels/level-065/diagram-complete.svg",
+        "Description": "Full schematic with Arduino and power supply"
+      },
+      {
+        "Title": "Data Signal Timing",
+        "Url": "/images/levels/level-065/diagram-timing.svg",
+        "Description": "How WS2812B protocol works"
+      }
+    ],
+    "FunFact": "The WS2812B LED contains a tiny computer chip that receives color data and controls the LED - all inside a package smaller than a grain of rice! A 5-meter LED strip with 300 LEDs contains 300 tiny computers. These addressable LEDs have revolutionized lighting design and are used in everything from gaming keyboards to massive stage productions!",
+    "Quiz": {
+      "Question": "Why can we control each LED in a WS2812B strip individually?",
+      "Options": [
+        "Each LED has a built-in chip that receives and processes color data",
+        "Each LED needs its own separate wire",
+        "The LEDs are actually regular LEDs with filters",
+        "They use radio signals to communicate"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Each WS2812B LED contains a tiny integrated circuit (IC) that receives color data, controls its own LED, and passes the remaining data to the next LED in the chain! This clever design lets you control hundreds of LEDs with just one data wire."
+    }
+  },
+  {
+    "Id": 66,
+    "Title": "Voltage Divider Basics",
+    "Category": "Circuit Wizard",
+    "Difficulty": 6,
+    "EstimatedTime": 30,
+    "Components": [
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "For voltage divider experiments"
+      },
+      {
+        "Name": "1kΩ Resistor",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "For different divider ratios"
+      },
+      {
+        "Name": "4.7kΩ Resistor",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "For different divider ratios"
+      },
+      {
+        "Name": "LED (Red)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/led-red.svg",
+        "Description": "Voltage indicators"
+      },
+      {
+        "Name": "Digital Multimeter",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/multimeter.svg",
+        "Description": "For measuring voltages"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Input voltage source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Paper and pencil for calculations",
+      "Calculator (or use phone)"
+    ],
+    "LearningObjectives": [
+      "Understand voltage division principle",
+      "Learn Ohm's Law applications",
+      "Calculate output voltages using voltage divider formula",
+      "Explore loading effects on voltage dividers"
+    ],
+    "SafetyNotes": [
+      "Check multimeter is set to DC voltage before measuring",
+      "Don't short-circuit the battery directly",
+      "Ensure correct polarity when connecting components"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Learn Voltage Divider Formula",
+        "Description": "A voltage divider splits voltage between two resistors. The formula is: Vout = Vin × (R2 / (R1 + R2)). This is one of the most important formulas in electronics!",
+        "DiagramUrl": "/images/levels/level-066/step-1.svg",
+        "Tip": "The output voltage is always less than the input voltage!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build 50% Divider",
+        "Description": "Connect two 10kΩ resistors in series between 9V battery + and -. Measure the voltage at the midpoint with your multimeter.",
+        "DiagramUrl": "/images/levels/level-066/step-2.svg",
+        "Tip": "With equal resistors, you should measure about 4.5V - half of 9V!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Calculate and Verify",
+        "Description": "Use the formula to calculate: Vout = 9V × (10kΩ / (10kΩ + 10kΩ)) = 9V × 0.5 = 4.5V. Compare with your measured value!",
+        "DiagramUrl": "/images/levels/level-066/step-3.svg",
+        "Tip": "Your measured value might be slightly different due to resistor tolerance (usually ±5%)."
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Build 33% Divider",
+        "Description": "Replace one 10kΩ resistor with a 4.7kΩ resistor (bottom position). Calculate the expected output, then measure it!",
+        "DiagramUrl": "/images/levels/level-066/step-4.svg",
+        "Tip": "Calculate: Vout = 9V × (4.7kΩ / (10kΩ + 4.7kΩ)) ≈ 2.87V"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Build 10% Divider",
+        "Description": "Now use a 10kΩ (top) and 1kΩ (bottom). This creates a 1:10 divider. Measure the output voltage.",
+        "DiagramUrl": "/images/levels/level-066/step-5.svg",
+        "Tip": "Calculate: Vout = 9V × (1kΩ / (10kΩ + 1kΩ)) ≈ 0.82V"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Understand Loading Effect",
+        "Description": "Connect an LED (with no resistor!) to the output of your 50% divider (two 10kΩ resistors). Notice the LED is very dim or off!",
+        "DiagramUrl": "/images/levels/level-066/step-6.svg",
+        "Tip": "The LED 'loads' the divider, changing the output voltage and limiting current!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Low-Resistance Divider",
+        "Description": "Build a divider using two 1kΩ resistors (50% divider). Now connect an LED to the output - it should be brighter!",
+        "DiagramUrl": "/images/levels/level-066/step-7.svg",
+        "Tip": "Lower resistance dividers can provide more current, but waste more power!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Create Multi-Tap Divider",
+        "Description": "Connect four 10kΩ resistors in series. Measure voltages at each junction - you should see 2.25V, 4.5V, and 6.75V!",
+        "DiagramUrl": "/images/levels/level-066/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Voltage Divider Formula Explained",
+        "Url": "/images/levels/level-066/diagram-formula.svg",
+        "Description": "Visual explanation of voltage division"
+      },
+      {
+        "Title": "Loading Effect",
+        "Url": "/images/levels/level-066/diagram-loading.svg",
+        "Description": "How a load affects divider output"
+      },
+      {
+        "Title": "Multi-Tap Voltage Divider",
+        "Url": "/images/levels/level-066/diagram-multitap.svg",
+        "Description": "Creating multiple voltage levels"
+      }
+    ],
+    "FunFact": "Voltage dividers are everywhere in electronics! Your phone's volume control is a voltage divider, sensor circuits use them to scale signals, and even your guitar's tone knob is a voltage divider! The ancient Babylonians used a similar principle for measuring water levels over 4,000 years ago.",
+    "Quiz": {
+      "Question": "You have a 9V battery and want to create 3V using a voltage divider with a 10kΩ resistor on top. What value should the bottom resistor be?",
+      "Options": [
+        "5kΩ",
+        "10kΩ",
+        "3kΩ",
+        "1kΩ"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Using the voltage divider formula: 3V = 9V × (R2 / (10kΩ + R2)). Solving: 3(10kΩ + R2) = 9R2, so 30kΩ + 3R2 = 9R2, meaning 30kΩ = 6R2, therefore R2 = 5kΩ!"
+    }
+  },
+  {
+    "Id": 67,
+    "Title": "Logic Gates with Switches",
+    "Category": "Circuit Wizard",
+    "Difficulty": 6,
+    "EstimatedTime": 35,
+    "Components": [
+      {
+        "Name": "SPST Switches",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/switch-spst.svg",
+        "Description": "Logic inputs"
+      },
+      {
+        "Name": "LEDs (Red, Yellow, Green)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Logic outputs"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Current limiting for LEDs"
+      },
+      {
+        "Name": "6V Battery Pack (4×AA)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-pack-4aa.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Paper and pencil for truth tables",
+      "Ruler for drawing tables"
+    ],
+    "LearningObjectives": [
+      "Understand Boolean logic concepts",
+      "Learn about AND, OR, and NOT operations",
+      "Create and interpret truth tables",
+      "See how digital logic is built from simple switches"
+    ],
+    "SafetyNotes": [
+      "Ensure correct LED polarity",
+      "Don't short-circuit the battery",
+      "Double-check wiring before applying power"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Digital Logic",
+        "Description": "Learn that digital logic uses only two states: ON (1, TRUE) and OFF (0, FALSE). All computer operations are built from these simple states!",
+        "DiagramUrl": "/images/levels/level-067/step-1.svg",
+        "Tip": "Think of switches as ON or OFF, and LEDs as TRUE or FALSE!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build AND Gate",
+        "Description": "Connect two switches in SERIES with a red LED and resistor. The LED only lights when BOTH switches are ON. Draw the truth table!",
+        "DiagramUrl": "/images/levels/level-067/step-2.svg",
+        "Tip": "AND gate: Output is TRUE only when Input A AND Input B are both TRUE!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Create AND Truth Table",
+        "Description": "Test all four combinations: OFF-OFF, OFF-ON, ON-OFF, ON-ON. Record which combinations light the LED. This is your truth table!",
+        "DiagramUrl": "/images/levels/level-067/step-3.svg",
+        "Tip": "Only the last row (1,1 = 1) should light the LED in an AND gate!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Build OR Gate",
+        "Description": "Connect two switches in PARALLEL with a yellow LED and resistor. The LED lights when EITHER switch (or both) is ON!",
+        "DiagramUrl": "/images/levels/level-067/step-4.svg",
+        "Tip": "OR gate: Output is TRUE when Input A OR Input B (or both) is TRUE!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Create OR Truth Table",
+        "Description": "Test all four combinations for your OR gate. The LED should light in three out of four cases!",
+        "DiagramUrl": "/images/levels/level-067/step-5.svg",
+        "Tip": "The OR gate outputs TRUE (LED on) when at least one input is TRUE!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Build NOT Gate (Inverter)",
+        "Description": "This is tricky! Wire a switch so when it's OFF, the LED is ON, and when it's ON, the LED is OFF. (Hint: wire LED across the switch!)",
+        "DiagramUrl": "/images/levels/level-067/step-6.svg",
+        "Tip": "NOT gate: Output is the opposite of the input - also called an inverter!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Compare Logic Gates",
+        "Description": "Compare your three truth tables. Notice how AND requires both inputs, OR requires any input, and NOT inverts the input!",
+        "DiagramUrl": "/images/levels/level-067/step-7.svg",
+        "Tip": "These three gates are the building blocks of all digital electronics!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Real-World Application",
+        "Description": "Design a safety circuit: A machine should only run (LED on) if BOTH safety guards (switches) are closed. Which gate is this?",
+        "DiagramUrl": "/images/levels/level-067/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "AND Gate Symbol and Truth Table",
+        "Url": "/images/levels/level-067/diagram-and.svg",
+        "Description": "Standard logic symbol and behavior"
+      },
+      {
+        "Title": "OR Gate Symbol and Truth Table",
+        "Url": "/images/levels/level-067/diagram-or.svg",
+        "Description": "Standard logic symbol and behavior"
+      },
+      {
+        "Title": "NOT Gate Symbol and Truth Table",
+        "Url": "/images/levels/level-067/diagram-not.svg",
+        "Description": "Standard logic symbol and behavior"
+      }
+    ],
+    "FunFact": "The first electronic computer, ENIAC (1945), used 17,468 vacuum tubes as switches to perform logic operations! Today, a single modern processor chip contains over 50 BILLION transistor switches. All of them still perform the same basic AND, OR, and NOT operations you just built with mechanical switches!",
+    "Quiz": {
+      "Question": "Which logic gate is used for a circuit that activates an alarm when a door is opened OR a window is opened?",
+      "Options": [
+        "OR gate",
+        "AND gate",
+        "NOT gate",
+        "NOR gate"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "An OR gate is perfect for this! The alarm should sound if the door sensor OR the window sensor (or both) detects an opening. The output is TRUE when ANY input is TRUE, which is exactly what we need for a security system!"
+    }
+  },
+  {
+    "Id": 68,
+    "Title": "AND Gate Circuit",
+    "Category": "Circuit Wizard",
+    "Difficulty": 6,
+    "EstimatedTime": 40,
+    "Components": [
+      {
+        "Name": "2N2222 Transistors (NPN)",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/transistor-npn.svg",
+        "Description": "For building logic"
+      },
+      {
+        "Name": "1kΩ Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Base resistors"
+      },
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Pull-down resistors"
+      },
+      {
+        "Name": "220Ω Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiter"
+      },
+      {
+        "Name": "LED (Red)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led-red.svg",
+        "Description": "Output indicator"
+      },
+      {
+        "Name": "Push Buttons",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Logic inputs A and B"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Paper for drawing schematic",
+      "Truth table template"
+    ],
+    "LearningObjectives": [
+      "Understand transistor logic circuits",
+      "Learn how transistors act as electronic switches",
+      "Build AND gate using discrete components",
+      "Explore transistor saturation and cutoff modes"
+    ],
+    "SafetyNotes": [
+      "Identify transistor pins correctly (E-B-C)",
+      "Don't exceed transistor current ratings",
+      "Ensure correct LED polarity"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Review Transistor Operation",
+        "Description": "Remember: A transistor is like an electronic switch. When base current flows, the transistor 'closes' and allows collector-to-emitter current flow.",
+        "DiagramUrl": "/images/levels/level-068/step-1.svg",
+        "Tip": "Think of the base as the 'control' terminal - small base current controls large collector current!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Place First Transistor",
+        "Description": "Insert the first 2N2222 transistor (Q1) into the breadboard. Identify Emitter, Base, and Collector pins using the datasheet or pin diagram.",
+        "DiagramUrl": "/images/levels/level-068/step-2.svg",
+        "Tip": "Looking at the flat side: E-B-C from left to right on 2N2222!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Wire First Input",
+        "Description": "Connect a push button (Input A) to +V through a 1kΩ resistor to Q1's base. Add a 10kΩ pull-down resistor from base to ground.",
+        "DiagramUrl": "/images/levels/level-068/step-3.svg",
+        "Tip": "The pull-down ensures the base is at 0V when button is not pressed!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect Q1 Collector",
+        "Description": "Connect Q1's emitter to ground. Connect Q1's collector to the positive rail. Q1 will act as the first stage of our AND gate.",
+        "DiagramUrl": "/images/levels/level-068/step-4.svg",
+        "Tip": "When Input A is pressed, Q1 turns on and pulls its collector to ground!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Add Second Transistor",
+        "Description": "Place Q2 (second 2N2222). Connect its emitter to Q1's collector. This creates a series connection - both must conduct for current to flow!",
+        "DiagramUrl": "/images/levels/level-068/step-5.svg",
+        "Tip": "This series connection is the KEY to making an AND gate with transistors!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Wire Second Input",
+        "Description": "Connect a push button (Input B) through a 1kΩ resistor to Q2's base. Add a 10kΩ pull-down resistor from Q2's base to ground.",
+        "DiagramUrl": "/images/levels/level-068/step-6.svg",
+        "Tip": "Now we have two independent inputs controlling two transistors in series!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Add LED Output",
+        "Description": "Connect the LED (through 220Ω resistor) from +V to Q2's collector. The LED lights only when BOTH transistors conduct!",
+        "DiagramUrl": "/images/levels/level-068/step-7.svg",
+        "Tip": "When both Q1 and Q2 are ON, current flows through the LED to ground!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test AND Function",
+        "Description": "Test all four input combinations and create a truth table. The LED should only light when BOTH buttons are pressed!",
+        "DiagramUrl": "/images/levels/level-068/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Transistor AND Gate Schematic",
+        "Url": "/images/levels/level-068/diagram-schematic.svg",
+        "Description": "Complete circuit diagram"
+      },
+      {
+        "Title": "Current Flow When Both ON",
+        "Url": "/images/levels/level-068/diagram-current-flow.svg",
+        "Description": "How current flows when both inputs are HIGH"
+      },
+      {
+        "Title": "AND Gate Truth Table",
+        "Url": "/images/levels/level-068/diagram-truth-table.svg",
+        "Description": "Expected output for all input combinations"
+      }
+    ],
+    "FunFact": "Before integrated circuits, computers were built from discrete transistors just like you're using! The Apollo Guidance Computer that landed astronauts on the Moon in 1969 used over 5,000 NOR gates built from discrete transistors. Your smartphone has billions of transistors, but each one still works on the same principle you just learned!",
+    "Quiz": {
+      "Question": "Why must BOTH transistors be ON for the LED to light in this AND gate?",
+      "Options": [
+        "They're connected in series - current must flow through both",
+        "They share the same power supply",
+        "They have the same resistance",
+        "The LED needs extra voltage"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The transistors are connected in series (Q2's emitter to Q1's collector). For current to flow from the LED to ground, it must pass through BOTH transistors. If either one is OFF (not conducting), the path is broken and no current flows - that's how we create an AND function!"
+    }
+  },
+  {
+    "Id": 69,
+    "Title": "OR Gate Circuit",
+    "Category": "Circuit Wizard",
+    "Difficulty": 6,
+    "EstimatedTime": 35,
+    "Components": [
+      {
+        "Name": "2N2222 Transistors (NPN)",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/transistor-npn.svg",
+        "Description": "For building logic"
+      },
+      {
+        "Name": "1kΩ Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Base resistors"
+      },
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Pull-down resistors"
+      },
+      {
+        "Name": "220Ω Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiter"
+      },
+      {
+        "Name": "LED (Yellow)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led-yellow.svg",
+        "Description": "Output indicator"
+      },
+      {
+        "Name": "Push Buttons",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Logic inputs A and B"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Paper for drawing schematic",
+      "Truth table template"
+    ],
+    "LearningObjectives": [
+      "Build OR gate using transistors",
+      "Understand parallel transistor configuration",
+      "Compare OR vs AND gate construction",
+      "Learn about wired-OR connections"
+    ],
+    "SafetyNotes": [
+      "Verify transistor pin configuration",
+      "Check all connections before applying power",
+      "Ensure proper LED polarity"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand OR Gate Logic",
+        "Description": "An OR gate outputs HIGH (1) when EITHER input A OR input B (or both) is HIGH. We'll use parallel transistors to achieve this!",
+        "DiagramUrl": "/images/levels/level-069/step-1.svg",
+        "Tip": "OR is 'inclusive' - it includes the case where both inputs are HIGH!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Place Both Transistors",
+        "Description": "Insert two 2N2222 transistors (Q1 and Q2) on your breadboard, positioned side by side.",
+        "DiagramUrl": "/images/levels/level-069/step-2.svg",
+        "Tip": "Space them far enough apart to easily connect components to each pin!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Emitters to Ground",
+        "Description": "Connect both transistor emitters to the ground rail. This is our common ground reference.",
+        "DiagramUrl": "/images/levels/level-069/step-3.svg",
+        "Tip": "All emitters go to the same ground point!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Collectors in Parallel",
+        "Description": "Connect BOTH transistor collectors together to the same point. This parallel connection is KEY to making an OR gate!",
+        "DiagramUrl": "/images/levels/level-069/step-4.svg",
+        "Tip": "In parallel, if EITHER transistor turns on, current can flow!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Add First Input Circuit",
+        "Description": "Wire push button (Input A) through a 1kΩ resistor to Q1's base. Add a 10kΩ pull-down resistor from Q1's base to ground.",
+        "DiagramUrl": "/images/levels/level-069/step-5.svg",
+        "Tip": "This creates a proper logic input with defined HIGH and LOW states!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Second Input Circuit",
+        "Description": "Wire push button (Input B) through a 1kΩ resistor to Q2's base. Add a 10kΩ pull-down resistor from Q2's base to ground.",
+        "DiagramUrl": "/images/levels/level-069/step-6.svg",
+        "Tip": "Now each input independently controls its own transistor!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Connect LED Output",
+        "Description": "Connect the LED (through 220Ω resistor) from the joined collectors to ground. The LED lights when EITHER (or both) transistor conducts!",
+        "DiagramUrl": "/images/levels/level-069/step-7.svg",
+        "Tip": "Unlike AND gate, we only need ONE path to be complete for the LED to light!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test OR Function",
+        "Description": "Test all four combinations: no buttons, A only, B only, both buttons. LED should light in THREE of the four cases!",
+        "DiagramUrl": "/images/levels/level-069/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Transistor OR Gate Schematic",
+        "Url": "/images/levels/level-069/diagram-schematic.svg",
+        "Description": "Complete circuit diagram showing parallel transistors"
+      },
+      {
+        "Title": "OR Gate Truth Table",
+        "Url": "/images/levels/level-069/diagram-truth-table.svg",
+        "Description": "Expected output for all input combinations"
+      },
+      {
+        "Title": "AND vs OR Comparison",
+        "Url": "/images/levels/level-069/diagram-comparison.svg",
+        "Description": "Series (AND) vs Parallel (OR) transistor connections"
+      }
+    ],
+    "FunFact": "The concept of OR logic was formalized by George Boole in the 1850s, long before transistors were invented! Boolean algebra, named after him, is the mathematical foundation of all digital electronics. The same OR logic you just built is used billions of times per second in your phone's processor!",
+    "Quiz": {
+      "Question": "What's the key difference between AND and OR gate transistor configurations?",
+      "Options": [
+        "AND uses series transistors, OR uses parallel transistors",
+        "AND uses NPN, OR uses PNP transistors",
+        "AND uses more resistors than OR",
+        "AND uses LEDs, OR uses buzzers"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Perfect! In an AND gate, transistors are in SERIES - current must flow through all of them. In an OR gate, transistors are in PARALLEL - current can flow through ANY of them. Series = ALL must be on (AND), Parallel = ANY can be on (OR)!"
+    }
+  },
+  {
+    "Id": 70,
+    "Title": "NOT Gate (Inverter)",
+    "Category": "Circuit Wizard",
+    "Difficulty": 6,
+    "EstimatedTime": 60,
+    "Components": [
+      {
+        "Name": "2N2222 Transistor (NPN)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/transistor-npn.svg",
+        "Description": "For building logic gates"
+      },
+      {
+        "Name": "1kΩ Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Base resistors"
+      },
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Pull-down and pull-up resistors"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "LEDs (Red, Yellow, Green)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Output indicators"
+      },
+      {
+        "Name": "Push Buttons",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Logic inputs"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V battery snap"
+      },
+      {
+        "Name": "Breadboard (Large)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building all circuits"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Cardboard for mounting (optional)",
+      "Labels for inputs and outputs",
+      "Truth table reference sheets"
+    ],
+    "LearningObjectives": [
+      "Understand NOT gate (inverter) operation",
+      "Learn about complementary outputs",
+      "Build complete set of basic logic gates",
+      "Combine gates to create NAND and NOR functions",
+      "Understand universal gates concept"
+    ],
+    "SafetyNotes": [
+      "Double-check all transistor orientations",
+      "Verify resistor values with multimeter if unsure",
+      "Ensure correct LED polarities",
+      "Don't mix up base, collector, and emitter connections"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand NOT Gate",
+        "Description": "A NOT gate (inverter) outputs the OPPOSITE of its input. Input HIGH → Output LOW. Input LOW → Output HIGH. It has only 2 rows in its truth table!",
+        "DiagramUrl": "/images/levels/level-070/step-1.svg",
+        "Tip": "Think of it as the 'opposite maker' - it always does the reverse of the input!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Simple NOT Gate",
+        "Description": "Place a transistor. Connect its collector through a 220Ω resistor and green LED to +V. Connect emitter to ground. Wire a button through 1kΩ resistor to base, with 10kΩ pull-down.",
+        "DiagramUrl": "/images/levels/level-070/step-2.svg",
+        "Tip": "When button is pressed (HIGH), transistor turns on and pulls LED side LOW - inverting!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Test NOT Function",
+        "Description": "Test your NOT gate: Button NOT pressed → LED ON. Button pressed → LED OFF. This is inversion!",
+        "DiagramUrl": "/images/levels/level-070/step-3.svg",
+        "Tip": "The pull-up resistor (220Ω + LED) is KEY - it pulls the output HIGH when transistor is OFF!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Build NAND Gate (Milestone)",
+        "Description": "Combine your AND gate with a NOT gate! Take the collector output from your AND gate and feed it into the base of an inverter transistor.",
+        "DiagramUrl": "/images/levels/level-070/step-4.svg",
+        "Tip": "NAND = NOT + AND. It's the opposite of AND - outputs LOW only when both inputs are HIGH!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Test NAND Function",
+        "Description": "Test all four input combinations for your NAND gate. LED should light for three cases and be OFF only when both inputs are HIGH!",
+        "DiagramUrl": "/images/levels/level-070/step-5.svg",
+        "Tip": "NAND is called a 'universal gate' - you can build ANY logic function using only NAND gates!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Build NOR Gate",
+        "Description": "Add a NOT gate after your OR gate to create a NOR gate. Connect the OR gate's output to the NOT gate's input.",
+        "DiagramUrl": "/images/levels/level-070/step-6.svg",
+        "Tip": "NOR = NOT + OR. Outputs HIGH only when BOTH inputs are LOW!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test NOR Function",
+        "Description": "Test your NOR gate. LED should only light when BOTH buttons are NOT pressed. All other combinations should be dark!",
+        "DiagramUrl": "/images/levels/level-070/step-7.svg",
+        "Tip": "NOR is also a universal gate - you can build any logic function with just NOR gates!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Create Logic Gate Tester",
+        "Description": "Organize all three gates (NOT, NAND, NOR) on your breadboard. Label inputs and outputs. You've built a complete logic gate demonstration board!",
+        "DiagramUrl": "/images/levels/level-070/step-8.svg",
+        "Tip": "This is your logic gate toolbox - these gates can build ANY digital circuit!"
+      },
+      {
+        "StepNumber": 9,
+        "Title": "Challenge: XOR Gate",
+        "Description": "Advanced: Can you combine your gates to create an XOR (Exclusive-OR) gate? Hint: XOR outputs HIGH when inputs are DIFFERENT.",
+        "DiagramUrl": "/images/levels/level-070/step-9.svg",
+        "Tip": "XOR needs 4 NAND gates or a combination of other gates. Research online for the circuit!"
+      },
+      {
+        "StepNumber": 10,
+        "Title": "Document Your Milestone",
+        "Description": "Draw schematics for all your gates, create complete truth tables, and understand how these simple gates form the foundation of ALL computers!",
+        "DiagramUrl": "/images/levels/level-070/step-10.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "NOT Gate Operation",
+        "Url": "/images/levels/level-070/diagram-not.svg",
+        "Description": "How transistor inverts the input signal"
+      },
+      {
+        "Title": "NAND Gate Schematic",
+        "Url": "/images/levels/level-070/diagram-nand.svg",
+        "Description": "AND gate followed by NOT gate"
+      },
+      {
+        "Title": "NOR Gate Schematic",
+        "Url": "/images/levels/level-070/diagram-nor.svg",
+        "Description": "OR gate followed by NOT gate"
+      },
+      {
+        "Title": "Complete Truth Tables",
+        "Url": "/images/levels/level-070/diagram-truth-tables.svg",
+        "Description": "All gates' truth tables for comparison"
+      },
+      {
+        "Title": "Universal Gates Explained",
+        "Url": "/images/levels/level-070/diagram-universal.svg",
+        "Description": "Why NAND and NOR can build any logic"
+      }
+    ],
+    "FunFact": "The Apollo Guidance Computer that landed humans on the Moon was built entirely from NOR gates - over 5,000 of them! NOR and NAND are called 'universal gates' because you can build ANY digital circuit using only one type. Modern computers still use the same basic logic you just built, but billions of gates etched onto silicon chips smaller than your fingernail!",
+    "Quiz": {
+      "Question": "Why are NAND and NOR gates called 'universal gates'?",
+      "Options": [
+        "You can build any logic function using only NAND gates or only NOR gates",
+        "They work in any country",
+        "They use universal power supplies",
+        "They're used in every circuit"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Exactly! NAND and NOR gates are functionally complete - meaning you can build ANY other logic gate (AND, OR, NOT, XOR, etc.) and therefore ANY digital circuit using only NAND or only NOR gates. This makes manufacturing easier since you only need to produce one type of gate!"
+    }
+  }
+]

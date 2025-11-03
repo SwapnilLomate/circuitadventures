@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#34495e" stroke="#2c3e50" stroke-width="4"/>
+  <circle cx="100" cy="100" r="65" fill="#566573"/>
+  <circle cx="100" cy="100" r="50" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+  <path d="M 100 55 L 100 100 L 130 85" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="100" cy="100" r="8" fill="#2c3e50"/>
+  <text x="100" y="170" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">CIRCUIT</text>
+  <text x="100" y="185" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">EXPLORER</text>
+</svg>

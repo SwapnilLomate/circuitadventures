@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#16a085" stroke="#138d75" stroke-width="4"/>
+  <circle cx="100" cy="100" r="65" fill="#1abc9c"/>
+  <path d="M 70 105 L 85 120 L 130 75" fill="none" stroke="#f1c40f" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="70" cy="105" r="5" fill="#f1c40f"/>
+  <circle cx="85" cy="120" r="5" fill="#f1c40f"/>
+  <circle cx="130" cy="75" r="5" fill="#f1c40f"/>
+  <text x="100" y="170" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">QUIZ</text>
+  <text x="100" y="185" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">MASTER</text>
+</svg>

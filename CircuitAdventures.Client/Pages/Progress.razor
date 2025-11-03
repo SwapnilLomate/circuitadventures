@@ -91,8 +91,8 @@
                         <MudItem xs="12" sm="6" md="4">
                             <MudCard Elevation="2" Style="@GetCertificateCardStyle(design)">
                                 <MudCardContent Style="text-align: center;">
-                                    <div style="font-size: 48px; margin-bottom: 10px;">@design.IconSymbol</div>
-                                    <MudText Typo="Typo.h6">@design.Name</MudText>
+                                    <div style="font-size: 48px; margin-bottom: 10px;">@(design?.IconSymbol ?? "🏆")</div>
+                                    <MudText Typo="Typo.h6">@(design?.Name ?? "Certificate")</MudText>
                                     <MudText Typo="Typo.caption" Color="Color.Secondary">
                                         Level @cert.Level Milestone
                                     </MudText>

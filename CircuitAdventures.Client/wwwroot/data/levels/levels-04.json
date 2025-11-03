@@ -1,0 +1,1215 @@
+﻿[
+    {
+        "Quiz":  {
+                     "Explanation":  "The potato\u0027s acid allows a chemical reaction between the zinc and copper. This reaction causes electrons to flow from one metal to the other, creating an electric current!",
+                     "Options":  [
+                                     "The potato\u0027s energy",
+                                     "Chemical reaction between different metals and potato acid",
+                                     "Magic",
+                                     "The potato stores electricity"
+                                 ],
+                     "Question":  "What creates electricity in a potato battery?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Ask adult for help cutting potatoes",
+                            "Wash hands after handling - potatoes may oxidize metals",
+                            "Don\u0027t eat the potatoes after using as batteries"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Insert one zinc nail and one copper wire/penny into each potato, about 2cm apart.",
+                                 "Title":  "Prepare Potatoes",
+                                 "Tip":  "Don\u0027t let the metals touch inside!",
+                                 "DiagramUrl":  "/images/levels/level-031/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect LED to one potato (zinc to LED-, copper to LED+). It probably won\u0027t light - voltage too low!",
+                                 "Title":  "Test Single Cell",
+                                 "DiagramUrl":  "/images/levels/level-031/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Potato1 zinc â†’ Potato2 copper, Potato2 zinc â†’ Potato3 copper.",
+                                 "Title":  "Connect in Series",
+                                 "Tip":  "This adds the voltages!",
+                                 "DiagramUrl":  "/images/levels/level-031/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect: Potato1 copper â†’ LED (+), Potato3 zinc â†’ LED (-).",
+                                 "Title":  "Connect LED",
+                                 "DiagramUrl":  "/images/levels/level-031/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "The LED should glow dimly! You\u0027ve made a battery from vegetables!",
+                                 "Title":  "Observe",
+                                 "DiagramUrl":  "/images/levels/level-031/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Try lemon, orange, or other acidic fruits. Which works best?",
+                                 "Title":  "Experiment",
+                                 "Tip":  "More acidic = better battery!",
+                                 "DiagramUrl":  "/images/levels/level-031/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "3 large potatoes",
+                                    "Knife (adult supervision)",
+                                    "Multimeter (optional)"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-031/main-diagram.svg",
+                         "/images/levels/level-031/final-view.svg"
+                     ],
+        "Title":  "Potato Battery",
+        "LearningObjectives":  [
+                                   "Understand chemical battery principles",
+                                   "Learn about electrochemical reactions",
+                                   "Build batteries from everyday materials",
+                                   "Series connection for higher voltage"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  3,
+                               "Name":  "Zinc nail or galvanized nail",
+                               "Description":  "Negative electrode",
+                               "ImageUrl":  "/images/components/nail.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Copper wire or penny",
+                               "Description":  "Positive electrode",
+                               "ImageUrl":  "/images/components/copper.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red - low voltage)",
+                               "Description":  "Test load",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Alligator clip wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  31,
+        "FunFact":  "The first electric battery was invented in 1800 by Alessandro Volta using copper and zinc discs separated by cloth soaked in saltwater!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Thermoelectric generators work on the Seebeck effect - they need a temperature difference between two sides. The bigger the difference, the more electricity they generate!",
+                     "Options":  [
+                                     "Just heat",
+                                     "Just cold",
+                                     "A temperature difference between two sides",
+                                     "Sunlight"
+                                 ],
+                     "Question":  "What does a thermoelectric generator need to produce electricity?",
+                     "CorrectAnswerIndex":  2
+                 },
+        "SafetyNotes":  [
+                            "Hot water should be warm, not boiling",
+                            "Watch polarity on capacitor",
+                            "Peltier modules can get very hot or cold"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "A Peltier module generates electricity when one side is hot and the other is cold.",
+                                 "Title":  "Understand Peltier Module",
+                                 "Tip":  "Temperature difference = electricity!",
+                                 "DiagramUrl":  "/images/levels/level-032/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect: Peltier (+) â†’ Capacitor (+) â†’ LED (+) â†’ Peltier (-) â†’ Capacitor (-).",
+                                 "Title":  "Wire Circuit",
+                                 "DiagramUrl":  "/images/levels/level-032/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Place one side of Peltier on hot water cup (with metal plate between).",
+                                 "Title":  "Apply Heat",
+                                 "DiagramUrl":  "/images/levels/level-032/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Place ice cube or cold metal on the other side of Peltier.",
+                                 "Title":  "Apply Cold",
+                                 "DiagramUrl":  "/images/levels/level-032/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "The LED should light from the temperature difference!",
+                                 "Title":  "Observe",
+                                 "DiagramUrl":  "/images/levels/level-032/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Try different temperature differences. Bigger difference = more power!",
+                                 "Title":  "Experiment",
+                                 "DiagramUrl":  "/images/levels/level-032/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cup of hot water",
+                                    "Ice cube or cold water",
+                                    "Two small metal plates or coins"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-032/main-diagram.svg",
+                         "/images/levels/level-032/final-view.svg"
+                     ],
+        "Title":  "Thermoelectric Power",
+        "LearningObjectives":  [
+                                   "Learn about thermoelectric generation",
+                                   "Understand Seebeck effect",
+                                   "Generate electricity from temperature difference",
+                                   "Explore heat energy conversion"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Peltier Module (TEC)",
+                               "Description":  "Thermoelectric generator",
+                               "ImageUrl":  "/images/components/peltier.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red - low voltage)",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (1000ÂµF)",
+                               "Description":  "Voltage smoothing",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  20,
+        "Id":  32,
+        "FunFact":  "NASA uses thermoelectric generators powered by radioactive decay to power deep space probes like Voyager, which has been running for over 45 years!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Kinetic energy is the energy of motion. When you capture this motion (like spinning a generator), you can convert it into electrical energy!",
+                     "Options":  [
+                                     "Energy from heat",
+                                     "Energy from motion",
+                                     "Energy from light",
+                                     "Energy from chemicals"
+                                 ],
+                     "Question":  "What is kinetic energy?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Secure motor firmly before testing",
+                            "Don\u0027t shake too violently"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Mount a small wheel to the motor shaft using rubber band or tape.",
+                                 "Title":  "Attach Wheel to Motor",
+                                 "DiagramUrl":  "/images/levels/level-033/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Mount motor at bottom of cardboard ramp so wheel touches objects rolling down.",
+                                 "Title":  "Create Ramp Generator",
+                                 "Tip":  "Wheel should spin when objects roll past!",
+                                 "DiagramUrl":  "/images/levels/level-033/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Motor â†’ Diode â†’ Capacitor (+) â†’ LED (+) â†’ Ground.",
+                                 "Title":  "Wire Circuit",
+                                 "DiagramUrl":  "/images/levels/level-033/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Roll a toy car or ball down the ramp. It spins the wheel/motor!",
+                                 "Title":  "Test with Rolling Object",
+                                 "DiagramUrl":  "/images/levels/level-033/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "The LED should flicker as the motor generates power from motion!",
+                                 "Title":  "Observe LED",
+                                 "DiagramUrl":  "/images/levels/level-033/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Alternatively, mount motor in tube with loose magnet that shakes past coils.",
+                                 "Title":  "Build Shake Light",
+                                 "Tip":  "Shake to generate power!",
+                                 "DiagramUrl":  "/images/levels/level-033/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Small toy car wheel",
+                                    "Rubber band",
+                                    "Cardboard for ramp",
+                                    "Tape"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-033/main-diagram.svg",
+                         "/images/levels/level-033/final-view.svg"
+                     ],
+        "Title":  "Kinetic Energy",
+        "LearningObjectives":  [
+                                   "Convert kinetic energy to electricity",
+                                   "Build a shake flashlight prototype",
+                                   "Understand energy harvesting",
+                                   "Learn about motion-powered devices"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (small)",
+                               "Description":  "Used as generator",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (470ÂµF)",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Rectifier",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  33,
+        "FunFact":  "Some watches are powered by the motion of your wrist throughout the day, never needing batteries!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Piezoelectric materials generate electricity when mechanical pressure or stress is applied to them. This is used in gas lighters, sensors, and energy harvesting!",
+                     "Options":  [
+                                     "Electric pizza",
+                                     "Pressure creates electricity",
+                                     "Electric pressure",
+                                     "Electricity from light"
+                                 ],
+                     "Question":  "What does piezoelectric mean?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Piezo discs are fragile - don\u0027t bend too much",
+                            "Generated voltage can be high but very low current"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "The piezo disc has two wires. When you bend or tap it, it generates voltage.",
+                                 "Title":  "Examine Piezo Disc",
+                                 "Tip":  "Mechanical stress creates electricity!",
+                                 "DiagramUrl":  "/images/levels/level-034/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Tape piezo disc to cardboard, leaving it free to flex in the middle.",
+                                 "Title":  "Mount Piezo",
+                                 "DiagramUrl":  "/images/levels/level-034/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Piezo wire 1 â†’ Diode â†’ Capacitor (+) â†’ LED (+) â†’ Piezo wire 2 â†’ Capacitor (-).",
+                                 "Title":  "Wire Circuit",
+                                 "DiagramUrl":  "/images/levels/level-034/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Tap the piezo disc rapidly. The LED should flicker!",
+                                 "Title":  "Test by Tapping",
+                                 "DiagramUrl":  "/images/levels/level-034/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Tap 10 times quickly. The capacitor stores energy and LED glows briefly!",
+                                 "Title":  "Charge and Release",
+                                 "DiagramUrl":  "/images/levels/level-034/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Try tapping at different rates and pressures. What works best?",
+                                 "Title":  "Experiment",
+                                 "DiagramUrl":  "/images/levels/level-034/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard piece",
+                                    "Tape"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-034/main-diagram.svg",
+                         "/images/levels/level-034/final-view.svg"
+                     ],
+        "Title":  "Piezo Power",
+        "LearningObjectives":  [
+                                   "Learn about piezoelectric effect",
+                                   "Generate electricity from pressure/vibration",
+                                   "Build a tap-powered light",
+                                   "Understand mechanical stress energy"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Piezo Disc",
+                               "Description":  "Pressure to electricity",
+                               "ImageUrl":  "/images/components/piezo-disc.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red - low voltage)",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Rectifier",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (100ÂµF)",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  34,
+        "FunFact":  "Some dance floors in nightclubs use piezoelectric generators under the floor to convert dancers\u0027 footsteps into electricity!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Diodes act as one-way valves, allowing each source to contribute power to the storage without interfering with other sources. This prevents energy from flowing backward into inactive sources!",
+                     "Options":  [
+                                     "To make it look professional",
+                                     "To prevent sources from interfering with or back-feeding each other",
+                                     "To increase voltage",
+                                     "Diodes aren\u0027t necessary"
+                                 ],
+                     "Question":  "Why do we use diodes when combining multiple power sources?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Check all polarities before connecting",
+                            "Don\u0027t mix incompatible voltages",
+                            "Monitor temperature of all components"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Design a system that can charge a battery from ANY of 4 sources: solar, hand crank, heat, or vibration.",
+                                 "Title":  "Plan Power Station",
+                                 "Tip":  "Each source needs its own switch and diode!",
+                                 "DiagramUrl":  "/images/levels/level-035/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect Solar Panel â†’ Diode 1 â†’ Switch 1 â†’ Common charging bus.",
+                                 "Title":  "Build Solar Input",
+                                 "DiagramUrl":  "/images/levels/level-035/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect Motor/Generator â†’ Diode 2 â†’ Switch 2 â†’ Common charging bus.",
+                                 "Title":  "Build Mechanical Input",
+                                 "DiagramUrl":  "/images/levels/level-035/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect Peltier Module â†’ Diode 3 â†’ Switch 3 â†’ Common charging bus.",
+                                 "Title":  "Build Thermal Input",
+                                 "DiagramUrl":  "/images/levels/level-035/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect Piezo Disc â†’ Diode 4 â†’ Switch 4 â†’ Common charging bus.",
+                                 "Title":  "Build Vibration Input",
+                                 "DiagramUrl":  "/images/levels/level-035/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Connect common charging bus to battery/large capacitor.",
+                                 "Title":  "Add Storage",
+                                 "DiagramUrl":  "/images/levels/level-035/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Wire 3 LEDs with resistors in parallel to the storage to show available power.",
+                                 "Title":  "Add Load Circuit",
+                                 "DiagramUrl":  "/images/levels/level-035/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "One at a time, test each energy source. Measure how long each takes to charge the storage.",
+                                 "Title":  "Test Each Source",
+                                 "DiagramUrl":  "/images/levels/level-035/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "Record: Solar (15 sec of bright light), Crank (20 sec of cranking), Heat (30 sec temp difference), Piezo (50 taps). Which is most efficient?",
+                                 "Title":  "Compare Efficiency",
+                                 "DiagramUrl":  "/images/levels/level-035/step-9.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Use ALL sources together! See how fast you can charge the storage with multiple renewable sources!",
+                                 "Title":  "Test Combined Power",
+                                 "Tip":  "Congratulations! You\u0027ve mastered Energy Explorer!",
+                                 "DiagramUrl":  "/images/levels/level-035/step-10.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Project box",
+                                    "Various materials from previous levels",
+                                    "Timer",
+                                    "Paper for recording data"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-035/main-diagram.svg",
+                         "/images/levels/level-035/final-view.svg",
+                         "/images/levels/level-035/all-sources.svg"
+                     ],
+        "Title":  "Energy Challenge",
+        "LearningObjectives":  [
+                                   "Combine multiple energy sources",
+                                   "Compare efficiency of different energy types",
+                                   "Build a multi-source power system",
+                                   "Understand renewable energy integration",
+                                   "Complete Energy Explorer mastery project"
+                               ],
+        "Difficulty":  5,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Solar Panel",
+                               "Description":  "Light power",
+                               "ImageUrl":  "/images/components/solar-panel.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor/Generator",
+                               "Description":  "Mechanical power",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Peltier Module",
+                               "Description":  "Heat power",
+                               "ImageUrl":  "/images/components/peltier.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Piezo Disc",
+                               "Description":  "Vibration power",
+                               "ImageUrl":  "/images/components/piezo-disc.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Rechargeable Battery or Large Capacitor",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/battery-rechargeable.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Mixing diodes",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "LED",
+                               "Description":  "Load/indicators",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Switch",
+                               "Description":  "Source selection",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  20,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  60,
+        "Id":  35,
+        "FunFact":  "Modern electric grids combine solar, wind, hydro, and other renewable sources just like your project, balancing different energy sources for reliable power!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The DPDT switch reverses which motor terminal connects to positive and negative power, effectively reversing the current direction and making the motor spin the opposite way!",
+                     "Options":  [
+                                     "It changes the voltage",
+                                     "It reverses the polarity of connections to the motor",
+                                     "It makes the motor spin faster",
+                                     "It uses magnets"
+                                 ],
+                     "Question":  "How does a DPDT switch reverse motor direction?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t switch direction while motor is running at full speed",
+                            "Let motor stop before reversing"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "A DPDT switch has 6 terminals and can reverse connections. It\u0027s like two switches in one!",
+                                 "Title":  "Understand DPDT Switch",
+                                 "Tip":  "Perfect for reversing motor polarity!",
+                                 "DiagramUrl":  "/images/levels/level-036/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect battery (+) to DPDT center terminal 1, battery (-) to center terminal 2.",
+                                 "Title":  "Wire Battery to Switch",
+                                 "DiagramUrl":  "/images/levels/level-036/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect DPDT outer terminals to motor wires in a crossover pattern.",
+                                 "Title":  "Wire Switch to Motor",
+                                 "Tip":  "When switch flips, connections reverse!",
+                                 "DiagramUrl":  "/images/levels/level-036/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Flip switch to one position. Motor spins one direction!",
+                                 "Title":  "Test Forward",
+                                 "DiagramUrl":  "/images/levels/level-036/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Flip switch to other position. Motor spins the opposite direction!",
+                                 "Title":  "Test Reverse",
+                                 "DiagramUrl":  "/images/levels/level-036/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Mount motor on toy car chassis. Now you have forward and reverse!",
+                                 "Title":  "Build Simple Car",
+                                 "DiagramUrl":  "/images/levels/level-036/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-036/main-diagram.svg",
+                         "/images/levels/level-036/final-view.svg"
+                     ],
+        "Title":  "Motor Direction Control",
+        "LearningObjectives":  [
+                                   "Learn about reversing motor direction",
+                                   "Understand H-bridge concept",
+                                   "Wire a DPDT switch for direction control",
+                                   "Build bidirectional motor control"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (3V)",
+                               "Description":  "Bidirectional motor",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "Power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "DPDT Switch",
+                               "Description":  "Double pole double throw",
+                               "ImageUrl":  "/images/components/dpdt-switch.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  20,
+        "Id":  36,
+        "FunFact":  "Electric cars and drones use electronic H-bridges (like our DPDT switch but electronic) to control motor direction and speed!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The transistor acts like an electrically-controlled valve. The potentiometer voltage at the base controls how much current can flow from collector to emitter, thus controlling motor speed!",
+                     "Options":  [
+                                     "Generates electricity",
+                                     "Acts as a variable resistor controlling motor current",
+                                     "Changes voltage",
+                                     "Stores energy"
+                                 ],
+                     "Question":  "What does the transistor do in this motor control circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Transistor can get warm - this is normal",
+                            "Flyback diode prevents voltage spikes"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "The transistor acts like a voltage-controlled valve. Potentiometer controls the transistor, which controls motor speed.",
+                                 "Title":  "Understand Circuit",
+                                 "DiagramUrl":  "/images/levels/level-037/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect batteries in series for 3V. Create positive and negative rails.",
+                                 "Title":  "Wire Power Rail",
+                                 "DiagramUrl":  "/images/levels/level-037/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Power (+) â†’ Potentiometer â†’ 1K resistor â†’ Transistor base.",
+                                 "Title":  "Wire Potentiometer",
+                                 "DiagramUrl":  "/images/levels/level-037/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect: Power (+) â†’ Motor â†’ Transistor collector. Transistor emitter to ground.",
+                                 "Title":  "Wire Motor Circuit",
+                                 "DiagramUrl":  "/images/levels/level-037/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect diode across motor terminals (cathode to +, anode to -).",
+                                 "Title":  "Add Flyback Diode",
+                                 "Tip":  "Protects from voltage spikes!",
+                                 "DiagramUrl":  "/images/levels/level-037/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Turn potentiometer knob. Motor speed changes from stopped to full speed!",
+                                 "Title":  "Test Speed Control",
+                                 "DiagramUrl":  "/images/levels/level-037/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-037/main-diagram.svg",
+                         "/images/levels/level-037/final-view.svg"
+                     ],
+        "Title":  "Motor Speed Control",
+        "LearningObjectives":  [
+                                   "Learn transistor motor control",
+                                   "Understand PWM basics",
+                                   "Build variable speed controller",
+                                   "Protect circuits with flyback diodes"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (3V)",
+                               "Description":  "Small motor",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "Power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer (10K)",
+                               "Description":  "Variable speed control",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Transistor (TIP120)",
+                               "Description":  "Power amplifier",
+                               "ImageUrl":  "/images/components/transistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Base resistor",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Flyback protection",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  8,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  15,
+        "Id":  37,
+        "FunFact":  "Modern electric drills use similar transistor control circuits to give you variable speed from a gentle touch on the trigger!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Servos have internal position feedback and move to specific angles (typically 0-180Â°) based on the control signal pulse width. Regular motors just spin continuously!",
+                     "Options":  [
+                                     "Servos are faster",
+                                     "Servos move to specific angles instead of continuous spinning",
+                                     "Servos use less power",
+                                     "Servos are bigger"
+                                 ],
+                     "Question":  "What makes a servo different from a regular DC motor?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t force servo beyond its mechanical stops",
+                            "Servos draw significant current - use fresh batteries"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Unlike regular motors, servos move to specific angles (0-180Â°) based on pulse width signals.",
+                                 "Title":  "Understand Servos",
+                                 "Tip":  "Perfect for robot arms and steering!",
+                                 "DiagramUrl":  "/images/levels/level-038/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Wire 555 timer in astable mode with potentiometer controlling pulse width. This generates the control signal.",
+                                 "Title":  "Build 555 Timer",
+                                 "DiagramUrl":  "/images/levels/level-038/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Wire servo: Brown=Ground, Red=Power(+5V), Orange=Signal from 555 output.",
+                                 "Title":  "Connect Servo",
+                                 "DiagramUrl":  "/images/levels/level-038/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Turn potentiometer. Servo moves to different angles!",
+                                 "Title":  "Test Position Control",
+                                 "DiagramUrl":  "/images/levels/level-038/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Attach servo horn. Now you can build robot arm, steering mechanism, or pan-tilt system!",
+                                 "Title":  "Build Servo Arm",
+                                 "DiagramUrl":  "/images/levels/level-038/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Breadboard",
+                                    "Servo horn (usually included with servo)"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-038/main-diagram.svg",
+                         "/images/levels/level-038/final-view.svg",
+                         "/images/levels/level-038/555-circuit.svg"
+                     ],
+        "Title":  "Servo Motor Basics",
+        "LearningObjectives":  [
+                                   "Learn how servo motors work",
+                                   "Understand PWM position control",
+                                   "Build a 555 timer pulse generator",
+                                   "Control servo angle with potentiometer"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Servo Motor (SG90 or similar)",
+                               "Description":  "Position-controlled motor",
+                               "ImageUrl":  "/images/components/servo.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "AA Battery",
+                               "Description":  "5V power",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "555 Timer IC",
+                               "Description":  "Pulse generator",
+                               "ImageUrl":  "/images/components/555-timer.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Potentiometer (10K)",
+                               "Description":  "Position control",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Timing resistors",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (10ÂµF)",
+                               "Description":  "Timing capacitor",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  10,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  38,
+        "FunFact":  "Servos are used in RC cars, airplanes, and robots because they provide precise angle control, unlike regular motors that just spin!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Stepper motors move in discrete steps (like 200 steps per rotation) and can hold their position without power to the coils, making them perfect for precise positioning applications!",
+                     "Options":  [
+                                     "They\u0027re faster",
+                                     "They move in precise steps and can hold position",
+                                     "They use less power",
+                                     "They\u0027re quieter"
+                                 ],
+                     "Question":  "What makes stepper motors different from regular DC motors?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Stepper motors get warm during operation",
+                            "Don\u0027t force the motor shaft manually"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Stepper motors move in discrete steps (e.g., 1.8Â° per step) by energizing coils in sequence.",
+                                 "Title":  "Understand Steppers",
+                                 "Tip":  "Perfect for precise positioning!",
+                                 "DiagramUrl":  "/images/levels/level-039/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Wire ULN2003 board to stepper motor (usually comes pre-connected).",
+                                 "Title":  "Connect Driver Board",
+                                 "DiagramUrl":  "/images/levels/level-039/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect 4x AA batteries (5V) to driver board power pins.",
+                                 "Title":  "Power Setup",
+                                 "DiagramUrl":  "/images/levels/level-039/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect 4 buttons (with pull-down resistors) to the 4 coil inputs on the driver board.",
+                                 "Title":  "Wire Control Buttons",
+                                 "Tip":  "Each button controls one coil!",
+                                 "DiagramUrl":  "/images/levels/level-039/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Press buttons in sequence: 1-2-3-4-1-2-3-4. Motor steps forward!",
+                                 "Title":  "Test Step Sequence",
+                                 "DiagramUrl":  "/images/levels/level-039/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Press buttons in reverse: 4-3-2-1-4-3-2-1. Motor steps backward!",
+                                 "Title":  "Reverse Direction",
+                                 "DiagramUrl":  "/images/levels/level-039/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "200 steps = one full rotation. You can position the motor precisely!",
+                                 "Title":  "Count Steps",
+                                 "DiagramUrl":  "/images/levels/level-039/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Breadboard"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-039/main-diagram.svg",
+                         "/images/levels/level-039/final-view.svg"
+                     ],
+        "Title":  "Stepper Motor Introduction",
+        "LearningObjectives":  [
+                                   "Learn stepper motor principles",
+                                   "Understand step sequencing",
+                                   "Manual stepper control",
+                                   "Precise angular positioning"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Stepper Motor (28BYJ-48 or similar)",
+                               "Description":  "Precise position motor",
+                               "ImageUrl":  "/images/components/stepper.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "ULN2003 Driver Board",
+                               "Description":  "Stepper driver",
+                               "ImageUrl":  "/images/components/uln2003.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "AA Battery",
+                               "Description":  "5V power",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Push Button",
+                               "Description":  "Manual step controls",
+                               "ImageUrl":  "/images/components/button.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Resistor (10K Ohm)",
+                               "Description":  "Pull-down resistors",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  15,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  39,
+        "FunFact":  "Stepper motors are used in 3D printers, CNC machines, and camera autofocus systems because they can position to exact angles!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Each servo controls one degree of freedom (DOF) - one type of movement. A 3-DOF arm needs 3 servos: base rotation, elbow bend, and gripper open/close. More DOF = more complex movements!",
+                     "Options":  [
+                                     "For backup if one fails",
+                                     "Each servo controls one degree of freedom (joint movement)",
+                                     "To share the load",
+                                     "They look impressive"
+                                 ],
+                     "Question":  "Why do we need multiple servos in a robot arm?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Adult supervision for hot glue",
+                            "Secure all joints firmly",
+                            "Don\u0027t overload servos",
+                            "Test each joint individually before combining"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Design 3-DOF arm: base rotation, elbow joint, gripper. Sketch dimensions.",
+                                 "Title":  "Plan Arm Design",
+                                 "Tip":  "Keep it simple - 3 joints is plenty!",
+                                 "DiagramUrl":  "/images/levels/level-040/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Mount first servo (base rotation) securely to project base.",
+                                 "Title":  "Build Base Platform",
+                                 "DiagramUrl":  "/images/levels/level-040/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Attach popsicle sticks to base servo horn as lower arm segment (15cm long).",
+                                 "Title":  "Build Lower Arm",
+                                 "DiagramUrl":  "/images/levels/level-040/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Mount second servo at end of lower arm. This will be the elbow.",
+                                 "Title":  "Add Elbow Joint",
+                                 "DiagramUrl":  "/images/levels/level-040/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Attach upper arm segment (10cm) to elbow servo.",
+                                 "Title":  "Build Upper Arm",
+                                 "DiagramUrl":  "/images/levels/level-040/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Mount third servo at end of upper arm. Attach clothespin or custom gripper to servo horn.",
+                                 "Title":  "Add Gripper",
+                                 "Tip":  "Servo opens and closes the gripper!",
+                                 "DiagramUrl":  "/images/levels/level-040/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Build three 555 timer circuits (from Level 38) for each servo.",
+                                 "Title":  "Wire Control Circuits",
+                                 "DiagramUrl":  "/images/levels/level-040/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Arrange the 3 potentiometer knobs as a control panel. Label: Base, Elbow, Gripper.",
+                                 "Title":  "Mount Control Panel",
+                                 "DiagramUrl":  "/images/levels/level-040/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  10,
+                                 "Description":  "Test each joint independently, then together. Practice picking up small objects!",
+                                 "Title":  "Test and Calibrate",
+                                 "DiagramUrl":  "/images/levels/level-040/step-10.svg"
+                             },
+                             {
+                                 "StepNumber":  11,
+                                 "Description":  "Can you pick up a coin and move it to a cup? Try stacking blocks!",
+                                 "Title":  "Challenge Mode",
+                                 "Tip":  "You\u0027ve built a real robot arm!",
+                                 "DiagramUrl":  "/images/levels/level-040/step-11.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Popsicle sticks or cardboard (10-15)",
+                                    "Hot glue gun",
+                                    "Brass fasteners or small screws",
+                                    "Clothespin or binder clip (for gripper)",
+                                    "Breadboard or perfboard",
+                                    "Project base (cardboard or wood)"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-040/main-diagram.svg",
+                         "/images/levels/level-040/final-view.svg",
+                         "/images/levels/level-040/assembly.svg"
+                     ],
+        "Title":  "Build a Robot Arm",
+        "LearningObjectives":  [
+                                   "Design multi-axis robot arm",
+                                   "Integrate multiple servo motors",
+                                   "Build mechanical linkages",
+                                   "Create functional gripper mechanism",
+                                   "Apply all Motion Maker concepts"
+                               ],
+        "Difficulty":  5,
+        "Category":  "Motion Maker",
+        "Components":  [
+                           {
+                               "Quantity":  3,
+                               "Name":  "Servo Motor",
+                               "Description":  "Base, elbow, gripper",
+                               "ImageUrl":  "/images/components/servo.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "AA Battery",
+                               "Description":  "Power supply",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "555 Timer IC",
+                               "Description":  "Servo controllers",
+                               "ImageUrl":  "/images/components/555-timer.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Potentiometer (10K)",
+                               "Description":  "Joint controls",
+                               "ImageUrl":  "/images/components/potentiometer.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Timing resistors",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Capacitor (10ÂµF)",
+                               "Description":  "Timing capacitors",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "Power control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  25,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  90,
+        "Id":  40,
+        "FunFact":  "Industrial robot arms can have 6 or more joints and can weld cars, package products, and even perform surgery with incredible precision!"
+    }
+]

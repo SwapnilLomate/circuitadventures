@@ -1,0 +1,1220 @@
+﻿[
+    {
+        "Quiz":  {
+                     "Explanation":  "Solar panels convert light energy directly into electrical energy through the photovoltaic effect. This is why they\u0027re called \u0027photovoltaic\u0027 cells!",
+                     "Options":  [
+                                     "Heat",
+                                     "Sound",
+                                     "Electricity",
+                                     "Wind"
+                                 ],
+                     "Question":  "What does a solar panel convert light into?",
+                     "CorrectAnswerIndex":  2
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t look directly at bright light sources",
+                            "Solar panels work best in direct sunlight or bright light"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your solar panel. It has dark cells that convert light into electricity.",
+                                 "Title":  "Examine Solar Panel",
+                                 "Tip":  "The more light, the more power!",
+                                 "DiagramUrl":  "/images/levels/level-021/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect the 100 Ohm resistor to the solar panel\u0027s positive (+) terminal.",
+                                 "Title":  "Connect Resistor",
+                                 "DiagramUrl":  "/images/levels/level-021/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Resistor â†’ LED long leg (+). Connect LED short leg (-) to solar panel negative (-).",
+                                 "Title":  "Connect LED",
+                                 "DiagramUrl":  "/images/levels/level-021/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Place the solar panel under a bright lamp or in sunlight. The LED should light up!",
+                                 "Title":  "Test in Light",
+                                 "DiagramUrl":  "/images/levels/level-021/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Cast shadows on different parts of the panel - see how the LED dims!",
+                                 "Title":  "Test Shadows",
+                                 "Tip":  "Even partial shade reduces output!",
+                                 "DiagramUrl":  "/images/levels/level-021/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Tilt the panel at different angles to the light. Find the brightest angle!",
+                                 "Title":  "Test Angles",
+                                 "Tip":  "Perpendicular to light is best!",
+                                 "DiagramUrl":  "/images/levels/level-021/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Bright lamp or sunlight",
+                                    "Cardboard for testing shadows"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-021/main-diagram.svg",
+                         "/images/levels/level-021/final-view.svg"
+                     ],
+        "Title":  "Solar Power Start",
+        "LearningObjectives":  [
+                                   "Learn how solar panels work",
+                                   "Understand photovoltaic effect",
+                                   "Observe light-to-electricity conversion",
+                                   "Measure solar panel output by LED brightness"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Solar Panel (Small 2V)",
+                               "Description":  "Converts light to electricity",
+                               "ImageUrl":  "/images/components/solar-panel.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red)",
+                               "Description":  "Light emitting diode",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (100 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  20,
+        "Id":  21,
+        "FunFact":  "The International Space Station uses solar panels the size of a house to generate electricity in space!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The capacitor stored electrical energy while charging in the light. When you disconnect the light source, the capacitor releases its stored energy to power the LED!",
+                     "Options":  [
+                                     "The LED generates its own power",
+                                     "The capacitor stored energy and is now releasing it",
+                                     "The wires have power",
+                                     "Magic"
+                                 ],
+                     "Question":  "Why does the LED stay lit even after removing the solar panel from light?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Watch capacitor polarity carefully",
+                            "Don\u0027t exceed capacitor voltage rating"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect Solar Panel (+) â†’ Capacitor (+). Connect Solar Panel (-) â†’ Capacitor (-).",
+                                 "Title":  "Wire Charging Circuit",
+                                 "Tip":  "The capacitor will charge from the solar panel!",
+                                 "DiagramUrl":  "/images/levels/level-022/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect: Capacitor (+) â†’ Switch â†’ 220Î© resistor â†’ LED (+) â†’ Capacitor (-).",
+                                 "Title":  "Add LED Circuit",
+                                 "DiagramUrl":  "/images/levels/level-022/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Place solar panel in bright light for 30 seconds with switch OFF.",
+                                 "Title":  "Charge in Light",
+                                 "Tip":  "The capacitor is storing energy!",
+                                 "DiagramUrl":  "/images/levels/level-022/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Move the solar panel away from light or cover it completely.",
+                                 "Title":  "Move to Dark",
+                                 "DiagramUrl":  "/images/levels/level-022/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Turn the switch ON. The LED lights using only the stored energy!",
+                                 "Title":  "Use Stored Energy",
+                                 "DiagramUrl":  "/images/levels/level-022/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Watch the LED slowly dim as the capacitor discharges.",
+                                 "Title":  "Observe Discharge",
+                                 "Tip":  "You\u0027ve stored and used solar energy!",
+                                 "DiagramUrl":  "/images/levels/level-022/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Bright lamp or sunlight"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-022/main-diagram.svg",
+                         "/images/levels/level-022/final-view.svg"
+                     ],
+        "Title":  "Charge Storage",
+        "LearningObjectives":  [
+                                   "Store solar energy in a capacitor",
+                                   "Understand energy storage principles",
+                                   "Learn about delayed energy use",
+                                   "Observe charging and discharging rates"
+                               ],
+        "Difficulty":  3,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Solar Panel (Small 2V)",
+                               "Description":  "Power source",
+                               "ImageUrl":  "/images/components/solar-panel.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (1000ÂµF)",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED",
+                               "Description":  "Indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (220 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "Control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  5,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  22,
+        "FunFact":  "Large capacitor banks can store energy from solar panels during the day and release it at night!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Diodes prevent current from flowing backwards between power sources. Without them, the battery might try to charge the solar panel, or vice versa, which could damage components!",
+                     "Options":  [
+                                     "To make it brighter",
+                                     "To prevent current from flowing backwards between sources",
+                                     "To reduce voltage",
+                                     "Diodes aren\u0027t necessary"
+                                 ],
+                     "Question":  "Why do we need diodes when connecting two power sources?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Diodes have polarity - stripe indicates cathode (negative)",
+                            "Don\u0027t connect power sources directly together without diodes"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Look at your diodes. The stripe marks the cathode end. Current flows from anode â†’ cathode only.",
+                                 "Title":  "Examine Diodes",
+                                 "Tip":  "Diodes are like one-way valves for electricity!",
+                                 "DiagramUrl":  "/images/levels/level-023/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect Solar Panel (+) â†’ Diode anode. The cathode will connect to LED circuit.",
+                                 "Title":  "Add Solar Panel Diode",
+                                 "DiagramUrl":  "/images/levels/level-023/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect Battery (+) â†’ Second diode anode. This cathode also connects to LED circuit.",
+                                 "Title":  "Add Battery Diode",
+                                 "DiagramUrl":  "/images/levels/level-023/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect both diode cathodes together to one junction point.",
+                                 "Title":  "Join Power Lines",
+                                 "Tip":  "Both sources can power the LED, but can\u0027t interfere with each other!",
+                                 "DiagramUrl":  "/images/levels/level-023/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Connect: Junction â†’ 330Î© resistor â†’ LED (+) â†’ Ground (both negatives together).",
+                                 "Title":  "Wire LED",
+                                 "DiagramUrl":  "/images/levels/level-023/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Shine light on solar panel - LED lights from solar power!",
+                                 "Title":  "Test Primary Power",
+                                 "DiagramUrl":  "/images/levels/level-023/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Cover solar panel - LED stays on using battery backup!",
+                                 "Title":  "Test Backup Power",
+                                 "Tip":  "Automatic failover!",
+                                 "DiagramUrl":  "/images/levels/level-023/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-023/main-diagram.svg",
+                         "/images/levels/level-023/final-view.svg"
+                     ],
+        "Title":  "Dual Power Source",
+        "LearningObjectives":  [
+                                   "Build a dual power source circuit",
+                                   "Learn about diodes and current direction",
+                                   "Understand backup power systems",
+                                   "Prevent reverse current with diodes"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Solar Panel (Small 2V)",
+                               "Description":  "Primary power",
+                               "ImageUrl":  "/images/components/solar-panel.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "AA Battery",
+                               "Description":  "Backup power",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Prevent backflow",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Green)",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "Current limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  25,
+        "Id":  23,
+        "FunFact":  "Many emergency devices like exit signs use this dual power system - solar/AC power with battery backup!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "When you draw more current from a battery, its voltage drops slightly due to internal resistance. This is why all devices get dimmer or slower when the battery powers many things at once!",
+                     "Options":  [
+                                     "The LEDs are broken",
+                                     "The battery voltage drops under heavy load",
+                                     "The wires get tired",
+                                     "It\u0027s your imagination"
+                                 ],
+                     "Question":  "Why do the LEDs get dimmer when you run many devices from one battery?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t run all loads simultaneously for too long",
+                            "Monitor battery temperature"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect two AA batteries in series. Create a common positive and negative rail.",
+                                 "Title":  "Build Power Rail",
+                                 "DiagramUrl":  "/images/levels/level-024/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Create 4 parallel circuits: 3 LED circuits (each with resistor and switch), and 1 motor circuit (with switch).",
+                                 "Title":  "Wire Test Circuits",
+                                 "DiagramUrl":  "/images/levels/level-024/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Turn on one LED only. Note how bright it is. This is your baseline.",
+                                 "Title":  "Test Single LED",
+                                 "Tip":  "This draws the least current!",
+                                 "DiagramUrl":  "/images/levels/level-024/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Turn on all three LEDs. Notice they\u0027re slightly dimmer? The battery is working harder!",
+                                 "Title":  "Test All LEDs",
+                                 "DiagramUrl":  "/images/levels/level-024/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Turn off LEDs. Turn on motor. Feel the battery - it gets slightly warm with this load.",
+                                 "Title":  "Test Motor Only",
+                                 "Tip":  "Motors use much more current than LEDs!",
+                                 "DiagramUrl":  "/images/levels/level-024/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Write down what you learned about power consumption of different devices.",
+                                 "Title":  "Record Observations",
+                                 "DiagramUrl":  "/images/levels/level-024/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Paper and pencil for recording",
+                                    "Timer or clock"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-024/main-diagram.svg",
+                         "/images/levels/level-024/final-view.svg"
+                     ],
+        "Title":  "Power Measurement",
+        "LearningObjectives":  [
+                                   "Understand power consumption differences",
+                                   "Compare current draw of different loads",
+                                   "Learn about battery life vs load",
+                                   "Practice scientific observation"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "Power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "LED",
+                               "Description":  "Test loads",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Motor (Small 3V)",
+                               "Description":  "Test load",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  3,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Switch",
+                               "Description":  "Load controls",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  12,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  24,
+        "FunFact":  "Your smartphone battery lasts days on standby but only hours playing games because games use much more power, just like your motor uses more than an LED!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "LEDs are more efficient because they convert most energy directly to light. Incandescent bulbs waste about 90% of energy as heat, which is why they get so hot!",
+                     "Options":  [
+                                     "LEDs are newer technology",
+                                     "LEDs convert more energy to light and less to heat",
+                                     "LEDs are smaller",
+                                     "LEDs look better"
+                                 ],
+                     "Question":  "Why are LED lights more energy efficient than incandescent bulbs?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Incandescent bulb gets hot - don\u0027t touch when on",
+                            "Let bulb cool before handling"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect: Battery (+) â†’ Switch 1 â†’ 100Î© resistor â†’ LED â†’ Battery (-).",
+                                 "Title":  "Build LED Circuit",
+                                 "DiagramUrl":  "/images/levels/level-025/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect: Battery (+) â†’ Switch 2 â†’ Bulb â†’ Battery (-).",
+                                 "Title":  "Build Bulb Circuit",
+                                 "DiagramUrl":  "/images/levels/level-025/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Turn on Switch 1. Note LED brightness and feel the components - cool!",
+                                 "Title":  "Test LED",
+                                 "DiagramUrl":  "/images/levels/level-025/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "The bulb wastes energy as heat. The LED converts almost all energy to light!",
+                                 "Title":  "Compare Heat",
+                                 "Tip":  "Heat = wasted energy!",
+                                 "DiagramUrl":  "/images/levels/level-025/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "If you have time, see how long each can run. The LED lasts much longer on the same battery!",
+                                 "Title":  "Run Time Test",
+                                 "DiagramUrl":  "/images/levels/level-025/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Timer or clock",
+                                    "Paper for recording"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-025/main-diagram.svg",
+                         "/images/levels/level-025/final-view.svg"
+                     ],
+        "Title":  "Energy Efficiency",
+        "LearningObjectives":  [
+                                   "Compare LED vs incandescent efficiency",
+                                   "Understand energy waste as heat",
+                                   "Learn why LEDs are better for environment",
+                                   "Measure relative battery life"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (White)",
+                               "Description":  "Efficient light source",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Incandescent Bulb (2.5V)",
+                               "Description":  "Inefficient light source",
+                               "ImageUrl":  "/images/components/bulb.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "Power sources",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Resistor (100 Ohm)",
+                               "Description":  "LED limiter",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Switch",
+                               "Description":  "Controls",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  20,
+        "Id":  25,
+        "FunFact":  "Switching your home to LED bulbs can reduce lighting energy use by 75% and save hundreds of dollars per year!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "A motor and a generator are essentially the same device! When you spin a motor\u0027s shaft mechanically, it generates electricity. This is how wind turbines and hydroelectric dams work!",
+                     "Options":  [
+                                     "It stores electricity",
+                                     "Spinning it backwards creates electricity",
+                                     "It converts heat to electricity",
+                                     "It doesn\u0027t work as a generator"
+                                 ],
+                     "Question":  "How does a motor work as a generator?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t spin motor too fast - it can generate high voltage",
+                            "Keep fingers away from spinning blades"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Cut 3 cardboard rectangles (3cm x 8cm). Attach them evenly around a straw to make a propeller.",
+                                 "Title":  "Build Wind Blades",
+                                 "Tip":  "Angle the blades slightly for better catching wind!",
+                                 "DiagramUrl":  "/images/levels/level-026/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Attach the straw propeller to the motor shaft securely with tape.",
+                                 "Title":  "Attach to Motor",
+                                 "DiagramUrl":  "/images/levels/level-026/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Motor wire 1 â†’ Diode anode â†’ Diode cathode â†’ Capacitor (+) â†’ LED (+) â†’ Motor wire 2 â†’ Capacitor (-).",
+                                 "Title":  "Wire Generator Circuit",
+                                 "Tip":  "The motor becomes a generator when spun!",
+                                 "DiagramUrl":  "/images/levels/level-026/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Spin the propeller quickly by hand. The LED should flicker!",
+                                 "Title":  "Test by Hand",
+                                 "DiagramUrl":  "/images/levels/level-026/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Use a fan or blow on the propeller. The LED lights from wind power!",
+                                 "Title":  "Test with Wind",
+                                 "DiagramUrl":  "/images/levels/level-026/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Try different blade sizes and angles. Find what works best!",
+                                 "Title":  "Experiment",
+                                 "Tip":  "You\u0027ve built a wind turbine!",
+                                 "DiagramUrl":  "/images/levels/level-026/step-6.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard for wind blades",
+                                    "Straw or stick for axle",
+                                    "Tape",
+                                    "Scissors",
+                                    "Fan or blow on it"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-026/main-diagram.svg",
+                         "/images/levels/level-026/final-view.svg"
+                     ],
+        "Title":  "Wind Power",
+        "LearningObjectives":  [
+                                   "Learn motors can work as generators",
+                                   "Understand wind energy conversion",
+                                   "Build a wind turbine",
+                                   "Observe mechanical to electrical energy"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (Small)",
+                               "Description":  "Used as generator",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red)",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Current direction",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (470ÂµF)",
+                               "Description":  "Smooth output",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  26,
+        "FunFact":  "Modern wind turbines can generate enough electricity to power 1,500 homes with a single turbine!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "Humans can only generate about 50-150 watts of power by hand cranking, and small capacitors store limited energy. This demonstrates why we rely on power plants and batteries!",
+                     "Options":  [
+                                     "The motor is broken",
+                                     "Humans can\u0027t generate much power, and energy storage is limited",
+                                     "The LED uses too much power",
+                                     "The wires waste energy"
+                                 ],
+                     "Question":  "Why does it take so much cranking to light an LED for a short time?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Don\u0027t crank too fast - motor can generate high voltage",
+                            "Secure all components before cranking"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Attach a pencil or dowel to the motor shaft to create a crank handle.",
+                                 "Title":  "Create Crank Handle",
+                                 "DiagramUrl":  "/images/levels/level-027/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Mount the motor securely in a cardboard box with the crank handle accessible.",
+                                 "Title":  "Mount Motor",
+                                 "DiagramUrl":  "/images/levels/level-027/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect: Motor â†’ Diode â†’ Capacitor (+). Motor other wire to Capacitor (-).",
+                                 "Title":  "Wire Charging Circuit",
+                                 "Tip":  "Diode ensures energy flows into capacitor!",
+                                 "DiagramUrl":  "/images/levels/level-027/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Wire two LEDs with resistors in parallel through the switch, connected to capacitor.",
+                                 "Title":  "Add Load Circuit",
+                                 "DiagramUrl":  "/images/levels/level-027/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Turn the crank rapidly for 20 seconds with switch OFF.",
+                                 "Title":  "Charge by Cranking",
+                                 "Tip":  "You\u0027re generating electricity with your muscles!",
+                                 "DiagramUrl":  "/images/levels/level-027/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Turn on the switch. The LEDs light up from your stored hand-power!",
+                                 "Title":  "Use Stored Energy",
+                                 "DiagramUrl":  "/images/levels/level-027/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Notice how much cranking is needed for just a few seconds of light. This shows why we need efficient power sources!",
+                                 "Title":  "Compare Effort",
+                                 "DiagramUrl":  "/images/levels/level-027/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard box for housing",
+                                    "Pencil or dowel for crank handle",
+                                    "Tape and glue"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-027/main-diagram.svg",
+                         "/images/levels/level-027/final-view.svg"
+                     ],
+        "Title":  "Hand Crank Generator",
+        "LearningObjectives":  [
+                                   "Build a hand-powered generator",
+                                   "Understand human power generation",
+                                   "Learn about energy storage from manual power",
+                                   "Experience effort required to generate electricity"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "DC Motor (Larger)",
+                               "Description":  "Generator",
+                               "ImageUrl":  "/images/components/motor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "LED",
+                               "Description":  "Load indicators",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Capacitor (1000ÂµF)",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/capacitor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Rectifier",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor (220 Ohm)",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "Load control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  6,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  35,
+        "Id":  27,
+        "FunFact":  "Hand-crank flashlights and radios are used in emergency situations when batteries aren\u0027t available. One minute of cranking can power a radio for 30 minutes!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "We connect batteries in series to add their voltages. Four 1.2V rechargeable batteries in series give us about 4.8V, close to the 5V needed for USB devices!",
+                     "Options":  [
+                                     "It\u0027s easier to wire",
+                                     "To increase voltage to match USB requirements (5V)",
+                                     "To reduce size",
+                                     "Series doesn\u0027t matter"
+                                 ],
+                     "Question":  "Why do we connect batteries in series for a power bank?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Only use rechargeable batteries",
+                            "Monitor charging time - don\u0027t overcharge",
+                            "Check battery voltage before connecting to USB devices"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect Solar Panel through diode and switch 1 to battery pack positive.",
+                                 "Title":  "Add Charging Input",
+                                 "DiagramUrl":  "/images/levels/level-028/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Add red LED with resistor in parallel with charging circuit.",
+                                 "Title":  "Wire Charging Indicator",
+                                 "DiagramUrl":  "/images/levels/level-028/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect battery pack through diode and switch 2 to USB breakout (+5V and GND).",
+                                 "Title":  "Add Output Circuit",
+                                 "Tip":  "Diode prevents backflow!",
+                                 "DiagramUrl":  "/images/levels/level-028/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Add green LED with resistor to show when output is active.",
+                                 "Title":  "Wire Output Indicator",
+                                 "DiagramUrl":  "/images/levels/level-028/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Mount components in project box with solar panel on top, switches and USB port accessible.",
+                                 "Title":  "Assemble Housing",
+                                 "DiagramUrl":  "/images/levels/level-028/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Label: \u0027Charge\u0027 switch, \u0027Output\u0027 switch, charge/output indicators.",
+                                 "Title":  "Label Everything",
+                                 "DiagramUrl":  "/images/levels/level-028/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "Place in sunlight, turn on Charge switch. Red LED shows charging!",
+                                 "Title":  "Test Charging",
+                                 "Tip":  "Charge for 4-6 hours",
+                                 "DiagramUrl":  "/images/levels/level-028/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "After charging, turn off Charge, turn on Output. You can now power small USB devices!",
+                                 "Title":  "Test Output",
+                                 "DiagramUrl":  "/images/levels/level-028/step-9.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Battery holder for 4x AA",
+                                    "Project box",
+                                    "Labels"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-028/main-diagram.svg",
+                         "/images/levels/level-028/final-view.svg"
+                     ],
+        "Title":  "Power Bank DIY",
+        "LearningObjectives":  [
+                                   "Build a portable power bank",
+                                   "Understand battery pack configuration",
+                                   "Learn voltage regulation basics",
+                                   "Create a practical charging device"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  4,
+                               "Name":  "Rechargeable AA Battery",
+                               "Description":  "Energy storage",
+                               "ImageUrl":  "/images/components/battery-rechargeable.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Solar Panel (5V)",
+                               "Description":  "Charging source",
+                               "ImageUrl":  "/images/components/solar-panel.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Circuit protection",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red)",
+                               "Description":  "Charging indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Green)",
+                               "Description":  "Output indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor (470 Ohm)",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Switch",
+                               "Description":  "Charge/Output control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "USB Breakout",
+                               "Description":  "USB output connector",
+                               "ImageUrl":  "/images/components/usb-breakout.svg"
+                           },
+                           {
+                               "Quantity":  12,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  40,
+        "Id":  28,
+        "FunFact":  "Commercial power banks can store 10,000-30,000 mAh of energy, enough to charge a smartphone 3-8 times!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "As battery voltage drops, the voltage at each tap point in the divider chain also drops. LEDs need minimum voltage to light, so they turn off one by one as the battery drains!",
+                     "Options":  [
+                                     "It guesses randomly",
+                                     "Different LEDs need different voltages to light, fewer light as battery voltage drops",
+                                     "The LEDs get smarter",
+                                     "Time-based countdown"
+                                 ],
+                     "Question":  "How does the LED bar graph show battery level?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Check all resistor values before wiring",
+                            "LEDs should light in sequence as voltage increases"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Create a resistor ladder: Battery (+) â†’ 1KÎ© â†’ 1KÎ© â†’ 1KÎ© â†’ 1KÎ© â†’ Battery (-). This creates 4 tap points.",
+                                 "Title":  "Build Voltage Divider Chain",
+                                 "Tip":  "Each tap point has a different voltage!",
+                                 "DiagramUrl":  "/images/levels/level-029/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Connect tap point 1 (highest voltage) through 330Î© resistor to LED 1.",
+                                 "Title":  "Wire First LED",
+                                 "DiagramUrl":  "/images/levels/level-029/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  3,
+                                 "Description":  "Connect tap points 2, 3, 4 each through 330Î© resistors to LEDs 2, 3, 4.",
+                                 "Title":  "Wire Remaining LEDs",
+                                 "DiagramUrl":  "/images/levels/level-029/step-3.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Connect battery positive directly through 330Î© to LED 5 (maximum brightness indicator).",
+                                 "Title":  "Add Fifth LED",
+                                 "DiagramUrl":  "/images/levels/level-029/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Mount the 5 LEDs in a row on cardboard to create a bar graph display.",
+                                 "Title":  "Arrange as Bar Graph",
+                                 "DiagramUrl":  "/images/levels/level-029/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Connect fresh batteries. All 5 LEDs should light up!",
+                                 "Title":  "Test Fresh Batteries",
+                                 "DiagramUrl":  "/images/levels/level-029/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Use partially drained batteries. Fewer LEDs will light, showing battery level!",
+                                 "Title":  "Test Weak Batteries",
+                                 "Tip":  "You\u0027ve built a battery meter!",
+                                 "DiagramUrl":  "/images/levels/level-029/step-7.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Cardboard for LED mounting",
+                                    "Paper for recording data"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-029/main-diagram.svg",
+                         "/images/levels/level-029/final-view.svg"
+                     ],
+        "Title":  "Energy Monitoring",
+        "LearningObjectives":  [
+                                   "Build a battery level indicator",
+                                   "Understand voltage dividers",
+                                   "Create a simple bar graph display",
+                                   "Learn about battery discharge curves"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  2,
+                               "Name":  "AA Battery",
+                               "Description":  "Test power source",
+                               "ImageUrl":  "/images/components/battery.svg"
+                           },
+                           {
+                               "Quantity":  5,
+                               "Name":  "LED",
+                               "Description":  "Bar graph display",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  5,
+                               "Name":  "Resistor (330 Ohm)",
+                               "Description":  "LED protection",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  4,
+                               "Name":  "Resistor (1K Ohm)",
+                               "Description":  "Voltage divider",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Switch",
+                               "Description":  "Power control",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  15,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  30,
+        "Id":  29,
+        "FunFact":  "Your phone\u0027s battery indicator works similarly, using voltage measurement to estimate remaining charge!"
+    },
+    {
+        "Quiz":  {
+                     "Explanation":  "The diode prevents reverse current flow. At night or in darkness, without the diode, the battery would discharge back through the solar panel, wasting stored energy!",
+                     "Options":  [
+                                     "To make it charge faster",
+                                     "To prevent the battery from discharging back through the solar panel at night",
+                                     "To reduce voltage",
+                                     "It makes the LED brighter"
+                                 ],
+                     "Question":  "Why is the diode necessary in a solar charging circuit?",
+                     "CorrectAnswerIndex":  1
+                 },
+        "SafetyNotes":  [
+                            "Only use NiMH or NiCd rechargeable batteries - never charge alkaline batteries!",
+                            "Don\u0027t overcharge - monitor charging time (2-4 hours in bright sun)",
+                            "Keep charging circuit cool and ventilated",
+                            "Never short circuit batteries"
+                        ],
+        "Instructions":  [
+                             {
+                                 "StepNumber":  1,
+                                 "Description":  "Connect Solar Panel (+) â†’ Diode anode â†’ Diode cathode will connect to battery (+).",
+                                 "Title":  "Wire Solar Input",
+                                 "Tip":  "Diode prevents battery from discharging backwards!",
+                                 "DiagramUrl":  "/images/levels/level-030/step-1.svg"
+                             },
+                             {
+                                 "StepNumber":  2,
+                                 "Description":  "Wire red LED with 470Î© resistor in parallel with the diode to show charging.",
+                                 "Title":  "Add Charging Indicator",
+                                 "DiagramUrl":  "/images/levels/level-030/step-2.svg"
+                             },
+                             {
+                                 "StepNumber":  4,
+                                 "Description":  "Wire green LED with 470Î© resistor through Switch 2 (load switch) to demonstrate stored power.",
+                                 "Title":  "Add Load Circuit",
+                                 "DiagramUrl":  "/images/levels/level-030/step-4.svg"
+                             },
+                             {
+                                 "StepNumber":  5,
+                                 "Description":  "Mount all components in project box with solar panel on top, switches and LEDs accessible.",
+                                 "Title":  "Build Housing",
+                                 "DiagramUrl":  "/images/levels/level-030/step-5.svg"
+                             },
+                             {
+                                 "StepNumber":  6,
+                                 "Description":  "Label switches: \u0027Charge\u0027 and \u0027Load\u0027. Label LEDs: \u0027Charging\u0027 (red) and \u0027Power\u0027 (green).",
+                                 "Title":  "Label Components",
+                                 "DiagramUrl":  "/images/levels/level-030/step-6.svg"
+                             },
+                             {
+                                 "StepNumber":  7,
+                                 "Description":  "Place in bright sunlight. Turn on Charge switch. Red LED should light showing charging!",
+                                 "Title":  "Test Charging",
+                                 "Tip":  "Charge for 2-4 hours",
+                                 "DiagramUrl":  "/images/levels/level-030/step-7.svg"
+                             },
+                             {
+                                 "StepNumber":  8,
+                                 "Description":  "After charging, turn off Charge switch. Turn on Load switch - green LED lights from stored solar energy!",
+                                 "Title":  "Test Stored Power",
+                                 "DiagramUrl":  "/images/levels/level-030/step-8.svg"
+                             },
+                             {
+                                 "StepNumber":  9,
+                                 "Description":  "Compare how long green LED runs vs how long you charged. You\u0027ve built a renewable energy system!",
+                                 "Title":  "Calculate Efficiency",
+                                 "Tip":  "Congratulations on completing the Energy Explorer milestone!",
+                                 "DiagramUrl":  "/images/levels/level-030/step-9.svg"
+                             }
+                         ],
+        "AdditionalMaterials":  [
+                                    "Battery holder for 2x AA",
+                                    "Small project box",
+                                    "Labels or markers",
+                                    "Bright sunlight or lamp"
+                                ],
+        "Diagrams":  [
+                         "/images/levels/level-030/main-diagram.svg",
+                         "/images/levels/level-030/final-view.svg",
+                         "/images/levels/level-030/circuit-diagram.svg"
+                     ],
+        "Title":  "Build a Solar Charger",
+        "LearningObjectives":  [
+                                   "Build a complete solar charging system",
+                                   "Understand rechargeable battery technology",
+                                   "Learn safe battery charging practices",
+                                   "Create a useful renewable energy device",
+                                   "Apply all Energy Explorer concepts"
+                               ],
+        "Difficulty":  4,
+        "Category":  "Energy Explorer",
+        "Components":  [
+                           {
+                               "Quantity":  1,
+                               "Name":  "Solar Panel (5V)",
+                               "Description":  "Power source",
+                               "ImageUrl":  "/images/components/solar-panel.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Rechargeable AA Battery",
+                               "Description":  "1.2V NiMH batteries",
+                               "ImageUrl":  "/images/components/battery-rechargeable.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "Diode (1N4001)",
+                               "Description":  "Prevent discharge",
+                               "ImageUrl":  "/images/components/diode.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Red)",
+                               "Description":  "Charging indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  1,
+                               "Name":  "LED (Green)",
+                               "Description":  "Power indicator",
+                               "ImageUrl":  "/images/components/led.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Resistor (470 Ohm)",
+                               "Description":  "LED limiters",
+                               "ImageUrl":  "/images/components/resistor.svg"
+                           },
+                           {
+                               "Quantity":  2,
+                               "Name":  "Switch",
+                               "Description":  "Charge/Load controls",
+                               "ImageUrl":  "/images/components/switch.svg"
+                           },
+                           {
+                               "Quantity":  10,
+                               "Name":  "Jumper Wires",
+                               "Description":  "Connecting wires",
+                               "ImageUrl":  "/images/components/wire.svg"
+                           }
+                       ],
+        "EstimatedTime":  45,
+        "Id":  30,
+        "FunFact":  "The solar panels on the International Space Station can charge batteries that provide power when the station is in Earth\u0027s shadow!"
+    }
+]

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="60" y="70" width="80" height="80" rx="5" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+  <rect x="85" y="50" width="30" height="25" rx="3" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"/>
+  <circle cx="90" cy="90" r="8" fill="#e74c3c"/>
+  <circle cx="110" cy="90" r="8" fill="#2c3e50"/>
+  <text x="90" y="95" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">+</text>
+  <text x="110" y="95" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">-</text>
+  <text x="100" y="130" font-family="Arial" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">9V</text>
+  <text x="100" y="190" font-family="Arial" font-size="14" fill="#2c3e50" text-anchor="middle">9V Battery</text>
+</svg>

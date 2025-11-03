@@ -1,4 +1,5 @@
 using CircuitAdventures.Client.Models;
+using System.Net.Http.Json;
 
 namespace CircuitAdventures.Client.Services;
 
@@ -7,12 +8,24 @@ namespace CircuitAdventures.Client.Services;
 /// </summary>
 public class LevelService
 {
+    private readonly HttpClient _http;
     private List<Level> _levels = new();
+    private bool _isLoaded = false;
 
-    public LevelService()
+    public LevelService(HttpClient http)
     {
-        // Levels will be loaded from LevelsData.cs
-        LoadLevels();
+        _http = http;
+    }
+
+    /// <summary>
+    /// Initialize and load all levels from JSON files
+    /// </summary>
+    public async Task InitializeAsync()
+    {
+        if (_isLoaded) return;
+
+        await LoadLevelsFromJson();
+        _isLoaded = true;
     }
 
     /// <summary>
@@ -48,14 +61,33 @@ public class LevelService
     }
 
     /// <summary>
-    /// Load levels data (to be populated from Data/LevelsData.cs)
+    /// Load levels from JSON files
     /// </summary>
-    private void LoadLevels()
+    private async Task LoadLevelsFromJson()
     {
-        // Load defined levels from data
-        _levels = Data.LevelsData.GetLevels();
+        _levels = new List<Level>();
 
-        // Generate placeholder levels for remaining levels (up to 100)
+        // Load from 10 JSON files
+        for (int i = 1; i <= 10; i++)
+        {
+            try
+            {
+                var fileNumber = i.ToString("00");
+                var url = $"data/levels/levels-{fileNumber}.json";
+                var levels = await _http.GetFromJsonAsync<List<Level>>(url);
+
+                if (levels != null && levels.Count > 0)
+                {
+                    _levels.AddRange(levels);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading levels file {i}: {ex.Message}");
+            }
+        }
+
+        // Generate placeholder levels for any missing levels (up to 100)
         var existingCount = _levels.Count;
 
         for (int i = existingCount + 1; i <= 100; i++)
@@ -83,5 +115,8 @@ public class LevelService
                 SafetyNotes = new List<string> { "Ask an adult for help" }
             });
         }
+
+        // Sort by ID to ensure correct order
+        _levels = _levels.OrderBy(l => l.Id).ToList();
     }
 }

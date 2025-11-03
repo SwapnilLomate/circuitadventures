@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#f1c40f" stroke="#f39c12" stroke-width="4"/>
+  <circle cx="100" cy="100" r="65" fill="#f8c471"/>
+  <path d="M 100 40 L 110 75 L 145 75 L 117 95 L 128 130 L 100 110 L 72 130 L 83 95 L 55 75 L 90 75 Z" fill="#fff" stroke="#f39c12" stroke-width="2"/>
+  <circle cx="100" cy="100" r="20" fill="#e74c3c"/>
+  <text x="100" y="105" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">100</text>
+  <text x="100" y="170" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">PERFECT</text>
+  <text x="100" y="185" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">SCORE</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="40" y="50" width="120" height="100" rx="5" fill="#00979d" stroke="#2c3e50" stroke-width="2"/>
+  <rect x="50" y="130" width="10" height="15" fill="#2c3e50"/>
+  <rect x="70" y="130" width="10" height="15" fill="#2c3e50"/>
+  <rect x="90" y="130" width="10" height="15" fill="#2c3e50"/>
+  <rect x="110" y="130" width="10" height="15" fill="#2c3e50"/>
+  <rect x="130" y="130" width="10" height="15" fill="#2c3e50"/>
+  <circle cx="100" cy="90" r="15" fill="#fff"/>
+  <text x="100" y="95" font-family="Arial" font-size="16" fill="#00979d" text-anchor="middle" font-weight="bold">A</text>
+  <text x="100" y="190" font-family="Arial" font-size="14" fill="#2c3e50" text-anchor="middle">Arduino</text>
+</svg>

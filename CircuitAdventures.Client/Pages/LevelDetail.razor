@@ -256,6 +256,9 @@ else
             return;
         }
 
+        // Initialize level service (loads from JSON)
+        await LevelService.InitializeAsync();
+
         LoadLevel();
     }
 
@@ -310,7 +313,7 @@ else
         var quizDialog = await DialogService.ShowAsync<QuizModal>("Quiz Time!", quizParameters, quizOptions);
         var quizResult = await quizDialog.Result;
 
-        if (quizResult.Canceled)
+        if (quizResult == null || quizResult.Canceled)
             return;
 
         bool quizPassed = (bool)(quizResult.Data ?? false);
@@ -345,7 +348,7 @@ else
         var completionDialog = await DialogService.ShowAsync<CompletionModal>("", completionParameters, completionOptions);
         var completionResult = await completionDialog.Result;
 
-        if (completionResult.Canceled)
+        if (completionResult == null || completionResult.Canceled)
             return;
 
         var action = completionResult.Data?.ToString() ?? "close";
@@ -376,7 +379,7 @@ else
                     var certDialog = await DialogService.ShowAsync<CertificateModal>("", certParameters, certOptions);
                     var certResult = await certDialog.Result;
 
-                    if (!certResult.Canceled)
+                    if (certResult != null && !certResult.Canceled)
                     {
                         var certAction = certResult.Data?.ToString() ?? "continue";
                         if (certAction == "continue" && LevelId < 100)

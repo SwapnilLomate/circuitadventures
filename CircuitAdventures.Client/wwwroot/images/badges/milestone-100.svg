@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#f1c40f" stroke="#f39c12" stroke-width="4"/>
+  <circle cx="100" cy="100" r="65" fill="#f8c471"/>
+  <path d="M 100 30 L 115 70 L 158 75 L 125 105 L 135 148 L 100 125 L 65 148 L 75 105 L 42 75 L 85 70 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="100" y="105" font-family="Arial" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">100</text>
+  <text x="100" y="170" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">COMPLETE</text>
+</svg>

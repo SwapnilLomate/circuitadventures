@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#9b59b6" stroke="#8e44ad" stroke-width="4"/>
+  <circle cx="100" cy="100" r="65" fill="#af7ac5"/>
+  <path d="M 100 55 L 103 68 L 116 70 L 106 80 L 109 93 L 100 86 L 91 93 L 94 80 L 84 70 L 97 68 Z" fill="#f1c40f"/>
+  <path d="M 70 85 L 73 98 L 86 100 L 76 110 L 79 123 L 70 116 L 61 123 L 64 110 L 54 100 L 67 98 Z" fill="#f1c40f"/>
+  <path d="M 130 85 L 133 98 L 146 100 L 136 110 L 139 123 L 130 116 L 121 123 L 124 110 L 114 100 L 127 98 Z" fill="#f1c40f"/>
+  <text x="100" y="170" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">DEDICATED</text>
+  <text x="100" y="185" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">LEARNER</text>
+</svg>

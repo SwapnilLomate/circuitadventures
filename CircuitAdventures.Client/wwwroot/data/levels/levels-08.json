@@ -1,0 +1,1792 @@
+[
+  {
+    "Id": 71,
+    "Title": "NAND Gate IC (7400)",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 45,
+    "Components": [
+      {
+        "Name": "7400 NAND Gate IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-7400.svg",
+        "Description": "Quad 2-input NAND gate chip"
+      },
+      {
+        "Name": "LEDs (various colors)",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Output indicators"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Pull-down resistors"
+      },
+      {
+        "Name": "Push Buttons",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Logic inputs"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "IC power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "7400 datasheet (print or digital)",
+      "IC pin diagram reference"
+    ],
+    "LearningObjectives": [
+      "Understand integrated circuit basics",
+      "Learn to read IC datasheets and pin diagrams",
+      "Use NAND gates as universal logic building blocks",
+      "Build other logic gates using only NAND gates"
+    ],
+    "SafetyNotes": [
+      "Never apply power before inserting the IC",
+      "Ensure correct IC orientation (notch or dot marks pin 1)",
+      "Don't exceed 5V power supply",
+      "Handle ICs by the edges to avoid static damage"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand the 7400 IC",
+        "Description": "The 7400 contains FOUR independent 2-input NAND gates in one tiny chip! Each gate has two inputs and one output. Study the pinout diagram.",
+        "DiagramUrl": "/images/levels/level-071/step-1.svg",
+        "Tip": "Pin 1 is marked by a notch or dot. Pins are numbered counter-clockwise from pin 1!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Insert IC Correctly",
+        "Description": "Place the 7400 IC on your breadboard straddling the center gap. Ensure the notch faces left (or up) so pin 1 is in the top-left position.",
+        "DiagramUrl": "/images/levels/level-071/step-2.svg",
+        "Warning": "Wrong orientation can damage the IC when powered! Double-check before connecting power."
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Power",
+        "Description": "Connect pin 14 (VCC) to +5V and pin 7 (GND) to ground. These power all four gates inside the chip!",
+        "DiagramUrl": "/images/levels/level-071/step-3.svg",
+        "Tip": "Always power the IC first before testing individual gates!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Test First NAND Gate",
+        "Description": "Wire two push buttons (with 10kΩ pull-downs) to pins 1 and 2 (inputs). Connect an LED through 220Ω resistor from pin 3 (output) to ground.",
+        "DiagramUrl": "/images/levels/level-071/step-4.svg",
+        "Tip": "Pins 1-2 are inputs, pin 3 is output for the first gate!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Create Truth Table",
+        "Description": "Test all four input combinations and verify NAND behavior: LED should be OFF only when both buttons are pressed.",
+        "DiagramUrl": "/images/levels/level-071/step-5.svg",
+        "Tip": "NAND outputs LOW only when both inputs are HIGH - opposite of AND!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Build NOT Gate from NAND",
+        "Description": "Connect both inputs of gate 2 (pins 4 and 5) together. This creates an inverter! Test with one button controlling both inputs.",
+        "DiagramUrl": "/images/levels/level-071/step-6.svg",
+        "Tip": "When both NAND inputs are tied together, it becomes a NOT gate!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Build AND Gate from NAND",
+        "Description": "Use gate 3 as NAND, then feed its output into a NOT gate (gate 4 with tied inputs). NAND + NOT = AND!",
+        "DiagramUrl": "/images/levels/level-071/step-7.svg",
+        "Tip": "Inverting a NAND gives you AND - proof that NAND is universal!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Build OR Gate Challenge",
+        "Description": "Advanced: Use De Morgan's law to build an OR gate using only NAND gates. Hint: NOT(A) NAND NOT(B) = OR!",
+        "DiagramUrl": "/images/levels/level-071/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "7400 IC Pinout",
+        "Url": "/images/levels/level-071/diagram-pinout.svg",
+        "Description": "Complete pin diagram showing all four gates"
+      },
+      {
+        "Title": "NAND to NOT Conversion",
+        "Url": "/images/levels/level-071/diagram-nand-to-not.svg",
+        "Description": "How tying inputs creates an inverter"
+      },
+      {
+        "Title": "NAND to AND Conversion",
+        "Url": "/images/levels/level-071/diagram-nand-to-and.svg",
+        "Description": "Using two NAND gates to make AND"
+      }
+    ],
+    "FunFact": "The 7400 series logic chips revolutionized electronics in the 1960s-1970s! Before integrated circuits, you'd need separate transistors for each gate. The 7400 was so popular it became a standard - even today, '7400-series logic' refers to digital ICs. A single smartphone processor now contains the equivalent of billions of 7400 chips!",
+    "Quiz": {
+      "Question": "Why is the NAND gate called a 'universal gate'?",
+      "Options": [
+        "You can build any other logic gate using only NAND gates",
+        "It works with any voltage",
+        "It's used in every circuit",
+        "It was invented first"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "NAND is universal because you can construct AND, OR, NOT, XOR, and any other logic function using only NAND gates! This makes manufacturing simpler - you only need to produce one type of gate."
+    }
+  },
+  {
+    "Id": 72,
+    "Title": "SR Latch (Set-Reset Flip-Flop)",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 50,
+    "Components": [
+      {
+        "Name": "7400 NAND Gate IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-7400.svg",
+        "Description": "For building SR latch"
+      },
+      {
+        "Name": "LEDs (Red and Green)",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Q and Q̄ outputs"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "1kΩ Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Input resistors"
+      },
+      {
+        "Name": "Push Buttons (Momentary)",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Set and Reset inputs"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Paper for state diagram",
+      "Labels for Set/Reset buttons"
+    ],
+    "LearningObjectives": [
+      "Understand sequential logic vs combinational logic",
+      "Learn about memory and state in digital circuits",
+      "Build a basic flip-flop circuit",
+      "Explore cross-coupled NAND gates"
+    ],
+    "SafetyNotes": [
+      "Ensure IC is powered correctly",
+      "Don't press both Set and Reset buttons simultaneously (undefined state)",
+      "Verify connections before powering on"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Memory in Circuits",
+        "Description": "Until now, all circuits were combinational - output depends only on current inputs. An SR latch has MEMORY - it remembers which button was pressed last!",
+        "DiagramUrl": "/images/levels/level-072/step-1.svg",
+        "Tip": "This is sequential logic - the circuit has states that persist over time!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Place and Power IC",
+        "Description": "Insert the 7400 IC on your breadboard and connect power (pin 14 to +5V, pin 7 to GND).",
+        "DiagramUrl": "/images/levels/level-072/step-2.svg",
+        "Tip": "We'll only use 2 of the 4 NAND gates in the 7400 for this circuit."
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Create Cross-Coupled Connection",
+        "Description": "Connect the output of gate 1 (pin 3) to one input of gate 2 (pin 5). Connect the output of gate 2 (pin 6) to one input of gate 1 (pin 2). This creates feedback!",
+        "DiagramUrl": "/images/levels/level-072/step-3.svg",
+        "Tip": "This feedback loop is the KEY to creating memory!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Add Set Input",
+        "Description": "Connect a push button through a 1kΩ resistor from +5V to pin 1 (gate 1's other input). When pressed, this becomes the SET input. Add a wire from pin 1 to ground (for default LOW).",
+        "DiagramUrl": "/images/levels/level-072/step-4.svg",
+        "Tip": "The SET button will make the Q output go HIGH and stay HIGH!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Add Reset Input",
+        "Description": "Connect another push button through a 1kΩ resistor from +5V to pin 4 (gate 2's other input). This is the RESET input. Add a wire from pin 4 to ground.",
+        "DiagramUrl": "/images/levels/level-072/step-5.svg",
+        "Tip": "The RESET button will make the Q output go LOW and stay LOW!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect Output LEDs",
+        "Description": "Connect a red LED (through 220Ω) from pin 6 (Q output) to ground. Connect a green LED (through 220Ω) from pin 3 (Q̄ output) to ground. They should always be opposite!",
+        "DiagramUrl": "/images/levels/level-072/step-6.svg",
+        "Tip": "When Q is HIGH, Q̄ (Q-bar, the complement) should be LOW, and vice versa!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test SET Function",
+        "Description": "Press the SET button. The Q LED (red) should turn ON and STAY ON even after you release the button. The circuit remembers!",
+        "DiagramUrl": "/images/levels/level-072/step-7.svg",
+        "Tip": "This is digital memory - the circuit maintains its state without continuous input!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test RESET Function",
+        "Description": "Press the RESET button. The Q LED should turn OFF and the Q̄ LED (green) should turn ON. This state persists until you press SET again!",
+        "DiagramUrl": "/images/levels/level-072/step-8.svg",
+        "Warning": "Never press both buttons at the same time - this creates an undefined state!"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "SR Latch Block Diagram",
+        "Url": "/images/levels/level-072/diagram-block.svg",
+        "Description": "Symbolic representation of SR latch"
+      },
+      {
+        "Title": "Cross-Coupled NAND Gates",
+        "Url": "/images/levels/level-072/diagram-cross-coupled.svg",
+        "Description": "How feedback creates memory"
+      },
+      {
+        "Title": "SR Latch Truth Table",
+        "Url": "/images/levels/level-072/diagram-truth-table.svg",
+        "Description": "All possible input combinations and resulting states"
+      }
+    ],
+    "FunFact": "The SR latch is the simplest form of computer memory! Your computer's RAM uses billions of flip-flops (more advanced versions of SR latches) to store data. Each bit of memory is essentially a flip-flop that can be set to 1 or reset to 0. A 16GB RAM stick contains over 128 BILLION individual flip-flop cells!",
+    "Quiz": {
+      "Question": "What makes an SR latch different from the logic gates you built earlier?",
+      "Options": [
+        "It has memory - it remembers previous inputs",
+        "It uses more power",
+        "It's faster",
+        "It has more inputs"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "An SR latch is sequential logic with memory! Unlike combinational logic (AND, OR, etc.) where output depends only on current inputs, the SR latch maintains its state. It 'remembers' whether SET or RESET was pressed last. This is the foundation of all computer memory!"
+    }
+  },
+  {
+    "Id": 73,
+    "Title": "Binary Counter with 7493",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 55,
+    "Components": [
+      {
+        "Name": "7493 Binary Counter IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-7493.svg",
+        "Description": "4-bit binary counter chip"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Clock pulse generator"
+      },
+      {
+        "Name": "LEDs (different colors)",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Binary output display"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "10kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "For 555 timer"
+      },
+      {
+        "Name": "100kΩ Potentiometer",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Speed control"
+      },
+      {
+        "Name": "10µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Timing capacitor for 555"
+      },
+      {
+        "Name": "0.01µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Bypass capacitor"
+      },
+      {
+        "Name": "Push Button",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Manual reset"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Binary to decimal conversion chart",
+      "7493 datasheet"
+    ],
+    "LearningObjectives": [
+      "Understand binary counting",
+      "Learn about clock signals in digital circuits",
+      "Use counter ICs",
+      "Convert between binary and decimal"
+    ],
+    "SafetyNotes": [
+      "Verify IC orientation before powering",
+      "Ensure capacitor polarity is correct",
+      "Check all connections before power on"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Binary Counting",
+        "Description": "Binary uses only 1s and 0s. 4 LEDs can display 16 values (0-15): 0000=0, 0001=1, 0010=2, 0011=3... 1111=15. Learn to read binary!",
+        "DiagramUrl": "/images/levels/level-073/step-1.svg",
+        "Tip": "Each LED represents a power of 2: 8-4-2-1 from left to right!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build 555 Clock",
+        "Description": "Build a 555 astable oscillator: Connect 100kΩ pot and 10kΩ resistor from pin 8 to 7 to 6/2, add 10µF cap from 6/2 to ground. This creates clock pulses!",
+        "DiagramUrl": "/images/levels/level-073/step-2.svg",
+        "Tip": "The 555 will generate regular pulses that drive the counter!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Place 7493 Counter",
+        "Description": "Insert the 7493 IC on your breadboard. Connect pin 5 (VCC) to +5V and pin 10 (GND) to ground.",
+        "DiagramUrl": "/images/levels/level-073/step-3.svg",
+        "Tip": "The 7493 is a 4-bit counter - it can count from 0 to 15!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect Clock Input",
+        "Description": "Connect the 555 output (pin 3) to the 7493 clock input (pin 14). Each pulse from the 555 will increment the counter by 1!",
+        "DiagramUrl": "/images/levels/level-073/step-4.svg",
+        "Tip": "Connect pin 12 to pin 14 to configure the full 4-bit counter!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Binary Output LEDs",
+        "Description": "Connect 4 LEDs (through 220Ω resistors) from pins 12, 9, 8, 11 to ground. These are outputs QA (LSB), QB, QC, QD (MSB) showing 1-2-4-8 bits.",
+        "DiagramUrl": "/images/levels/level-073/step-5.svg",
+        "Tip": "Label your LEDs 1-2-4-8 to make binary reading easier!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Reset Button",
+        "Description": "Connect a push button from pins 2 and 3 (reset pins) to +5V. When pressed, this resets the counter to 0000!",
+        "DiagramUrl": "/images/levels/level-073/step-6.svg",
+        "Tip": "Connect both reset pins together to ground with a 10kΩ resistor for normal operation."
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Counting",
+        "Description": "Power on and watch the LEDs count in binary! 0001, 0010, 0011, 0100... Adjust the pot to control count speed.",
+        "DiagramUrl": "/images/levels/level-073/step-7.svg",
+        "Tip": "Start with slow speed to clearly see each binary number!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Practice Binary Reading",
+        "Description": "Stop the counter at random numbers by pressing reset. Practice converting the binary LED pattern to decimal. E.g., 1010 = 8+2 = 10!",
+        "DiagramUrl": "/images/levels/level-073/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Binary to Decimal Chart",
+        "Url": "/images/levels/level-073/diagram-binary-chart.svg",
+        "Description": "0-15 in binary and decimal"
+      },
+      {
+        "Title": "7493 Counter Pinout",
+        "Url": "/images/levels/level-073/diagram-pinout.svg",
+        "Description": "Pin diagram and connections"
+      },
+      {
+        "Title": "Complete Counter Circuit",
+        "Url": "/images/levels/level-073/diagram-complete.svg",
+        "Description": "555 clock + 7493 counter + LEDs"
+      }
+    ],
+    "FunFact": "Computers count in binary because transistors have two states: ON (1) and OFF (0). Your computer's processor has a clock that pulses billions of times per second, driving counters and calculators just like this 7493! A 3GHz processor ticks 3,000,000,000 times every second - that's 3 billion clock pulses!",
+    "Quiz": {
+      "Question": "If the LEDs show the pattern 1101 (from 8-4-2-1 positions), what decimal number is displayed?",
+      "Options": [
+        "13",
+        "11",
+        "7",
+        "14"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Convert binary 1101 to decimal: (1×8) + (1×4) + (0×2) + (1×1) = 8 + 4 + 0 + 1 = 13! Each position represents a power of 2, and you add up the values where there's a 1."
+    }
+  },
+  {
+    "Id": 74,
+    "Title": "Shift Register (4015)",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 50,
+    "Components": [
+      {
+        "Name": "4015 Dual 4-Stage Shift Register IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-4015.svg",
+        "Description": "CMOS shift register chip"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Clock generator"
+      },
+      {
+        "Name": "LEDs (same color)",
+        "Quantity": 8,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Visual output of shift register"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 8,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "10kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "555 timing"
+      },
+      {
+        "Name": "100kΩ Potentiometer",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Speed control"
+      },
+      {
+        "Name": "10µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Timing cap"
+      },
+      {
+        "Name": "SPDT Switch",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/switch-spdt.svg",
+        "Description": "Data input selection"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "4015 datasheet",
+      "Paper to draw timing diagrams"
+    ],
+    "LearningObjectives": [
+      "Understand shift register operation",
+      "Learn serial data transfer",
+      "Explore data movement in digital circuits",
+      "Create moving light patterns"
+    ],
+    "SafetyNotes": [
+      "Handle CMOS ICs carefully - they're sensitive to static",
+      "Verify correct power supply voltage (5V)",
+      "Check IC orientation before powering"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Shift Registers",
+        "Description": "A shift register moves data one position at a time with each clock pulse - like a conveyor belt for bits! Data enters serially (one bit at a time) and shifts through.",
+        "DiagramUrl": "/images/levels/level-074/step-1.svg",
+        "Tip": "Think of it as 8 flip-flops in a row, each passing its data to the next!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build 555 Clock",
+        "Description": "Build the same 555 astable oscillator from the previous level for clock pulses. Make it adjustable with the pot for different speeds.",
+        "DiagramUrl": "/images/levels/level-074/step-2.svg",
+        "Tip": "Start with a slow clock (1-2 Hz) to see the shifting action clearly!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Insert and Power 4015",
+        "Description": "Place the 4015 IC on breadboard. Connect pin 16 (VDD) to +5V and pin 8 (VSS) to ground.",
+        "DiagramUrl": "/images/levels/level-074/step-3.svg",
+        "Tip": "The 4015 contains TWO 4-bit shift registers - we'll use both for 8 LEDs total!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire First Shift Register",
+        "Description": "Connect 555 output to pin 9 (clock 1). Connect 4 LEDs (through resistors) to pins 4, 5, 13, 14 (outputs Q1-Q4). Wire pin 6 (Reset) to +5V.",
+        "DiagramUrl": "/images/levels/level-074/step-4.svg",
+        "Tip": "These are the outputs of the first 4-bit shift register!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Chain Second Register",
+        "Description": "Connect pin 14 (Q4 of first register) to pin 1 (Data input of second register). Connect pin 10 (clock 2) to 555 output. Add 4 more LEDs to pins 2, 3, 11, 12.",
+        "DiagramUrl": "/images/levels/level-074/step-5.svg",
+        "Tip": "Now data will shift through all 8 stages like a long conveyor belt!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Data Input Switch",
+        "Description": "Connect a switch from pin 7 (Data input) - center to pin 7, one side to +5V (1), other side to GND (0). This lets you input 1s or 0s!",
+        "DiagramUrl": "/images/levels/level-074/step-6.svg",
+        "Tip": "Flip the switch to HIGH and watch a 1 (lit LED) shift through all 8 positions!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Create Light Chase",
+        "Description": "Set switch to HIGH for one clock pulse, then LOW. Watch a single lit LED chase across all 8 LEDs! This is a 'Knight Rider' effect.",
+        "DiagramUrl": "/images/levels/level-074/step-7.svg",
+        "Tip": "Try different patterns: HIGH-HIGH-LOW-LOW creates pairs of lit LEDs!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Serial Data Experiment",
+        "Description": "Try inputting an 8-bit pattern by timing your switch flips with the clock. Can you create patterns like 10101010 or 11110000?",
+        "DiagramUrl": "/images/levels/level-074/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Shift Register Concept",
+        "Url": "/images/levels/level-074/diagram-concept.svg",
+        "Description": "How data moves through the register"
+      },
+      {
+        "Title": "4015 Pinout and Connections",
+        "Url": "/images/levels/level-074/diagram-pinout.svg",
+        "Description": "Complete pin diagram"
+      },
+      {
+        "Title": "Timing Diagram",
+        "Url": "/images/levels/level-074/diagram-timing.svg",
+        "Description": "How clock pulses move data"
+      }
+    ],
+    "FunFact": "Shift registers are crucial for serial data communication! Your USB cable uses shift registers to convert parallel data inside your computer to serial bits on the wire, then back to parallel in the receiving device. The same principle is used in SPI, I2C, and UART communication - technologies that let microcontrollers talk to sensors, displays, and other chips!",
+    "Quiz": {
+      "Question": "If you input the pattern HIGH-HIGH-LOW-HIGH into a 4-bit shift register, what will the outputs show after 4 clock pulses?",
+      "Options": [
+        "Q4=HIGH, Q3=HIGH, Q2=LOW, Q1=HIGH",
+        "All LOW",
+        "All HIGH",
+        "Q1=HIGH, Q2=LOW, Q3=HIGH, Q4=HIGH"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The first bit entered (HIGH) shifts all the way to Q4, the second HIGH to Q3, the LOW to Q2, and the last HIGH to Q1. Data shifts from input towards the last output, like a conveyor belt moving right!"
+    }
+  },
+  {
+    "Id": 75,
+    "Title": "Electronic Dice",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 60,
+    "Components": [
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "High-speed oscillator"
+      },
+      {
+        "Name": "4017 Decade Counter IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-4017.svg",
+        "Description": "Counts 0-9 and controls LEDs"
+      },
+      {
+        "Name": "LEDs (Red)",
+        "Quantity": 7,
+        "ImageUrl": "/images/components/led-red.svg",
+        "Description": "Die pattern display"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 7,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "1kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "555 timing"
+      },
+      {
+        "Name": "10kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "555 timing"
+      },
+      {
+        "Name": "0.01µF Capacitor",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Timing capacitors"
+      },
+      {
+        "Name": "100µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Power smoothing"
+      },
+      {
+        "Name": "Push Button (Momentary)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "'Roll' button"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Portable power"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Cardboard for LED mounting (optional)",
+      "Real dice for comparison"
+    ],
+    "LearningObjectives": [
+      "Combine multiple ICs in one project",
+      "Understand decade counter operation",
+      "Create pseudo-random selection",
+      "Design LED display patterns"
+    ],
+    "SafetyNotes": [
+      "Check capacitor polarity",
+      "Verify all IC orientations",
+      "Test 555 oscillator separately first"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand the Design",
+        "Description": "When you press the button, a fast 555 oscillator cycles through 6 dice patterns. When you release, it stops on a random pattern - creating an electronic dice roll!",
+        "DiagramUrl": "/images/levels/level-075/step-1.svg",
+        "Tip": "The 555 will run at about 10kHz - too fast to follow by eye, making it appear random!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Fast 555 Oscillator",
+        "Description": "Build a 555 astable with 1kΩ and 10kΩ resistors and 0.01µF cap. This creates a very fast clock (around 10kHz) for randomness.",
+        "DiagramUrl": "/images/levels/level-075/step-2.svg",
+        "Tip": "Fast oscillation is key - you can't predict where it will stop!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Add Button Control",
+        "Description": "Connect the 555 reset pin (4) to +V through the push button, and to ground through a 10kΩ resistor. Button pressed = oscillator runs, released = stops!",
+        "DiagramUrl": "/images/levels/level-075/step-3.svg",
+        "Tip": "The 555 only oscillates while the button is held down!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Insert 4017 Counter",
+        "Description": "Place the 4017 decade counter IC. Connect pin 16 (VDD) to +9V, pin 8 (VSS) to ground, pin 13 (enable) to ground, and pin 15 (reset) to ground.",
+        "DiagramUrl": "/images/levels/level-075/step-4.svg",
+        "Tip": "The 4017 has 10 outputs (Q0-Q9) - only ONE is HIGH at a time!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Clock Input",
+        "Description": "Connect 555 output (pin 3) to 4017 clock input (pin 14). Now each pulse advances the 4017 to the next output!",
+        "DiagramUrl": "/images/levels/level-075/step-5.svg",
+        "Tip": "The counter cycles through outputs: Q0, Q1, Q2... Q5, then back to Q0!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Wire Dice Patterns",
+        "Description": "Arrange 7 LEDs in a dice pattern. Connect multiple 4017 outputs to create each number: 1 (center), 2 (diagonal), 3 (diagonal+center), etc. Use diodes to combine outputs!",
+        "DiagramUrl": "/images/levels/level-075/step-6.svg",
+        "Tip": "For example, pattern 5 = 4 corners + center. Connect Q4 through diodes to all 5 LEDs!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Connect Reset for 6 States",
+        "Description": "Connect Q6 (pin 5) back to reset (pin 15) so the counter only cycles through 0-5 (representing dice values 1-6). Q6 immediately resets to Q0!",
+        "DiagramUrl": "/images/levels/level-075/step-7.svg",
+        "Tip": "Now it counts 0-1-2-3-4-5-0-1... giving you 6 patterns like a real die!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test Your Electronic Die",
+        "Description": "Press and hold the button for about 1 second, then release. The LEDs should stop on a random dice pattern! Roll again by pressing again.",
+        "DiagramUrl": "/images/levels/level-075/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Standard Dice Patterns 1-6",
+        "Url": "/images/levels/level-075/diagram-patterns.svg",
+        "Description": "LED arrangements for each number"
+      },
+      {
+        "Title": "4017 Decade Counter Pinout",
+        "Url": "/images/levels/level-075/diagram-4017.svg",
+        "Description": "Pin diagram and output sequence"
+      },
+      {
+        "Title": "Complete Electronic Dice Circuit",
+        "Url": "/images/levels/level-075/diagram-complete.svg",
+        "Description": "Full schematic with all connections"
+      }
+    ],
+    "FunFact": "True randomness is hard to achieve in electronics! This electronic dice uses pseudo-randomness - because you can't predict exactly when you'll release the button, and the oscillator is very fast, it APPEARS random. True random number generators use quantum effects or electronic noise. Cryptography and online gaming require special hardware random number generators to ensure fairness and security!",
+    "Quiz": {
+      "Question": "Why does the electronic dice appear to give random results?",
+      "Options": [
+        "The oscillator is too fast to predict where it will stop when you release the button",
+        "It uses a special randomness chip",
+        "The battery creates random noise",
+        "The LEDs flicker randomly"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The 555 oscillates at about 10,000 cycles per second! It's impossible to time your button release to stop at a specific number. Since human reaction time varies by milliseconds and the circuit cycles much faster, where it stops appears random - even though it's technically deterministic!"
+    }
+  },
+  {
+    "Id": 76,
+    "Title": "Touch Sensor with 555",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 45,
+    "Components": [
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Sensitive switch circuit"
+      },
+      {
+        "Name": "2N2222 Transistor (NPN)",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/transistor-npn.svg",
+        "Description": "Touch detection"
+      },
+      {
+        "Name": "LED",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Output indicator"
+      },
+      {
+        "Name": "220Ω Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiter"
+      },
+      {
+        "Name": "1MΩ Resistor",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "High impedance for touch sensing"
+      },
+      {
+        "Name": "10kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Base resistor"
+      },
+      {
+        "Name": "100kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Timing resistor"
+      },
+      {
+        "Name": "10µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Timing capacitor"
+      },
+      {
+        "Name": "0.01µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Bypass capacitor"
+      },
+      {
+        "Name": "Aluminum Foil",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/foil.svg",
+        "Description": "Touch plate"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/9v-battery.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Battery Connector",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/battery-connector.svg",
+        "Description": "9V snap"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Tape to secure touch plate",
+      "Scissors for cutting foil"
+    ],
+    "LearningObjectives": [
+      "Understand capacitive touch sensing",
+      "Learn about 555 monostable mode",
+      "Explore high-impedance circuits",
+      "Build a touchless switch"
+    ],
+    "SafetyNotes": [
+      "Use low voltage (9V) for safety",
+      "Touch plate must not be connected directly to power",
+      "Wash hands if handling components - oils affect sensitivity"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Touch Sensing",
+        "Description": "Your body has electrical capacitance! When you touch metal connected to a high-impedance circuit, you change the voltage enough to trigger the circuit. This is how smartphone screens work!",
+        "DiagramUrl": "/images/levels/level-076/step-1.svg",
+        "Tip": "Human body capacitance is about 100-200 picofarads!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Touch Detection Circuit",
+        "Description": "Place transistor on breadboard. Connect base through 1MΩ resistor to a wire (touch point). Add 1MΩ resistor from base to ground. Connect emitter to ground.",
+        "DiagramUrl": "/images/levels/level-076/step-2.svg",
+        "Tip": "The high resistance (1MΩ) makes the circuit super sensitive to small currents!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Create Touch Plate",
+        "Description": "Cut a piece of aluminum foil about 1 inch square. Tape it to cardboard or directly to breadboard. Connect a wire from the foil to the transistor base resistor.",
+        "DiagramUrl": "/images/levels/level-076/step-3.svg",
+        "Warning": "Keep the touch plate away from other wires to avoid false triggering!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Configure 555 in Monostable Mode",
+        "Description": "Wire the 555: Connect pins 2 and 6 together, pin 4 and 8 to +9V, pin 1 to ground. Add 100kΩ from pin 7 to +V, and 10µF from pin 6/2 to ground.",
+        "DiagramUrl": "/images/levels/level-076/step-4.svg",
+        "Tip": "Monostable mode = one-shot. The output pulse lasts a specific time then turns off!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Transistor to 555",
+        "Description": "Connect transistor collector to 555 trigger pin (2). Add a 10kΩ resistor from pin 2 to +9V. When you touch, the transistor pulls pin 2 LOW, triggering the 555!",
+        "DiagramUrl": "/images/levels/level-076/step-5.svg",
+        "Tip": "The 555 triggers when pin 2 drops below 1/3 VCC!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Output LED",
+        "Description": "Connect an LED (through 220Ω resistor) from 555 output pin 3 to ground. Now when you touch the plate, the LED will light for about 1 second!",
+        "DiagramUrl": "/images/levels/level-076/step-6.svg",
+        "Tip": "The pulse duration is about 1.1 × R × C = 1.1 × 100kΩ × 10µF ≈ 1.1 seconds!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Touch Sensitivity",
+        "Description": "Power on the circuit. Lightly touch the aluminum foil with your finger - the LED should light! Try adjusting the base resistors for different sensitivity.",
+        "DiagramUrl": "/images/levels/level-076/step-7.svg",
+        "Tip": "Don't press hard - a gentle touch is all you need!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Experiment with Applications",
+        "Description": "Try using this as a touch lamp, doorbell, or game buzzer. Can you modify it to toggle on/off instead of just pulse?",
+        "DiagramUrl": "/images/levels/level-076/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Capacitive Touch Principle",
+        "Url": "/images/levels/level-076/diagram-capacitive.svg",
+        "Description": "How body capacitance affects the circuit"
+      },
+      {
+        "Title": "555 Monostable Mode",
+        "Url": "/images/levels/level-076/diagram-monostable.svg",
+        "Description": "One-shot timer configuration"
+      },
+      {
+        "Title": "Complete Touch Sensor Circuit",
+        "Url": "/images/levels/level-076/diagram-complete.svg",
+        "Description": "Full schematic with touch plate"
+      }
+    ],
+    "FunFact": "Capacitive touch screens (like on smartphones) use the same principle! Your phone's screen is covered with a grid of transparent capacitive sensors. When you touch the glass, your finger's capacitance changes the electric field at that location. The phone's processor measures these tiny changes across the grid to detect exactly where you touched - even through the glass!",
+    "Quiz": {
+      "Question": "Why does this circuit need very high resistance (1MΩ) resistors?",
+      "Options": [
+        "To make the circuit sensitive to the tiny current from body capacitance",
+        "To save battery power",
+        "To protect the IC",
+        "To make the LED brighter"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "High resistance creates a high-impedance circuit that's extremely sensitive to small voltage changes. When you touch the plate, your body's capacitance and 60Hz AC pickup (from nearby power lines) cause a tiny current to flow. The 1MΩ resistor converts this microamp-level current into enough voltage to trigger the transistor!"
+    }
+  },
+  {
+    "Id": 77,
+    "Title": "Schmitt Trigger Oscillator",
+    "Category": "Circuit Wizard",
+    "Difficulty": 7,
+    "EstimatedTime": 50,
+    "Components": [
+      {
+        "Name": "7414 Hex Schmitt Trigger Inverter IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-7414.svg",
+        "Description": "Schmitt trigger gates"
+      },
+      {
+        "Name": "LEDs (various colors)",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Oscillator outputs"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "1MΩ Resistors",
+        "Quantity": 3,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Oscillator timing"
+      },
+      {
+        "Name": "100kΩ Potentiometer",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Frequency control"
+      },
+      {
+        "Name": "10µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Slow oscillator"
+      },
+      {
+        "Name": "1µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Medium oscillator"
+      },
+      {
+        "Name": "0.1µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Fast oscillator"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Oscilloscope or audio speaker (optional)",
+      "7414 datasheet"
+    ],
+    "LearningObjectives": [
+      "Understand Schmitt trigger hysteresis",
+      "Learn noise immunity in digital circuits",
+      "Build oscillators using digital ICs",
+      "Compare Schmitt vs regular logic"
+    ],
+    "SafetyNotes": [
+      "Verify IC orientation and power connections",
+      "Don't exceed 5V power supply",
+      "Check capacitor polarity"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Schmitt Triggers",
+        "Description": "A Schmitt trigger has two threshold voltages: upper and lower. This creates 'hysteresis' - it resists noise and creates clean digital transitions even from slow/noisy inputs!",
+        "DiagramUrl": "/images/levels/level-077/step-1.svg",
+        "Tip": "Regular inverters switch at one voltage. Schmitt triggers have a 'dead zone' between thresholds!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Insert and Power 7414",
+        "Description": "Place the 7414 IC on breadboard. Connect pin 14 (VCC) to +5V and pin 7 (GND) to ground. This IC contains SIX Schmitt trigger inverters!",
+        "DiagramUrl": "/images/levels/level-077/step-2.svg",
+        "Tip": "The 7414 is like a 7404 (hex inverter) but with Schmitt trigger inputs!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Build Simple Oscillator",
+        "Description": "Connect pins 1 (input) and 2 (output) of first gate through a 1MΩ resistor. Add a 10µF capacitor from pin 1 to ground. This creates an oscillator!",
+        "DiagramUrl": "/images/levels/level-077/step-3.svg",
+        "Tip": "The capacitor charges/discharges through the resistor, oscillating between the two thresholds!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Add LED Indicator",
+        "Description": "Connect an LED (through 220Ω resistor) from pin 2 (output) to ground. The LED should blink at about 1Hz!",
+        "DiagramUrl": "/images/levels/level-077/step-4.svg",
+        "Tip": "Frequency ≈ 1 / (RC) where R is in ohms and C is in farads!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Build Fast Oscillator",
+        "Description": "Use gate 2 (pins 3-4) with a 1MΩ resistor and 0.1µF capacitor. Add LED to output. This oscillates much faster - about 10Hz!",
+        "DiagramUrl": "/images/levels/level-077/step-5.svg",
+        "Tip": "Smaller capacitor = faster charging = higher frequency!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Build Audio Oscillator",
+        "Description": "Use gate 3 (pins 5-6) with 100kΩ pot and 0.1µF cap. Add LED. Adjust the pot to vary frequency from slow to fast (could reach audible range)!",
+        "DiagramUrl": "/images/levels/level-077/step-6.svg",
+        "Tip": "If you connect a speaker through a capacitor, you can hear the tone!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test Noise Immunity",
+        "Description": "While oscillator 1 is running, try touching the input wire with your finger. Notice it keeps oscillating cleanly - Schmitt triggers reject noise!",
+        "DiagramUrl": "/images/levels/level-077/step-7.svg",
+        "Tip": "A regular inverter would produce erratic output from the electrical noise your body adds!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Create Multi-Tone Circuit",
+        "Description": "Use the three oscillators together to create an interesting pattern of flashing LEDs at different rates!",
+        "DiagramUrl": "/images/levels/level-077/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Schmitt Trigger Hysteresis",
+        "Url": "/images/levels/level-077/diagram-hysteresis.svg",
+        "Description": "Upper and lower threshold voltages"
+      },
+      {
+        "Title": "Schmitt vs Regular Inverter",
+        "Url": "/images/levels/level-077/diagram-comparison.svg",
+        "Description": "How Schmitt triggers handle slow inputs"
+      },
+      {
+        "Title": "RC Oscillator Operation",
+        "Url": "/images/levels/level-077/diagram-oscillator.svg",
+        "Description": "Charge/discharge cycle creates oscillation"
+      }
+    ],
+    "FunFact": "Schmitt triggers were invented by American scientist Otto Schmitt in 1934 while studying nerve impulses! He noticed that biological neurons had hysteresis - they resisted small fluctuations but responded decisively to larger changes. He built an electronic circuit mimicking this behavior. Today, Schmitt triggers are everywhere: button debouncing, wave shaping, and noise filtering in digital systems!",
+    "Quiz": {
+      "Question": "Why are Schmitt triggers better than regular logic gates for oscillator circuits?",
+      "Options": [
+        "Hysteresis provides noise immunity and clean oscillation",
+        "They use less power",
+        "They're faster",
+        "They're cheaper"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Schmitt triggers have two thresholds with a 'hysteresis gap' between them. This means noise near the threshold won't cause rapid switching or oscillation problems. The output only changes when the input crosses the upper threshold (going high) or lower threshold (going low), making for stable, clean oscillations!"
+    }
+  },
+  {
+    "Id": 78,
+    "Title": "Crystal Oscillator",
+    "Category": "Circuit Wizard",
+    "Difficulty": 8,
+    "EstimatedTime": 55,
+    "Components": [
+      {
+        "Name": "32.768 kHz Crystal",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/crystal-32768.svg",
+        "Description": "Watch crystal"
+      },
+      {
+        "Name": "4MHz Crystal",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/crystal-4mhz.svg",
+        "Description": "Microcontroller crystal"
+      },
+      {
+        "Name": "7404 Hex Inverter IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-7404.svg",
+        "Description": "For Pierce oscillator"
+      },
+      {
+        "Name": "4060 Binary Counter IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-4060.svg",
+        "Description": "Divides crystal frequency"
+      },
+      {
+        "Name": "LEDs",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Output indicators"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "1MΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Feedback resistor"
+      },
+      {
+        "Name": "10MΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Bias resistor"
+      },
+      {
+        "Name": "22pF Capacitors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Load capacitors for crystal"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Frequency counter or oscilloscope (very helpful)",
+      "Crystal oscillator datasheet"
+    ],
+    "LearningObjectives": [
+      "Understand quartz crystal resonators",
+      "Learn Pierce oscillator configuration",
+      "Explore precise frequency generation",
+      "Build the circuit used in every computer and watch"
+    ],
+    "SafetyNotes": [
+      "Crystals are fragile - handle carefully",
+      "Static electricity can damage CMOS ICs",
+      "Verify all connections before powering"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Crystal Oscillators",
+        "Description": "Quartz crystals vibrate at an extremely precise frequency when electricity is applied. They're the reason clocks keep accurate time and computers run at precise speeds!",
+        "DiagramUrl": "/images/levels/level-078/step-1.svg",
+        "Tip": "32.768 kHz is exactly 2^15 Hz - convenient for dividing down to 1 Hz for clocks!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Pierce Oscillator",
+        "Description": "Insert 7404 IC. Connect 10MΩ resistor from pin 1 (input) to pin 2 (output) of first inverter. This creates the feedback path for oscillation.",
+        "DiagramUrl": "/images/levels/level-078/step-2.svg",
+        "Tip": "The Pierce oscillator uses an inverter as an amplifier with the crystal providing feedback!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Add Crystal and Load Caps",
+        "Description": "Connect 32.768kHz crystal between pin 1 and pin 2. Add 22pF capacitors from each crystal lead to ground. These are 'load capacitors' that tune the oscillation.",
+        "DiagramUrl": "/images/levels/level-078/step-3.svg",
+        "Warning": "Handle the crystal gently - it's fragile! Don't bend the leads too much."
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Buffer the Output",
+        "Description": "Connect pin 2 to pin 3 (second inverter input). This buffers the signal. Connect pin 4 (output) to pin 5 (third inverter). Double buffering prevents loading!",
+        "DiagramUrl": "/images/levels/level-078/step-4.svg",
+        "Tip": "Buffering isolates the oscillator from the load, keeping it stable!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Add Frequency Divider",
+        "Description": "Insert 4060 IC (14-stage binary counter). Connect pin 16 to +5V, pin 8 to ground. Connect buffered oscillator output to pin 10 (clock input).",
+        "DiagramUrl": "/images/levels/level-078/step-5.svg",
+        "Tip": "The 4060 divides the 32.768kHz by powers of 2, giving you slower outputs!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Connect Output LED",
+        "Description": "Connect LED (through 220Ω) from pin 3 of 4060 (Q14 output) to ground. Q14 divides by 16384, so 32768/16384 = 2 Hz. The LED should blink twice per second!",
+        "DiagramUrl": "/images/levels/level-078/step-6.svg",
+        "Tip": "32.768kHz ÷ 2^14 (16384) = 2Hz - perfect for a visible blink rate!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test with 4MHz Crystal",
+        "Description": "Advanced: Build a second oscillator using the 4MHz crystal. You'll need a different IC (like CD4060 with internal oscillator) or adjust load caps!",
+        "DiagramUrl": "/images/levels/level-078/step-7.svg",
+        "Tip": "4MHz crystals are commonly used in microcontrollers like Arduino!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Measure and Compare",
+        "Description": "If you have an oscilloscope or frequency counter, measure the crystal frequency. Notice how stable and precise it is compared to RC oscillators!",
+        "DiagramUrl": "/images/levels/level-078/step-8.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Quartz Crystal Structure",
+        "Url": "/images/levels/level-078/diagram-crystal.svg",
+        "Description": "How piezoelectric effect creates oscillation"
+      },
+      {
+        "Title": "Pierce Oscillator Circuit",
+        "Url": "/images/levels/level-078/diagram-pierce.svg",
+        "Description": "Complete oscillator with load capacitors"
+      },
+      {
+        "Title": "4060 Divider Chain",
+        "Url": "/images/levels/level-078/diagram-divider.svg",
+        "Description": "How binary division creates lower frequencies"
+      }
+    ],
+    "FunFact": "Quartz crystals are so precise they're accurate to within seconds per year! The 32.768 kHz crystal in your wristwatch uses the piezoelectric effect - when voltage is applied, the quartz physically vibrates. The vibration is so consistent that it's used as a time standard. Your computer's processor also uses a crystal oscillator (typically 25-100 MHz) to coordinate billions of operations per second with perfect timing!",
+    "Quiz": {
+      "Question": "Why is 32.768 kHz a popular frequency for watch crystals?",
+      "Options": [
+        "32768 is 2^15, so dividing by 2 fifteen times gives exactly 1 Hz for a seconds counter",
+        "It's the resonant frequency of quartz",
+        "It uses less power",
+        "It's cheaper to manufacture"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "32768 Hz = 2^15. Digital counters divide by 2 very easily! After 15 stages of binary division (divide by 2, then divide by 2 again, etc.), you get exactly 1 Hz - perfect for counting seconds. One more division gives 0.5 Hz for a clock's ticking twice per second!"
+    }
+  },
+  {
+    "Id": 79,
+    "Title": "Decade Counter with 7-Segment Display",
+    "Category": "Circuit Wizard",
+    "Difficulty": 8,
+    "EstimatedTime": 70,
+    "Components": [
+      {
+        "Name": "4026 Decade Counter/7-Segment Driver IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-4026.svg",
+        "Description": "Counter with built-in decoder"
+      },
+      {
+        "Name": "Common Cathode 7-Segment Display",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/7-segment.svg",
+        "Description": "Digital number display"
+      },
+      {
+        "Name": "555 Timer IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/555-timer.svg",
+        "Description": "Clock generator"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 7,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Segment current limiters"
+      },
+      {
+        "Name": "10kΩ Resistor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "555 timing"
+      },
+      {
+        "Name": "100kΩ Potentiometer",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/potentiometer.svg",
+        "Description": "Speed control"
+      },
+      {
+        "Name": "10µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-electrolytic.svg",
+        "Description": "Timing capacitor"
+      },
+      {
+        "Name": "0.01µF Capacitor",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/capacitor-ceramic.svg",
+        "Description": "Bypass capacitor"
+      },
+      {
+        "Name": "Push Button",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/push-button.svg",
+        "Description": "Clock and reset"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "4026 pinout diagram",
+      "7-segment display datasheet"
+    ],
+    "LearningObjectives": [
+      "Understand 7-segment display operation",
+      "Learn BCD to 7-segment decoding",
+      "Build a digital counter display",
+      "Combine multiple ICs in a system"
+    ],
+    "SafetyNotes": [
+      "Verify 7-segment display pinout before connecting",
+      "Ensure common cathode type (not common anode)",
+      "Check IC orientations"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand 7-Segment Displays",
+        "Description": "A 7-segment display has 7 LEDs arranged as segments (a-g) plus a decimal point. By lighting different combinations, you can display digits 0-9!",
+        "DiagramUrl": "/images/levels/level-079/step-1.svg",
+        "Tip": "Common cathode means all segment cathodes connect together to ground!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Identify Display Pins",
+        "Description": "Using the display's datasheet, identify which pins correspond to segments a, b, c, d, e, f, g and the common cathode pins. Test with a resistor and power!",
+        "DiagramUrl": "/images/levels/level-079/step-2.svg",
+        "Warning": "ALWAYS use current-limiting resistors - direct connection will burn out segments!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Place and Power 4026",
+        "Description": "Insert the 4026 IC. Connect pin 16 (VDD) to +5V and pin 8 (VSS) to ground. The 4026 counts from 0-9 and directly drives 7-segment displays!",
+        "DiagramUrl": "/images/levels/level-079/step-3.svg",
+        "Tip": "The 4026 is amazing - it combines a counter AND a 7-segment decoder in one chip!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Segment Outputs",
+        "Description": "Connect the 4026 outputs to the display through resistors: pins 11,9,12,13,14,4,10 to segments a,b,c,d,e,f,g. Use 220Ω resistors for each segment!",
+        "DiagramUrl": "/images/levels/level-079/step-4.svg",
+        "Tip": "Make a chart matching pin numbers to segment letters - it's easy to mix them up!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Connect Common Cathode",
+        "Description": "Connect all common cathode pins of the display to ground. Some displays have 2 or 4 common pins - connect them all together to ground!",
+        "DiagramUrl": "/images/levels/level-079/step-5.svg",
+        "Tip": "Multiple common pins are provided to handle the current from all segments!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Build 555 Clock",
+        "Description": "Build a 555 astable oscillator with adjustable frequency using the pot. This will be your clock source to step through digits 0-9.",
+        "DiagramUrl": "/images/levels/level-079/step-6.svg",
+        "Tip": "Start with slow speed (~1 Hz) so you can clearly see each digit!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Connect Clock and Reset",
+        "Description": "Connect 555 output (pin 3) to 4026 clock input (pin 1). Add a push button from pin 15 (reset) to +5V. Pressing reset sets display to 0!",
+        "DiagramUrl": "/images/levels/level-079/step-7.svg",
+        "Tip": "Add a 10kΩ resistor from pin 15 to ground so reset is normally LOW!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Test and Adjust",
+        "Description": "Power on! The display should count 0-1-2-3-4-5-6-7-8-9-0... Adjust the pot to change count speed. Press reset to jump back to 0!",
+        "DiagramUrl": "/images/levels/level-079/step-8.svg",
+        "Tip": "If some segments don't light, check connections and resistor values!"
+      },
+      {
+        "StepNumber": 9,
+        "Title": "Challenge: Add Second Digit",
+        "Description": "Advanced: Use the carry-out pin (pin 5) to drive a second 4026 and display for a 2-digit counter (0-99)!",
+        "DiagramUrl": "/images/levels/level-079/step-9.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "7-Segment Display Segments",
+        "Url": "/images/levels/level-079/diagram-segments.svg",
+        "Description": "Segment labels and digit patterns"
+      },
+      {
+        "Title": "4026 Pinout and Truth Table",
+        "Url": "/images/levels/level-079/diagram-4026.svg",
+        "Description": "Pin functions and segment patterns for 0-9"
+      },
+      {
+        "Title": "Complete Counter Display Circuit",
+        "Url": "/images/levels/level-079/diagram-complete.svg",
+        "Description": "Full schematic with all connections"
+      }
+    ],
+    "FunFact": "7-segment displays were invented in 1908! They became popular in the 1970s for calculators and digital clocks. Before LED 7-segment displays, some used tiny incandescent bulbs, and others used 'Nixie tubes' (gas-discharge displays). Modern displays often use 14 or 16 segments for showing letters too. Your microwave, oven, and alarm clock probably all use 7-segment displays!",
+    "Quiz": {
+      "Question": "Why does the 4026 IC need to know which type of 7-segment display you're using?",
+      "Options": [
+        "The 4026 is designed for common cathode displays and outputs HIGH to light segments",
+        "Different displays use different voltages",
+        "It affects the counting speed",
+        "It changes the power consumption"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The 4026 outputs HIGH signals to light segments. For common cathode displays (cathodes tied to ground), a HIGH output through a resistor lights the segment. Common anode displays (anodes tied to +V) need LOW outputs to light segments. The 4026 is designed for common cathode, so using common anode would show inverted, incorrect patterns!"
+    }
+  },
+  {
+    "Id": 80,
+    "Title": "Digital Half-Adder Circuit",
+    "Category": "Circuit Wizard",
+    "Difficulty": 8,
+    "EstimatedTime": 90,
+    "Components": [
+      {
+        "Name": "7400 NAND Gate IC",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/ic-7400.svg",
+        "Description": "For building logic"
+      },
+      {
+        "Name": "7486 XOR Gate IC",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/ic-7486.svg",
+        "Description": "For Sum calculation"
+      },
+      {
+        "Name": "LEDs (Green and Yellow)",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/led.svg",
+        "Description": "Inputs and outputs display"
+      },
+      {
+        "Name": "220Ω Resistors",
+        "Quantity": 4,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "LED current limiters"
+      },
+      {
+        "Name": "10kΩ Resistors",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/resistor.svg",
+        "Description": "Pull-down resistors"
+      },
+      {
+        "Name": "SPDT Switches",
+        "Quantity": 2,
+        "ImageUrl": "/images/components/switch-spdt.svg",
+        "Description": "Binary inputs (0 or 1)"
+      },
+      {
+        "Name": "5V Power Supply",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/power-supply-5v.svg",
+        "Description": "Power source"
+      },
+      {
+        "Name": "Breadboard",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/breadboard.svg",
+        "Description": "For building the circuit"
+      },
+      {
+        "Name": "Jumper Wires",
+        "Quantity": 1,
+        "ImageUrl": "/images/components/jumper-wires.svg",
+        "Description": "For connections"
+      }
+    ],
+    "AdditionalMaterials": [
+      "Binary addition table",
+      "Truth table worksheet",
+      "Paper for documenting results"
+    ],
+    "LearningObjectives": [
+      "Understand binary addition",
+      "Build arithmetic circuits using logic gates",
+      "Learn about Sum and Carry bits",
+      "Explore the foundation of computer arithmetic",
+      "Combine multiple ICs to perform calculations"
+    ],
+    "SafetyNotes": [
+      "Verify all IC orientations and power connections",
+      "Double-check wiring before powering on",
+      "Test each IC separately before combining"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Binary Addition",
+        "Description": "Binary addition: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (that's 0 with a carry of 1). A half-adder adds two 1-bit numbers and produces Sum and Carry outputs!",
+        "DiagramUrl": "/images/levels/level-080/step-1.svg",
+        "Tip": "When both inputs are 1, the sum is 0 but we 'carry' 1 to the next position - just like 9+1=10 in decimal!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Design the Logic",
+        "Description": "Sum = A XOR B (different inputs), Carry = A AND B (both inputs HIGH). Draw the truth table to verify!",
+        "DiagramUrl": "/images/levels/level-080/step-2.svg",
+        "Tip": "XOR outputs 1 when inputs are DIFFERENT. AND outputs 1 when BOTH are 1!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Set Up Input Switches",
+        "Description": "Wire two SPDT switches as A and B inputs. Center pin to gate inputs, one side to +5V (=1), other to GND (=0). Add LEDs to show input states!",
+        "DiagramUrl": "/images/levels/level-080/step-3.svg",
+        "Tip": "Label your switches 'A' and 'B', and the LED positions '0' and '1'!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Build XOR for Sum",
+        "Description": "Insert 7486 XOR gate IC. Power it (pin 14 to +5V, pin 7 to GND). Connect inputs A and B to pins 1 and 2. Output pin 3 is the Sum bit!",
+        "DiagramUrl": "/images/levels/level-080/step-4.svg",
+        "Tip": "The 7486 has four XOR gates - you only need one for now!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Build AND for Carry",
+        "Description": "Build AND gate using NAND gates: Use two NAND gates from the 7400. First NAND gets A and B inputs. Second NAND gets the first NAND output on both inputs (makes inverter). Output is Carry!",
+        "DiagramUrl": "/images/levels/level-080/step-5.svg",
+        "Tip": "NAND(A,B) followed by NAND(X,X) = AND(A,B). NAND is universal!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Add Output LEDs",
+        "Description": "Connect green LED (through 220Ω) to Sum output. Connect yellow LED (through 220Ω) to Carry output. Now you can see the results!",
+        "DiagramUrl": "/images/levels/level-080/step-6.svg",
+        "Tip": "Label the Sum LED 'S' and Carry LED 'C' for clarity!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test All Cases",
+        "Description": "Test all four input combinations and verify against the truth table: 0+0=00, 0+1=01, 1+0=01, 1+1=10 (Carry=1, Sum=0)!",
+        "DiagramUrl": "/images/levels/level-080/step-7.svg",
+        "Tip": "Document your results in a truth table - this proves your adder works!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Build Full Adder (Challenge)",
+        "Description": "Advanced: A full adder adds three inputs (A, B, and Carry-In from previous bit). Use two half-adders and an OR gate to build a full adder!",
+        "DiagramUrl": "/images/levels/level-080/step-8.svg",
+        "Tip": "Full adders can be chained to add multi-bit numbers - that's how CPUs do addition!"
+      },
+      {
+        "StepNumber": 9,
+        "Title": "Build 4-Bit Adder (Advanced)",
+        "Description": "Ultimate challenge: Chain four full adders to add two 4-bit binary numbers. Use the 7483 IC (4-bit binary adder) or build from gates!",
+        "DiagramUrl": "/images/levels/level-080/step-9.svg",
+        "Tip": "Modern CPUs have 64-bit adders built from billions of transistors!"
+      },
+      {
+        "StepNumber": 10,
+        "Title": "Reflect on Computer Arithmetic",
+        "Description": "Congratulations! You've built the fundamental circuit that performs addition in every computer! From this simple adder, CPUs build multiplication, division, and all math operations!",
+        "DiagramUrl": "/images/levels/level-080/step-10.svg"
+      }
+    ],
+    "Diagrams": [
+      {
+        "Title": "Half-Adder Truth Table",
+        "Url": "/images/levels/level-080/diagram-truth-table.svg",
+        "Description": "All input combinations and outputs"
+      },
+      {
+        "Title": "Half-Adder Logic Diagram",
+        "Url": "/images/levels/level-080/diagram-logic.svg",
+        "Description": "XOR and AND gates implementation"
+      },
+      {
+        "Title": "Complete Half-Adder Circuit",
+        "Url": "/images/levels/level-080/diagram-complete.svg",
+        "Description": "Full schematic with inputs and outputs"
+      },
+      {
+        "Title": "Full Adder Block Diagram",
+        "Url": "/images/levels/level-080/diagram-full-adder.svg",
+        "Description": "How to extend to full adder"
+      }
+    ],
+    "FunFact": "The half-adder circuit you just built is the foundation of the Arithmetic Logic Unit (ALU) in every computer processor! The first electronic computer, ENIAC (1945), used 17,468 vacuum tubes to build adders and other arithmetic circuits. Your smartphone's processor has billions of transistors forming thousands of adders that can perform billions of additions per second. All starting from the simple XOR and AND gates you just mastered!",
+    "Quiz": {
+      "Question": "In a half-adder, what happens when you add 1 + 1 in binary?",
+      "Options": [
+        "Sum = 0, Carry = 1 (result is 10 in binary, which is 2 in decimal)",
+        "Sum = 1, Carry = 1 (result is 11)",
+        "Sum = 1, Carry = 0 (result is 1)",
+        "Sum = 0, Carry = 0 (result is 0)"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "When adding 1+1 in binary, the result is 10 (2 in decimal). This means the Sum bit is 0 and the Carry bit is 1. The Carry represents the '2s place' in binary, just like carries in decimal addition represent the '10s place'. This is why the XOR gives 0 (inputs are the same) and AND gives 1 (both inputs are HIGH)!"
+    }
+  }
+]

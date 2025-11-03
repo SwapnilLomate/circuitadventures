@@ -1,0 +1,1187 @@
+[
+  {
+    "Id": 91,
+    "Title": "Line Following Robot",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 75,
+    "Components": [
+      {
+        "Name": "Arduino Uno",
+        "Quantity": 1,
+        "Description": "Microcontroller brain for robot navigation"
+      },
+      {
+        "Name": "L293D Motor Driver IC",
+        "Quantity": 1,
+        "Description": "Controls two DC motors independently"
+      },
+      {
+        "Name": "DC Gear Motors",
+        "Quantity": 2,
+        "Description": "Provide movement for robot wheels"
+      },
+      {
+        "Name": "IR Line Sensor Module (TCRT5000)",
+        "Quantity": 3,
+        "Description": "Detects black line on white surface"
+      },
+      {
+        "Name": "Robot Chassis Kit",
+        "Quantity": 1,
+        "Description": "Frame with wheels and battery holder"
+      },
+      {
+        "Name": "9V Battery",
+        "Quantity": 1,
+        "Description": "Powers the robot motors"
+      }
+    ],
+    "LearningObjectives": [
+      "Understand autonomous robot navigation principles",
+      "Learn PID control algorithms for smooth movement",
+      "Build sensor feedback systems for real-time decisions",
+      "Master differential steering techniques"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Line Following",
+        "Description": "Line following robots use IR reflectance sensors to detect contrast between a dark line and light background. TCRT5000 sensors emit IR light and measure reflection - black surfaces absorb IR (low signal), white surfaces reflect it (high signal). By positioning 3 sensors (left, center, right), the robot can determine if it's on track, veering left, or veering right.",
+        "Tip": "Use a black electrical tape line on white poster board for best contrast!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Robot Chassis",
+        "Description": "Assemble the robot chassis according to kit instructions. Mount the two DC motors to drive the wheels, and attach the battery holder. Position the Arduino on top of the chassis using standoffs or double-sided tape.",
+        "Warning": "Ensure wheels are properly aligned and rotate freely before proceeding!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Mount IR Sensors",
+        "Description": "Mount the 3 IR sensors at the front of the robot, about 5-10mm above ground level. Position them in a line: left sensor, center sensor, right sensor, spaced about 2cm apart. Wire each sensor's output to Arduino pins A0, A1, A2 respectively. Connect VCC to 5V and GND to GND.",
+        "Tip": "Adjust sensor height with small spacers - too high and they won't detect the line!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire L293D Motor Driver",
+        "Description": "Connect L293D pin 16 (VCC1) to Arduino 5V, pin 8 (VCC2) to 9V battery positive, pins 4,5,12,13 to GND. Connect Arduino pin 9 to L293D pin 1 (enable left), pin 5 to pin 2 (left input 1), pin 6 to pin 7 (left input 2). Connect Arduino pin 10 to L293D pin 9 (enable right), pin 3 to pin 10 (right input 1), pin 11 to pin 15 (right input 2). Connect motors to pins 3,6 (left) and 11,14 (right).",
+        "Warning": "Double-check all connections! Reversed motor polarity will make the robot go backward."
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Program Navigation Logic",
+        "Description": "Write Arduino code that reads the 3 IR sensors continuously. Implement logic: if center sensor detects line (LOW), go straight. If left sensor detects line, turn left. If right sensor detects line, turn right. If no sensors detect line, stop or search. Use analogRead() for sensors and set threshold values (typically around 512) to distinguish black from white.",
+        "Tip": "Add Serial.println() to debug sensor values and calibrate thresholds for your surface!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Implement PID Control",
+        "Description": "For smooth following, implement a simple PID controller. Calculate error as (leftSensor - rightSensor). Multiply error by proportional constant Kp (start with 0.5). Add derivative term Kd * (error - lastError) for smoothness. Use this correction to adjust motor speeds: leftSpeed = baseSpeed - correction, rightSpeed = baseSpeed + correction.",
+        "Tip": "Start with P-only control (Kp=1, Kd=0), then add D term for smoother turns!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test and Calibrate",
+        "Description": "Place the robot at the start of your line track. Power it on and observe its behavior. If it overshoots turns, reduce Kp. If it oscillates, add Kd. If it's too slow, increase base speed. Adjust sensor thresholds if detection is unreliable. Test on different track shapes: straight, curves, sharp turns.",
+        "Tip": "Create a test track with gentle curves first, then add sharper turns as you tune!"
+      }
+    ],
+    "SafetyNotes": [
+      "Work on a stable table - don't let robot fall off edges!",
+      "Disconnect battery when programming or wiring",
+      "Ensure no loose wires near spinning wheels"
+    ],
+    "FunFact": "Industrial warehouse robots use similar line-following technology to transport goods autonomously! Amazon's fulfillment centers use thousands of these robots to move products efficiently.",
+    "Quiz": {
+      "Question": "In a line following robot, what does a LOW reading from the IR sensor typically indicate?",
+      "Options": [
+        "The sensor is detecting a black line (absorbing IR)",
+        "The sensor is detecting a white surface (reflecting IR)",
+        "The sensor is broken and needs replacement",
+        "The robot is moving too fast"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "IR reflectance sensors work by emitting infrared light and measuring reflection. Black surfaces absorb IR light, resulting in LOW (0) readings because little light reflects back. White surfaces reflect IR strongly, giving HIGH (1) readings. This contrast allows the robot to detect and follow black lines on white backgrounds."
+    }
+  },
+  {
+    "Id": 92,
+    "Title": "Voice-Controlled Home Automation",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 70,
+    "Components": [
+      {
+        "Name": "Arduino Nano",
+        "Quantity": 1,
+        "Description": "Compact microcontroller for automation"
+      },
+      {
+        "Name": "Voice Recognition Module V3",
+        "Quantity": 1,
+        "Description": "Recognizes up to 80 voice commands"
+      },
+      {
+        "Name": "4-Channel Relay Module",
+        "Quantity": 1,
+        "Description": "Switches high-power AC appliances safely"
+      },
+      {
+        "Name": "LED Bulbs (AC)",
+        "Quantity": 2,
+        "Description": "Simulates home lights"
+      },
+      {
+        "Name": "12V DC Fan",
+        "Quantity": 1,
+        "Description": "Simulates ventilation system"
+      },
+      {
+        "Name": "Buzzer",
+        "Quantity": 1,
+        "Description": "Audio feedback for commands"
+      }
+    ],
+    "LearningObjectives": [
+      "Understand voice recognition technology and signal processing",
+      "Learn to control high-power devices safely with relays",
+      "Build intuitive human-machine interfaces",
+      "Master serial communication between modules"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Voice Recognition",
+        "Description": "The Voice Recognition Module V3 uses speaker-dependent recognition - you train it with your voice, and it recognizes those specific patterns. It extracts voice features (pitch, frequency, duration) and compares them to stored templates. The module can store up to 80 commands across 7 groups. It communicates via UART serial at 9600 baud.",
+        "Tip": "Voice recognition works best in quiet environments - background noise reduces accuracy!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Connect Voice Module",
+        "Description": "Connect Voice Module VCC to Arduino 5V, GND to GND. Connect module TX to Arduino pin 2 (RX), module RX to Arduino pin 3 (TX). This uses software serial communication. Connect the microphone to the module's MIC input. The module has an onboard LED that indicates recognition status.",
+        "Warning": "Do NOT swap TX/RX connections - module TX goes to Arduino RX and vice versa!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Train Voice Commands",
+        "Description": "Upload training code to Arduino that puts the module into learning mode. Speak each command 2-3 times clearly: 'Lights On', 'Lights Off', 'Fan On', 'Fan Off', 'All On', 'All Off'. The module stores voice signatures. Use short, distinct phrases for best results. After training, the module assigns each command a unique ID (0-79).",
+        "Tip": "Speak at consistent volume and distance (about 10cm from microphone) during training!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Relay Module",
+        "Description": "Connect relay module VCC to Arduino 5V, GND to GND. Connect relay control pins IN1, IN2, IN3, IN4 to Arduino pins 4, 5, 6, 7. Each relay has COM (common), NO (normally open), and NC (normally closed) terminals. Connect light 1 between power source and relay 1 COM-NO, light 2 to relay 2, fan to relay 3, buzzer to relay 4.",
+        "Warning": "NEVER work with AC wiring while powered! Always disconnect power before wiring relays!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Program Command Handler",
+        "Description": "Write Arduino code that listens for voice command IDs from the module via serial. When a command is received, parse the ID and execute the corresponding action. For example: ID 0 = digitalWrite(4, HIGH) turns on light 1, ID 1 = digitalWrite(4, LOW) turns it off. Add buzzer beeps for audio feedback when commands are recognized.",
+        "Tip": "Print received command IDs to Serial Monitor during testing to debug recognition!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Implement Smart Features",
+        "Description": "Add intelligent behaviors: 'All On' command turns all devices on, 'All Off' turns everything off. Implement 'Sleep Mode' that dims lights and turns off fan. Add 'Security Mode' that turns on all lights if motion detected (if you add a PIR sensor). Store device states in variables so commands toggle rather than just set.",
+        "Tip": "Use millis() timers to auto-turn-off devices after set periods for energy saving!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test and Optimize",
+        "Description": "Test each voice command multiple times from different distances and angles. If recognition fails, retrain that command with clearer pronunciation. Test with background noise to understand limits. Try commands from different users - speaker-dependent systems won't recognize other voices (security feature!). Add error handling for unrecognized commands.",
+        "Tip": "Keep a command list visible - it's easy to forget exact phrases you trained!"
+      }
+    ],
+    "SafetyNotes": [
+      "CRITICAL: Get adult supervision when working with AC power!",
+      "Never touch relay terminals while circuit is powered",
+      "Use proper AC-rated wiring and enclosures for real deployments",
+      "Test with low-voltage DC devices (LEDs, fans) first before AC"
+    ],
+    "FunFact": "Modern voice assistants like Alexa and Google Home use neural networks with millions of parameters to understand speech. They can handle 15+ languages and thousands of commands - far beyond this module's 80! However, the principle of feature extraction (analyzing pitch, tone, frequency) remains the same.",
+    "Quiz": {
+      "Question": "Why is the Voice Recognition Module V3 called 'speaker-dependent' and what security advantage does this provide?",
+      "Options": [
+        "It only recognizes voices it was trained on, preventing unauthorized users from controlling your devices",
+        "It requires external speakers to work properly for audio output",
+        "It depends on the speaker's accent to function correctly",
+        "It only works when connected to a Bluetooth speaker"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Speaker-dependent recognition means the module learns and stores YOUR specific voice patterns during training. It won't respond to other people's voices, even if they say the exact same words. This is a security feature - only authorized users who trained the system can control the devices. This is different from speaker-independent systems (like Alexa) that work for anyone."
+    }
+  },
+  {
+    "Id": 93,
+    "Title": "Obstacle-Avoiding Robot",
+    "Category": "Innovation Lab",
+    "Difficulty": 10,
+    "EstimatedTime": 80,
+    "Components": [
+      {
+        "Name": "Arduino Uno",
+        "Quantity": 1,
+        "Description": "Microcontroller for autonomous navigation"
+      },
+      {
+        "Name": "HC-SR04 Ultrasonic Sensors",
+        "Quantity": 2,
+        "Description": "Detect obstacles at different angles"
+      },
+      {
+        "Name": "SG90 Servo Motor",
+        "Quantity": 1,
+        "Description": "Pan sensor for scanning environment"
+      },
+      {
+        "Name": "L298N Motor Driver",
+        "Quantity": 1,
+        "Description": "High-current dual motor controller"
+      },
+      {
+        "Name": "DC Gear Motors",
+        "Quantity": 2,
+        "Description": "Drive robot wheels"
+      },
+      {
+        "Name": "Robot Chassis",
+        "Quantity": 1,
+        "Description": "Frame with wheels"
+      },
+      {
+        "Name": "Li-ion Battery Pack (7.4V)",
+        "Quantity": 1,
+        "Description": "Rechargeable power source"
+      }
+    ],
+    "LearningObjectives": [
+      "Build fully autonomous navigation systems",
+      "Implement pathfinding and decision-making algorithms",
+      "Master multi-sensor fusion for robust obstacle detection",
+      "Learn real-time system design and interrupt handling"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Autonomous Navigation",
+        "Description": "Autonomous robots use sense-think-act loops: SENSE obstacles with ultrasonic sensors, THINK about best path using decision algorithms, ACT by controlling motors. This robot uses two HC-SR04 sensors - one mounted on a servo for scanning (0° to 180°), one fixed forward. By scanning the environment, the robot builds a simple 'mental map' of obstacle distances and finds clear paths.",
+        "Tip": "Real autonomous vehicles (like Tesla) use similar sense-plan-act architecture with cameras and radar!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Robot Platform",
+        "Description": "Assemble the robot chassis with both motors installed. Mount the L298N motor driver on top. Create a raised platform at the front using standoffs to mount the Arduino. This elevated position allows the servo and ultrasonic sensor to be mounted at the front without obstruction. Ensure the chassis is balanced - center of mass should be between the wheels.",
+        "Warning": "If the robot is front-heavy, it may tip during sudden stops. Add weight to the rear if needed."
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Mount Sensor System",
+        "Description": "Mount one HC-SR04 sensor on the SG90 servo motor horn using hot glue or a 3D-printed bracket. This creates a scanning sensor that can look left and right. Mount this assembly at the front center of the robot, raised above the chassis. Mount the second HC-SR04 fixed, facing forward, slightly below the scanning sensor. This provides constant forward monitoring while scanning occurs.",
+        "Tip": "Angle the fixed sensor slightly downward (about 15°) to detect low obstacles!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Motor System",
+        "Description": "Connect L298N IN1, IN2, IN3, IN4 to Arduino pins 8, 9, 10, 11 for direction control. Connect ENA and ENB to pins 5 and 6 for PWM speed control. Connect the two motors to OUT1-OUT2 (left) and OUT3-OUT4 (right). Connect battery 7.4V to L298N 12V input and GND. The L298N's 5V regulator can power Arduino - connect to Arduino Vin.",
+        "Warning": "Do NOT power Arduino via USB while motor battery is connected - choose one power source!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Wire Sensors and Servo",
+        "Description": "Connect servo signal wire to Arduino pin 3, VCC to 5V, GND to GND. Connect scanning HC-SR04 Trig to pin A0, Echo to pin A1. Connect fixed HC-SR04 Trig to pin A2, Echo to pin A3. All sensors share the 5V and GND lines. Use jumper wires long enough to allow servo rotation without tension.",
+        "Tip": "Color-code your wires - red for power, black for ground, yellow/white for signals!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Program Navigation Algorithm",
+        "Description": "Implement this algorithm: (1) Move forward while checking fixed sensor. (2) If obstacle detected within 30cm, stop. (3) Perform scan: rotate servo from 0° to 180° in 30° increments, measure distance at each angle, store in array. (4) Analyze scan data: find angle with maximum clear distance. (5) If best path is left (<90°), turn left. If right (>90°), turn right. (6) Drive forward, repeat. Use functions: measureDistance(), performScan(), findBestPath(), turnToAngle(), driveForward().",
+        "Tip": "Add hysteresis - only change direction if new path is significantly better (>20cm difference)!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Optimize and Test",
+        "Description": "Test in an obstacle course with boxes, chairs, walls. Tune parameters: detection threshold (30cm works well), scan resolution (every 30° balances speed vs. accuracy), turning duration (calibrate 90° turn time), driving speed (slower = more responsive). Add behaviors: if all directions blocked, back up before rescanning. Add random wandering if stuck in loop. Implement 'stuck detection' using timeout counters.",
+        "Tip": "Film your robot's behavior to analyze decision-making and improve algorithms!"
+      }
+    ],
+    "SafetyNotes": [
+      "Test on the floor - robot may drive off tables!",
+      "Disconnect battery when programming",
+      "Ensure no loose wires near spinning wheels or servo",
+      "Start with slow speeds until navigation is reliable"
+    ],
+    "FunFact": "NASA's Mars rovers use similar obstacle avoidance! Curiosity and Perseverance have autonomous navigation systems called AutoNav that analyze terrain, detect obstacles with stereo cameras, and plan safe paths. Due to the 20-minute signal delay to Mars, the rovers MUST navigate autonomously without real-time human control!",
+    "Quiz": {
+      "Question": "Why does the robot use a scanning ultrasonic sensor on a servo instead of just having multiple fixed sensors?",
+      "Options": [
+        "One scanning sensor can cover 180° field of view, replacing 6+ fixed sensors, saving cost and complexity",
+        "Servo motors are required for ultrasonic sensors to work properly",
+        "Fixed sensors cannot detect obstacles accurately",
+        "The servo makes the robot look more advanced and impressive"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "A single ultrasonic sensor on a servo can scan across 180° by rotating and taking measurements at different angles (0°, 30°, 60°, 90°, etc.). This creates a 'radar-like' sweep of the environment. To achieve the same coverage with fixed sensors, you'd need 6-7 sensors pointing in different directions, which is more expensive, uses more Arduino pins, and requires more complex wiring. The scanning approach trades some speed (time to sweep) for cost and simplicity."
+    }
+  },
+  {
+    "Id": 94,
+    "Title": "Real-Time Clock Alarm System",
+    "Category": "Innovation Lab",
+    "Difficulty": 8,
+    "EstimatedTime": 60,
+    "Components": [
+      {
+        "Name": "Arduino Uno",
+        "Quantity": 1,
+        "Description": "Microcontroller for time management"
+      },
+      {
+        "Name": "DS3231 RTC Module",
+        "Quantity": 1,
+        "Description": "Precision real-time clock with battery backup"
+      },
+      {
+        "Name": "16x2 LCD with I2C",
+        "Quantity": 1,
+        "Description": "Displays time and alarm status"
+      },
+      {
+        "Name": "Push Buttons",
+        "Quantity": 4,
+        "Description": "Set time, set alarm, dismiss, mode switch"
+      },
+      {
+        "Name": "Active Buzzer",
+        "Quantity": 1,
+        "Description": "Alarm sound"
+      },
+      {
+        "Name": "LED (Red)",
+        "Quantity": 1,
+        "Description": "Alarm armed indicator"
+      },
+      {
+        "Name": "CR2032 Battery",
+        "Quantity": 1,
+        "Description": "Keeps time during power loss"
+      }
+    ],
+    "LearningObjectives": [
+      "Understand real-time clock technology and timekeeping",
+      "Learn to handle time and date calculations in embedded systems",
+      "Master interrupt-driven programming for responsive interfaces",
+      "Build persistent data storage with battery backup"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Real-Time Clocks",
+        "Description": "The DS3231 is a temperature-compensated real-time clock with crystal oscillator. Unlike Arduino's millis() which resets on power loss, the DS3231 maintains time indefinitely via CR2032 backup battery. It communicates via I2C (address 0x68), tracks seconds/minutes/hours/day/date/month/year, and has two programmable alarms. Temperature compensation keeps accuracy to ±2 minutes per year!",
+        "Tip": "Set the RTC time once from your computer, then it keeps accurate time forever!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Connect DS3231 Module",
+        "Description": "Connect DS3231 VCC to Arduino 5V, GND to GND, SDA to A4, SCL to A5. Insert CR2032 battery into the module's battery holder. The module includes pull-up resistors for I2C, so no external resistors needed. The module also has temperature sensor onboard (±3°C accuracy) that you can read via I2C.",
+        "Tip": "The DS3231 module LED indicates power status - it stays on even when Arduino is off if battery is present!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect LCD Display",
+        "Description": "Connect I2C LCD VCC to 5V, GND to GND, SDA to A4 (shared with RTC), SCL to A5 (shared with RTC). Both the RTC and LCD use I2C, so they share the same bus (different addresses). LCD is usually at address 0x27 or 0x3F. Use I2C scanner code to find your LCD's address if display doesn't work.",
+        "Tip": "Adjust LCD contrast with the small potentiometer on the I2C backpack!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Add Controls",
+        "Description": "Connect 4 push buttons to pins 2, 3, 4, 5 with one side to pin, other to GND. Enable internal pull-up resistors in code with pinMode(pin, INPUT_PULLUP). Buttons: pin 2 = SET TIME, pin 3 = SET ALARM, pin 4 = DISMISS ALARM, pin 5 = MODE (toggle between clock and alarm display). Connect LED anode to pin 7 via 220Ω resistor, cathode to GND. Connect buzzer + to pin 6, - to GND.",
+        "Warning": "Use button debouncing in code - without it, one press may register as multiple!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Program Time Setting",
+        "Description": "Install DS3231 library (RTClib by Adafruit). On first run, set RTC time: rtc.adjust(DateTime(F(__DATE__), F(__TIME__))) uses compile time. For production, create menu to set time with buttons: press SET TIME to enter mode, use MODE button to cycle through hour/minute/second fields, use DISMISS button to increment selected field, press SET TIME again to save.",
+        "Tip": "Only call rtc.adjust() once! Comment it out after first upload or time resets every reboot!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Implement Alarm Logic",
+        "Description": "Store alarm time in EEPROM so it persists across power cycles. When SET ALARM pressed, enter alarm setting mode similar to time setting. In main loop, get current time with rtc.now(), compare to alarm time. If matched and alarm is armed, activate buzzer with tone() function at 1000Hz, blink LED rapidly. Press DISMISS to silence alarm. Add snooze feature: DISMISS delays alarm by 5 minutes.",
+        "Tip": "Use rtc.setAlarm1() to configure hardware alarm - RTC can trigger Arduino interrupt!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Enhance Display",
+        "Description": "Display line 1: 'HH:MM:SS Day' (e.g., '09:45:32 Wed'). Line 2: 'Alarm: HH:MM ON/OFF' or 'Temp: 23.5C'. Add scrolling text for alarm trigger. Implement animations: colons blink every second, alarm icon appears when armed. Add brightness control if LCD supports it. Show battery status indicator if desired.",
+        "Tip": "Use sprintf() or String formatting to ensure time displays with leading zeros (09:05, not 9:5)!"
+      }
+    ],
+    "SafetyNotes": [
+      "CR2032 batteries are coin cells - keep away from children (choking hazard)",
+      "Don't short circuit the battery terminals",
+      "Replace backup battery every 2-3 years"
+    ],
+    "FunFact": "The DS3231's accuracy (±2 minutes per year) comes from its Temperature Compensated Crystal Oscillator (TCXO). Quartz crystals change frequency with temperature - at 25°C they're accurate, but deviate at other temperatures. The DS3231 measures temperature every 64 seconds and compensates the clock frequency accordingly. This is the same technology used in GPS satellites and high-precision scientific instruments!",
+    "Quiz": {
+      "Question": "Why does the DS3231 RTC module need a backup battery (CR2032) and what happens without it?",
+      "Options": [
+        "The battery keeps the clock running when main power is off, preventing time loss. Without it, you'd have to reset the time after every power outage.",
+        "The battery powers the LCD display when Arduino is unplugged",
+        "The battery is used to make the buzzer louder during alarms",
+        "The DS3231 requires two power sources to function properly"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The DS3231 RTC has extremely low power consumption (about 3µA in battery backup mode). When main VCC power is disconnected, the CR2032 battery takes over, powering just the timekeeping circuit. This allows the RTC to maintain accurate time for years without main power. Without the backup battery, every time you unplug the Arduino or power goes out, the RTC would lose time and you'd have to set it again. The battery makes the clock truly persistent!"
+    }
+  },
+  {
+    "Id": 95,
+    "Title": "PIR Motion Security System",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 70,
+    "Components": [
+      {
+        "Name": "Arduino Uno",
+        "Quantity": 1,
+        "Description": "Security system controller"
+      },
+      {
+        "Name": "PIR Motion Sensor (HC-SR501)",
+        "Quantity": 2,
+        "Description": "Detect human movement via infrared"
+      },
+      {
+        "Name": "GSM Module (SIM800L)",
+        "Quantity": 1,
+        "Description": "Send SMS alerts to phone"
+      },
+      {
+        "Name": "16x2 LCD with I2C",
+        "Quantity": 1,
+        "Description": "Display system status"
+      },
+      {
+        "Name": "Keypad 4x4",
+        "Quantity": 1,
+        "Description": "Enter security code"
+      },
+      {
+        "Name": "Active Buzzer",
+        "Quantity": 1,
+        "Description": "Alarm siren"
+      },
+      {
+        "Name": "LED (Red & Green)",
+        "Quantity": 2,
+        "Description": "Armed/disarmed indicators"
+      },
+      {
+        "Name": "SIM Card",
+        "Quantity": 1,
+        "Description": "For SMS alerts"
+      }
+    ],
+    "LearningObjectives": [
+      "Understand passive infrared (PIR) motion detection technology",
+      "Learn GSM cellular communication and SMS protocols",
+      "Build secure access control with keypad authentication",
+      "Master state machine programming for complex systems"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand PIR Technology",
+        "Description": "PIR (Passive Infrared) sensors detect changes in infrared radiation - all warm objects emit IR. Humans emit IR around 9-10μm wavelength. The HC-SR501 has two pyroelectric sensors behind a Fresnel lens that divides the field of view into zones. When a warm body moves between zones, it creates a differential signal triggering the output. PIRs don't emit anything - they're passive, just detecting existing IR radiation changes.",
+        "Tip": "PIRs work best detecting side-to-side movement, not approaching movement directly toward sensor!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Configure PIR Sensors",
+        "Description": "HC-SR501 has two potentiometers: Sensitivity (3-7m range adjustment) and Time Delay (0.3s-5min trigger duration). Set sensitivity to mid-range initially. Set time delay to minimum for security (faster response). The jumper has two positions: H = Retriggering mode (output stays HIGH while motion continues), L = Single trigger mode (output goes HIGH for set time then LOW). Use H mode for security.",
+        "Tip": "Let PIR warm up for 60 seconds after powering on - readings are unstable during initialization!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Wire Sensor Network",
+        "Description": "Connect PIR #1 (entrance) VCC to Arduino 5V, GND to GND, OUT to pin 2. Connect PIR #2 (interior) same way, OUT to pin 3. Connect green LED to pin 4 (system ready), red LED to pin 5 (alarm triggered), buzzer to pin 6. Connect 4x4 keypad rows to pins 7-10, columns to pins 11-14 (use Keypad library wiring diagram).",
+        "Warning": "PIR sensors are sensitive to air currents and heat sources - avoid pointing at heaters, AC vents, or windows with direct sunlight!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Connect GSM Module",
+        "Description": "SIM800L requires 3.7-4.2V power (use dedicated power supply or LiPo battery, NOT Arduino 5V regulator - it draws 2A peak during transmission!). Connect SIM800L TXD to Arduino pin 8 (software serial RX), RXD to Arduino pin 9 (software serial TX). Share common ground. Insert activated SIM card with SMS capability. Connect antenna to ANT connector.",
+        "Warning": "CRITICAL: SIM800L RXD is 2.8V max! Use 1kΩ + 2.2kΩ voltage divider from Arduino TX to protect it!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Program State Machine",
+        "Description": "Implement states: DISARMED (green LED on, ignore PIR), ARMED (red LED on, monitor PIR), TRIGGERED (alarm blaring, send SMS), SETUP (change password). On boot, start DISARMED. Prompt for 4-digit code on keypad. If correct, toggle ARMED/DISARMED. In ARMED state, if PIR detects motion, enter TRIGGERED state after 10-second warning beep (grace period to disarm). TRIGGERED sends SMS and sounds alarm until disarmed with code.",
+        "Tip": "Store password in EEPROM so it persists. Default password: 1234. Add master reset code!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Implement SMS Alerts",
+        "Description": "Use AT commands to control SIM800L. Initialize with AT, check signal with AT+CSQ (should return >10), set SMS text mode with AT+CMGF=1, send SMS with AT+CMGS=\"+1234567890\", then type message, end with Ctrl+Z (char 26). Example alert: 'SECURITY ALERT! Motion detected at 09:45 AM. Zone: Entrance.' Add timestamp from RTC if available.",
+        "Tip": "Wait for GSM registration (AT+CREG? returns 0,1) before sending - takes 10-30 seconds after power-on!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test and Optimize",
+        "Description": "Test each zone independently - walk through PIR detection areas, verify triggers. Test false alarms: pets walking by (adjust PIR height to ignore animals), moving curtains/plants. Implement multi-zone logic: require motion in 2 zones within 10 seconds to trigger (reduces false alarms). Add SMS log of arming/disarming events. Implement low-power sleep mode when disarmed.",
+        "Tip": "Add tamper detection - trigger alarm if enclosure is opened or PIR unplugged!"
+      }
+    ],
+    "SafetyNotes": [
+      "SIM800L requires proper power supply - insufficient current causes brownouts and resets",
+      "GSM modules can interfere with Arduino - use separate power supplies with shared ground",
+      "Check local laws regarding automated security systems and SMS alerts",
+      "Don't rely solely on this for real security - it's an educational project!"
+    ],
+    "FunFact": "Commercial security systems use dual-technology sensors combining PIR and microwave radar. PIR detects infrared changes (body heat), while microwave radar bounces signals and detects movement via Doppler effect. Both must trigger simultaneously for alarm to sound, virtually eliminating false alarms from pets, curtains, or temperature changes. This is called 'AND logic' - security at its smartest!",
+    "Quiz": {
+      "Question": "Why is the SIM800L GSM module dangerous to power directly from Arduino's 5V regulator, and what happens if you try?",
+      "Options": [
+        "SIM800L draws 2A peak during transmission; Arduino regulator provides max 500mA, causing voltage collapse, brownout, and system crash",
+        "SIM800L only works with 12V power and will be damaged by 5V",
+        "GSM modules create electromagnetic interference that destroys Arduino chips",
+        "The SIM card requires exactly 3.7V or it will corrupt data"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "GSM modules transmit radio signals at high power (up to 2W) to reach cell towers. During transmission bursts, the SIM800L draws peak currents of 2A (2000mA) for milliseconds. Arduino's onboard 5V regulator can only supply 500-800mA. When the GSM module transmits, current demand exceeds supply, voltage drops dramatically (brownout), causing both the Arduino and GSM module to reset. This is why GSM modules need dedicated power supplies (LiPo battery or 2A+ buck converter). Current matters as much as voltage!"
+    }
+  },
+  {
+    "Id": 96,
+    "Title": "Wireless Sensor Network Node",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 75,
+    "Components": [
+      {
+        "Name": "Arduino Nano",
+        "Quantity": 3,
+        "Description": "Three nodes for network mesh"
+      },
+      {
+        "Name": "nRF24L01+ Radio Module",
+        "Quantity": 3,
+        "Description": "2.4GHz wireless transceivers"
+      },
+      {
+        "Name": "DHT22 Temperature Sensor",
+        "Quantity": 1,
+        "Description": "Environmental data for node 1"
+      },
+      {
+        "Name": "Light Sensor (BH1750)",
+        "Quantity": 1,
+        "Description": "Light level monitoring for node 2"
+      },
+      {
+        "Name": "OLED Display 0.96\" I2C",
+        "Quantity": 1,
+        "Description": "Display data on base station (node 3)"
+      },
+      {
+        "Name": "10µF Capacitor",
+        "Quantity": 3,
+        "Description": "Stabilize nRF24 power supply"
+      }
+    ],
+    "LearningObjectives": [
+      "Understand wireless mesh networking and routing protocols",
+      "Learn RF communication principles at 2.4GHz",
+      "Build distributed sensor systems with multiple nodes",
+      "Master packet-based data transmission and error handling"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Wireless Networks",
+        "Description": "The nRF24L01+ operates at 2.4GHz (same as WiFi and Bluetooth) but uses a simpler proprietary protocol. It can create networks of up to 6 nodes (1 transmitter, 5 receivers) on a single channel. With mesh networking (using RF24Network library), nodes can relay messages, extending range. Each node has an address (00, 01, 011, etc. in octal). Data is sent in packets (max 32 bytes) with automatic acknowledgment and retransmission.",
+        "Tip": "2.4GHz signals are blocked by walls and metal - outdoor range is 100m+, indoor may be 10-30m!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Node Hardware",
+        "Description": "For each of 3 nodes: Connect nRF24L01+ to Arduino Nano: VCC to 3.3V (NOT 5V!), GND to GND, CE to pin 9, CSN to pin 10, MOSI to pin 11, MISO to pin 12, SCK to pin 13. CRITICAL: Solder a 10µF capacitor directly between nRF24 VCC and GND pins - the module has voltage spikes during transmission that cause issues without decoupling.",
+        "Warning": "nRF24L01+ is 3.3V only! Connecting VCC to 5V will instantly damage the module!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Configure Network Topology",
+        "Description": "Design a 3-node network: Node 00 = Base Station (OLED display, receives all data), Node 01 = Temperature Sensor (DHT22, sends temp data), Node 02 = Light Sensor (BH1750, sends light data). Base station is the master receiver. Nodes 01 and 02 are transmitters. Each node needs unique address assigned in code using network.begin(90, node_address) where 90 is the channel (0-125).",
+        "Tip": "Use octal addressing: 00 = master, 01-05 = children, 011-055 = grandchildren. This creates tree topology!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Sensors to Nodes",
+        "Description": "Node 01: Connect DHT22 data pin to Nano pin 2, VCC to 5V, GND to GND (DHT22 is 5V tolerant). Node 02: Connect BH1750 SDA to A4, SCL to A5, VCC to 5V, GND to GND (I2C device). Node 00: Connect OLED SDA to A4, SCL to A5, VCC to 5V, GND to GND. All nodes have their nRF24 modules wired identically per step 2.",
+        "Tip": "Label each node clearly - it's easy to mix them up during programming!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Program Transmitter Nodes",
+        "Description": "Install RF24 and RF24Network libraries. Transmitter code: Initialize network with node address. In loop(), read sensor data (temp for Node 01, light for Node 02). Create packet structure: struct payload_t { byte nodeID; float sensorValue; unsigned long timestamp; }. Populate packet, send with network.write(header, &payload, sizeof(payload)). Send every 5 seconds. Check for ACK (acknowledgment) - if failed, retry up to 3 times.",
+        "Tip": "Use sizeof() for packet size - ensures correct byte count even if you modify struct!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Program Receiver Base Station",
+        "Description": "Base station code: Initialize network as node 00. In loop(), call network.update() to process incoming packets. If network.available(), read packet with network.read(header, &payload, sizeof(payload)). Parse nodeID to determine source. Display on OLED: Line 1: 'Node 01 Temp: 22.5C', Line 2: 'Node 02 Light: 450lx'. Update display when new data arrives. Calculate and display signal strength (RSSI) if available.",
+        "Tip": "Add timeout detection - if node hasn't sent data in 30 seconds, display 'Node XX: OFFLINE'!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test and Expand Network",
+        "Description": "Power all 3 nodes simultaneously. Observe OLED updating with sensor data from both nodes. Test range: move transmitter nodes progressively farther from base station until communication fails. Test interference: turn on WiFi router, microwave - observe packet loss. Expand network: add Node 03 as relay (receives from Node 01, forwards to Node 00) to extend range. Implement multi-hop routing.",
+        "Tip": "Monitor failed transmissions with Serial output - high failure rate indicates interference or low power!"
+      }
+    ],
+    "SafetyNotes": [
+      "NEVER connect nRF24L01+ VCC to 5V - it's 3.3V only and will be destroyed!",
+      "Always use decoupling capacitor - module can't function reliably without it",
+      "nRF24 antennas are fragile - handle carefully to avoid breaking the trace"
+    ],
+    "FunFact": "Wireless sensor networks (WSNs) are used everywhere: smart buildings monitor temperature and occupancy, farms track soil moisture across acres, factories monitor machine vibrations, and cities detect air quality. The ZigBee protocol (similar to nRF24) is used in smart homes - your Philips Hue lights form a mesh network where each bulb acts as a relay, extending range throughout your house. Some networks have thousands of nodes communicating simultaneously!",
+    "Quiz": {
+      "Question": "Why is a 10µF capacitor soldered directly to the nRF24L01+ power pins essential, and what happens without it?",
+      "Options": [
+        "nRF24 draws current spikes (up to 115mA) during transmission; without capacitor, voltage drops, causing packet loss, corruption, or module resets",
+        "The capacitor stores energy to make the radio signal stronger and reach longer distances",
+        "nRF24L01+ modules are defective from factory and need capacitor to work at all",
+        "The capacitor prevents the module from interfering with Arduino's operation"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The nRF24L01+ draws very little current when idle (26µA) but spikes to 11.3mA (RX mode) or 11.5mA (TX mode at 0dBm) during operation. These current spikes happen in microseconds. Long wires from Arduino's 3.3V regulator have inductance and resistance, causing voltage drops during spikes. The 10µF capacitor acts as a local energy reservoir right at the module, instantly supplying current during spikes while voltage is maintained. Without it, voltage dips cause the module to reset, corrupt packets, or fail to transmit. This is called 'decoupling' - a critical technique in all high-speed digital circuits!"
+    }
+  },
+  {
+    "Id": 97,
+    "Title": "Solar-Powered Weather Robot",
+    "Category": "Innovation Lab",
+    "Difficulty": 10,
+    "EstimatedTime": 90,
+    "Components": [
+      {
+        "Name": "Arduino Nano",
+        "Quantity": 1,
+        "Description": "Low-power microcontroller"
+      },
+      {
+        "Name": "6V Solar Panel (2W)",
+        "Quantity": 1,
+        "Description": "Renewable energy source"
+      },
+      {
+        "Name": "TP4056 Li-ion Charger",
+        "Quantity": 1,
+        "Description": "Solar charge controller"
+      },
+      {
+        "Name": "18650 Li-ion Battery (3.7V)",
+        "Quantity": 2,
+        "Description": "Energy storage for night operation"
+      },
+      {
+        "Name": "BME280 Sensor",
+        "Quantity": 1,
+        "Description": "Temperature, humidity, pressure"
+      },
+      {
+        "Name": "BH1750 Light Sensor",
+        "Quantity": 1,
+        "Description": "Solar irradiance monitoring"
+      },
+      {
+        "Name": "OLED Display 0.96\" I2C",
+        "Quantity": 1,
+        "Description": "Display weather data"
+      },
+      {
+        "Name": "DC Gear Motors",
+        "Quantity": 2,
+        "Description": "Mobile platform"
+      },
+      {
+        "Name": "L293D Motor Driver",
+        "Quantity": 1,
+        "Description": "Motor control"
+      }
+    ],
+    "LearningObjectives": [
+      "Build self-sustaining solar-powered autonomous systems",
+      "Learn power management and energy harvesting techniques",
+      "Master environmental sensing for meteorology",
+      "Implement intelligent power-saving strategies"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Solar Robotics",
+        "Description": "Solar-powered robots must balance energy harvesting (solar input) with consumption (sensors, motors, microcontroller). A 2W solar panel generates peak 2W in direct sunlight (about 330mA at 6V), but varies with weather, angle, and time. Two 18650 batteries (2600mAh each = 5200mAh total at 3.7V = 19.24Wh) provide backup for night or cloudy days. The robot must implement power budgeting: spend most time sleeping (1mA), wake periodically to sense (20mA), move only when necessary (200mA+).",
+        "Tip": "Solar works best with Maximum Power Point Tracking (MPPT), but TP4056 is simpler constant-current charging!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Build Solar Power System",
+        "Description": "Connect 6V solar panel to TP4056 IN+ and IN-. Connect two 18650 batteries in parallel (positive to positive, negative to negative) to TP4056 BAT+ and BAT-. TP4056 OUT+ and OUT- provide regulated power output. Connect OUT+ to a boost converter (or directly to Arduino VIN if voltage is sufficient), OUT- to common ground. The TP4056 handles charging (red LED) and full charge (blue LED) automatically with CC-CV profile.",
+        "Warning": "NEVER connect solar panel directly to Arduino or batteries - voltage varies 0-6V+ and can damage components!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Wire Sensor Array",
+        "Description": "Connect BME280 VCC to Arduino 3.3V, GND to GND, SDA to A4, SCL to A5 (I2C address 0x76). Connect BH1750 to same I2C bus (address 0x23). Connect OLED to same I2C bus (address 0x3C). All three I2C devices share the bus with different addresses. Mount solar panel on top of robot chassis angled upward. Mount sensors exposed to environment (BME280 must not be in direct sunlight for accurate temperature).",
+        "Tip": "Use I2C multiplexer (TCA9548A) if you have address conflicts!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Motor System",
+        "Description": "Connect L293D to Arduino as in previous robot projects (enable pins to PWM pins for speed control, input pins for direction). Connect motors to L293D outputs. Power L293D motor supply (VCC2) from battery output through the power switch. Implement current sensing with INA219 module if available to monitor power consumption. Add low-battery detection: read battery voltage with voltage divider on analog pin.",
+        "Warning": "Motors are the biggest power drain - use them sparingly! Limit movement to essential tasks only."
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Implement Power Management",
+        "Description": "Use Arduino's sleep modes to save power. Include <avr/sleep.h> and <avr/power.h>. In main loop: read sensors, update display, check if movement needed, then sleep. Implement sleep function: set_sleep_mode(SLEEP_MODE_PWR_DOWN) saves most power (1mA). Use Watchdog Timer to wake after 8 seconds: configure WDT interrupt. Disable unused peripherals: power_adc_disable(), power_spi_disable(). Run Arduino at 8MHz instead of 16MHz to save power (edit board settings).",
+        "Tip": "Deep sleep modes disable USB serial - use LED blinks for debugging instead of Serial.print()!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Program Autonomous Behavior",
+        "Description": "Implement state machine: CHARGING (battery < 50%, stay still, update display), MONITORING (battery 50-80%, wake every 5 minutes, read sensors, log data, sleep), ACTIVE (battery > 80%, wake every 1 minute, move to sunny spot if light < threshold, monitor weather). Calculate energy budget: estimate daily solar harvest (2W × 6 hours × efficiency 0.7 = 8.4Wh) vs. consumption. Move only when 'energy rich'.",
+        "Tip": "Log solar irradiance (lux from BH1750) to learn your panel's performance in different conditions!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test and Optimize",
+        "Description": "Test full solar cycle: start with depleted batteries, place in sunlight, monitor charging (TP4056 LED red). Once charged (LED blue), test autonomous operation over 24-hour period. Monitor battery voltage trend - it should stay stable or increase during day, decrease slowly at night. Optimize sleep duration, sensor update rate, movement frequency to achieve energy neutrality (harvest = consumption over 24hrs). Test on cloudy days.",
+        "Tip": "Create power log: timestamp, battery voltage, solar current, state. Analyze to optimize behavior!"
+      }
+    ],
+    "SafetyNotes": [
+      "Li-ion batteries can catch fire if short-circuited - handle carefully!",
+      "Never charge Li-ion batteries without proper charge controller (TP4056)",
+      "Don't leave batteries in direct sunlight - overheating risk",
+      "Test solar system outdoors with supervision first"
+    ],
+    "FunFact": "NASA's Mars rovers Opportunity and Curiosity are solar-powered robots! Opportunity's solar panels generated up to 140W and the rover operated for 14 years (designed for 90 days) by carefully managing power. During winter, it hibernated in low-power mode. When dust accumulated on panels, wind storms cleaned them, reviving the rover! Martian dust devils are natural solar panel cleaners. Your weather robot uses the same energy management principles as a Mars rover!",
+    "Quiz": {
+      "Question": "Why must the robot spend most of its time in sleep mode, and how does this enable autonomous operation?",
+      "Options": [
+        "Sleep mode reduces current from 50mA to 1mA (50× less). Over 24hrs, this saves enough energy that small solar panel can maintain battery, enabling indefinite autonomous operation.",
+        "Sleep mode makes the robot wake up faster when it needs to move",
+        "Arduino overheats if it runs continuously for more than a few hours",
+        "Sleep mode is required for the sensors to reset and give accurate readings"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Power is energy over time (P = Energy/Time). If Arduino runs continuously at 50mA @ 5V = 0.25W = 6Wh per day. Your solar panel generates only about 8.4Wh on a good sunny day. But if Arduino sleeps 99% of the time at 1mA, consumption drops to ~0.1Wh/day, leaving 8.3Wh for sensors and occasional movement. This is the secret to solar robots: maximize sleep time to minimize energy consumption, allowing a small solar panel to sustain indefinite operation. It's not about generating more power - it's about using less!"
+    }
+  },
+  {
+    "Id": 98,
+    "Title": "Smart Plant Watering System",
+    "Category": "Innovation Lab",
+    "Difficulty": 8,
+    "EstimatedTime": 65,
+    "Components": [
+      {
+        "Name": "Arduino Uno",
+        "Quantity": 1,
+        "Description": "Plant care automation controller"
+      },
+      {
+        "Name": "Soil Moisture Sensor",
+        "Quantity": 2,
+        "Description": "Capacitive sensors measure soil water content"
+      },
+      {
+        "Name": "5V Water Pump",
+        "Quantity": 1,
+        "Description": "Delivers water to plants"
+      },
+      {
+        "Name": "Relay Module (5V)",
+        "Quantity": 1,
+        "Description": "Controls pump power"
+      },
+      {
+        "Name": "DHT22 Sensor",
+        "Quantity": 1,
+        "Description": "Monitors air temperature and humidity"
+      },
+      {
+        "Name": "BH1750 Light Sensor",
+        "Quantity": 1,
+        "Description": "Monitors light levels for plant health"
+      },
+      {
+        "Name": "OLED Display 0.96\" I2C",
+        "Quantity": 1,
+        "Description": "Shows plant status"
+      },
+      {
+        "Name": "Water Reservoir Tank",
+        "Quantity": 1,
+        "Description": "Stores water for irrigation"
+      }
+    ],
+    "LearningObjectives": [
+      "Understand plant physiology and water requirements",
+      "Learn analog sensor calibration and signal conditioning",
+      "Build closed-loop control systems with feedback",
+      "Master timing and scheduling for autonomous operation"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Plant Watering",
+        "Description": "Plants need water for photosynthesis, nutrient transport, and cell structure. Soil moisture sensors measure water content by capacitance (water has high dielectric constant, increasing capacitance between sensor plates). Dry soil: low capacitance (~300-400 raw value). Wet soil: high capacitance (~600-700). Overwatering is as harmful as underwatering - it causes root rot. Ideal moisture: 45-55% for most plants. This system maintains moisture in optimal range.",
+        "Tip": "Different plants need different moisture levels - adjust thresholds for cacti vs. ferns!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Calibrate Soil Sensors",
+        "Description": "Capacitive soil sensors output analog voltage proportional to moisture. Connect sensor VCC to Arduino 5V, GND to GND, AOUT to pin A0 (sensor 1) and A1 (sensor 2). Run calibration: read analogRead() with sensor in air (dry reading, ~300), then in water (wet reading, ~700). Map these values to 0-100% using map() function. Calibrate separately for your soil type (clay, sand, loam have different readings).",
+        "Tip": "Take 10 readings and average them to reduce noise - soil moisture changes slowly anyway!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Environmental Sensors",
+        "Description": "Connect DHT22 data pin to Arduino pin 2, VCC to 5V, GND to GND. Connect BH1750 and OLED to I2C bus (SDA to A4, SCL to A5). These sensors provide context: high temperature increases evaporation (need more watering), high humidity decreases it (water less). Low light means plant photosynthesizes less (needs less water). Use this data to adjust watering schedule intelligently.",
+        "Tip": "Install sensors at plant level, not at ground level - microclimate varies by height!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Wire Pump System",
+        "Description": "Connect relay module IN to Arduino pin 3, VCC to 5V, GND to GND. Connect water pump to relay COM and NO (normally open) terminals. Connect pump power supply to relay COM and GND. When pin 3 is HIGH, relay closes, pump runs. When LOW, pump stops. Place pump inlet tube in water reservoir, outlet tube with drip emitter near plant roots. Test pump dry first to verify direction and flow rate.",
+        "Warning": "NEVER run water pump dry (without water) - it will overheat and burn out!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Program Watering Logic",
+        "Description": "Implement control algorithm: Every 10 minutes, read both soil sensors and average. If moisture < 40% (dry), activate pump for calculated duration (start with 5 seconds). Wait 5 minutes for water to absorb, re-read moisture. If still dry, water again (max 3 cycles to prevent overwatering). If moisture > 60% (too wet), skip watering cycle. Log all watering events with timestamp to EEPROM. Display current moisture, last watering time, and next check time on OLED.",
+        "Tip": "Use PID control for advanced version: error = (targetMoisture - currentMoisture), adjust pump time proportionally!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Implement Smart Scheduling",
+        "Description": "Add intelligent features: (1) Don't water at night - check RTC, only water during daylight hours. (2) Seasonal adjustment - water more in summer (high temp, low humidity) and less in winter (low temp, high humidity). (3) Rain detection - if humidity suddenly spikes to 90%+, assume rain, skip watering. (4) Water reservoir monitoring - use ultrasonic sensor or float switch to detect low water, send alert (LED or buzzer).",
+        "Tip": "Add 'vacation mode' - if you'll be gone for weeks, reduce target moisture slightly to minimize water usage!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Test and Monitor",
+        "Description": "Deploy system with real plants. Monitor for 1 week, logging data: date, time, moisture before watering, pump duration, moisture after watering, temperature, humidity, light level. Analyze logs to optimize thresholds and pump timing. Observe plant health: leaf color (green = good, yellow = overwatered, brown = underwatered), growth rate, flowering. Adjust parameters based on plant feedback. Different plants may need different profiles.",
+        "Tip": "Use web dashboard (ESP32 + WiFi) to log data to Google Sheets and monitor remotely!"
+      }
+    ],
+    "SafetyNotes": [
+      "Place electronics above water level to prevent water damage",
+      "Use waterproof enclosure for outdoor deployment",
+      "Ensure water pump has proper voltage rating (5V or 12V)",
+      "Check for leaks in tubing before leaving system unattended"
+    ],
+    "FunFact": "Precision agriculture uses similar technology at massive scale! Drones with multispectral cameras detect crop water stress by analyzing leaf reflectance in near-infrared spectrum. Automated irrigation systems map entire fields with moisture sensors every few meters, delivering exact amounts of water only where needed. This saves millions of gallons of water and increases crop yields by 20-30%. Your smart watering system uses the same closed-loop feedback control as farms feeding billions!",
+    "Quiz": {
+      "Question": "Why is it important to wait 5 minutes after watering before re-reading the soil moisture sensor?",
+      "Options": [
+        "Water needs time to permeate through soil and reach the sensor depth; immediate reading would show soil still dry, causing unnecessary overwatering",
+        "The soil moisture sensor needs to cool down after the first reading",
+        "The Arduino's processor needs time to calculate the next watering amount",
+        "Waiting 5 minutes saves battery power in the system"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "When you water a plant, water first wets the top surface of soil, then gradually infiltrates downward via gravity and capillary action through soil pores. If the sensor is buried 5-10cm deep, it takes several minutes for water to reach that depth. If you read the sensor immediately after watering, it still detects dry soil because water hasn't reached it yet. The system would incorrectly water again, overwatering the plant. The 5-minute delay allows water to distribute through the soil volume, giving an accurate moisture reading. This is called 'hydraulic lag' and is critical in irrigation control systems!"
+    }
+  },
+  {
+    "Id": 99,
+    "Title": "Multi-Room Temperature Monitor",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 70,
+    "Components": [
+      {
+        "Name": "Arduino Mega 2560",
+        "Quantity": 1,
+        "Description": "Microcontroller with more I/O pins for multiple sensors"
+      },
+      {
+        "Name": "DS18B20 Temperature Sensors",
+        "Quantity": 6,
+        "Description": "Digital sensors for 6 different rooms"
+      },
+      {
+        "Name": "TCA9548A I2C Multiplexer",
+        "Quantity": 1,
+        "Description": "Allows multiple I2C devices with same address"
+      },
+      {
+        "Name": "16x2 LCD with I2C",
+        "Quantity": 1,
+        "Description": "Display temperature data"
+      },
+      {
+        "Name": "SD Card Module",
+        "Quantity": 1,
+        "Description": "Log temperature data over time"
+      },
+      {
+        "Name": "Real-Time Clock (DS3231)",
+        "Quantity": 1,
+        "Description": "Timestamp for data logging"
+      },
+      {
+        "Name": "Active Buzzer",
+        "Quantity": 1,
+        "Description": "Alert for extreme temperatures"
+      },
+      {
+        "Name": "4.7kΩ Resistor",
+        "Quantity": 1,
+        "Description": "Pull-up resistor for OneWire bus"
+      }
+    ],
+    "LearningObjectives": [
+      "Build multi-sensor data acquisition systems",
+      "Learn OneWire protocol for sensor networks",
+      "Master data logging to SD card with timestamps",
+      "Implement threshold-based alerting systems"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand OneWire Protocol",
+        "Description": "DS18B20 sensors use Dallas OneWire protocol - multiple sensors share a single data wire. Each sensor has a unique 64-bit ROM address burned in at factory. The Arduino polls each sensor by address, reads temperature (9-12 bit resolution, -55°C to +125°C), and moves to the next. OneWire requires one pull-up resistor (4.7kΩ) on the data line. All sensors share power (VCC), ground, and data - only 3 wires total for 6+ sensors!",
+        "Tip": "OneWire can support up to 100+ sensors on one bus, but polling time increases linearly!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Wire Sensor Network",
+        "Description": "Connect all 6 DS18B20 sensors in parallel: all VCC pins together to Arduino 5V, all GND together to GND, all DQ (data) pins together to Arduino pin 2. Install 4.7kΩ pull-up resistor between data line (pin 2) and 5V. This creates a OneWire bus. Run sensor enumeration code to discover all 6 addresses and assign them to rooms (Living Room, Bedroom 1, Bedroom 2, Kitchen, Bathroom, Basement). Store addresses in array.",
+        "Tip": "Print each sensor's address, then touch the sensor to warm it with your hand - watch which address's temperature rises to identify it!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Connect Data Logging System",
+        "Description": "Connect SD card module to Arduino SPI pins: MOSI to pin 51, MISO to pin 50, SCK to pin 52, CS to pin 53, VCC to 5V, GND to GND. Format SD card as FAT32. Connect DS3231 RTC to I2C: SDA to pin 20, SCL to pin 21, VCC to 5V, GND to GND, insert CR2032 battery. Connect LCD with I2C to same bus. If LCD address conflicts with RTC (both 0x68), use TCA9548A multiplexer to separate them.",
+        "Warning": "SD card operations can take 50-200ms - don't log too frequently or system becomes unresponsive!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Program Multi-Sensor Polling",
+        "Description": "Install OneWire and DallasTemperature libraries. Initialize sensors with DallasTemperature sensors(&oneWire). In loop: call sensors.requestTemperatures() to trigger all sensors simultaneously (takes 750ms for 12-bit resolution). Then iterate through each sensor address, call sensors.getTempC(address) to read temperature. Store all 6 readings in array with room labels. This polling cycle takes about 1 second total.",
+        "Tip": "Use 9-bit resolution (sensors.setResolution(9)) for faster readings (94ms) if you don't need 0.5°C precision!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Implement Data Logging",
+        "Description": "Every 5 minutes, log data to SD card in CSV format: timestamp, room1_temp, room2_temp, ..., room6_temp. Create filename with date (e.g., '2025_01_15.csv') so each day is a new file. Use SD library's File.write() or File.println(). Always close file after writing: file.close(). Check SD.begin() on startup and blink error LED if SD card missing. Implement circular buffer: keep only last 30 days of data, delete older files to prevent SD card filling up.",
+        "Tip": "Add header row to CSV: 'Timestamp,Living,Bed1,Bed2,Kitchen,Bath,Basement' for easy Excel import!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Create Display Interface",
+        "Description": "LCD shows rotating display: Screen 1 (5 sec): 'Living: 22.5C  Bed1: 20.1C', Screen 2 (5 sec): 'Bed2: 21.3C  Kitchen: 23.8C', Screen 3 (5 sec): 'Bath: 24.2C  Basement: 18.5C', Screen 4 (5 sec): 'Avg: 21.7C  Range: 6.3C'. Add scrolling to show current time and next log time. If any temperature exceeds thresholds (< 15°C or > 30°C), display 'ALERT!' and activate buzzer.",
+        "Tip": "Add button to manually scroll through rooms instead of automatic rotation!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Analyze and Visualize",
+        "Description": "After collecting 24-48 hours of data, remove SD card and read on computer. Import CSV into Excel or Python (pandas). Create graphs: temperature vs. time for each room (line graph), temperature distribution (histogram), room comparison (bar chart). Identify patterns: which room is coldest at night? Which warms fastest in morning sun? Calculate heating efficiency: how long to raise temp 1°C? Use insights to optimize HVAC system and save energy.",
+        "Tip": "Plot all 6 rooms on one graph with different colors - patterns and correlations become obvious!"
+      }
+    ],
+    "SafetyNotes": [
+      "DS18B20 sensors can handle -55°C to +125°C, but don't place near open flames",
+      "Waterproof sensors (in metal probe) exist for outdoor or wet locations",
+      "SD cards have limited write cycles (~10,000-100,000) - don't log more than once per minute"
+    ],
+    "FunFact": "Smart buildings use similar multi-zone temperature monitoring to optimize HVAC systems! A typical office building has hundreds of temperature sensors networked together. Advanced systems use machine learning to predict heating/cooling needs based on time of day, occupancy patterns, weather forecasts, and historical data. They can reduce energy costs by 20-40% while maintaining comfort. Your 6-room monitor uses the same data acquisition and analysis techniques as a $100,000 building management system!",
+    "Quiz": {
+      "Question": "What is the major advantage of OneWire protocol for temperature monitoring systems with many sensors?",
+      "Options": [
+        "All sensors share a single data wire (plus power and ground), drastically reducing wiring complexity - 3 wires total instead of 3 wires per sensor (18 wires for 6 sensors)",
+        "OneWire sensors are waterproof and cannot be damaged by moisture",
+        "OneWire sensors are much more accurate than I2C or SPI sensors",
+        "OneWire protocol allows wireless communication between sensors"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "OneWire's genius is in the name - all sensors share ONE data wire. For 6 sensors with separate analog or I2C connections, you'd need 6 data wires (plus shared power/ground). With OneWire, all 6 sensors connect to the same data line using just 3 wires total: +5V, GND, and DATA. The Arduino addresses each sensor individually using their unique 64-bit ROM codes. This massively simplifies wiring, especially when sensors are distributed across large distances (like different rooms). You can run a 3-wire cable through walls to connect sensors throughout a building. This is why OneWire is used in industrial applications with 50-100 sensors!"
+    }
+  },
+  {
+    "Id": 100,
+    "Title": "Complete Smart Home Automation Hub - CAPSTONE",
+    "Category": "Innovation Lab",
+    "Difficulty": 10,
+    "EstimatedTime": 120,
+    "Components": [
+      {
+        "Name": "ESP32 DevKit",
+        "Quantity": 1,
+        "Description": "WiFi-enabled microcontroller for IoT"
+      },
+      {
+        "Name": "Relay Module (8-Channel)",
+        "Quantity": 1,
+        "Description": "Control 8 appliances (lights, fans, etc.)"
+      },
+      {
+        "Name": "DHT22 Sensors",
+        "Quantity": 3,
+        "Description": "Temperature/humidity for multiple rooms"
+      },
+      {
+        "Name": "PIR Motion Sensors",
+        "Quantity": 2,
+        "Description": "Occupancy detection"
+      },
+      {
+        "Name": "MQ-2 Gas Sensor",
+        "Quantity": 1,
+        "Description": "Smoke/gas leak detection"
+      },
+      {
+        "Name": "Rain Sensor",
+        "Quantity": 1,
+        "Description": "Detect rain for automated windows"
+      },
+      {
+        "Name": "BH1750 Light Sensors",
+        "Quantity": 2,
+        "Description": "Ambient light for auto-lighting"
+      },
+      {
+        "Name": "Servo Motors (SG90)",
+        "Quantity": 2,
+        "Description": "Automated curtain/window control"
+      },
+      {
+        "Name": "OLED Display 1.3\" I2C",
+        "Quantity": 1,
+        "Description": "Local status display"
+      },
+      {
+        "Name": "DS3231 RTC",
+        "Quantity": 1,
+        "Description": "Timekeeping for schedules"
+      },
+      {
+        "Name": "Active Buzzer",
+        "Quantity": 1,
+        "Description": "Security alarm"
+      },
+      {
+        "Name": "Voltage/Current Sensor (INA219)",
+        "Quantity": 1,
+        "Description": "Power consumption monitoring"
+      },
+      {
+        "Name": "6V Solar Panel",
+        "Quantity": 1,
+        "Description": "Backup power"
+      },
+      {
+        "Name": "Li-ion Battery Pack",
+        "Quantity": 1,
+        "Description": "Uninterruptible power supply"
+      }
+    ],
+    "LearningObjectives": [
+      "Integrate multiple subsystems into cohesive smart home",
+      "Master MQTT protocol for IoT device communication",
+      "Build web-based control interfaces with ESP32",
+      "Implement voice control integration",
+      "Learn data analytics and energy optimization",
+      "Create production-ready embedded systems"
+    ],
+    "Instructions": [
+      {
+        "StepNumber": 1,
+        "Title": "Understand Smart Home Architecture",
+        "Description": "A complete smart home uses hub-and-spoke architecture: ESP32 is the hub, all sensors/actuators are spokes. ESP32 connects to WiFi, runs web server for control interface, publishes data to MQTT broker (Mosquitto or cloud service like Adafruit IO), and accepts commands via HTTP API, MQTT, or voice assistant (Alexa/Google Home via webhooks). This project combines 8 previous levels: motion security, weather monitoring, voice control, solar power, automation, data logging, and wireless communication.",
+        "Tip": "Draw system architecture diagram first - it's a complex project with 15+ components!"
+      },
+      {
+        "StepNumber": 2,
+        "Title": "Wire Sensor Network",
+        "Description": "This is the most complex wiring in all 100 levels! Create power distribution: ESP32 3.3V and 5V rails with proper current capacity. I2C bus (SDA=21, SCL=22): connect OLED, BH1750 #1, BH1750 #2, DS3231 (use TCA9548A multiplexer if address conflicts). OneWire (pin 4): DHT22 sensors. Digital inputs: PIR #1 (pin 25), PIR #2 (pin 26), rain sensor (pin 27). Analog inputs: MQ-2 (pin 34), battery voltage divider (pin 35). PWM outputs: Servo #1 (pin 12), Servo #2 (pin 13). Relay control: pins 14-19 and 23-24 (8 channels).",
+        "Warning": "ESP32 pins are 3.3V logic! Use level shifters for 5V devices or they may damage ESP32!"
+      },
+      {
+        "StepNumber": 3,
+        "Title": "Build Solar Backup System",
+        "Description": "Wire solar panel → TP4056 charge controller → Li-ion battery pack → boost converter (to 5V) → ESP32 VIN. Install INA219 current sensor between boost converter output and ESP32 to monitor power consumption. Implement automatic power source switching: when USB power present, use it; when unplugged, switch to battery. ESP32 monitors battery voltage via analog pin - if below 3.4V, enter deep sleep mode to preserve charge. Calculate runtime: ESP32 consumes ~80mA active, 10µA deep sleep.",
+        "Tip": "Add solar MPPT charger (like CN3791) instead of TP4056 for 30% more charging efficiency!"
+      },
+      {
+        "StepNumber": 4,
+        "Title": "Program Core Firmware",
+        "Description": "Create modular firmware structure: main.cpp (setup/loop), wifi_manager.cpp (WiFi connection, reconnection), web_server.cpp (HTTP API endpoints), mqtt_client.cpp (publish sensor data, subscribe to commands), sensor_manager.cpp (read all sensors), automation_engine.cpp (rules and logic), ota_update.cpp (over-the-air firmware updates). Use FreeRTOS tasks to run sensor polling, automation, and web server concurrently. Implement watchdog timer to auto-reset if system hangs.",
+        "Tip": "Use PlatformIO instead of Arduino IDE for better project organization and library management!"
+      },
+      {
+        "StepNumber": 5,
+        "Title": "Create Web Control Interface",
+        "Description": "ESP32 serves HTML/CSS/JavaScript dashboard on local network (e.g., http://192.168.1.100). Dashboard shows: (1) Real-time sensor readings (temp, humidity, light, motion) with gauges and graphs. (2) Appliance controls - toggle switches for 8 relays. (3) Automation rules editor - create IF-THEN rules: 'IF motion detected AND light < 100 lux THEN turn on lights'. (4) Schedule editor - time-based automation: 'Turn on porch light at sunset'. (5) Energy dashboard - power consumption over time, solar generation. Use WebSocket for real-time updates without page refresh.",
+        "Tip": "Store HTML/CSS in SPIFFS file system to separate web content from firmware code!"
+      },
+      {
+        "StepNumber": 6,
+        "Title": "Implement MQTT & Voice Integration",
+        "Description": "Connect ESP32 to MQTT broker (use free tier of Adafruit IO or install Mosquitto on Raspberry Pi). Publish sensor data every 30 seconds to topics: 'home/living/temperature', 'home/bedroom/motion', etc. Subscribe to command topics: 'home/living/light/set'. For voice control, integrate with Alexa via Sinric Pro (free service) or use IFTTT webhooks. Example: 'Alexa, turn on bedroom lights' → IFTTT → MQTT publish to 'home/bedroom/light/set' → ESP32 receives → relay activates.",
+        "Tip": "Use Home Assistant (open-source smart home platform) to unify control of all devices!"
+      },
+      {
+        "StepNumber": 7,
+        "Title": "Implement Smart Automation",
+        "Description": "Program intelligent behaviors: (1) Auto-lighting: if PIR detects motion AND light < 100 lux AND time is 18:00-06:00, turn on lights for 5 minutes. (2) Climate control: if temp > 26°C AND occupancy detected, turn on fan. (3) Security mode: if motion detected while system armed (away from home), sound alarm and send push notification via Telegram bot. (4) Energy saver: between 22:00-06:00, disable non-essential loads. (5) Weather response: if rain detected, close servo-controlled window. (6) Air quality: if MQ-2 detects gas leak, sound alarm, turn off gas appliances, send emergency alert.",
+        "Tip": "Add machine learning (TensorFlow Lite) to predict heating needs based on weather forecast!"
+      },
+      {
+        "StepNumber": 8,
+        "Title": "Data Logging & Analytics",
+        "Description": "Log all sensor data and events to SD card (CSV format with timestamps) and cloud (MQTT to Adafruit IO or ThingSpeak). Create analytics: (1) Energy analysis - calculate daily/weekly power consumption, identify vampire loads. (2) Occupancy patterns - detect when rooms are used, optimize heating schedule. (3) Comfort metrics - track temp/humidity comfort zones. (4) Cost savings - calculate electricity saved by automation. Create Python scripts to analyze CSV data and generate reports with matplotlib graphs.",
+        "Tip": "Use Grafana dashboard to visualize time-series data from MQTT - looks professional!"
+      },
+      {
+        "StepNumber": 9,
+        "Title": "Test & Refine",
+        "Description": "Deploy full system in real home environment. Test each subsystem: manual control via web, voice commands, automation triggers, security alerts, power backup during outage. Monitor system stability over 1 week - check for crashes, memory leaks (use ESP.getFreeHeap()), WiFi disconnections. Optimize automation rules based on actual usage patterns. Fine-tune sensor thresholds. Test edge cases: what happens if WiFi drops? If power fails? If sensor fails? Implement graceful degradation.",
+        "Tip": "Enable ESP32 exception decoder to debug crashes from stack trace!"
+      },
+      {
+        "StepNumber": 10,
+        "Title": "Document & Celebrate!",
+        "Description": "You've built a production-grade smart home system combining 100 levels of learning! Document your project: create system architecture diagram, wiring schematics (Fritzing), code documentation (Doxygen), user manual for web interface. Record demo video showing all features. Calculate total project cost, energy savings, and compare to commercial systems (Google Nest, SmartThings - yours is more customizable!). Share on maker communities (Hackster.io, Arduino Project Hub). Consider certification (UL for electrical safety if deploying commercially). Add your project to portfolio - this demonstrates real engineering skills to employers!",
+        "Tip": "3D print custom enclosure with ventilation for ESP32, mount sensors in wall boxes for clean installation!"
+      }
+    ],
+    "SafetyNotes": [
+      "CRITICAL: Get certified electrician for any AC mains wiring - this is NOT a DIY safety area!",
+      "Use isolated relays with optocouplers - never connect AC directly to ESP32",
+      "Implement proper fusing and circuit protection",
+      "Test gas sensor in ventilated area - never expose to high gas concentrations",
+      "Obtain homeowner insurance approval before deploying fire/gas detection",
+      "Follow electrical codes (NEC in US) for permanent installations",
+      "Add emergency manual overrides for critical systems (lighting, heating)",
+      "This is an educational project - professional certification required for commercial use"
+    ],
+    "FunFact": "The global smart home market is projected to reach $300 billion by 2030! Your capstone project includes features found in commercial systems costing thousands of dollars. But here's what makes yours special: it's OPEN SOURCE and CUSTOMIZABLE. Commercial systems lock you into specific brands and cloud services (which can shut down - see Wink Hub bankruptcy). Your system is vendor-independent, privacy-respecting (data stays local or in your cloud), and infinitely expandable. Professional home automation installers charge $5,000-50,000+ for systems with similar capabilities. You built it yourself and learned every component. This hands-on knowledge is invaluable - you understand exactly how smart homes work at the circuit level, not just as a user. CONGRATULATIONS on completing all 100 levels! You've gone from lighting a simple LED to building a complete IoT ecosystem. You're now a CIRCUIT MASTER! 🎉",
+    "Quiz": {
+      "Question": "What is the key advantage of using MQTT protocol for smart home communication, and why is it preferred over direct HTTP requests for IoT?",
+      "Options": [
+        "MQTT uses publish-subscribe model with persistent connections, reducing latency and bandwidth. Devices publish once to broker, multiple subscribers receive instantly - scalable to thousands of devices.",
+        "MQTT is more secure than HTTPS and cannot be hacked by intruders",
+        "MQTT works without WiFi using special radio frequencies",
+        "MQTT automatically creates web interfaces for all connected devices"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "MQTT (Message Queuing Telemetry Transport) is designed for IoT. Unlike HTTP where each device polls server repeatedly (opening/closing connections, high overhead), MQTT uses publish-subscribe: devices maintain ONE persistent connection to broker. When sensor publishes 'home/temp=22C', all subscribers receive it instantly without polling. Benefits: (1) Low bandwidth - tiny packets, ideal for cellular IoT. (2) Bi-directional - server can push commands to devices immediately. (3) Quality of Service levels - guaranteed delivery for critical messages. (4) Last Will Testament - broker detects device disconnections. (5) Scalability - broker handles distribution; one sensor can serve 1000+ clients. HTTP is request-response; MQTT is event-driven. For 100 devices updating every second, HTTP would need 100 requests/sec. MQTT needs 100 publishes, one broker distributes. This is why it's THE standard for industrial IoT, smart cities, and home automation!"
+    }
+  }
+]

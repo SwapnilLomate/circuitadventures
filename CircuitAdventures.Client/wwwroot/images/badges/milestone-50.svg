@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="80" fill="#e67e22" stroke="#d35400" stroke-width="4"/>
+  <circle cx="100" cy="100" r="65" fill="#f39c12"/>
+  <text x="100" y="115" font-family="Arial" font-size="48" fill="#fff" text-anchor="middle" font-weight="bold">50</text>
+  <text x="100" y="170" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle" font-weight="bold">HALFWAY</text>
+</svg>

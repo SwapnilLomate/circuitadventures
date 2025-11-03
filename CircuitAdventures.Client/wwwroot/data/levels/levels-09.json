@@ -1,0 +1,435 @@
+[
+  {
+    "Id": 81,
+    "Title": "Infrared Remote Control Receiver",
+    "Category": "Innovation Lab",
+    "Difficulty": 8,
+    "EstimatedTime": 60,
+    "Components": [
+      {"Name": "Arduino Uno", "Quantity": 1, "ImageUrl": "/images/components/arduino-uno.svg", "Description": "Microcontroller"},
+      {"Name": "IR Receiver Module (TSOP1738)", "Quantity": 1, "ImageUrl": "/images/components/ir-receiver.svg", "Description": "38kHz IR detector"},
+      {"Name": "TV Remote Control", "Quantity": 1, "ImageUrl": "/images/components/tv-remote.svg", "Description": "Any IR remote"},
+      {"Name": "LEDs (RGB)", "Quantity": 3, "ImageUrl": "/images/components/led.svg", "Description": "Visual feedback"},
+      {"Name": "220Ω Resistors", "Quantity": 3, "ImageUrl": "/images/components/resistor.svg", "Description": "LED current limiters"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable for Arduino", "Computer with Arduino IDE", "IRremote library"],
+    "LearningObjectives": [
+      "Understand infrared communication protocols",
+      "Learn about modulated IR signals (38kHz carrier)",
+      "Decode remote control commands",
+      "Build interactive remote-controlled projects"
+    ],
+    "SafetyNotes": [
+      "Never look directly into IR LEDs when testing",
+      "Ensure correct power supply polarity",
+      "Don't exceed Arduino pin current limits"
+    ],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand IR Communication", "Description": "IR remotes send data by flashing an IR LED at 38kHz, modulated with command codes. The receiver demodulates this to extract button presses!", "DiagramUrl": "/images/levels/level-081/step-1.svg", "Tip": "The 38kHz carrier helps filter out interference from sunlight and incandescent bulbs!"},
+      {"StepNumber": 2, "Title": "Connect IR Receiver", "Description": "Wire TSOP1738: OUT pin to Arduino D11, GND to ground, VCC to 5V. The receiver outputs HIGH normally, pulls LOW when IR detected.", "DiagramUrl": "/images/levels/level-081/step-2.svg", "Tip": "Keep receiver away from direct bright lights - they can interfere!"},
+      {"StepNumber": 3, "Title": "Install IR Library", "Description": "In Arduino IDE, install 'IRremote' library via Library Manager. This handles all the complex timing and decoding!", "DiagramUrl": "/images/levels/level-081/step-3.svg"},
+      {"StepNumber": 4, "Title": "Upload Test Sketch", "Description": "Upload IRrecvDemo example code. Open Serial Monitor, press remote buttons - you'll see hex codes for each button!", "DiagramUrl": "/images/levels/level-081/step-4.svg", "Tip": "Write down codes for power, volume, and channel buttons!"},
+      {"StepNumber": 5, "Title": "Add LED Indicators", "Description": "Connect RGB LEDs to pins 2, 3, 4 through 220Ω resistors. Each LED will light for different remote buttons!", "DiagramUrl": "/images/levels/level-081/step-5.svg"},
+      {"StepNumber": 6, "Title": "Program Button Actions", "Description": "Write code to check received IR codes and control LEDs: power button=red, volume+=green, volume-=blue!", "DiagramUrl": "/images/levels/level-081/step-6.svg"},
+      {"StepNumber": 7, "Title": "Test and Expand", "Description": "Test your remote control! Try adding more complex actions - toggle, dimming, patterns!", "DiagramUrl": "/images/levels/level-081/step-7.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "IR Signal Modulation", "Url": "/images/levels/level-081/diagram-modulation.svg", "Description": "How 38kHz carrier encodes data"},
+      {"Title": "NEC Protocol Timing", "Url": "/images/levels/level-081/diagram-nec.svg", "Description": "Common remote control protocol"}
+    ],
+    "FunFact": "IR remote controls were invented in the 1950s! The first TV remote, the 'Zenith Space Command', used ultrasonic sound instead of IR. Modern IR remotes use protocols like NEC, RC5, or Sony SIRC. Your remote sends a unique code (usually 32 bits) for each button - that's 4 billion possible commands!",
+    "Quiz": {
+      "Question": "Why do IR remotes use a 38kHz carrier frequency?",
+      "Options": [
+        "To filter out interference from sunlight and ambient IR sources",
+        "To make the signal travel farther",
+        "To save battery power",
+        "To make it invisible"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "The 38kHz modulation acts like a filter! The receiver only responds to rapidly pulsing IR at that specific frequency, ignoring steady IR from sunlight or heat sources. This makes remote controls reliable even in bright rooms!"
+    }
+  },
+  {
+    "Id": 82,
+    "Title": "Temperature Sensor Display",
+    "Category": "Innovation Lab",
+    "Difficulty": 8,
+    "EstimatedTime": 55,
+    "Components": [
+      {"Name": "Arduino Nano", "Quantity": 1, "ImageUrl": "/images/components/arduino-nano.svg", "Description": "Microcontroller"},
+      {"Name": "DHT22 Temperature/Humidity Sensor", "Quantity": 1, "ImageUrl": "/images/components/dht22.svg", "Description": "Digital sensor"},
+      {"Name": "16x2 LCD Display (I2C)", "Quantity": 1, "ImageUrl": "/images/components/lcd-16x2-i2c.svg", "Description": "Display module"},
+      {"Name": "10kΩ Resistor", "Quantity": 1, "ImageUrl": "/images/components/resistor.svg", "Description": "Pull-up for DHT22"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "DHT sensor library", "LiquidCrystal I2C library"],
+    "LearningObjectives": [
+      "Use digital temperature/humidity sensors",
+      "Understand I2C communication protocol",
+      "Display data on LCD screens",
+      "Build environmental monitoring systems"
+    ],
+    "SafetyNotes": ["Don't expose DHT sensor to extreme temperatures", "Verify I2C address before connecting", "Check power polarity"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand DHT22 Sensor", "Description": "DHT22 measures temperature (±0.5°C) and humidity (±2%). It uses a single-wire digital protocol to send 40 bits of data!", "DiagramUrl": "/images/levels/level-082/step-1.svg", "Tip": "DHT22 is more accurate than DHT11 and works from -40°C to +80°C!"},
+      {"StepNumber": 2, "Title": "Wire DHT22", "Description": "Connect DHT22: pin 1 (+) to 5V, pin 2 (data) to Arduino D2 with 10kΩ pull-up to 5V, pin 4 (-) to ground. Leave pin 3 unconnected.", "DiagramUrl": "/images/levels/level-082/step-2.svg"},
+      {"StepNumber": 3, "Title": "Connect I2C LCD", "Description": "Wire LCD: SDA to Arduino A4, SCL to A5, VCC to 5V, GND to ground. I2C uses just 2 wires for communication!", "DiagramUrl": "/images/levels/level-082/step-3.svg", "Tip": "Run I2C scanner sketch to find your LCD's address (usually 0x27 or 0x3F)!"},
+      {"StepNumber": 4, "Title": "Install Libraries", "Description": "Install 'DHT sensor library' by Adafruit and 'LiquidCrystal I2C' via Library Manager.", "DiagramUrl": "/images/levels/level-082/step-4.svg"},
+      {"StepNumber": 5, "Title": "Write Display Code", "Description": "Program Arduino to read DHT22 every 2 seconds and display 'Temp: XX.X°C' on line 1, 'Humidity: XX%' on line 2!", "DiagramUrl": "/images/levels/level-082/step-5.svg"},
+      {"StepNumber": 6, "Title": "Test and Calibrate", "Description": "Test! Try breathing on sensor (humidity rises), or holding ice near it (temp drops). Watch values update in real-time!", "DiagramUrl": "/images/levels/level-082/step-6.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "DHT22 Timing Protocol", "Url": "/images/levels/level-082/diagram-dht.svg", "Description": "Single-wire data protocol"},
+      {"Title": "I2C Communication", "Url": "/images/levels/level-082/diagram-i2c.svg", "Description": "Two-wire serial bus"}
+    ],
+    "FunFact": "I2C (Inter-Integrated Circuit) was invented by Philips in 1982. It allows multiple devices to share just 2 wires using unique addresses! You can connect up to 128 devices on one I2C bus. Modern smartphones use I2C to talk to sensors, cameras, and touchscreens - all on the same two wires!",
+    "Quiz": {
+      "Question": "What advantage does I2C have over using separate pins for each device?",
+      "Options": [
+        "Multiple devices can share the same 2 wires (SDA and SCL)",
+        "It's faster than separate pins",
+        "It uses less power",
+        "It's more accurate"
+      ],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "I2C is a bus protocol! Multiple devices share SDA (data) and SCL (clock) wires. Each device has a unique address. The microcontroller can talk to any device by sending its address first. This saves precious I/O pins - you could control 100 devices with just 2 wires!"
+    }
+  },
+  {
+    "Id": 83,
+    "Title": "Ultrasonic Distance Sensor",
+    "Category": "Innovation Lab",
+    "Difficulty": 8,
+    "EstimatedTime": 50,
+    "Components": [
+      {"Name": "Arduino Uno", "Quantity": 1, "ImageUrl": "/images/components/arduino-uno.svg", "Description": "Microcontroller"},
+      {"Name": "HC-SR04 Ultrasonic Sensor", "Quantity": 1, "ImageUrl": "/images/components/hc-sr04.svg", "Description": "Distance sensor"},
+      {"Name": "Piezo Buzzer", "Quantity": 1, "ImageUrl": "/images/components/buzzer.svg", "Description": "Audio feedback"},
+      {"Name": "LEDs (Red, Yellow, Green)", "Quantity": 3, "ImageUrl": "/images/components/led.svg", "Description": "Distance indicators"},
+      {"Name": "220Ω Resistors", "Quantity": 3, "ImageUrl": "/images/components/resistor.svg", "Description": "LED current limiters"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "Cardboard for testing"],
+    "LearningObjectives": ["Understand ultrasonic echo ranging", "Measure time-of-flight", "Convert time to distance", "Build parking sensors and obstacle detectors"],
+    "SafetyNotes": ["Keep sensor away from water", "Don't point at eyes", "Avoid extreme temperatures"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand Ultrasonic Ranging", "Description": "HC-SR04 sends 40kHz ultrasonic pulse, waits for echo. Time = 2×distance/speed of sound. Sound travels ~343 m/s!", "DiagramUrl": "/images/levels/level-083/step-1.svg", "Tip": "Distance (cm) = pulse duration (μs) / 58. The /58 comes from speed of sound calculation!"},
+      {"StepNumber": 2, "Title": "Wire Sensor", "Description": "Connect HC-SR04: VCC to 5V, GND to ground, Trig to pin 9, Echo to pin 10.", "DiagramUrl": "/images/levels/level-083/step-2.svg"},
+      {"StepNumber": 3, "Title": "Add Visual Indicators", "Description": "Wire 3 LEDs: Green (far >50cm), Yellow (medium 20-50cm), Red (close <20cm) to pins 2, 3, 4.", "DiagramUrl": "/images/levels/level-083/step-3.svg"},
+      {"StepNumber": 4, "Title": "Add Buzzer", "Description": "Connect buzzer to pin 8. It will beep faster as objects get closer - like a parking sensor!", "DiagramUrl": "/images/levels/level-083/step-4.svg"},
+      {"StepNumber": 5, "Title": "Write Distance Code", "Description": "Program: Send 10μs pulse on Trig, measure Echo pulse width, calculate distance, update LEDs and buzzer!", "DiagramUrl": "/images/levels/level-083/step-5.svg"},
+      {"StepNumber": 6, "Title": "Test and Calibrate", "Description": "Test with objects at different distances. Adjust LED thresholds and buzzer rates for best results!", "DiagramUrl": "/images/levels/level-083/step-6.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "Ultrasonic Echo Ranging", "Url": "/images/levels/level-083/diagram-ranging.svg", "Description": "How sound waves measure distance"},
+      {"Title": "Timing Diagram", "Url": "/images/levels/level-083/diagram-timing.svg", "Description": "Trigger and echo pulse timing"}
+    ],
+    "FunFact": "Bats use ultrasonic echolocation to navigate and hunt in complete darkness! They emit ultrasonic chirps and listen for echoes, just like the HC-SR04. Dolphins and whales also use sonar. Modern cars use ultrasonic sensors for parking assistance - some have 12 sensors around the car!",
+    "Quiz": {
+      "Question": "Why does the HC-SR04 use 40kHz ultrasonic sound instead of audible sound?",
+      "Options": ["40kHz is ultrasonic (inaudible to humans) and has less interference from ambient noise", "It travels faster", "It's cheaper to generate", "It uses less power"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "40kHz is above human hearing range (20Hz-20kHz), so it doesn't create annoying sounds. Ultrasonic frequencies also have less interference from voices, music, and environmental noise, making measurements more accurate!"
+    }
+  },
+  {
+    "Id": 84,
+    "Title": "Servo Motor Control",
+    "Category": "Innovation Lab",
+    "Difficulty": 8,
+    "EstimatedTime": 55,
+    "Components": [
+      {"Name": "Arduino Uno", "Quantity": 1, "ImageUrl": "/images/components/arduino-uno.svg", "Description": "Microcontroller"},
+      {"Name": "SG90 Servo Motor", "Quantity": 2, "ImageUrl": "/images/components/servo-sg90.svg", "Description": "Position-controlled motors"},
+      {"Name": "10kΩ Potentiometer", "Quantity": 1, "ImageUrl": "/images/components/potentiometer.svg", "Description": "Manual control"},
+      {"Name": "Push Buttons", "Quantity": 3, "ImageUrl": "/images/components/push-button.svg", "Description": "Preset positions"},
+      {"Name": "10kΩ Resistors", "Quantity": 3, "ImageUrl": "/images/components/resistor.svg", "Description": "Button pull-downs"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "5V 2A power supply (optional)", "Cardboard for robotic arm"],
+    "LearningObjectives": ["Control servo motor positions", "Understand PWM servo control", "Build simple robotic mechanisms", "Create coordinated multi-servo movements"],
+    "SafetyNotes": ["Don't force servo beyond its range", "Use external power for multiple servos", "Keep fingers away from moving parts"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand Servo Motors", "Description": "Servos have built-in position feedback! Send PWM signal: 1ms=0°, 1.5ms=90°, 2ms=180°. Servo maintains position using internal potentiometer!", "DiagramUrl": "/images/levels/level-084/step-1.svg", "Tip": "Servos have 3 wires: Brown=GND, Red=5V, Orange=Control signal"},
+      {"StepNumber": 2, "Title": "Connect First Servo", "Description": "Wire servo: Brown to GND, Red to 5V, Orange to Arduino pin 9. Use external 5V supply if servo jitters!", "DiagramUrl": "/images/levels/level-084/step-2.svg"},
+      {"StepNumber": 3, "Title": "Add Potentiometer", "Description": "Connect pot: outer pins to 5V and GND, center wiper to A0. This gives manual angle control!", "DiagramUrl": "/images/levels/level-084/step-3.svg"},
+      {"StepNumber": 4, "Title": "Add Second Servo", "Description": "Connect second servo to pin 10. Now you can build a 2-axis robotic arm or pan-tilt mechanism!", "DiagramUrl": "/images/levels/level-084/step-4.svg"},
+      {"StepNumber": 5, "Title": "Add Preset Buttons", "Description": "Wire 3 buttons to pins 2, 3, 4 for preset positions: Home (90°), Left (0°), Right (180°)!", "DiagramUrl": "/images/levels/level-084/step-5.svg"},
+      {"StepNumber": 6, "Title": "Program Smooth Movement", "Description": "Write code to move servos smoothly (not instant jumps). Use small increments in a loop for fluid motion!", "DiagramUrl": "/images/levels/level-084/step-6.svg"},
+      {"StepNumber": 7, "Title": "Build Robotic Arm", "Description": "Use cardboard to create a simple 2-servo robotic arm. One servo for base rotation, one for arm up/down!", "DiagramUrl": "/images/levels/level-084/step-7.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "Servo PWM Control", "Url": "/images/levels/level-084/diagram-pwm.svg", "Description": "Pulse width to angle relationship"},
+      {"Title": "Servo Internal Mechanism", "Url": "/images/levels/level-084/diagram-mechanism.svg", "Description": "How servos maintain position"}
+    ],
+    "FunFact": "Servo motors are everywhere in robotics! Humanoid robots like Boston Dynamics' Atlas use dozens of high-torque servos. RC hobby servos (like SG90) were invented for radio-controlled airplanes. Modern robotic surgery systems use ultra-precise servos for millimeter-accurate movements inside the human body!",
+    "Quiz": {
+      "Question": "What makes a servo motor different from a regular DC motor?",
+      "Options": ["A servo has position feedback and can hold a specific angle", "A servo is faster", "A servo uses less power", "A servo is smaller"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Servos have a built-in potentiometer that measures the shaft position and a control circuit that adjusts the motor to maintain the commanded angle. Regular DC motors just spin and have no position awareness!"
+    }
+  },
+  {
+    "Id": 85,
+    "Title": "Bluetooth Phone-Controlled LED",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 65,
+    "Components": [
+      {"Name": "Arduino Uno", "Quantity": 1, "ImageUrl": "/images/components/arduino-uno.svg", "Description": "Microcontroller"},
+      {"Name": "HC-05 Bluetooth Module", "Quantity": 1, "ImageUrl": "/images/components/hc-05.svg", "Description": "Wireless communication"},
+      {"Name": "RGB LED", "Quantity": 1, "ImageUrl": "/images/components/rgb-led.svg", "Description": "Color-controlled LED"},
+      {"Name": "220Ω Resistors", "Quantity": 3, "ImageUrl": "/images/components/resistor.svg", "Description": "LED current limiters"},
+      {"Name": "1kΩ Resistor", "Quantity": 1, "ImageUrl": "/images/components/resistor.svg", "Description": "Voltage divider"},
+      {"Name": "2kΩ Resistor", "Quantity": 1, "ImageUrl": "/images/components/resistor.svg", "Description": "Voltage divider"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "Smartphone with Bluetooth", "Arduino Bluetooth Control app"],
+    "LearningObjectives": ["Understand Bluetooth serial communication", "Control circuits wirelessly from phone", "Build IoT-style remote control", "Parse serial commands"],
+    "SafetyNotes": ["Don't exceed 3.3V on HC-05 RX pin", "Use voltage divider for Arduino TX to HC-05", "Disconnect Bluetooth during upload"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand Bluetooth", "Description": "HC-05 is a Bluetooth 2.0 serial module. It appears as a serial port to Arduino and as 'HC-05' device to your phone!", "DiagramUrl": "/images/levels/level-085/step-1.svg", "Tip": "Default pairing code is usually 1234 or 0000"},
+      {"StepNumber": 2, "Title": "Wire Bluetooth Module", "Description": "Connect HC-05: VCC to 5V, GND to ground, TX to Arduino RX (pin 0), RX through voltage divider to Arduino TX (pin 1).", "DiagramUrl": "/images/levels/level-085/step-2.svg", "Warning": "HC-05 RX is 3.3V! Use 1kΩ-2kΩ divider from Arduino 5V TX!"},
+      {"StepNumber": 3, "Title": "Build Voltage Divider", "Description": "Arduino TX (5V) -> 1kΩ resistor -> HC-05 RX -> 2kΩ resistor -> GND. This makes 3.3V safe for Bluetooth!", "DiagramUrl": "/images/levels/level-085/step-3.svg"},
+      {"StepNumber": 4, "Title": "Add RGB LED", "Description": "Wire RGB LED: Red to pin 9, Green to pin 10, Blue to pin 11 (all through 220Ω resistors). Common cathode to ground.", "DiagramUrl": "/images/levels/level-085/step-4.svg"},
+      {"StepNumber": 5, "Title": "Write Communication Code", "Description": "Program Arduino to read serial commands: 'R', 'G', 'B' to change colors. 'O' for off, 'W' for white!", "DiagramUrl": "/images/levels/level-085/step-5.svg"},
+      {"StepNumber": 6, "Title": "Pair with Phone", "Description": "Enable Bluetooth on phone, scan for 'HC-05', pair with code 1234. Install 'Arduino Bluetooth Controller' app!", "DiagramUrl": "/images/levels/level-085/step-6.svg"},
+      {"StepNumber": 7, "Title": "Test Wireless Control", "Description": "Open app, connect to HC-05, send commands! Control LED colors from your phone wirelessly!", "DiagramUrl": "/images/levels/level-085/step-7.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "Bluetooth Communication", "Url": "/images/levels/level-085/diagram-bluetooth.svg", "Description": "How Bluetooth serial works"},
+      {"Title": "Voltage Divider for 3.3V", "Url": "/images/levels/level-085/diagram-divider.svg", "Description": "Protecting HC-05 RX pin"}
+    ],
+    "FunFact": "Bluetooth is named after Viking King Harald Bluetooth who united Denmark and Norway in the 10th century! The Bluetooth logo combines the Nordic runes for 'H' and 'B'. Bluetooth 5.0 can transmit data up to 240 meters and at 2 Mbps. Your phone uses Bluetooth for headphones, smartwatches, car systems, and IoT devices!",
+    "Quiz": {
+      "Question": "Why do we need a voltage divider between Arduino TX and HC-05 RX?",
+      "Options": ["Arduino outputs 5V but HC-05 RX needs 3.3V maximum", "To reduce noise", "To increase signal strength", "To save power"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Arduino TX outputs 5V logic levels, but the HC-05 RX pin is 3.3V tolerant. Applying 5V directly could damage the Bluetooth module! The voltage divider (1kΩ and 2kΩ) reduces 5V to 3.3V safely."
+    }
+  },
+  {
+    "Id": 86,
+    "Title": "RFID Access Control",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 60,
+    "Components": [
+      {"Name": "Arduino Uno", "Quantity": 1, "ImageUrl": "/images/components/arduino-uno.svg", "Description": "Microcontroller"},
+      {"Name": "RC522 RFID Reader", "Quantity": 1, "ImageUrl": "/images/components/rc522.svg", "Description": "13.56MHz NFC reader"},
+      {"Name": "RFID Cards/Tags", "Quantity": 3, "ImageUrl": "/images/components/rfid-card.svg", "Description": "Access cards"},
+      {"Name": "Servo Motor", "Quantity": 1, "ImageUrl": "/images/components/servo-sg90.svg", "Description": "Electronic lock"},
+      {"Name": "LEDs (Green, Red)", "Quantity": 2, "ImageUrl": "/images/components/led.svg", "Description": "Access indicators"},
+      {"Name": "220Ω Resistors", "Quantity": 2, "ImageUrl": "/images/components/resistor.svg", "Description": "LED current limiters"},
+      {"Name": "Buzzer", "Quantity": 1, "ImageUrl": "/images/components/buzzer.svg", "Description": "Audio feedback"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "MFRC522 library", "Cardboard for door mockup"],
+    "LearningObjectives": ["Understand RFID/NFC technology", "Read unique card IDs", "Implement access control logic", "Build security systems"],
+    "SafetyNotes": ["Don't bend or damage RFID antenna", "Keep strong magnets away from cards", "Ensure proper SPI connections"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand RFID", "Description": "RC522 uses 13.56MHz radio waves to power and read passive RFID cards. Each card has a unique UID (Unique ID) - like a fingerprint!", "DiagramUrl": "/images/levels/level-086/step-1.svg", "Tip": "RFID cards have no battery - they're powered by the reader's electromagnetic field!"},
+      {"StepNumber": 2, "Title": "Wire RC522 via SPI", "Description": "Connect RC522: SDA->pin 10, SCK->13, MOSI->11, MISO->12, IRQ->not connected, GND->GND, RST->9, 3.3V->3.3V.", "DiagramUrl": "/images/levels/level-086/step-2.svg", "Warning": "RC522 uses 3.3V, NOT 5V! Connecting to 5V will damage it!"},
+      {"StepNumber": 3, "Title": "Install Library", "Description": "Install 'MFRC522' library by GithubCommunity via Library Manager. Upload DumpInfo example to read card UIDs!", "DiagramUrl": "/images/levels/level-086/step-3.svg"},
+      {"StepNumber": 4, "Title": "Scan and Store UIDs", "Description": "Scan your RFID cards and note their UIDs. These will be your 'authorized' cards in the access control!", "DiagramUrl": "/images/levels/level-086/step-4.svg", "Tip": "UIDs are usually 4 or 7 bytes, shown in hex like 'AB CD EF 12'"},
+      {"StepNumber": 5, "Title": "Add Servo Lock", "Description": "Connect servo to pin 6. It will rotate to 'unlock' (90°) for authorized cards, stay 'locked' (0°) for unauthorized!", "DiagramUrl": "/images/levels/level-086/step-5.svg"},
+      {"StepNumber": 6, "Title": "Add Visual/Audio Feedback", "Description": "Wire green LED (pin 2) and red LED (pin 3), plus buzzer (pin 4). Green+beep for access granted, red+error tone for denied!", "DiagramUrl": "/images/levels/level-086/step-6.svg"},
+      {"StepNumber": 7, "Title": "Program Access Control", "Description": "Code: Read card UID, compare with authorized list, if match->unlock servo, green LED, beep! Else->red LED, error sound!", "DiagramUrl": "/images/levels/level-086/step-7.svg"},
+      {"StepNumber": 8, "Title": "Build Door Mockup", "Description": "Create a cardboard door with the servo as a latch. Test your access control system!", "DiagramUrl": "/images/levels/level-086/step-8.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "RFID Communication", "Url": "/images/levels/level-086/diagram-rfid.svg", "Description": "How electromagnetic coupling reads cards"},
+      {"Title": "SPI Protocol", "Url": "/images/levels/level-086/diagram-spi.svg", "Description": "Serial Peripheral Interface"}
+    ],
+    "FunFact": "RFID technology was first used in WWII to identify friendly aircraft! Today, RFID is everywhere: contactless payments (tap-to-pay), building access cards, pet microchips, library book tracking, and marathon timing chips. The Dallas Cowboys stadium has RFID-enabled tickets that track fan movement and preferences!",
+    "Quiz": {
+      "Question": "How do passive RFID cards work without a battery?",
+      "Options": ["They're powered by the electromagnetic field from the reader", "They use solar power", "They have tiny batteries inside", "They store static electricity"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Passive RFID cards have no battery! When you bring a card near the RC522 reader, the reader's 13.56MHz electromagnetic field induces current in the card's antenna coil. This powers the card's chip just long enough to transmit its UID back to the reader!"
+    }
+  },
+  {
+    "Id": 87,
+    "Title": "Solar-Powered Battery Charger",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 70,
+    "Components": [
+      {"Name": "6V 2W Solar Panel", "Quantity": 1, "ImageUrl": "/images/components/solar-panel.svg", "Description": "Energy source"},
+      {"Name": "TP4056 Charging Module", "Quantity": 1, "ImageUrl": "/images/components/tp4056.svg", "Description": "Li-ion charger"},
+      {"Name": "18650 Li-ion Battery", "Quantity": 1, "ImageUrl": "/images/components/18650-battery.svg", "Description": "Energy storage"},
+      {"Name": "Battery Holder", "Quantity": 1, "ImageUrl": "/images/components/battery-holder-18650.svg", "Description": "Secure mounting"},
+      {"Name": "1N4007 Diode", "Quantity": 1, "ImageUrl": "/images/components/diode-1n4007.svg", "Description": "Reverse protection"},
+      {"Name": "100µF Capacitor", "Quantity": 1, "ImageUrl": "/images/components/capacitor-electrolytic.svg", "Description": "Smoothing"},
+      {"Name": "Voltmeter Module", "Quantity": 1, "ImageUrl": "/images/components/voltmeter.svg", "Description": "Voltage display"},
+      {"Name": "LEDs", "Quantity": 2, "ImageUrl": "/images/components/led.svg", "Description": "Status indicators"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["Multimeter", "USB cable for testing", "Project enclosure"],
+    "LearningObjectives": ["Understand solar energy conversion", "Learn Li-ion battery charging", "Build renewable energy systems", "Implement charge controllers"],
+    "SafetyNotes": ["NEVER short-circuit Li-ion batteries!", "Use protection circuit (TP4056 has built-in)", "Don't overcharge or over-discharge", "Adult supervision required"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand Solar Charging", "Description": "Solar panels convert sunlight to DC electricity. TP4056 regulates voltage/current for safe Li-ion charging. It cuts off at 4.2V!", "DiagramUrl": "/images/levels/level-087/step-1.svg", "Tip": "Solar panels produce maximum power at around 75-80% of open-circuit voltage"},
+      {"StepNumber": 2, "Title": "Add Reverse Protection", "Description": "Solder 1N4007 diode in series with solar panel positive (cathode toward TP4056). This prevents reverse current at night!", "DiagramUrl": "/images/levels/level-087/step-2.svg", "Warning": "Diode band marks cathode! Current flows toward the band."},
+      {"StepNumber": 3, "Title": "Connect Solar Panel", "Description": "Wire solar panel (through diode) to TP4056 IN+ and IN-. Add 100µF capacitor across input to smooth voltage!", "DiagramUrl": "/images/levels/level-087/step-3.svg"},
+      {"StepNumber": 4, "Title": "Connect Battery", "Description": "Insert 18650 battery in holder. Connect holder to TP4056 B+ and B- terminals. TP4056 will protect battery!", "DiagramUrl": "/images/levels/level-087/step-4.svg", "Warning": "Verify polarity! Reversed battery connection can cause fire!"},
+      {"StepNumber": 5, "Title": "Add Voltage Monitor", "Description": "Connect voltmeter module across battery terminals to monitor voltage. Healthy battery: 3.7V nominal, 4.2V fully charged!", "DiagramUrl": "/images/levels/level-087/step-5.svg"},
+      {"StepNumber": 6, "Title": "Connect Load Output", "Description": "Use TP4056 OUT+ and OUT- to power devices. Built-in protection prevents over-discharge below 2.5V!", "DiagramUrl": "/images/levels/level-087/step-6.svg"},
+      {"StepNumber": 7, "Title": "Test in Sunlight", "Description": "Place solar panel in bright sunlight. Watch red LED (charging) light up! Blue LED means fully charged (4.2V).", "DiagramUrl": "/images/levels/level-087/step-7.svg"},
+      {"StepNumber": 8, "Title": "Calculate Power", "Description": "Measure current and voltage from panel. Power (W) = Voltage (V) × Current (A). Track how many mAh are stored!", "DiagramUrl": "/images/levels/level-087/step-8.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "Solar Cell Physics", "Url": "/images/levels/level-087/diagram-solar.svg", "Description": "Photovoltaic effect explained"},
+      {"Title": "Li-ion Charging Profile", "Url": "/images/levels/level-087/diagram-charging.svg", "Description": "CC-CV charging curve"},
+      {"Title": "Complete System", "Url": "/images/levels/level-087/diagram-system.svg", "Description": "Full solar charging circuit"}
+    ],
+    "FunFact": "Solar power is the fastest-growing energy source! Modern solar panels are 20-23% efficient (laboratory cells reach 47%). The International Space Station uses 8 arrays of solar panels producing 120kW. Your phone could be charged by a 5W panel in 2-3 hours of sunlight. China and USA lead in solar installation with hundreds of gigawatts!",
+    "Quiz": {
+      "Question": "Why do we need the TP4056 charging module instead of connecting solar panel directly to battery?",
+      "Options": ["Li-ion batteries require precise voltage regulation and current control for safe charging", "Solar panels are too weak", "Batteries charge faster with it", "It makes the panel work better"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Li-ion batteries must be charged with CC-CV (Constant Current-Constant Voltage) profile. Overcharging above 4.2V can cause fire/explosion! TP4056 monitors voltage and adjusts current, safely charging to exactly 4.2V then stopping. It also prevents over-discharge below 2.5V."
+    }
+  },
+  {
+    "Id": 88,
+    "Title": "Music Reactive LED Strip",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 65,
+    "Components": [
+      {"Name": "Arduino Nano", "Quantity": 1, "ImageUrl": "/images/components/arduino-nano.svg", "Description": "Microcontroller"},
+      {"Name": "WS2812B LED Strip (1m, 60 LEDs)", "Quantity": 1, "ImageUrl": "/images/components/led-strip-ws2812b.svg", "Description": "Addressable RGB"},
+      {"Name": "MAX4466 Microphone Module", "Quantity": 1, "ImageUrl": "/images/components/max4466.svg", "Description": "Audio sensor"},
+      {"Name": "1000µF Capacitor", "Quantity": 1, "ImageUrl": "/images/components/capacitor-electrolytic.svg", "Description": "Power smoothing"},
+      {"Name": "470Ω Resistor", "Quantity": 1, "ImageUrl": "/images/components/resistor.svg", "Description": "Data line protection"},
+      {"Name": "5V 3A Power Supply", "Quantity": 1, "ImageUrl": "/images/components/power-supply-5v.svg", "Description": "For LED strip"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "FastLED library", "Music player for testing"],
+    "LearningObjectives": ["Analyze audio signals", "Convert sound to visual effects", "Control addressable LEDs", "Implement FFT analysis basics"],
+    "SafetyNotes": ["Use external power for LED strip", "Don't exceed 3A current draw", "Connect all grounds together", "Avoid loud sounds near mic"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand Audio Analysis", "Description": "MAX4466 outputs analog voltage (0-5V) proportional to sound amplitude. Arduino ADC reads this, software creates visual effects!", "DiagramUrl": "/images/levels/level-088/step-1.svg", "Tip": "For better effects, implement band-pass filters for bass, mid, treble!"},
+      {"StepNumber": 2, "Title": "Connect Microphone", "Description": "Wire MAX4466: VCC to 5V, GND to ground, OUT to Arduino A0. Adjust onboard pot for sensitivity!", "DiagramUrl": "/images/levels/level-088/step-2.svg"},
+      {"StepNumber": 3, "Title": "Power LED Strip Safely", "Description": "Connect 1000µF capacitor across 5V supply. Wire supply GND to Arduino GND (common ground crucial!). Strip: +5V to supply, GND to common, DIN through 470Ω to Arduino D6.", "DiagramUrl": "/images/levels/level-088/step-3.svg", "Warning": "60 LEDs at full white draw ~3.5A! Use adequate power supply!"},
+      {"StepNumber": 4, "Title": "Install FastLED Library", "Description": "Install 'FastLED' library for WS2812B control. It handles all timing and color management!", "DiagramUrl": "/images/levels/level-088/step-4.svg"},
+      {"StepNumber": 5, "Title": "Program Basic Response", "Description": "Code: Read mic, map amplitude to brightness/colors. Higher volume = brighter/more LEDs lit!", "DiagramUrl": "/images/levels/level-088/step-5.svg"},
+      {"StepNumber": 6, "Title": "Add Effect Modes", "Description": "Create multiple effects: VU meter (amplitude bars), pulse (center-out), rainbow wave, color change on beats!", "DiagramUrl": "/images/levels/level-088/step-6.svg"},
+      {"StepNumber": 7, "Title": "Implement Beat Detection", "Description": "Track audio peaks and trigger special effects on beats. Compare current amplitude with recent average!", "DiagramUrl": "/images/levels/level-088/step-7.svg"},
+      {"StepNumber": 8, "Title": "Test with Music", "Description": "Play different genres! Adjust sensitivity and thresholds for best visual sync. Try bass-heavy tracks for dramatic effects!", "DiagramUrl": "/images/levels/level-088/step-8.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "Audio Signal Processing", "Url": "/images/levels/level-088/diagram-audio.svg", "Description": "From sound waves to LED control"},
+      {"Title": "WS2812B Data Protocol", "Url": "/images/levels/level-088/diagram-ws2812b.svg", "Description": "Addressable LED communication"},
+      {"Title": "VU Meter Effect", "Url": "/images/levels/level-088/diagram-vu.svg", "Description": "Volume level visualization"}
+    ],
+    "FunFact": "Music visualizers have been around since the 1970s! The first were analog oscilloscopes displaying waveforms. Winamp's visualizations in the 1990s were legendary. Modern concert stages use thousands of addressable LEDs synchronized to music using protocols like DMX512 and Art-Net. Coachella and Tomorrowland use millions of LEDs!",
+    "Quiz": {
+      "Question": "Why do we need to connect all grounds together (power supply, Arduino, LED strip)?",
+      "Options": ["All devices must share a common ground reference for signals to work properly", "To save wire", "To prevent overheating", "To make it look neat"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "Voltage is always relative to ground! If the LED strip power supply and Arduino have different ground references, the data signal voltage becomes undefined, causing flickering or non-functional LEDs. Common ground ensures all devices measure voltages from the same reference point!"
+    }
+  },
+  {
+    "Id": 89,
+    "Title": "GPS Location Tracker",
+    "Category": "Innovation Lab",
+    "Difficulty": 9,
+    "EstimatedTime": 70,
+    "Components": [
+      {"Name": "Arduino Uno", "Quantity": 1, "ImageUrl": "/images/components/arduino-uno.svg", "Description": "Microcontroller"},
+      {"Name": "NEO-6M GPS Module", "Quantity": 1, "ImageUrl": "/images/components/neo-6m.svg", "Description": "Satellite receiver"},
+      {"Name": "16x2 LCD Display (I2C)", "Quantity": 1, "ImageUrl": "/images/components/lcd-16x2-i2c.svg", "Description": "Data display"},
+      {"Name": "Active GPS Antenna", "Quantity": 1, "ImageUrl": "/images/components/gps-antenna.svg", "Description": "Satellite reception"},
+      {"Name": "SD Card Module", "Quantity": 1, "ImageUrl": "/images/components/sd-module.svg", "Description": "Data logging"},
+      {"Name": "MicroSD Card", "Quantity": 1, "ImageUrl": "/images/components/microsd.svg", "Description": "Storage"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "TinyGPS++ library", "Access to outdoors with sky view"],
+    "LearningObjectives": ["Understand GPS satellite systems", "Parse NMEA sentences", "Log GPS data to SD card", "Build location-aware projects"],
+    "SafetyNotes": ["Use outdoors for best signal", "GPS takes 30-60 seconds for first fix", "Don't use while driving", "Respect privacy laws"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Understand GPS", "Description": "GPS uses 31 satellites 20,000km up! Module receives signals from 4+ satellites, calculates position from time-of-flight. Accuracy: 2-5 meters!", "DiagramUrl": "/images/levels/level-089/step-1.svg", "Tip": "GPS = Global Positioning System (USA). Similar: GLONASS (Russia), Galileo (EU), BeiDou (China)"},
+      {"StepNumber": 2, "Title": "Connect GPS Module", "Description": "Wire NEO-6M: VCC to 5V, GND to ground, TX to Arduino pin 4, RX to pin 3. GPS sends NMEA sentences at 9600 baud!", "DiagramUrl": "/images/levels/level-089/step-2.svg"},
+      {"StepNumber": 3, "Title": "Attach Antenna", "Description": "Connect active antenna to GPS module's antenna connector. Place with clear sky view - no roof/trees blocking!", "DiagramUrl": "/images/levels/level-089/step-3.svg", "Warning": "GPS needs sky view! Won't work indoors or under trees!"},
+      {"StepNumber": 4, "Title": "Connect LCD Display", "Description": "Wire I2C LCD: SDA to A4, SCL to A5, VCC to 5V, GND to ground. This displays lat/long in real-time!", "DiagramUrl": "/images/levels/level-089/step-4.svg"},
+      {"StepNumber": 5, "Title": "Add SD Logger", "Description": "Connect SD module via SPI: CS to pin 10, MOSI to 11, MISO to 12, SCK to 13. Logs GPS track!", "DiagramUrl": "/images/levels/level-089/step-5.svg"},
+      {"StepNumber": 6, "Title": "Install Libraries", "Description": "Install 'TinyGPS++' for parsing NMEA, 'SD' for card access, 'LiquidCrystal I2C' for display.", "DiagramUrl": "/images/levels/level-089/step-6.svg"},
+      {"StepNumber": 7, "Title": "Program GPS Reader", "Description": "Code: Read GPS serial, parse with TinyGPS++, display lat/long on LCD, log with timestamp to SD card!", "DiagramUrl": "/images/levels/level-089/step-7.svg"},
+      {"StepNumber": 8, "Title": "Test Outdoors", "Description": "Go outside with clear sky view. Wait 30-60 seconds for satellite lock (LED on module blinks when locked). Watch coordinates update!", "DiagramUrl": "/images/levels/level-089/step-8.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "GPS Trilateration", "Url": "/images/levels/level-089/diagram-trilateration.svg", "Description": "How 3D position is calculated"},
+      {"Title": "NMEA Sentence Format", "Url": "/images/levels/level-089/diagram-nmea.svg", "Description": "GPS data protocol"},
+      {"Title": "Satellite Constellation", "Url": "/images/levels/level-089/diagram-satellites.svg", "Description": "GPS orbital configuration"}
+    ],
+    "FunFact": "GPS was originally military-only! President Reagan opened it to civilians after Korean Air 007 was shot down in 1983. The US maintains 31 GPS satellites, each costing $1.5 million to launch. GPS satellites use atomic clocks accurate to 1 nanosecond - they have to account for Einstein's relativity because time runs faster in orbit!",
+    "Quiz": {
+      "Question": "Why does GPS need signals from at least 4 satellites?",
+      "Options": ["3 satellites for 3D position (X,Y,Z), plus 1 more for time synchronization", "More satellites = more accuracy", "Backup in case one fails", "To cover the whole Earth"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "GPS calculates position by measuring distance to satellites using signal travel time. With 3 satellites you get 3 sphere intersections for position, but your receiver's clock isn't perfect! A 4th satellite solves for both position AND time offset, giving accurate X, Y, Z coordinates plus exact time!"
+    }
+  },
+  {
+    "Id": 90,
+    "Title": "IoT Weather Station",
+    "Category": "Innovation Lab",
+    "Difficulty": 10,
+    "EstimatedTime": 120,
+    "Components": [
+      {"Name": "ESP32 Development Board", "Quantity": 1, "ImageUrl": "/images/components/esp32.svg", "Description": "WiFi microcontroller"},
+      {"Name": "BME280 Sensor", "Quantity": 1, "ImageUrl": "/images/components/bme280.svg", "Description": "Temp/Humidity/Pressure"},
+      {"Name": "BH1750 Light Sensor", "Quantity": 1, "ImageUrl": "/images/components/bh1750.svg", "Description": "Light intensity"},
+      {"Name": "Rain Sensor Module", "Quantity": 1, "ImageUrl": "/images/components/rain-sensor.svg", "Description": "Precipitation detection"},
+      {"Name": "0.96\" OLED Display (I2C)", "Quantity": 1, "ImageUrl": "/images/components/oled-096.svg", "Description": "Local display"},
+      {"Name": "18650 Li-ion Battery", "Quantity": 1, "ImageUrl": "/images/components/18650-battery.svg", "Description": "Power backup"},
+      {"Name": "TP4056 Charging Module", "Quantity": 1, "ImageUrl": "/images/components/tp4056.svg", "Description": "Battery management"},
+      {"Name": "6V Solar Panel", "Quantity": 1, "ImageUrl": "/images/components/solar-panel.svg", "Description": "Power source"},
+      {"Name": "Breadboard", "Quantity": 1, "ImageUrl": "/images/components/breadboard.svg", "Description": "For building"},
+      {"Name": "Jumper Wires", "Quantity": 1, "ImageUrl": "/images/components/jumper-wires.svg", "Description": "Connections"}
+    ],
+    "AdditionalMaterials": ["USB cable", "WiFi network", "ThingSpeak account", "Weather-proof enclosure"],
+    "LearningObjectives": ["Build complete IoT system", "Multi-sensor integration", "Cloud data uploading", "Solar-powered design", "Web dashboard creation"],
+    "SafetyNotes": ["Weatherproof all electronics", "Use proper enclosure for outdoors", "Don't expose batteries to extreme temperatures", "Ensure antenna clearance"],
+    "Instructions": [
+      {"StepNumber": 1, "Title": "Plan Weather Station", "Description": "This milestone project combines EVERYTHING: sensors, power management, wireless connectivity, solar charging, and cloud data! Plan component layout.", "DiagramUrl": "/images/levels/level-090/step-1.svg", "Tip": "This is a Level 90 MILESTONE - take your time and do it right!"},
+      {"StepNumber": 2, "Title": "Wire Sensor Array", "Description": "Connect all I2C sensors to ESP32: BME280 and BH1750 to I2C bus (SDA=21, SCL=22). Rain sensor to GPIO34 (ADC). All share power and ground.", "DiagramUrl": "/images/levels/level-090/step-2.svg"},
+      {"StepNumber": 3, "Title": "Add OLED Display", "Description": "Connect 0.96\" OLED via I2C to ESP32. This shows current readings locally without needing WiFi!", "DiagramUrl": "/images/levels/level-090/step-3.svg"},
+      {"StepNumber": 4, "Title": "Build Solar Power System", "Description": "Connect solar panel to TP4056, battery to TP4056, TP4056 output to ESP32 VIN. This provides 24/7 power!", "DiagramUrl": "/images/levels/level-090/step-4.svg"},
+      {"StepNumber": 5, "Title": "Install Libraries", "Description": "Install: Adafruit BME280, BH1750, Adafruit SSD1306, WiFi, HTTPClient libraries for ESP32.", "DiagramUrl": "/images/levels/level-090/step-5.svg"},
+      {"StepNumber": 6, "Title": "Program Sensor Reading", "Description": "Code: Read BME280 (temp, humidity, pressure), BH1750 (lux), rain sensor (analog). Display on OLED with icons!", "DiagramUrl": "/images/levels/level-090/step-6.svg"},
+      {"StepNumber": 7, "Title": "Add WiFi Upload", "Description": "Connect ESP32 to WiFi, upload data to ThingSpeak.com every 5 minutes. Create free account for cloud logging!", "DiagramUrl": "/images/levels/level-090/step-7.svg"},
+      {"StepNumber": 8, "Title": "Implement Deep Sleep", "Description": "To save power, ESP32 sleeps between readings. Wake every 5 min, read sensors, upload, sleep! Battery lasts days!", "DiagramUrl": "/images/levels/level-090/step-8.svg"},
+      {"StepNumber": 9, "Title": "Weather-Proof Build", "Description": "Place electronics in waterproof enclosure with cable glands. Mount solar panel on top, sensors exposed to elements!", "DiagramUrl": "/images/levels/level-090/step-9.svg"},
+      {"StepNumber": 10, "Title": "Deploy and Monitor", "Description": "Install outdoors with WiFi range! Monitor on ThingSpeak dashboard. You've built a professional IoT weather station!", "DiagramUrl": "/images/levels/level-090/step-10.svg"}
+    ],
+    "Diagrams": [
+      {"Title": "Complete System Architecture", "Url": "/images/levels/level-090/diagram-architecture.svg", "Description": "Full weather station block diagram"},
+      {"Title": "Power Management", "Url": "/images/levels/level-090/diagram-power.svg", "Description": "Solar charging and battery backup"},
+      {"Title": "IoT Data Flow", "Url": "/images/levels/level-090/diagram-iot.svg", "Description": "From sensors to cloud"}
+    ],
+    "FunFact": "Professional weather stations cost $500-$5000, but you just built one for under $100! The National Weather Service uses thousands of stations to create forecasts. IoT weather networks like Weather Underground crowdsource data from personal stations worldwide. Your station could contribute to global weather data!",
+    "Quiz": {
+      "Question": "Why is deep sleep mode crucial for solar-powered IoT devices?",
+      "Options": ["It drastically reduces power consumption, allowing the device to run on small battery/solar between uploads", "It makes WiFi faster", "It protects sensors", "It improves accuracy"],
+      "CorrectAnswerIndex": 0,
+      "Explanation": "ESP32 uses ~240mA when active but only ~10μA in deep sleep - that's 24,000 times less! By sleeping 95% of the time and waking only to read sensors and upload, a small battery and solar panel can power the device indefinitely. Active 24/7 would drain the battery in hours!"
+    }
+  }
+]

@@ -79,6 +79,9 @@
             return;
         }
 
+        // Initialize level service (loads from JSON)
+        await LevelService.InitializeAsync();
+
         // Load levels and user data
         allLevels = LevelService.GetAllLevels();
         categories = LevelService.GetAllCategories();
