@@ -44,7 +44,7 @@ jobs:
       run: touch release/wwwroot/.nojekyll
 
     - name: Add 404.html for SPA routing
-      run: cp release/index.html release/404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
