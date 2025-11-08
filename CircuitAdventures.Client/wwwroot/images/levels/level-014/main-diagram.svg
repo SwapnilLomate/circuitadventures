@@ -1,29 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#f5f5f5"/>
-
-  <!-- Grid pattern -->
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
-    </pattern>
-  </defs>
+  <rect width="800" height="600" fill="#f8fcff"/>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/></pattern></defs>
   <rect width="800" height="600" fill="url(#grid)"/>
+  <text x="400" y="50" font-size="30" fill="#1976D2" text-anchor="middle" font-weight="bold">Night Light - Automatic Light Control</text>
 
-  <!-- Border -->
-  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#2196F3" stroke-width="3" rx="10"/>
+  <!-- Battery 1 -->
+  <g transform="translate(100, 200)"><rect x="-28" y="-48" width="56" height="96" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/><rect x="-9" y="-57" width="18" height="9" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/><rect x="-14" y="48" width="28" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-18" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="28" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-57" r="6" fill="#FF5252"/><circle cx="0" cy="53" r="6" fill="#2196F3"/><text x="0" y="-75" font-size="12" fill="#333" text-anchor="middle" font-weight="bold">Battery 1</text></g>
 
-  <!-- Icon -->
-  <circle cx="400" cy="250" r="80" fill="#E3F2FD" stroke="#2196F3" stroke-width="3"/>
-  <path d="M 400 190 L 400 220 M 370 220 L 430 220 M 400 280 L 400 310" stroke="#2196F3" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="370" cy="220" r="8" fill="#2196F3"/>
-  <circle cx="430" cy="220" r="8" fill="#2196F3"/>
+  <!-- Battery 2 -->
+  <g transform="translate(100, 380)"><rect x="-28" y="-48" width="56" height="96" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/><rect x="-9" y="-57" width="18" height="9" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/><rect x="-14" y="48" width="28" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-18" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="28" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-57" r="6" fill="#FF5252"/><circle cx="0" cy="53" r="6" fill="#2196F3"/><text x="0" y="-75" font-size="12" fill="#333" text-anchor="middle" font-weight="bold">Battery 2</text></g>
 
-  <!-- Text -->
-  <text x="400" y="380" text-anchor="middle" font-size="32" fill="#666" font-family="Arial, sans-serif" font-weight="bold">
-    Circuit Diagram
-  </text>
-  <text x="400" y="420" text-anchor="middle" font-size="20" fill="#999" font-family="Arial, sans-serif">
-    Placeholder - Detailed diagram coming soon
-  </text>
+  <!-- LDR -->
+  <g transform="translate(280, 180)"><rect x="-35" y="-45" width="70" height="90" fill="#795548" stroke="#5D4037" stroke-width="3" rx="8"/><circle cx="0" cy="0" r="28" fill="#FFC107" stroke="#F57C00" stroke-width="3" opacity="0.8"/><path d="M -15 -15 Q 0 -20, 15 -15 Q 20 0, 15 15 Q 0 20, -15 15 Q -20 0, -15 -15" fill="#FFD54F" opacity="0.6"/><path d="M -20 -25 L -15 -15 M -10 -28 L -8 -18 M 0 -30 L 0 -20 M 10 -28 L 8 -18 M 20 -25 L 15 -15" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/><circle cx="-35" cy="-35" r="5" fill="#888"/><circle cx="35" cy="-35" r="5" fill="#888"/><text x="0" y="-62" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">LDR</text></g>
+
+  <!-- 10K Resistor -->
+  <g transform="translate(280, 400)"><rect x="-40" y="-11" width="80" height="22" fill="#F5DEB3" stroke="#8B4513" stroke-width="3" rx="4"/><rect x="-28" y="-11" width="9" height="22" fill="#8B4513"/><rect x="-10" y="-11" width="9" height="22" fill="#FF9800"/><rect x="8" y="-11" width="9" height="22" fill="#8B4513"/><line x1="-52" y1="0" x2="-40" y2="0" stroke="#888" stroke-width="4"/><line x1="40" y1="0" x2="52" y2="0" stroke="#888" stroke-width="4"/><circle cx="-52" cy="0" r="5" fill="#888"/><circle cx="52" cy="0" r="5" fill="#888"/><text x="0" y="-26" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">10KΩ</text></g>
+
+  <!-- 1K Resistor -->
+  <g transform="translate(480, 280)"><rect x="-40" y="-11" width="80" height="22" fill="#F5DEB3" stroke="#8B4513" stroke-width="3" rx="4"/><rect x="-28" y="-11" width="9" height="22" fill="#8B4513"/><rect x="-10" y="-11" width="9" height="22" fill="#FF9800"/><rect x="8" y="-11" width="9" height="22" fill="#FF9800"/><line x1="-52" y1="0" x2="-40" y2="0" stroke="#888" stroke-width="4"/><line x1="40" y1="0" x2="52" y2="0" stroke="#888" stroke-width="4"/><circle cx="-52" cy="0" r="5" fill="#888"/><circle cx="52" cy="0" r="5" fill="#888"/><text x="0" y="-26" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">1KΩ</text></g>
+
+  <!-- LED (Lit) -->
+  <g transform="translate(670, 300)"><ellipse cx="0" cy="-10" rx="30" ry="40" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="3" opacity="0.9"/><circle cx="0" cy="0" r="18" fill="#FFFFEE" opacity="0.9"/><ellipse cx="-7" cy="-12" rx="10" ry="15" fill="#FFFFFF" opacity="0.7"/><circle cx="0" cy="0" r="40" fill="#FFFFCC" opacity="0.3"/><rect x="-24" y="26" width="48" height="10" fill="#757575" rx="3"/><line x1="17" y1="36" x2="17" y2="75" stroke="#888" stroke-width="5"/><circle cx="17" cy="75" r="6" fill="#FF5252" stroke="#C62828" stroke-width="2"/><line x1="-17" y1="36" x2="-17" y2="62" stroke="#888" stroke-width="5"/><circle cx="-17" cy="62" r="6" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-65" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">White LED</text></g>
+
+  <!-- Moon icon for darkness -->
+  <g transform="translate(280, 80)"><circle cx="0" cy="0" r="20" fill="#FFD700" opacity="0.7"/><circle cx="8" cy="0" r="18" fill="#f8fcff"/><text x="0" y="40" font-size="12" fill="#666" text-anchor="middle" font-weight="bold">DARK MODE</text></g>
+
+  <!-- Wires -->
+  <!-- Battery 1 + to LDR -->
+  <path d="M 100 143 C 150 143, 200 145, 245 145" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="100" cy="143" r="7" fill="#F44336"/><circle cx="245" cy="145" r="7" fill="#F44336"/>
+
+  <!-- Battery 1 - to Battery 2 + (series connection) -->
+  <path d="M 100 253 L 100 323" fill="none" stroke="#888" stroke-width="5"/><circle cx="100" cy="253" r="7" fill="#888"/><circle cx="100" cy="323" r="7" fill="#888"/>
+
+  <!-- LDR to junction point -->
+  <path d="M 280 225 L 280 300" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="280" cy="225" r="7" fill="#F44336"/><circle cx="280" cy="300" r="7" fill="#F44336"/>
+
+  <!-- Junction to 10K resistor -->
+  <path d="M 280 300 L 280 348" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="280" cy="348" r="7" fill="#F44336"/>
+
+  <!-- Junction to 1K resistor -->
+  <path d="M 280 300 C 340 290, 390 280, 428 280" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="428" cy="280" r="7" fill="#F44336"/>
+
+  <!-- 1K resistor to LED + -->
+  <path d="M 532 280 C 600 280, 640 300, 653 375" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="532" cy="280" r="7" fill="#F44336"/><circle cx="653" cy="375" r="7" fill="#F44336"/>
+
+  <!-- 10K resistor to Battery 2 - -->
+  <path d="M 280 452 C 200 452, 120 445, 100 433" fill="none" stroke="#2196F3" stroke-width="5"/><circle cx="280" cy="452" r="7" fill="#2196F3"/><circle cx="100" cy="433" r="7" fill="#2196F3"/>
+
+  <!-- LED - to Battery 2 - -->
+  <path d="M 653 362 C 500 362, 200 400, 100 433" fill="none" stroke="#2196F3" stroke-width="5"/><circle cx="653" cy="362" r="7" fill="#2196F3"/>
+
+  <rect x="130" y="510" width="540" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/><text x="400" y="547" font-size="17" fill="#1B5E20" text-anchor="middle" font-weight="bold">LED Turns ON When Dark - Automatic Night Light!</text>
 </svg>

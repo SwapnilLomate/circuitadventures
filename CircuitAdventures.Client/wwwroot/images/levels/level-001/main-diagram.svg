@@ -1,29 +1,72 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#f5f5f5"/>
-
-  <!-- Grid pattern -->
+  <!-- Background and Grid -->
+  <rect width="800" height="600" fill="#f8fcff"/>
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/>
     </pattern>
   </defs>
   <rect width="800" height="600" fill="url(#grid)"/>
 
-  <!-- Border -->
-  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#2196F3" stroke-width="3" rx="10"/>
+  <!-- Title -->
+  <text x="400" y="50" font-size="32" fill="#1976D2" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">First Light - Complete Circuit</text>
 
-  <!-- Icon -->
-  <circle cx="400" cy="250" r="80" fill="#E3F2FD" stroke="#2196F3" stroke-width="3"/>
-  <path d="M 400 190 L 400 220 M 370 220 L 430 220 M 400 280 L 400 310" stroke="#2196F3" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="370" cy="220" r="8" fill="#2196F3"/>
-  <circle cx="430" cy="220" r="8" fill="#2196F3"/>
+  <!-- Battery (left side) -->
+  <g transform="translate(200, 300)">
+    <rect x="-30" y="-50" width="60" height="100" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/>
+    <rect x="-10" y="-60" width="20" height="10" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/>
+    <rect x="-15" y="50" width="30" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+    <text x="0" y="-20" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">+</text>
+    <text x="0" y="30" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">-</text>
+    <circle cx="0" cy="-60" r="6" fill="#FF5252"/>
+    <circle cx="0" cy="55" r="6" fill="#2196F3"/>
+    <text x="0" y="-80" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Battery</text>
+    <text x="0" y="-95" font-size="14" fill="#666" text-anchor="middle">1.5V</text>
+  </g>
 
-  <!-- Text -->
-  <text x="400" y="380" text-anchor="middle" font-size="32" fill="#666" font-family="Arial, sans-serif" font-weight="bold">
-    Circuit Diagram
-  </text>
-  <text x="400" y="420" text-anchor="middle" font-size="20" fill="#999" font-family="Arial, sans-serif">
-    Placeholder - Detailed diagram coming soon
-  </text>
+  <!-- LED (right side, lit up) -->
+  <g transform="translate(600, 300)">
+    <!-- LED dome with glow -->
+    <ellipse cx="0" cy="-10" rx="35" ry="45" fill="#FFC107" stroke="#FFD54F" stroke-width="3" opacity="0.9"/>
+
+    <!-- Inner glow -->
+    <circle cx="0" cy="0" r="20" fill="#FFC107" opacity="0.7"/>
+    <ellipse cx="-8" cy="-15" rx="12" ry="18" fill="#FFFFFF" opacity="0.5"/>
+
+    <!-- Outer glow rings -->
+    <circle cx="0" cy="0" r="45" fill="#FFC107" opacity="0.3"/>
+    <circle cx="0" cy="0" r="55" fill="#FFC107" opacity="0.15"/>
+
+    <!-- LED base/rim -->
+    <rect x="-28" y="30" width="56" height="12" fill="#757575" rx="3"/>
+    <rect x="-25" y="33" width="50" height="6" fill="#9E9E9E" rx="2"/>
+
+    <!-- LONG leg (positive) - RIGHT side -->
+    <line x1="20" y1="42" x2="20" y2="100" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="20" cy="100" r="6" fill="#FF5252" stroke="#C62828" stroke-width="2"/>
+
+    <!-- SHORT leg (negative) - LEFT side -->
+    <line x1="-20" y1="42" x2="-20" y2="80" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-20" cy="80" r="6" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+
+    <text x="0" y="-75" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">LED (Lit!)</text>
+  </g>
+
+  <!-- Wire from Battery+ to LED+ (red wire with curve) -->
+  <path d="M 200 240 C 300 240, 500 400, 620 400" fill="none" stroke="#F44336" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="200" cy="240" r="7" fill="#F44336"/>
+  <circle cx="620" cy="400" r="7" fill="#F44336"/>
+
+  <!-- Wire from LED- to Battery- (blue wire with curve) -->
+  <path d="M 580 380 C 450 380, 300 355, 200 355" fill="none" stroke="#2196F3" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="580" cy="380" r="7" fill="#2196F3"/>
+  <circle cx="200" cy="355" r="7" fill="#2196F3"/>
+
+  <!-- Labels on wires -->
+  <text x="300" y="225" font-size="14" fill="#F44336" text-anchor="middle" font-weight="bold">Wire 1 (Red)</text>
+  <text x="350" y="370" font-size="14" fill="#2196F3" text-anchor="middle" font-weight="bold">Wire 2 (Blue)</text>
+
+  <!-- Success indicator -->
+  <rect x="250" y="500" width="300" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/>
+  <text x="400" y="537" font-size="20" fill="#1B5E20" text-anchor="middle" font-weight="bold">✓ Complete Circuit!</text>
 </svg>

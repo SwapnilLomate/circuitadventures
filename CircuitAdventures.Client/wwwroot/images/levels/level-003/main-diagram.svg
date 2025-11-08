@@ -1,29 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#f5f5f5"/>
-
-  <!-- Grid pattern -->
+  <!-- Background and Grid -->
+  <rect width="800" height="600" fill="#f8fcff"/>
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/>
     </pattern>
   </defs>
   <rect width="800" height="600" fill="url(#grid)"/>
 
-  <!-- Border -->
-  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#2196F3" stroke-width="3" rx="10"/>
+  <!-- Title -->
+  <text x="400" y="50" font-size="32" fill="#1976D2" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">Two Lights - Series Circuit</text>
 
-  <!-- Icon -->
-  <circle cx="400" cy="250" r="80" fill="#E3F2FD" stroke="#2196F3" stroke-width="3"/>
-  <path d="M 400 190 L 400 220 M 370 220 L 430 220 M 400 280 L 400 310" stroke="#2196F3" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="370" cy="220" r="8" fill="#2196F3"/>
-  <circle cx="430" cy="220" r="8" fill="#2196F3"/>
+  <!-- Battery 1 (top left) -->
+  <g transform="translate(150, 180)">
+    <rect x="-30" y="-50" width="60" height="100" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/>
+    <rect x="-10" y="-60" width="20" height="10" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/>
+    <rect x="-15" y="50" width="30" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+    <text x="0" y="-20" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text>
+    <text x="0" y="30" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text>
+    <circle cx="0" cy="-60" r="6" fill="#FF5252"/>
+    <circle cx="0" cy="55" r="6" fill="#2196F3"/>
+    <text x="0" y="-80" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Battery 1</text>
+  </g>
 
-  <!-- Text -->
-  <text x="400" y="380" text-anchor="middle" font-size="32" fill="#666" font-family="Arial, sans-serif" font-weight="bold">
-    Circuit Diagram
-  </text>
-  <text x="400" y="420" text-anchor="middle" font-size="20" fill="#999" font-family="Arial, sans-serif">
-    Placeholder - Detailed diagram coming soon
-  </text>
+  <!-- Battery 2 (bottom left) -->
+  <g transform="translate(150, 420)">
+    <rect x="-30" y="-50" width="60" height="100" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/>
+    <rect x="-10" y="-60" width="20" height="10" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/>
+    <rect x="-15" y="50" width="30" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+    <text x="0" y="-20" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text>
+    <text x="0" y="30" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text>
+    <circle cx="0" cy="-60" r="6" fill="#FF5252"/>
+    <circle cx="0" cy="55" r="6" fill="#2196F3"/>
+    <text x="0" y="-80" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Battery 2</text>
+  </g>
+
+  <!-- LED 1 (top right, lit) -->
+  <g transform="translate(650, 200)">
+    <ellipse cx="0" cy="-10" rx="30" ry="38" fill="#FFC107" stroke="#FFD54F" stroke-width="3" opacity="0.9"/>
+    <circle cx="0" cy="0" r="18" fill="#FFC107" opacity="0.7"/>
+    <ellipse cx="-7" cy="-12" rx="10" ry="15" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="0" cy="0" r="40" fill="#FFC107" opacity="0.25"/>
+    <rect x="-25" y="25" width="50" height="10" fill="#757575" rx="3"/>
+    <line x1="18" y1="35" x2="18" y2="75" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="18" cy="75" r="6" fill="#FF5252" stroke="#C62828" stroke-width="2"/>
+    <line x1="-18" y1="35" x2="-18" y2="60" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-18" cy="60" r="6" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+    <text x="0" y="-65" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">LED 1</text>
+  </g>
+
+  <!-- LED 2 (bottom right, lit) -->
+  <g transform="translate(650, 410)">
+    <ellipse cx="0" cy="-10" rx="30" ry="38" fill="#FFC107" stroke="#FFD54F" stroke-width="3" opacity="0.9"/>
+    <circle cx="0" cy="0" r="18" fill="#FFC107" opacity="0.7"/>
+    <ellipse cx="-7" cy="-12" rx="10" ry="15" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="0" cy="0" r="40" fill="#FFC107" opacity="0.25"/>
+    <rect x="-25" y="25" width="50" height="10" fill="#757575" rx="3"/>
+    <line x1="18" y1="35" x2="18" y2="75" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="18" cy="75" r="6" fill="#FF5252" stroke="#C62828" stroke-width="2"/>
+    <line x1="-18" y1="35" x2="-18" y2="60" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-18" cy="60" r="6" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+    <text x="0" y="-65" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">LED 2</text>
+  </g>
+
+  <!-- Wire: Battery1- to Battery2+ (purple, series connection) -->
+  <line x1="150" y1="235" x2="150" y2="360" stroke="#9C27B0" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="150" cy="235" r="7" fill="#9C27B0"/>
+  <circle cx="150" cy="360" r="7" fill="#9C27B0"/>
+  <text x="90" y="300" font-size="13" fill="#9C27B0" text-anchor="middle" font-weight="bold">Series</text>
+
+  <!-- Wire: Battery1+ to LED1+ (red) -->
+  <path d="M 150 120 C 300 120, 600 120, 668 275" fill="none" stroke="#F44336" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="150" cy="120" r="7" fill="#F44336"/>
+  <circle cx="668" cy="275" r="7" fill="#F44336"/>
+
+  <!-- Wire: LED1- to LED2+ (purple) -->
+  <line x1="632" y1="260" x2="668" y2="485" stroke="#9C27B0" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="632" cy="260" r="7" fill="#9C27B0"/>
+  <circle cx="668" cy="485" r="7" fill="#9C27B0"/>
+
+  <!-- Wire: LED2- to Battery2- (blue) -->
+  <path d="M 632 470 C 500 470, 250 470, 150 475" fill="none" stroke="#2196F3" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="632" cy="470" r="7" fill="#2196F3"/>
+  <circle cx="150" cy="475" r="7" fill="#2196F3"/>
+
+  <!-- Success indicator -->
+  <rect x="225" y="520" width="350" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/>
+  <text x="400" y="557" font-size="18" fill="#1B5E20" text-anchor="middle" font-weight="bold">✓ Two LEDs in Series - Sharing Voltage!</text>
 </svg>

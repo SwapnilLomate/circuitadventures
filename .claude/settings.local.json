@@ -36,7 +36,9 @@
       "Bash(del create-level-images.ps1)",
       "Bash(del create-component-images.ps1)",
       "Bash(del create-badge-images.ps1)",
-      "Bash(dotnet run:*)"
+      "Bash(dotnet run:*)",
+      "Bash(dotnet sln:*)",
+      "Bash(timeout /t 10)"
     ],
     "deny": [],
     "ask": []

@@ -1,6 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#f0f0f0"/>
-  <text x="400" y="300" font-family="Arial" font-size="24" fill="#666" text-anchor="middle">
-    Level 20 Main Diagram
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8fcff"/>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <text x="400" y="50" font-size="30" fill="#1976D2" text-anchor="middle" font-weight="bold">Build a Fan - Complete Project</text>
+
+  <!-- Battery 1 -->
+  <g transform="translate(80, 180)"><rect x="-22" y="-38" width="44" height="76" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="6"/><rect x="-7" y="-45" width="14" height="7" fill="#FF5252" stroke="#C62828" stroke-width="1" rx="1"/><rect x="-11" y="38" width="22" height="4" fill="#2196F3" stroke="#1565C0" stroke-width="1"/><text x="0" y="-15" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="22" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-45" r="5" fill="#FF5252"/><circle cx="0" cy="42" r="5" fill="#2196F3"/></g>
+
+  <!-- Battery 2 -->
+  <g transform="translate(80, 300)"><rect x="-22" y="-38" width="44" height="76" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="6"/><rect x="-7" y="-45" width="14" height="7" fill="#FF5252" stroke="#C62828" stroke-width="1" rx="1"/><rect x="-11" y="38" width="22" height="4" fill="#2196F3" stroke="#1565C0" stroke-width="1"/><text x="0" y="-15" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="22" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-45" r="5" fill="#FF5252"/><circle cx="0" cy="42" r="5" fill="#2196F3"/></g>
+
+  <!-- Switch -->
+  <g transform="translate(200, 160)"><rect x="-25" y="-16" width="50" height="32" fill="#E0E0E0" stroke="#757575" stroke-width="2" rx="4"/><rect x="-15" y="-8" width="30" height="16" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="2"/><text x="0" y="4" font-size="9" fill="#fff" text-anchor="middle" font-weight="bold">ON</text><circle cx="-30" cy="0" r="5" fill="#888"/><circle cx="30" cy="0" r="5" fill="#888"/><text x="0" y="-28" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">Switch</text></g>
+
+  <!-- Potentiometer -->
+  <g transform="translate(320, 220)"><rect x="-28" y="-28" width="56" height="56" fill="#795548" stroke="#5D4037" stroke-width="2" rx="6"/><circle cx="0" cy="0" r="20" fill="#D7CCC8" stroke="#A1887F" stroke-width="2"/><circle cx="0" cy="0" r="12" fill="#BCAAA4" stroke="#8D6E63" stroke-width="1"/><line x1="-9" y1="-9" x2="9" y2="9" stroke="#FF9800" stroke-width="3" stroke-linecap="round"/><circle cx="9" cy="9" r="4" fill="#FF9800"/><circle cx="-28" cy="-16" r="4" fill="#888"/><circle cx="0" cy="-36" r="4" fill="#888"/><circle cx="28" cy="-16" r="4" fill="#888"/><text x="0" y="-48" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">Speed</text><text x="0" y="46" font-size="10" fill="#666" text-anchor="middle">10KΩ</text></g>
+
+  <!-- DC Motor with Fan -->
+  <g transform="translate(490, 240)"><circle cx="0" cy="0" r="45" fill="#757575" stroke="#424242" stroke-width="3"/><circle cx="0" cy="0" r="38" fill="#9E9E9E" stroke="#616161" stroke-width="2"/><circle cx="0" cy="0" r="12" fill="#424242" stroke="#212121" stroke-width="2"/><rect x="-6" y="-40" width="12" height="15" fill="#546E7A" stroke="#37474F" stroke-width="2" rx="2"/><line x1="-20" y1="-20" x2="20" y2="20" stroke="#FFC107" stroke-width="3"/><line x1="20" y1="-20" x2="-20" y2="20" stroke="#FFC107" stroke-width="3"/><circle cx="0" cy="0" r="6" fill="#FFD54F"/><ellipse cx="-35" cy="0" rx="20" ry="8" fill="#81D4FA" opacity="0.7" transform="rotate(-30 -35 0)"/><ellipse cx="35" cy="0" rx="20" ry="8" fill="#81D4FA" opacity="0.7" transform="rotate(30 35 0)"/><ellipse cx="0" cy="-35" rx="8" ry="20" fill="#81D4FA" opacity="0.7" transform="rotate(-30 0 -35)"/><ellipse cx="0" cy="35" rx="8" ry="20" fill="#81D4FA" opacity="0.7" transform="rotate(30 0 35)"/><path d="M 50 -5 Q 58 0, 50 5" stroke="#42A5F5" stroke-width="2" fill="none" opacity="0.5"/><path d="M 60 -8 Q 70 0, 60 8" stroke="#42A5F5" stroke-width="2" fill="none" opacity="0.4"/><line x1="-12" y1="42" x2="-12" y2="62" stroke="#C62828" stroke-width="5"/><circle cx="-12" cy="62" r="5" fill="#F44336"/><line x1="12" y1="42" x2="12" y2="62" stroke="#212121" stroke-width="5"/><circle cx="12" cy="62" r="5" fill="#424242"/><text x="0" y="-62" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">Motor + Fan</text></g>
+
+  <!-- 330Ω Resistor -->
+  <g transform="translate(620, 180)"><rect x="-30" y="-8" width="60" height="16" fill="#F5DEB3" stroke="#8B4513" stroke-width="2" rx="3"/><rect x="-21" y="-8" width="7" height="16" fill="#FF9800"/><rect x="-7" y="-8" width="7" height="16" fill="#FF9800"/><rect x="7" y="-8" width="7" height="16" fill="#8B4513"/><line x1="-39" y1="0" x2="-30" y2="0" stroke="#888" stroke-width="3"/><line x1="30" y1="0" x2="39" y2="0" stroke="#888" stroke-width="3"/><circle cx="-39" cy="0" r="4" fill="#888"/><circle cx="39" cy="0" r="4" fill="#888"/><text x="0" y="-20" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">330Ω</text></g>
+
+  <!-- LED (Blue - Power indicator) -->
+  <g transform="translate(700, 200)"><ellipse cx="0" cy="-8" rx="22" ry="30" fill="#2196F3" stroke="#1976D2" stroke-width="2" opacity="0.8"/><circle cx="0" cy="0" r="13" fill="#42A5F5" opacity="0.7"/><ellipse cx="-5" cy="-9" rx="7" ry="11" fill="#FFFFFF" opacity="0.5"/><circle cx="0" cy="0" r="30" fill="#64B5F6" opacity="0.2"/><rect x="-18" y="20" width="36" height="8" fill="#757575" rx="2"/><line x1="13" y1="28" x2="13" y2="58" stroke="#888" stroke-width="4"/><circle cx="13" cy="58" r="5" fill="#FF5252" stroke="#C62828" stroke-width="2"/><line x1="-13" y1="28" x2="-13" y2="48" stroke="#888" stroke-width="4"/><circle cx="-13" cy="48" r="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-48" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">Power LED</text></g>
+
+  <!-- Wires -->
+  <!-- Battery series connection -->
+  <path d="M 80 218 L 80 255" fill="none" stroke="#888" stroke-width="4"/><circle cx="80" cy="218" r="6" fill="#888"/><circle cx="80" cy="255" r="6" fill="#888"/>
+
+  <!-- Battery 1 + to Switch -->
+  <path d="M 80 135 C 120 135, 150 150, 170 160" fill="none" stroke="#F44336" stroke-width="4"/><circle cx="80" cy="135" r="6" fill="#F44336"/><circle cx="170" cy="160" r="6" fill="#F44336"/>
+
+  <!-- Switch to Potentiometer outer pin -->
+  <path d="M 230 160 C 260 170, 280 190, 292 204" fill="none" stroke="#F44336" stroke-width="4"/><circle cx="230" cy="160" r="6" fill="#F44336"/><circle cx="292" cy="204" r="6" fill="#F44336"/>
+
+  <!-- Potentiometer middle to Motor red -->
+  <path d="M 320 184 C 380 200, 430 220, 478 302" fill="none" stroke="#F44336" stroke-width="4"/><circle cx="320" cy="184" r="6" fill="#F44336"/><circle cx="478" cy="302" r="6" fill="#F44336"/>
+
+  <!-- Potentiometer middle to Resistor (parallel LED path) -->
+  <path d="M 320 184 C 450 170, 540 180, 581 180" fill="none" stroke="#F44336" stroke-width="4" opacity="0.7"/><circle cx="581" cy="180" r="6" fill="#F44336"/>
+
+  <!-- Resistor to LED + -->
+  <path d="M 659 180 C 675 190, 685 195, 687 258" fill="none" stroke="#F44336" stroke-width="4"/><circle cx="659" cy="180" r="6" fill="#F44336"/><circle cx="687" cy="258" r="6" fill="#F44336"/>
+
+  <!-- Motor black to Battery - -->
+  <path d="M 502 302 C 400 330, 200 340, 80 342" fill="none" stroke="#424242" stroke-width="4"/><circle cx="502" cy="302" r="6" fill="#424242"/><circle cx="80" cy="342" r="6" fill="#424242"/>
+
+  <!-- LED - to Battery - -->
+  <path d="M 687 248 C 600 280, 300 330, 80 342" fill="none" stroke="#2196F3" stroke-width="4"/><circle cx="687" cy="248" r="6" fill="#2196F3"/>
+
+  <rect x="100" y="510" width="600" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/><text x="400" y="535" font-size="16" fill="#1B5E20" text-anchor="middle" font-weight="bold">Adjustable Speed Fan with Power Indicator!</text>
+  <text x="400" y="555" font-size="14" fill="#2E7D20" text-anchor="middle">Turn Switch ON - Adjust Speed with Knob</text>
 </svg>

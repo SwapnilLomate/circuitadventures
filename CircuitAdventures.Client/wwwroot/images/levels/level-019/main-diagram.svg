@@ -1,6 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#f0f0f0"/>
-  <text x="400" y="300" font-family="Arial" font-size="24" fill="#666" text-anchor="middle">
-    Level 19 Main Diagram
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8fcff"/>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <text x="400" y="50" font-size="30" fill="#1976D2" text-anchor="middle" font-weight="bold">Spinning Start - DC Motor Control</text>
+
+  <!-- Battery 1 -->
+  <g transform="translate(150, 220)"><rect x="-28" y="-48" width="56" height="96" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/><rect x="-9" y="-57" width="18" height="9" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/><rect x="-14" y="48" width="28" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-18" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="28" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-57" r="6" fill="#FF5252"/><circle cx="0" cy="53" r="6" fill="#2196F3"/><text x="0" y="-75" font-size="12" fill="#333" text-anchor="middle" font-weight="bold">Battery 1</text></g>
+
+  <!-- Battery 2 -->
+  <g transform="translate(150, 400)"><rect x="-28" y="-48" width="56" height="96" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/><rect x="-9" y="-57" width="18" height="9" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/><rect x="-14" y="48" width="28" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-18" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="28" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-57" r="6" fill="#FF5252"/><circle cx="0" cy="53" r="6" fill="#2196F3"/><text x="0" y="-75" font-size="12" fill="#333" text-anchor="middle" font-weight="bold">Battery 2</text></g>
+
+  <!-- Switch -->
+  <g transform="translate(350, 220)"><rect x="-35" y="-22" width="70" height="44" fill="#E0E0E0" stroke="#757575" stroke-width="2" rx="5"/><rect x="-20" y="-12" width="40" height="24" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="3"/><text x="0" y="6" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">ON</text><circle cx="-40" cy="0" r="6" fill="#888"/><circle cx="40" cy="0" r="6" fill="#888"/><text x="0" y="-38" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Switch</text></g>
+
+  <!-- DC Motor -->
+  <g transform="translate(550, 300)"><circle cx="0" cy="0" r="55" fill="#757575" stroke="#424242" stroke-width="4"/><circle cx="0" cy="0" r="45" fill="#9E9E9E" stroke="#616161" stroke-width="2"/><circle cx="0" cy="0" r="15" fill="#424242" stroke="#212121" stroke-width="2"/><rect x="-8" y="-50" width="16" height="20" fill="#546E7A" stroke="#37474F" stroke-width="2" rx="3"/><line x1="-25" y1="-25" x2="25" y2="25" stroke="#FFC107" stroke-width="4"/><line x1="25" y1="-25" x2="-25" y2="25" stroke="#FFC107" stroke-width="4"/><circle cx="0" cy="0" r="8" fill="#FFD54F"/><path d="M 10 -5 Q 15 0, 10 5" stroke="#FF9800" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M 20 -8 Q 28 0, 20 8" stroke="#FF9800" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M 30 -10 Q 40 0, 30 10" stroke="#FF9800" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/><line x1="-15" y1="50" x2="-15" y2="75" stroke="#C62828" stroke-width="6"/><circle cx="-15" cy="75" r="7" fill="#F44336" stroke="#C62828" stroke-width="2"/><line x1="15" y1="50" x2="15" y2="75" stroke="#212121" stroke-width="6"/><circle cx="15" cy="75" r="7" fill="#424242" stroke="#212121" stroke-width="2"/><text x="0" y="-78" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">DC Motor</text><text x="0" y="110" font-size="12" fill="#666" text-anchor="middle">3V</text><text x="-35" y="85" font-size="11" fill="#D32F2F" text-anchor="middle">RED</text><text x="35" y="85" font-size="11" fill="#424242" text-anchor="middle">BLK</text></g>
+
+  <!-- Motion lines -->
+  <g transform="translate(550, 300)" opacity="0.6"><path d="M -60 -15 Q -70 0, -60 15" stroke="#64B5F6" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M -60 15 L -55 13 M -60 15 L -58 10" stroke="#64B5F6" stroke-width="2" fill="none" stroke-linecap="round"/><text x="-90" y="5" font-size="13" fill="#1976D2" text-anchor="middle" font-weight="bold">SPIN!</text></g>
+
+  <!-- Wires -->
+  <!-- Battery series connection -->
+  <path d="M 150 273 L 150 343" fill="none" stroke="#888" stroke-width="5"/><circle cx="150" cy="273" r="7" fill="#888"/><circle cx="150" cy="343" r="7" fill="#888"/>
+
+  <!-- Battery 1 + to Switch -->
+  <path d="M 150 163 C 220 163, 280 200, 310 220" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="150" cy="163" r="7" fill="#F44336"/><circle cx="310" cy="220" r="7" fill="#F44336"/>
+
+  <!-- Switch to Motor red wire -->
+  <path d="M 390 220 C 450 220, 500 300, 535 375" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="390" cy="220" r="7" fill="#F44336"/><circle cx="535" cy="375" r="7" fill="#F44336"/>
+
+  <!-- Motor black wire to Battery 2 - -->
+  <path d="M 565 375 C 450 400, 250 440, 150 453" fill="none" stroke="#424242" stroke-width="5"/><circle cx="565" cy="375" r="7" fill="#424242"/><circle cx="150" cy="453" r="7" fill="#424242"/>
+
+  <rect x="180" y="510" width="440" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/><text x="400" y="547" font-size="17" fill="#1B5E20" text-anchor="middle" font-weight="bold">Turn Switch ON - Motor Spins!</text>
 </svg>

@@ -1,29 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#f5f5f5"/>
-
-  <!-- Grid pattern -->
+  <!-- Background and Grid -->
+  <rect width="800" height="600" fill="#f8fcff"/>
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/>
     </pattern>
   </defs>
   <rect width="800" height="600" fill="url(#grid)"/>
 
-  <!-- Border -->
-  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#2196F3" stroke-width="3" rx="10"/>
+  <!-- Title -->
+  <text x="400" y="50" font-size="32" fill="#1976D2" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">Sound Alarm - Piezo Buzzer</text>
 
-  <!-- Icon -->
-  <circle cx="400" cy="250" r="80" fill="#E3F2FD" stroke="#2196F3" stroke-width="3"/>
-  <path d="M 400 190 L 400 220 M 370 220 L 430 220 M 400 280 L 400 310" stroke="#2196F3" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="370" cy="220" r="8" fill="#2196F3"/>
-  <circle cx="430" cy="220" r="8" fill="#2196F3"/>
+  <!-- Battery (left) -->
+  <g transform="translate(150, 300)">
+    <rect x="-30" y="-50" width="60" height="100" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/>
+    <rect x="-10" y="-60" width="20" height="10" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/>
+    <rect x="-15" y="50" width="30" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/>
+    <text x="0" y="-20" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">+</text>
+    <text x="0" y="30" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">-</text>
+    <circle cx="0" cy="-60" r="6" fill="#FF5252"/>
+    <circle cx="0" cy="55" r="6" fill="#2196F3"/>
+    <text x="0" y="-85" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Battery</text>
+  </g>
 
-  <!-- Text -->
-  <text x="400" y="380" text-anchor="middle" font-size="32" fill="#666" font-family="Arial, sans-serif" font-weight="bold">
-    Circuit Diagram
-  </text>
-  <text x="400" y="420" text-anchor="middle" font-size="20" fill="#999" font-family="Arial, sans-serif">
-    Placeholder - Detailed diagram coming soon
-  </text>
+  <!-- Push Button (center, pressed) -->
+  <g transform="translate(380, 240)">
+    <circle cx="0" cy="0" r="34" fill="#FF5722" stroke="#BF360C" stroke-width="3"/>
+    <circle cx="0" cy="3" r="23" fill="#FF7043" stroke="#D84315" stroke-width="2"/>
+    <circle cx="-9" cy="-6" r="7" fill="#FFCCBC" opacity="0.8"/>
+    <circle cx="-24" cy="39" r="6" fill="#FFD54F" stroke="#F57F17" stroke-width="2"/>
+    <circle cx="24" cy="39" r="6" fill="#FFD54F" stroke="#F57F17" stroke-width="2"/>
+    <line x1="-24" y1="45" x2="-24" y2="58" stroke="#888" stroke-width="4" stroke-linecap="round"/>
+    <line x1="24" y1="45" x2="24" y2="58" stroke="#888" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="-24" cy="58" r="6" fill="#888"/>
+    <circle cx="24" cy="58" r="6" fill="#888"/>
+    <text x="0" y="-54" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Push Button</text>
+    <text x="0" y="85" font-size="13" fill="#4CAF50" text-anchor="middle" font-weight="bold">PRESSED</text>
+  </g>
+
+  <!-- Buzzer (right, sounding) -->
+  <g transform="translate(620, 300)">
+    <circle cx="0" cy="0" r="40" fill="#212121" stroke="#000" stroke-width="3"/>
+    <circle cx="0" cy="-6" r="35" fill="#424242" stroke="#212121" stroke-width="2"/>
+    <circle cx="0" cy="-6" r="18" fill="#757575" stroke="#424242" stroke-width="2"/>
+    <!-- Sound waves -->
+    <circle cx="0" cy="-6" r="52" fill="none" stroke="#FFC107" stroke-width="4" opacity="0.4"/>
+    <circle cx="0" cy="-6" r="66" fill="none" stroke="#FFC107" stroke-width="4" opacity="0.25"/>
+    <circle cx="0" cy="-6" r="80" fill="none" stroke="#FFC107" stroke-width="4" opacity="0.15"/>
+    <!-- Wires -->
+    <line x1="-18" y1="40" x2="-18" y2="75" stroke="#F44336" stroke-width="5" stroke-linecap="round"/>
+    <line x1="18" y1="40" x2="18" y2="75" stroke="#212121" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-18" cy="75" r="6" fill="#F44336"/>
+    <circle cx="18" cy="75" r="6" fill="#212121"/>
+    <text x="-18" y="95" font-size="13" fill="#F44336" text-anchor="middle" font-weight="bold">+</text>
+    <text x="18" y="95" font-size="13" fill="#212121" text-anchor="middle" font-weight="bold">-</text>
+    <text x="0" y="-65" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Buzzer</text>
+    <text x="0" y="-110" font-size="18" fill="#FFC107" text-anchor="middle" font-weight="bold">♪ ♫ BEEP! ♪ ♫</text>
+  </g>
+
+  <!-- Wire: Battery+ to Button (red) -->
+  <path d="M 150 240 C 220 240, 300 240, 356 298" fill="none" stroke="#F44336" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="150" cy="240" r="7" fill="#F44336"/>
+  <circle cx="356" cy="298" r="7" fill="#F44336"/>
+
+  <!-- Wire: Button to Buzzer+ (red) -->
+  <path d="M 404 298 C 450 310, 540 350, 602 375" fill="none" stroke="#F44336" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="404" cy="298" r="7" fill="#F44336"/>
+  <circle cx="602" cy="375" r="7" fill="#F44336"/>
+
+  <!-- Wire: Buzzer- to Battery- (blue/black) -->
+  <path d="M 638 375 C 580 400, 350 420, 200 380 C 160 370, 150 360, 150 355" fill="none" stroke="#2196F3" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="638" cy="375" r="7" fill="#212121"/>
+  <circle cx="150" cy="355" r="7" fill="#2196F3"/>
+
+  <!-- Success indicator -->
+  <rect x="180" y="510" width="440" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/>
+  <text x="400" y="547" font-size="18" fill="#1B5E20" text-anchor="middle" font-weight="bold">✓ Press Button to Make Sound!</text>
 </svg>

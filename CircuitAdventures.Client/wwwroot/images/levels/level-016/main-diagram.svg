@@ -1,29 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#f5f5f5"/>
-
-  <!-- Grid pattern -->
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
-    </pattern>
-  </defs>
+  <rect width="800" height="600" fill="#f8fcff"/>
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8f4f8" stroke-width="1"/></pattern></defs>
   <rect width="800" height="600" fill="url(#grid)"/>
+  <text x="400" y="50" font-size="30" fill="#1976D2" text-anchor="middle" font-weight="bold">Color Magic - RGB LED Control</text>
 
-  <!-- Border -->
-  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#2196F3" stroke-width="3" rx="10"/>
+  <!-- Battery 1 -->
+  <g transform="translate(80, 200)"><rect x="-28" y="-48" width="56" height="96" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/><rect x="-9" y="-57" width="18" height="9" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/><rect x="-14" y="48" width="28" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-18" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="28" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-57" r="6" fill="#FF5252"/><circle cx="0" cy="53" r="6" fill="#2196F3"/></g>
 
-  <!-- Icon -->
-  <circle cx="400" cy="250" r="80" fill="#E3F2FD" stroke="#2196F3" stroke-width="3"/>
-  <path d="M 400 190 L 400 220 M 370 220 L 430 220 M 400 280 L 400 310" stroke="#2196F3" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="370" cy="220" r="8" fill="#2196F3"/>
-  <circle cx="430" cy="220" r="8" fill="#2196F3"/>
+  <!-- Battery 2 -->
+  <g transform="translate(80, 380)"><rect x="-28" y="-48" width="56" height="96" fill="#4CAF50" stroke="#2E7D32" stroke-width="3" rx="8"/><rect x="-9" y="-57" width="18" height="9" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="2"/><rect x="-14" y="48" width="28" height="5" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><text x="0" y="-18" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">+</text><text x="0" y="28" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">-</text><circle cx="0" cy="-57" r="6" fill="#FF5252"/><circle cx="0" cy="53" r="6" fill="#2196F3"/></g>
 
-  <!-- Text -->
-  <text x="400" y="380" text-anchor="middle" font-size="32" fill="#666" font-family="Arial, sans-serif" font-weight="bold">
-    Circuit Diagram
-  </text>
-  <text x="400" y="420" text-anchor="middle" font-size="20" fill="#999" font-family="Arial, sans-serif">
-    Placeholder - Detailed diagram coming soon
-  </text>
+  <!-- Switch 1 (Red) -->
+  <g transform="translate(220, 150)"><rect x="-30" y="-20" width="60" height="40" fill="#E0E0E0" stroke="#757575" stroke-width="2" rx="5"/><rect x="-15" y="-10" width="30" height="20" fill="#FF5252" stroke="#C62828" stroke-width="2" rx="3"/><text x="0" y="5" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">ON</text><circle cx="-35" cy="0" r="5" fill="#888"/><circle cx="35" cy="0" r="5" fill="#888"/><text x="0" y="-32" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">RED</text></g>
+
+  <!-- Switch 2 (Green) -->
+  <g transform="translate(220, 290)"><rect x="-30" y="-20" width="60" height="40" fill="#E0E0E0" stroke="#757575" stroke-width="2" rx="5"/><rect x="-15" y="-10" width="30" height="20" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="3"/><text x="0" y="5" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">ON</text><circle cx="-35" cy="0" r="5" fill="#888"/><circle cx="35" cy="0" r="5" fill="#888"/><text x="0" y="-32" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">GREEN</text></g>
+
+  <!-- Switch 3 (Blue) -->
+  <g transform="translate(220, 430)"><rect x="-30" y="-20" width="60" height="40" fill="#E0E0E0" stroke="#757575" stroke-width="2" rx="5"/><rect x="-15" y="-10" width="30" height="20" fill="#2196F3" stroke="#1565C0" stroke-width="2" rx="3"/><text x="0" y="5" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">ON</text><circle cx="-35" cy="0" r="5" fill="#888"/><circle cx="35" cy="0" r="5" fill="#888"/><text x="0" y="-32" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">BLUE</text></g>
+
+  <!-- Resistor 1 (Red channel) -->
+  <g transform="translate(380, 150)"><rect x="-40" y="-11" width="80" height="22" fill="#F5DEB3" stroke="#8B4513" stroke-width="3" rx="4"/><rect x="-28" y="-11" width="9" height="22" fill="#FF9800"/><rect x="-10" y="-11" width="9" height="22" fill="#FF9800"/><rect x="8" y="-11" width="9" height="22" fill="#8B4513"/><line x1="-52" y1="0" x2="-40" y2="0" stroke="#888" stroke-width="4"/><line x1="40" y1="0" x2="52" y2="0" stroke="#888" stroke-width="4"/><circle cx="-52" cy="0" r="5" fill="#888"/><circle cx="52" cy="0" r="5" fill="#888"/><text x="0" y="-26" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">330Ω</text></g>
+
+  <!-- Resistor 2 (Green channel) -->
+  <g transform="translate(380, 290)"><rect x="-40" y="-11" width="80" height="22" fill="#F5DEB3" stroke="#8B4513" stroke-width="3" rx="4"/><rect x="-28" y="-11" width="9" height="22" fill="#FF9800"/><rect x="-10" y="-11" width="9" height="22" fill="#FF9800"/><rect x="8" y="-11" width="9" height="22" fill="#8B4513"/><line x1="-52" y1="0" x2="-40" y2="0" stroke="#888" stroke-width="4"/><line x1="40" y1="0" x2="52" y2="0" stroke="#888" stroke-width="4"/><circle cx="-52" cy="0" r="5" fill="#888"/><circle cx="52" cy="0" r="5" fill="#888"/><text x="0" y="-26" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">330Ω</text></g>
+
+  <!-- Resistor 3 (Blue channel) -->
+  <g transform="translate(380, 430)"><rect x="-40" y="-11" width="80" height="22" fill="#F5DEB3" stroke="#8B4513" stroke-width="3" rx="4"/><rect x="-28" y="-11" width="9" height="22" fill="#FF9800"/><rect x="-10" y="-11" width="9" height="22" fill="#FF9800"/><rect x="8" y="-11" width="9" height="22" fill="#8B4513"/><line x1="-52" y1="0" x2="-40" y2="0" stroke="#888" stroke-width="4"/><line x1="40" y1="0" x2="52" y2="0" stroke="#888" stroke-width="4"/><circle cx="-52" cy="0" r="5" fill="#888"/><circle cx="52" cy="0" r="5" fill="#888"/><text x="0" y="-26" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">330Ω</text></g>
+
+  <!-- RGB LED (showing all colors - white) -->
+  <g transform="translate(600, 290)"><ellipse cx="0" cy="-10" rx="40" ry="50" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="3" opacity="0.9"/><circle cx="0" cy="0" r="28" fill="#FFFFFF" opacity="0.8"/><ellipse cx="-10" cy="-15" rx="15" ry="20" fill="#FFFFFF" opacity="0.6"/><circle cx="0" cy="0" r="50" fill="#FFFFFF" opacity="0.3"/><circle cx="-15" cy="0" r="10" fill="#FF5252" opacity="0.5"/><circle cx="0" cy="0" r="10" fill="#4CAF50" opacity="0.5"/><circle cx="15" cy="0" r="10" fill="#2196F3" opacity="0.5"/><rect x="-30" y="35" width="60" height="12" fill="#757575" rx="3"/><line x1="25" y1="47" x2="25" y2="90" stroke="#888" stroke-width="5"/><circle cx="25" cy="90" r="6" fill="#FF5252" stroke="#C62828" stroke-width="2"/><line x1="8" y1="47" x2="8" y2="90" stroke="#888" stroke-width="5"/><circle cx="8" cy="90" r="6" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/><line x1="-8" y1="47" x2="-8" y2="90" stroke="#888" stroke-width="5"/><circle cx="-8" cy="90" r="6" fill="#2196F3" stroke="#1565C0" stroke-width="2"/><line x1="-25" y1="47" x2="-25" y2="75" stroke="#888" stroke-width="5"/><circle cx="-25" cy="75" r="6" fill="#888" stroke="#555" stroke-width="2"/><text x="0" y="-75" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">RGB LED</text><text x="35" y="105" font-size="10" fill="#D32F2F" text-anchor="start">R</text><text x="15" y="105" font-size="10" fill="#388E3C" text-anchor="start">G</text><text x="-5" y="105" font-size="10" fill="#1976D2" text-anchor="start">B</text><text x="-35" y="90" font-size="10" fill="#666" text-anchor="end">-</text></g>
+
+  <!-- Wires -->
+  <!-- Battery series connection -->
+  <path d="M 80 253 L 80 323" fill="none" stroke="#888" stroke-width="5"/><circle cx="80" cy="253" r="7" fill="#888"/><circle cx="80" cy="323" r="7" fill="#888"/>
+
+  <!-- Battery + to switches -->
+  <path d="M 80 143 L 185 143 L 185 150" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="80" cy="143" r="7" fill="#F44336"/><circle cx="185" cy="150" r="7" fill="#F44336"/>
+  <path d="M 185 150 L 185 290" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="185" cy="290" r="7" fill="#F44336"/>
+  <path d="M 185 290 L 185 430" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="185" cy="430" r="7" fill="#F44336"/>
+
+  <!-- Switches to resistors -->
+  <path d="M 255 150 L 328 150" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="255" cy="150" r="7" fill="#F44336"/><circle cx="328" cy="150" r="7" fill="#F44336"/>
+  <path d="M 255 290 L 328 290" fill="none" stroke="#4CAF50" stroke-width="5"/><circle cx="255" cy="290" r="7" fill="#4CAF50"/><circle cx="328" cy="290" r="7" fill="#4CAF50"/>
+  <path d="M 255 430 L 328 430" fill="none" stroke="#2196F3" stroke-width="5"/><circle cx="255" cy="430" r="7" fill="#2196F3"/><circle cx="328" cy="430" r="7" fill="#2196F3"/>
+
+  <!-- Resistors to RGB LED pins -->
+  <path d="M 432 150 C 500 150, 550 200, 575 290" fill="none" stroke="#F44336" stroke-width="5"/><circle cx="432" cy="150" r="7" fill="#F44336"/><circle cx="575" cy="290" r="7" fill="#F44336"/>
+  <path d="M 432 290 C 500 290, 550 290, 592 290" fill="none" stroke="#4CAF50" stroke-width="5"/><circle cx="432" cy="290" r="7" fill="#4CAF50"/><circle cx="592" cy="290" r="7" fill="#4CAF50"/>
+  <path d="M 432 430 C 500 430, 550 380, 575 290" fill="none" stroke="#2196F3" stroke-width="5"/><circle cx="432" cy="430" r="7" fill="#2196F3"/>
+
+  <!-- RGB LED common cathode to Battery - -->
+  <path d="M 575 365 C 400 365, 150 420, 80 433" fill="none" stroke="#888" stroke-width="5"/><circle cx="575" cy="365" r="7" fill="#888"/><circle cx="80" cy="433" r="7" fill="#888"/>
+
+  <rect x="120" y="510" width="560" height="60" fill="#C8E6C9" stroke="#388E3C" stroke-width="3" rx="10"/><text x="400" y="547" font-size="17" fill="#1B5E20" text-anchor="middle" font-weight="bold">Mix Red, Green & Blue - Create 7 Different Colors!</text>
 </svg>
