@@ -5,8 +5,6 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitAdventures.Client", "CircuitAdventures.Client\CircuitAdventures.Client.csproj", "{1576BD37-9085-FCB5-6193-41598AC0A11E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitAdventures.SvgGenerator", "CircuitAdventures.SvgGenerator\CircuitAdventures.SvgGenerator.csproj", "{DAE6D30E-EA04-4CF6-8600-C61D17691348}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
