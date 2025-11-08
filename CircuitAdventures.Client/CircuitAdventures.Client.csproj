@@ -4,6 +4,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StaticWebAssetBasePath>/circuitadventures</StaticWebAssetBasePath>
+    <BlazorWebAssemblyEnableLinker>false</BlazorWebAssemblyEnableLinker>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,9 +14,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.10" PrivateAssets="all" />
     <PackageReference Include="MudBlazor" Version="8.13.0" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <StaticWebAssetBasePath Include="circuitadventures" />
-  </ItemGroup>
+
 
 </Project>
