@@ -38,7 +38,7 @@ jobs:
 
     - name: Change base href in index.html
       run: |
-        sed -i 's|<base href="/" />|<base href="/circuitadventures/" />|' release/index.html
+        sed -i 's|<base href="/" />|<base href="/circuitadventures/" />|' release/wwwroot/index.html
 
     - name: Add .nojekyll file
       run: touch release/wwwroot/.nojekyll
