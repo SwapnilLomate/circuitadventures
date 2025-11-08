@@ -36,18 +36,15 @@ jobs:
     - name: Publish Blazor WebAssembly app
       run: dotnet publish CircuitAdventures.Client/CircuitAdventures.Client.csproj -c Release -o release --nologo
 
-    - name: Change base-tag in index.html
+    - name: Change base href in index.html
       run: |
-        sed -i 's|<base href="/" />|<base href="/circuitadventures/" />|' release/wwwroot/index.html
+        sed -i 's|<base href="/" />|<base href="/circuitadventures/" />|' release/index.html
 
     - name: Add .nojekyll file
       run: touch release/wwwroot/.nojekyll
 
     - name: Add 404.html for SPA routing
-      run: |
-        cp release/wwwroot/index.html release/wwwroot/404.html
-        # you can optionally insert the SPA fallback script here if you need advanced route handling
-        # e.g. sed -i '…script…' release/wwwroot/404.html
+      run: cp release/index.html release/404.html
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
