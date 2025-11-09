@@ -38,13 +38,13 @@ jobs:
 
     - name: Change base href in index.html
       run: |
-        sed -i 's|<base href="/" />|<base href="/circuitadventures/" />|' /wwwroot/index.html
+        sed -i 's|<base href="/" />|<base href="/circuitadventures/" />|' ./wwwroot/index.html
 
     - name: Add wwwroot/.nojekyll file
-      run: touch /wwwroot/.nojekyll
+      run: touch ./wwwroot/.nojekyll
 
     - name: Add 404.html for SPA routing
-      run: cp /wwwroot/index.html /wwwroot/404.html
+      run: cp ./wwwroot/index.html ./wwwroot/404.html
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
